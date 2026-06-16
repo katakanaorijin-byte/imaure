@@ -179,7 +179,12 @@ def fetch_rakuten(app_id, access_key, affiliate_id, cat, pages=FETCH_PAGES):
                 continue
             image = ""
             if it.get("mediumImageUrls"):
-                image = it["mediumImageUrls"][0].get("imageUrl", "").replace("?_ex=128x128", "?_ex=300x300")
+                first_image = it["mediumImageUrls"][0]
+                if isinstance(first_image, dict):
+                    image = first_image.get("imageUrl", "")
+                else:
+                    image = str(first_image or "")
+                image = image.replace("?_ex=128x128", "?_ex=300x300")
             items.append({
                 "code": code,
                 "name": name,
