@@ -243,7 +243,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>14:21 更新</span>
+      <span class="live"><i class="pulse"></i>14:26 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -319,7 +319,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">4月発売</span></p>
           <p class="cname">4月発売 予約 バンダイ BANDAI ONE PIECEカードゲーム スタートデッキEX ルフィ＆エース【ST-30】</p>
-          <p class="cmeta"><span class="price">23,800<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">23,800<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
           <p class="cshop">hankuroom 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardbox-o-020%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015137%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -339,7 +339,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p>予約の受付状況・価格・特典は変動が激しいため、必ずリンク先の最新情報をご確認ください。本サイトは定価での予約機会を見つけるための情報サイトであり、転売を推奨するものではありません。</p>
     <p>当サイトは楽天アフィリエイト等に参加しており、リンク経由の購入により紹介料を得ることがあります。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月16日 14:21</p>
+    <p>最終更新: 2026年6月16日 14:26</p>
   </div>
 </footer>
 
@@ -369,7 +369,7 @@ totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior
 </script>
 <script>
 (function () {
-  var CFG = {"rakutenAppId": "727925b7-ddc1-4c2c-a01f-977f41c84cec", "rakutenAffiliateId": "54f12f5e.a93ef832.54f12f5f.37d32e85", "yahooAppId": "", "amazonTag": ""};
+  var CFG = {"rakutenAppId": "727925b7-ddc1-4c2c-a01f-977f41c84cec", "rakutenAccessKey": "pk_9qHEK9bJFIXeFenSbfpK6MfdzUYl4DxmD4srRf4T21L", "rakutenAffiliateId": "54f12f5e.a93ef832.54f12f5f.37d32e85", "yahooAppId": "", "amazonTag": ""};
   function $(id) { return document.getElementById(id); }
   var state = { items: [] };
 
@@ -439,16 +439,17 @@ totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior
   }
 
   function searchRakuten(q, freeOnly) {
-    if (!CFG.rakutenAppId) return Promise.resolve([]);
-    var p = new URLSearchParams({ applicationId: CFG.rakutenAppId, format: "json",
-      keyword: q, hits: "20", availability: "1" });
+    if (!CFG.rakutenAppId || !CFG.rakutenAccessKey) return Promise.resolve([]);
+    var p = new URLSearchParams({ applicationId: CFG.rakutenAppId, accessKey: CFG.rakutenAccessKey,
+      format: "json", formatVersion: "2", keyword: q, hits: "20", availability: "1" });
     if (freeOnly) p.set("postageFlag", "1");
     if (CFG.rakutenAffiliateId) p.set("affiliateId", CFG.rakutenAffiliateId);
-    var url = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?" + p;
+    var url = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401?" + p;
     return getJSON(url).then(function (d) {
-      return (d.Items || []).map(function (e) { var it = e.Item || e;
-        var img = (it.mediumImageUrls && it.mediumImageUrls[0]) ?
-          (it.mediumImageUrls[0].imageUrl || "").replace("?_ex=128x128", "?_ex=300x300") : "";
+      return (d.Items || d.items || []).map(function (e) { var it = e.Item || e.item || e;
+        var rawImg = (it.mediumImageUrls && it.mediumImageUrls[0]) || "";
+        var img = (typeof rawImg === "string" ? rawImg : (rawImg.imageUrl || ""))
+          .replace("?_ex=128x128", "?_ex=300x300");
         return { mall: "rakuten", name: it.itemName || "", price: +it.itemPrice || 0,
           url: it.affiliateUrl || it.itemUrl || "", image: img,
           shop: it.shopName || "", free: true };
@@ -525,7 +526,7 @@ totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior
     var q = $("sq").value.trim();
     if (!q) return;
     saveHist(q); hideSugg();
-    if (!CFG.rakutenAppId && !CFG.yahooAppId) {
+    if ((!CFG.rakutenAppId || !CFG.rakutenAccessKey) && !CFG.yahooAppId) {
       $("sstatus").textContent = "検索を使うにはAPIキーの設定が必要です(説明書をご覧ください)。"; return;
     }
     var freeOnly = $("opt-free").checked;
