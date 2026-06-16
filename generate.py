@@ -152,6 +152,8 @@ def fetch_rakuten(app_id, access_key, affiliate_id, cat, pages=FETCH_PAGES):
         headers = {"User-Agent": "yoyaku-radar-generator"}
         if SITE_URL:
             headers["Referer"] = SITE_URL
+            headers["Referrer"] = SITE_URL
+            headers["Origin"] = SITE_URL.rstrip("/")
         req = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=30) as res:
@@ -227,6 +229,7 @@ def collect_data():
     access_key = os.environ.get("RAKUTEN_ACCESS_KEY", "").strip()
     affiliate_id = os.environ.get("RAKUTEN_AFFILIATE_ID", "").strip()
     demo = not (app_id and access_key)
+    print(f"楽天API設定: app_id={'あり' if app_id else 'なし'} access_key={'あり' if access_key else 'なし'} site_url={'あり' if SITE_URL else 'なし'}")
     now = datetime.now(JST)
     now_iso = now.strftime("%Y-%m-%dT%H:%M")
     cutoff = (now - timedelta(days=SEEN_KEEP_DAYS)).strftime("%Y-%m-%d")
