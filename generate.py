@@ -33,7 +33,8 @@ from search_assets import SEARCH_CSS, SEARCH_HTML, SEARCH_JS
 SITE_NAME = "予約開始レーダー"
 SITE_TAGLINE = "ホビーの“予約開始”を毎日自動キャッチ"
 SITE_DESCRIPTION = "ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。昨日まで無かった新着予約だけを検知して速報します。"
-SITE_URL = ""  # 公開後に https://あなたのID.github.io/リポジトリ名/ を入れる(空でもOK)
+_SITE_URL_ENV = os.environ.get("SITE_URL", "").strip()
+SITE_URL = (_SITE_URL_ENV.rstrip("/") + "/") if _SITE_URL_ENV else ""  # 公開URL(空でもOK)
 
 ITEMS_PER_CATEGORY = 14   # 各カテゴリに表示する件数
 FETCH_PAGES = 2           # 楽天から取得するページ数(1ページ30件)
@@ -151,6 +152,13 @@ def fetch_rakuten(app_id, affiliate_id, cat, pages=FETCH_PAGES):
         try:
             with urllib.request.urlopen(req, timeout=30) as res:
                 data = json.loads(res.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            try:
+                body = e.read().decode("utf-8", errors="replace")[:500]
+            except Exception:
+                body = ""
+            print(f"[警告] {cat['name']} p{page} 取得失敗: HTTP {e.code} {body}", file=sys.stderr)
+            data = {}
         except Exception as e:
             print(f"[警告] {cat['name']} p{page} 取得失敗: {e}", file=sys.stderr)
             data = {}

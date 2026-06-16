@@ -40,6 +40,7 @@ jobs:
           VC_PID: ${{ secrets.VC_PID }}
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
           ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
+          SITE_URL: ${{ secrets.SITE_URL }}
         run: python generate.py
 
       - name: SNSに自動投稿(キー未設定ならスキップ)
