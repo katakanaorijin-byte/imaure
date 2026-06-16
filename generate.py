@@ -149,7 +149,10 @@ def fetch_rakuten(app_id, access_key, affiliate_id, cat, pages=FETCH_PAGES):
         if affiliate_id:
             params["affiliateId"] = affiliate_id
         url = API_URL + "?" + urllib.parse.urlencode(params)
-        req = urllib.request.Request(url, headers={"User-Agent": "yoyaku-radar-generator"})
+        headers = {"User-Agent": "yoyaku-radar-generator"}
+        if SITE_URL:
+            headers["Referer"] = SITE_URL
+        req = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=30) as res:
                 data = json.loads(res.read().decode("utf-8"))
