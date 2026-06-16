@@ -24,6 +24,11 @@ SEARCH_CSS = """
 .rates input { width: 56px; font: inherit; font-size: 13px; padding: 3px 6px;
   border: 1px solid var(--rule); border-radius: 5px; text-align: right; }
 .sstatus { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+.sactions { display: none; margin-top: 10px; }
+.sactions.show { display: flex; gap: 8px; flex-wrap: wrap; }
+.shome { font: inherit; font-size: 12px; font-weight: 700; color: var(--ink);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 999px;
+  padding: 7px 12px; cursor: pointer; }
 .sresults { list-style: none; margin-top: 10px; background: var(--card);
   border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
 .sresults:empty { display: none; }
@@ -94,6 +99,9 @@ SEARCH_HTML = """
       <span>→「実質順」はポイント分を引いた価格で並びます</span>
     </div>
     <p class="sstatus" id="sstatus"></p>
+    <div class="sactions" id="sactions">
+      <button type="button" class="shome" id="search-home">ホームに戻る</button>
+    </div>
     <ol class="sresults" id="sresults"></ol>
   </div>
 </section>
@@ -283,6 +291,7 @@ SEARCH_JS = r"""
       msg += ' ・ <a href="https://www.amazon.co.jp/s?' + ap.toString() +
         '" target="_blank" rel="nofollow sponsored noopener" style="color:var(--green);font-weight:700">Amazonでも検索 →</a>';
       $("sstatus").innerHTML = msg;
+      $("sactions").classList.add("show");
       render();
     });
   }
@@ -354,6 +363,14 @@ SEARCH_JS = r"""
   });
 
   $("sform").addEventListener("submit", doSearch);
+  $("search-home").addEventListener("click", function () {
+    state.items = [];
+    $("sq").value = "";
+    $("sstatus").textContent = "";
+    $("sresults").innerHTML = "";
+    $("sactions").classList.remove("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   $("opt-sort").addEventListener("change", render);
   $("rates-toggle").addEventListener("click", function () { $("rates").classList.toggle("open"); });
   ["rate-rakuten", "rate-yahoo"].forEach(function (id) {

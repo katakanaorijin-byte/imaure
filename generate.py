@@ -335,8 +335,15 @@ def render_item(it, cat=None):
         ago_html = f'<span class="seen">{ago}</span>'
     else:
         ago_html = ""
+    classes = ["card"]
+    if it["is_new"]:
+        classes.append("isnew")
+    if it.get("hot"):
+        classes.append("ishot")
+    if it.get("image"):
+        classes.append("hasimg")
     return f"""
-      <li class="card{' isnew' if it['is_new'] else ''}">
+      <li class="{' '.join(classes)}" data-price="{int(it['price'] or 0)}">
         <div class="thumb">{img}</div>
         <div class="cbody">
           {chips_html}
@@ -549,14 +556,23 @@ h1, h2, .brand, .price, .cnt {{ font-family: "Murecho", "Noto Sans JP", sans-ser
 
 /* ===== ツールバー ===== */
 .toolbar {{ max-width: 680px; margin: 0 auto; padding: 12px 16px 0;
-  display: flex; align-items: center; justify-content: space-between; gap: 10px; }}
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }}
 .sum {{ font-size: 13px; color: var(--muted); }}
 .sum b {{ font-family: "Murecho", sans-serif; font-size: 17px; color: var(--ink); margin: 0 2px; }}
 .sum b.haspos {{ color: var(--new); }}
-.onlynew {{ display: inline-flex; align-items: center; gap: 6px;
+.listtools {{ display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; justify-content: flex-end; }}
+.onlynew, .toolcheck {{ display: inline-flex; align-items: center; gap: 6px;
   font-size: 12.5px; font-weight: 700; cursor: pointer; color: var(--ink); }}
-.onlynew input {{ width: 16px; height: 16px; accent-color: var(--green); }}
+.onlynew input, .toolcheck input {{ width: 16px; height: 16px; accent-color: var(--green); }}
+.pricefilter {{ display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--ink); }}
+.pricefilter input {{ width: 76px; font: inherit; font-size: 12px; padding: 5px 7px;
+  border: 1px solid var(--rule); border-radius: 7px; background: var(--card); color: var(--ink); }}
+.toolbtn {{ font: inherit; font-size: 12px; font-weight: 700; color: var(--muted);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 10px; cursor: pointer; }}
 body.only-new .card:not(.isnew) {{ display: none; }}
+body.only-hot .card:not(.ishot) {{ display: none; }}
+body.only-image .card:not(.hasimg) {{ display: none; }}
+.card.is-filtered {{ display: none !important; }}
 
 /* ===== パネル ===== */
 main {{ max-width: 680px; margin: 0 auto; padding: 6px 16px 48px; }}
@@ -658,7 +674,14 @@ footer {{ border-top: 1px solid var(--rule); background: var(--card);
 </nav>
 <div class="toolbar">
   <span class="sum">直近24時間の新着 <b class="{'haspos' if total_new else ''}">{total_new}</b> 件</span>
-  <label class="onlynew"><input type="checkbox" id="onlynew"> 新着だけ表示</label>
+  <div class="listtools">
+    <label class="onlynew"><input type="checkbox" id="onlynew"> 新着だけ</label>
+    <label class="toolcheck"><input type="checkbox" id="sortcheap"> 安い順</label>
+    <label class="toolcheck"><input type="checkbox" id="onlyhot"> 注目だけ</label>
+    <label class="toolcheck"><input type="checkbox" id="onlyimage"> 画像あり</label>
+    <label class="pricefilter">価格 <input type="number" id="minprice" min="0" step="100" placeholder="下限"> - <input type="number" id="maxprice" min="0" step="100" placeholder="上限"></label>
+    <button type="button" class="toolbtn" id="resetfilters">リセット</button>
+  </div>
 </div>
 
 <main>
@@ -689,9 +712,49 @@ document.querySelectorAll('.pill[data-target]').forEach(function (tab) {{
   }});
 }});
 var onlyNew = document.getElementById('onlynew');
+var sortCheap = document.getElementById('sortcheap');
+var onlyHot = document.getElementById('onlyhot');
+var onlyImage = document.getElementById('onlyimage');
+var minPrice = document.getElementById('minprice');
+var maxPrice = document.getElementById('maxprice');
+var resetFilters = document.getElementById('resetfilters');
+document.querySelectorAll('.cards').forEach(function (list) {{
+  Array.prototype.forEach.call(list.children, function (card, i) {{
+    card.dataset.order = i;
+  }});
+}});
+function applyListTools() {{
+  document.body.classList.toggle('only-new', !!(onlyNew && onlyNew.checked));
+  document.body.classList.toggle('only-hot', !!(onlyHot && onlyHot.checked));
+  document.body.classList.toggle('only-image', !!(onlyImage && onlyImage.checked));
+  var min = minPrice && minPrice.value !== '' ? Number(minPrice.value) : null;
+  var max = maxPrice && maxPrice.value !== '' ? Number(maxPrice.value) : null;
+  document.querySelectorAll('.card').forEach(function (card) {{
+    var price = Number(card.dataset.price || 0);
+    card.classList.toggle('is-filtered',
+      (min !== null && price < min) || (max !== null && price > max));
+  }});
+  document.querySelectorAll('.cards').forEach(function (list) {{
+    var cards = Array.prototype.slice.call(list.children);
+    cards.sort(function (a, b) {{
+      if (sortCheap && sortCheap.checked) {{
+        return Number(a.dataset.price || 0) - Number(b.dataset.price || 0);
+      }}
+      return Number(a.dataset.order || 0) - Number(b.dataset.order || 0);
+    }});
+    cards.forEach(function (card) {{ list.appendChild(card); }});
+  }});
+}}
 if (onlyNew) {{
-  onlyNew.addEventListener('change', function () {{
-    document.body.classList.toggle('only-new', onlyNew.checked);
+  [onlyNew, sortCheap, onlyHot, onlyImage, minPrice, maxPrice].forEach(function (el) {{
+    if (!el) return;
+    el.addEventListener(el.type === 'number' ? 'input' : 'change', applyListTools);
+  }});
+  resetFilters.addEventListener('click', function () {{
+    [onlyNew, sortCheap, onlyHot, onlyImage].forEach(function (el) {{ if (el) el.checked = false; }});
+    if (minPrice) minPrice.value = '';
+    if (maxPrice) maxPrice.value = '';
+    applyListTools();
   }});
 }}
 var totop = document.getElementById('totop');
