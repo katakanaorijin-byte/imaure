@@ -36,7 +36,7 @@ SITE_TAGLINE = "ホビーの“予約開始”を毎日自動キャッチ"
 SITE_DESCRIPTION = "ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。昨日まで無かった新着予約だけを検知して速報します。"
 _SITE_URL_ENV = os.environ.get("SITE_URL", "").strip()
 SITE_URL = (_SITE_URL_ENV.rstrip("/") + "/") if _SITE_URL_ENV else ""  # 公開URL(空でもOK)
-OPERATOR_NAME = os.environ.get("OPERATOR_NAME", "予約開始レーダー運営").strip()
+OPERATOR_NAME = os.environ.get("OPERATOR_NAME", "").strip() or "予約開始レーダー運営"
 CONTACT_URL = os.environ.get("CONTACT_URL", "").strip()
 X_ACCOUNT_URL = os.environ.get("X_ACCOUNT_URL", "").strip()
 
