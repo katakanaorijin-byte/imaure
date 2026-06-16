@@ -139,9 +139,12 @@ header {{ background:var(--card); color:var(--ink); padding:14px 16px 12px; bord
   border:2px dashed #D9A400; border-radius:6px; font-size:13px; font-weight:700; }}
 .tabs {{ position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 1px 0 var(--rule);
-  display:flex; gap:8px; overflow-x:auto; padding:10px 16px; scrollbar-width:none;
+  display:flex; gap:8px; overflow-x:auto; padding:10px 16px 12px; scrollbar-width:thin; scrollbar-color:#AEB6C4 transparent;
   touch-action:pan-x; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }}
-.tabs::-webkit-scrollbar {{ display:none; }}
+.tabs::-webkit-scrollbar {{ height:8px; }}
+.tabs::-webkit-scrollbar-track {{ background:transparent; }}
+.tabs::-webkit-scrollbar-thumb {{ background:#AEB6C4; border-radius:999px; border:2px solid transparent; background-clip:content-box; }}
+.tabs::-webkit-scrollbar-thumb:hover {{ background:#7D8796; background-clip:content-box; }}
 .tab {{ flex:0 0 auto; font-weight:700; font-size:13px; color:var(--ink); background:var(--card);
   border:1px solid var(--rule); border-radius:999px;
   padding:8px 14px; text-decoration:none; display:inline-block; white-space:nowrap; }}

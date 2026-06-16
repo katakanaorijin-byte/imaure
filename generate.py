@@ -529,10 +529,13 @@ h1, h2, .brand, .price, .cnt {{ font-family: "Murecho", "Noto Sans JP", sans-ser
 .pills {{ position: sticky; top: 0; z-index: 20;
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px;
-  scrollbar-width: none; box-shadow: 0 1px 0 var(--rule);
+  display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px 12px;
+  scrollbar-width: thin; scrollbar-color: #AEB6C4 transparent; box-shadow: 0 1px 0 var(--rule);
   touch-action: pan-x; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }}
-.pills::-webkit-scrollbar {{ display: none; }}
+.pills::-webkit-scrollbar {{ height: 8px; }}
+.pills::-webkit-scrollbar-track {{ background: transparent; }}
+.pills::-webkit-scrollbar-thumb {{ background: #AEB6C4; border-radius: 999px; border: 2px solid transparent; background-clip: content-box; }}
+.pills::-webkit-scrollbar-thumb:hover {{ background: #7D8796; background-clip: content-box; }}
 .pill {{ flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px;
   font: inherit; font-size: 13px; font-weight: 700; color: var(--ink);
   background: var(--card); border: 1px solid var(--rule); border-radius: 999px;
