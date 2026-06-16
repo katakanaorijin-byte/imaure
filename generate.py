@@ -456,6 +456,7 @@ def build_html(data, demo, single=None):
 
     cfg = {
         "rakutenAppId": os.environ.get("RAKUTEN_APP_ID", "").strip(),
+        "rakutenAccessKey": os.environ.get("RAKUTEN_ACCESS_KEY", "").strip(),
         "rakutenAffiliateId": os.environ.get("RAKUTEN_AFFILIATE_ID", "").strip(),
         "yahooAppId": os.environ.get("YAHOO_APP_ID", "").strip(),
         "amazonTag": AMAZON_TAG,

@@ -171,16 +171,17 @@ SEARCH_JS = r"""
   }
 
   function searchRakuten(q, freeOnly) {
-    if (!CFG.rakutenAppId) return Promise.resolve([]);
-    var p = new URLSearchParams({ applicationId: CFG.rakutenAppId, format: "json",
-      keyword: q, hits: "20", availability: "1" });
+    if (!CFG.rakutenAppId || !CFG.rakutenAccessKey) return Promise.resolve([]);
+    var p = new URLSearchParams({ applicationId: CFG.rakutenAppId, accessKey: CFG.rakutenAccessKey,
+      format: "json", formatVersion: "2", keyword: q, hits: "20", availability: "1" });
     if (freeOnly) p.set("postageFlag", "1");
     if (CFG.rakutenAffiliateId) p.set("affiliateId", CFG.rakutenAffiliateId);
-    var url = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?" + p;
+    var url = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401?" + p;
     return getJSON(url).then(function (d) {
-      return (d.Items || []).map(function (e) { var it = e.Item || e;
-        var img = (it.mediumImageUrls && it.mediumImageUrls[0]) ?
-          (it.mediumImageUrls[0].imageUrl || "").replace("?_ex=128x128", "?_ex=300x300") : "";
+      return (d.Items || d.items || []).map(function (e) { var it = e.Item || e.item || e;
+        var rawImg = (it.mediumImageUrls && it.mediumImageUrls[0]) || "";
+        var img = (typeof rawImg === "string" ? rawImg : (rawImg.imageUrl || ""))
+          .replace("?_ex=128x128", "?_ex=300x300");
         return { mall: "rakuten", name: it.itemName || "", price: +it.itemPrice || 0,
           url: it.affiliateUrl || it.itemUrl || "", image: img,
           shop: it.shopName || "", free: true };
@@ -257,7 +258,7 @@ SEARCH_JS = r"""
     var q = $("sq").value.trim();
     if (!q) return;
     saveHist(q); hideSugg();
-    if (!CFG.rakutenAppId && !CFG.yahooAppId) {
+    if ((!CFG.rakutenAppId || !CFG.rakutenAccessKey) && !CFG.yahooAppId) {
       $("sstatus").textContent = "検索を使うにはAPIキーの設定が必要です(説明書をご覧ください)。"; return;
     }
     var freeOnly = $("opt-free").checked;
