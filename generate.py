@@ -19,6 +19,7 @@ import re
 import sys
 import time
 import unicodedata
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
@@ -68,7 +69,7 @@ CATEGORIES = [
      "ng": "中古 訳あり", "min_price": 1500},
 ]
 
-API_URL = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601"
+API_URL = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401"
 JST = timezone(timedelta(hours=9))
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -134,12 +135,12 @@ def ago_text(ts: str) -> str:
 # データ取得と新着判定
 # ============================================================
 
-def fetch_rakuten(app_id, affiliate_id, cat, pages=FETCH_PAGES):
+def fetch_rakuten(app_id, access_key, affiliate_id, cat, pages=FETCH_PAGES):
     """楽天検索APIを新着順で叩き、「予約」商品だけ集める"""
     items, seen_codes = [], set()
     for page in range(1, pages + 1):
         params = {
-            "applicationId": app_id, "format": "json",
+            "applicationId": app_id, "accessKey": access_key, "format": "json", "formatVersion": 2,
             "keyword": cat["keyword"], "NGKeyword": cat["ng"],
             "hits": 30, "page": page,
             "sort": "-updateTimestamp",  # 新着・更新が新しい順
@@ -162,8 +163,8 @@ def fetch_rakuten(app_id, affiliate_id, cat, pages=FETCH_PAGES):
         except Exception as e:
             print(f"[警告] {cat['name']} p{page} 取得失敗: {e}", file=sys.stderr)
             data = {}
-        for e in data.get("Items", []):
-            it = e.get("Item", e)
+        for e in data.get("Items") or data.get("items") or []:
+            it = e.get("Item") or e.get("item") or e
             code = it.get("itemCode", "")
             name = it.get("itemName", "")
             if not code or code in seen_codes:
@@ -220,8 +221,9 @@ def load_seen():
 
 def collect_data():
     app_id = os.environ.get("RAKUTEN_APP_ID", "").strip()
+    access_key = os.environ.get("RAKUTEN_ACCESS_KEY", "").strip()
     affiliate_id = os.environ.get("RAKUTEN_AFFILIATE_ID", "").strip()
-    demo = not app_id
+    demo = not (app_id and access_key)
     now = datetime.now(JST)
     now_iso = now.strftime("%Y-%m-%dT%H:%M")
     cutoff = (now - timedelta(days=SEEN_KEEP_DAYS)).strftime("%Y-%m-%d")
@@ -243,7 +245,7 @@ def collect_data():
 
     for cat in CATEGORIES:
         pages = FETCH_PAGES if is_full_run() else 1
-        items = demo_category(cat) if demo else fetch_rakuten(app_id, affiliate_id, cat, pages)
+        items = demo_category(cat) if demo else fetch_rakuten(app_id, access_key, affiliate_id, cat, pages)
         cat_seen = seen.setdefault(cat["name"], {})
         first_run = len(cat_seen) == 0  # 初回はすべて「新着」になってしまうのを防ぐ
 
