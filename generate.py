@@ -36,6 +36,9 @@ SITE_TAGLINE = "ホビーの“予約開始”を毎日自動キャッチ"
 SITE_DESCRIPTION = "ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。昨日まで無かった新着予約だけを検知して速報します。"
 _SITE_URL_ENV = os.environ.get("SITE_URL", "").strip()
 SITE_URL = (_SITE_URL_ENV.rstrip("/") + "/") if _SITE_URL_ENV else ""  # 公開URL(空でもOK)
+OPERATOR_NAME = os.environ.get("OPERATOR_NAME", "予約開始レーダー運営").strip()
+CONTACT_URL = os.environ.get("CONTACT_URL", "").strip()
+X_ACCOUNT_URL = os.environ.get("X_ACCOUNT_URL", "").strip()
 
 ITEMS_PER_CATEGORY = 14   # 各カテゴリに表示する件数
 FETCH_PAGES = 2           # 楽天から取得するページ数(1ページ30件)
@@ -68,6 +71,21 @@ CATEGORIES = [
     {"name": "ぬいぐるみ・グッズ", "icon": "🧸", "slug": "plush", "tag": "#ぬいぐるみ", "keyword": "ぬいぐるみ 予約 キャラクター",
      "ng": "中古 訳あり", "min_price": 1500},
 ]
+
+CATEGORY_DESCRIPTIONS = {
+    "ポケモンカード": "BOX予約・抽選開始・再販の動きが早いカテゴリです。新弾発表後は価格差と販売店ごとの特典有無を特に確認してください。",
+    "ワンピースカード": "人気弾は予約開始直後に在庫が動きやすいため、BOX販売・抽選販売・再入荷の違いを見ながら追跡します。",
+    "遊戯王・他カード": "遊戯王OCGを中心に、カード系ホビーの予約・BOX販売・限定セットを広く拾います。",
+    "フィギュア": "スケールフィギュアや限定特典付き商品の予約情報を確認します。価格が高めなので、安い順や価格帯指定が便利です。",
+    "ねんどろいど・figma": "再販や特典付き予約が多いカテゴリです。キャラクター名で検索し、受付中の商品を絞り込むのがおすすめです。",
+    "ガンプラ・プラモデル": "新作・再販・限定キットの動きが速いカテゴリです。定価に近い予約先を見つける用途を重視しています。",
+    "ゲームソフト": "Switch/PS5などの新作、限定版、店舗特典付き予約を追います。マリオやカービィなど作品名検索も活用してください。",
+    "アニメBlu-ray・CD": "初回限定盤や店舗別特典付き商品の予約確認向けです。発売日が近い商品は在庫変動に注意してください。",
+    "特撮・なりきり玩具": "変身ベルト、フィギュアーツ、限定玩具などの予約開始を拾います。放送・イベント発表後は動きが増えます。",
+    "鉄道模型": "Nゲージ/HOゲージの新製品や再生産予約を確認します。価格帯を指定すると探しやすくなります。",
+    "トミカ・ミニカー": "初回特別仕様、限定セット、予約開始直後の商品を中心に確認します。",
+    "ぬいぐるみ・グッズ": "キャラクターグッズやぬいぐるみの予約受付を拾います。作品名やキャラクター名で検索すると便利です。",
+}
 
 API_URL = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401"
 JST = timezone(timedelta(hours=9))
@@ -362,11 +380,13 @@ def render_category(g, active):
     n = g["new_count"]
     rows = "\n".join(render_item(it) for it in g["items"])
     pid = re.sub(r"\W", "", g["name"])
+    desc = CATEGORY_DESCRIPTIONS.get(g["name"], "予約開始・再販・新着販売の動きを確認できます。価格や在庫状況はリンク先で必ず確認してください。")
     return f"""
   <section class="panel{' active' if active else ''}" id="panel-{pid}" role="tabpanel">
     <header class="phead">
       <h2>{g['icon']} {escape(g['name'])}</h2>
       <p class="pmeta">直近24時間の新着 <b>{n}</b>件 ・ {len(g['items'])}件を監視中</p>
+      <p class="pdesc">{escape(desc)}</p>
     </header>
     <ol class="cards">{rows}
     </ol>
@@ -414,6 +434,7 @@ def build_html(data, demo, single=None):
           f'<meta property="og:type" content="website">\n'
           f'<meta property="og:site_name" content="{escape(SITE_NAME, quote=True)}">\n'
           + (f'<meta property="og:url" content="{escape(page_url, quote=True)}">\n' if page_url else "")
+          + (f'<meta property="og:image" content="{escape(SITE_URL + "og-image.svg", quote=True)}">\n' if SITE_URL else "")
           + '<meta name="twitter:card" content="summary">')
     jsonld_items = [
         {"@type": "ListItem", "position": i + 1, "name": it["name"], "url": it["url"]}
@@ -463,15 +484,21 @@ def build_html(data, demo, single=None):
 
     cfg = {
         "rakutenAppId": os.environ.get("RAKUTEN_APP_ID", "").strip(),
-        "rakutenAccessKey": os.environ.get("RAKUTEN_ACCESS_KEY", "").strip(),
         "rakutenAffiliateId": os.environ.get("RAKUTEN_AFFILIATE_ID", "").strip(),
         "yahooAppId": os.environ.get("YAHOO_APP_ID", "").strip(),
         "amazonTag": AMAZON_TAG,
+        "dataUrl": f"{prefix}data.json",
     }
     search_js = "<script>" + SEARCH_JS.replace("__SEARCH_CONFIG__", json.dumps(cfg)) + "</script>"
     vc_pid = os.environ.get("VC_PID", "").strip()
     linkswitch = (f'<script>var vc_pid = "{escape(vc_pid, quote=True)}";</script>\n'
                   '<script src="//aml.valuecommerce.com/vcdal.js" async></script>') if vc_pid else ""
+    contact_links = []
+    if X_ACCOUNT_URL:
+        contact_links.append(f'<a href="{escape(X_ACCOUNT_URL, quote=True)}" target="_blank" rel="noopener">Xアカウント</a>')
+    if CONTACT_URL:
+        contact_links.append(f'<a href="{escape(CONTACT_URL, quote=True)}" target="_blank" rel="noopener">問い合わせ</a>')
+    contact_html = " / ".join(contact_links) if contact_links else "問い合わせ先は準備中です"
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -481,6 +508,7 @@ def build_html(data, demo, single=None):
 <title>{escape(page_title)}</title>
 <meta name="description" content="{escape(page_desc, quote=True)}">
 {canonical}
+<link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml">
 {og}
 {jsonld}
 {adsense}
@@ -573,6 +601,9 @@ body.only-new .card:not(.isnew) {{ display: none; }}
 body.only-hot .card:not(.ishot) {{ display: none; }}
 body.only-image .card:not(.hasimg) {{ display: none; }}
 .card.is-filtered {{ display: none !important; }}
+.filter-empty {{ display: none; padding: 16px; text-align: center; font-size: 12px; color: var(--muted);
+  background: var(--card); border: 1px dashed var(--rule); border-radius: 16px; }}
+.filter-empty.show {{ display: block; }}
 
 /* ===== パネル ===== */
 main {{ max-width: 680px; margin: 0 auto; padding: 6px 16px 48px; }}
@@ -582,6 +613,7 @@ main {{ max-width: 680px; margin: 0 auto; padding: 6px 16px 48px; }}
 .phead h2 {{ font-size: 18px; font-weight: 900; }}
 .pmeta {{ font-size: 12px; color: var(--muted); margin-top: 1px; }}
 .pmeta b {{ color: var(--new); }}
+.pdesc {{ font-size: 12.5px; color: var(--muted); margin-top: 6px; }}
 .pnote {{ font-size: 11px; color: var(--muted); margin: 10px 2px 0; }}
 
 /* ===== 商品カード ===== */
@@ -694,6 +726,8 @@ footer {{ border-top: 1px solid var(--rule); background: var(--card);
     <p>楽天市場の各ホビーカテゴリを15分ごとに自動巡回し、直近24時間で初めてレーダーに映った商品を「NEW」として表示しています。検知の仕組み上、再販・価格改定・新店舗の取り扱い開始もNEWに含まれることがあります。</p>
     <p>予約の受付状況・価格・特典は変動が激しいため、必ずリンク先の最新情報をご確認ください。本サイトは定価での予約機会を見つけるための情報サイトであり、転売を推奨するものではありません。</p>
     <p>当サイトは楽天アフィリエイト等に参加しており、リンク経由の購入により紹介料を得ることがあります。</p>
+    <p><strong>運営者:</strong> {escape(OPERATOR_NAME)} / {contact_html}</p>
+    <p>掲載内容に誤りがある場合や削除依頼がある場合は、上記連絡先からお知らせください。</p>
     {catlinks}
     <p>最終更新: {updated_full}</p>
   </div>
@@ -724,15 +758,16 @@ document.querySelectorAll('.cards').forEach(function (list) {{
   }});
 }});
 function applyListTools() {{
-  document.body.classList.toggle('only-new', !!(onlyNew && onlyNew.checked));
-  document.body.classList.toggle('only-hot', !!(onlyHot && onlyHot.checked));
-  document.body.classList.toggle('only-image', !!(onlyImage && onlyImage.checked));
+  document.body.classList.remove('only-new', 'only-hot', 'only-image');
   var min = minPrice && minPrice.value !== '' ? Number(minPrice.value) : null;
   var max = maxPrice && maxPrice.value !== '' ? Number(maxPrice.value) : null;
   document.querySelectorAll('.card').forEach(function (card) {{
     var price = Number(card.dataset.price || 0);
-    card.classList.toggle('is-filtered',
-      (min !== null && price < min) || (max !== null && price > max));
+    var hide = (onlyNew && onlyNew.checked && !card.classList.contains('isnew')) ||
+      (onlyHot && onlyHot.checked && !card.classList.contains('ishot')) ||
+      (onlyImage && onlyImage.checked && !card.classList.contains('hasimg')) ||
+      (min !== null && price < min) || (max !== null && price > max);
+    card.classList.toggle('is-filtered', hide);
   }});
   document.querySelectorAll('.cards').forEach(function (list) {{
     var cards = Array.prototype.slice.call(list.children);
@@ -743,6 +778,16 @@ function applyListTools() {{
       return Number(a.dataset.order || 0) - Number(b.dataset.order || 0);
     }});
     cards.forEach(function (card) {{ list.appendChild(card); }});
+    var empty = list.nextElementSibling && list.nextElementSibling.classList.contains('filter-empty')
+      ? list.nextElementSibling : null;
+    if (!empty) {{
+      empty = document.createElement('p');
+      empty.className = 'filter-empty';
+      empty.textContent = '条件に合う商品がありません。';
+      list.insertAdjacentElement('afterend', empty);
+    }}
+    var visible = cards.some(function (card) {{ return !card.classList.contains('is-filtered'); }});
+    empty.classList.toggle('show', !visible && cards.length > 0);
   }});
 }}
 if (onlyNew) {{
@@ -818,6 +863,35 @@ a {{ color:var(--green); }}
     os.makedirs(page_dir, exist_ok=True)
     with open(os.path.join(page_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(body)
+
+
+def write_brand_assets(out_dir):
+    favicon = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="14" fill="#14181F"/>
+<circle cx="32" cy="32" r="21" fill="none" stroke="#0BA678" stroke-width="5"/>
+<path d="M32 32 48 22" stroke="#FFE066" stroke-width="5" stroke-linecap="round"/>
+<circle cx="32" cy="32" r="5" fill="#E5304F"/>
+<path d="M14 44h36" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+</svg>
+"""
+    og = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#F5F6F8"/>
+<rect x="72" y="70" width="1056" height="490" rx="32" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="3"/>
+<circle cx="190" cy="198" r="72" fill="#E3F5EE"/>
+<circle cx="190" cy="198" r="48" fill="none" stroke="#0BA678" stroke-width="12"/>
+<path d="M190 198 232 170" stroke="#E5304F" stroke-width="12" stroke-linecap="round"/>
+<circle cx="190" cy="198" r="12" fill="#14181F"/>
+<text x="300" y="205" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="76" font-weight="800" fill="#14181F">{escape(SITE_NAME)}</text>
+<text x="304" y="282" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="34" font-weight="700" fill="#0BA678">ホビーの予約開始を毎日自動キャッチ</text>
+<text x="304" y="354" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="28" fill="#707888">ポケカ / ガンプラ / フィギュア / ゲーム / グッズ</text>
+<rect x="304" y="414" width="380" height="62" rx="31" fill="#14181F"/>
+<text x="342" y="456" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">新着予約をすばやく確認</text>
+</svg>
+"""
+    with open(os.path.join(out_dir, "favicon.svg"), "w", encoding="utf-8") as f:
+        f.write(favicon)
+    with open(os.path.join(out_dir, "og-image.svg"), "w", encoding="utf-8") as f:
+        f.write(og)
 
 
 # ============================================================
@@ -897,6 +971,7 @@ def main():
                 + (f"Sitemap: {SITE_URL}sitemap.xml\n" if SITE_URL else ""))
 
     # プライバシーポリシー(AdSense審査・広告掲載に必須)と ads.txt
+    write_brand_assets(out_dir)
     write_privacy_page(out_dir)
     ads_client = os.environ.get("ADSENSE_CLIENT", "").strip()
     if ads_client:
@@ -934,8 +1009,10 @@ def main():
                 "new_count": g["new_count"],
                 "items": [
                     {"name": it["name"], "price": it["price"], "url": it["url"],
-                     "release": it["release"], "is_new": it["is_new"]}
-                    for it in g["items"][:5]
+                     "release": it["release"], "is_new": it["is_new"],
+                     "image": it.get("image", ""), "shop": it.get("shop", ""),
+                     "hot": it.get("hot", False)}
+                    for it in g["items"]
                 ],
             }
             for g in data

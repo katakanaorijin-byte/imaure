@@ -42,6 +42,9 @@ jobs:
           AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
           ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
           SITE_URL: ${{ secrets.SITE_URL }}
+          OPERATOR_NAME: ${{ secrets.OPERATOR_NAME }}
+          CONTACT_URL: ${{ secrets.CONTACT_URL }}
+          X_ACCOUNT_URL: ${{ secrets.X_ACCOUNT_URL }}
         run: python generate.py
 
       - name: SNSに自動投稿(キー未設定ならスキップ)

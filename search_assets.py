@@ -16,6 +16,8 @@ SEARCH_CSS = """
   margin-top: 8px; font-size: 12px; color: var(--ink); }
 .sopts label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
 .sopts select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var(--rule); border-radius: 5px; }
+.sprice input { width: 76px; font: inherit; font-size: 12px; padding: 3px 6px;
+  border: 1px solid var(--rule); border-radius: 5px; background: var(--card); color: var(--ink); }
 .rates-toggle { background: none; border: none; color: var(--green); font-weight: 700;
   font-size: 12px; cursor: pointer; text-decoration: underline; padding: 0; }
 .rates { display: none; margin-top: 8px; padding: 10px 12px; background: var(--green-bg);
@@ -35,6 +37,7 @@ SEARCH_CSS = """
 .sr-row { display: grid; grid-template-columns: 64px 1fr auto; gap: 10px;
   padding: 11px 12px; border-bottom: 1px solid var(--rule); align-items: center; }
 .sr-row:last-child { border-bottom: none; }
+.sr-empty { padding: 16px; text-align: center; font-size: 12.5px; color: var(--muted); }
 .sr-row img { width: 64px; height: 64px; object-fit: contain;
   border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
 .sr-name { font-size: 12.5px; display: -webkit-box; -webkit-line-clamp: 2;
@@ -90,6 +93,7 @@ SEARCH_HTML = """
           <option value="eff">ポイント込み実質順</option>
         </select>
       </label>
+      <label class="sprice">価格 <input type="number" id="opt-min" min="0" step="100" placeholder="下限"> - <input type="number" id="opt-max" min="0" step="100" placeholder="上限"></label>
       <button type="button" class="rates-toggle" id="rates-toggle">ポイント還元率を設定</button>
     </div>
     <div class="rates" id="rates">
@@ -160,41 +164,37 @@ SEARCH_JS = r"""
       JSON.stringify({ r: +$("rate-rakuten").value, y: +$("rate-yahoo").value })); } catch (e) {}
   }
 
-  // ---- API呼び出し(fetchがダメならJSONPで再挑戦) ----
-  function jsonp(url) {
-    return new Promise(function (resolve, reject) {
-      var cb = "sokone_cb" + Math.random().toString(36).slice(2);
-      window[cb] = function (d) { resolve(d); cleanup(); };
-      var s = document.createElement("script");
-      function cleanup() { delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s); }
-      s.src = url + (url.indexOf("?") >= 0 ? "&" : "?") + "callback=" + cb;
-      s.onerror = function () { reject(new Error("jsonp")); cleanup(); };
-      setTimeout(function () { if (window[cb]) { reject(new Error("timeout")); cleanup(); } }, 12000);
-      document.head.appendChild(s);
+  // ---- 生成済みデータ検索。APIキーを公開HTMLに出さないため、ブラウザから楽天APIは直接叩かない。 ----
+  var dataPromise = null;
+  function loadSiteData() {
+    if (!dataPromise) {
+      dataPromise = fetch(CFG.dataUrl || "data.json", { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) {
+          var out = [];
+          (d.genres || []).forEach(function (g) {
+            (g.items || []).forEach(function (it) {
+              out.push({ mall: "rakuten", name: it.name || "", price: +it.price || 0,
+                url: it.url || "", image: it.image || "", shop: it.shop || g.name || "",
+                free: false, cat: g.name || "", isNew: !!it.is_new, hot: !!it.hot });
+            });
+          });
+          return out;
+        });
+    }
+    return dataPromise;
+  }
+  function searchLocal(q) {
+    var terms = sNorm(q).split(/\s+/).filter(Boolean);
+    return loadSiteData().then(function (items) {
+      return items.filter(function (it) {
+        var hay = sNorm([it.name, it.shop, it.cat].join(" "));
+        return terms.every(function (t) { return hay.indexOf(t) >= 0; });
+      });
     });
   }
   function getJSON(url) {
-    return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .catch(function () { return jsonp(url); });
-  }
-
-  function searchRakuten(q, freeOnly) {
-    if (!CFG.rakutenAppId || !CFG.rakutenAccessKey) return Promise.resolve([]);
-    var p = new URLSearchParams({ applicationId: CFG.rakutenAppId, accessKey: CFG.rakutenAccessKey,
-      format: "json", formatVersion: "2", keyword: q, hits: "20", availability: "1" });
-    if (freeOnly) p.set("postageFlag", "1");
-    if (CFG.rakutenAffiliateId) p.set("affiliateId", CFG.rakutenAffiliateId);
-    var url = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260401?" + p;
-    return getJSON(url).then(function (d) {
-      return (d.Items || d.items || []).map(function (e) { var it = e.Item || e.item || e;
-        var rawImg = (it.mediumImageUrls && it.mediumImageUrls[0]) || "";
-        var img = (typeof rawImg === "string" ? rawImg : (rawImg.imageUrl || ""))
-          .replace("?_ex=128x128", "?_ex=300x300");
-        return { mall: "rakuten", name: it.itemName || "", price: +it.itemPrice || 0,
-          url: it.affiliateUrl || it.itemUrl || "", image: img,
-          shop: it.shopName || "", free: true };
-      });
-    });
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   }
   function searchYahoo(q, freeOnly) {
     if (!CFG.yahooAppId) return Promise.resolve([]);
@@ -221,7 +221,11 @@ SEARCH_JS = r"""
   }
   function sortItems(items) {
     var mode = $("opt-sort").value;
-    var arr = items.slice();
+    var min = $("opt-min").value !== "" ? +$("opt-min").value : null;
+    var max = $("opt-max").value !== "" ? +$("opt-max").value : null;
+    var arr = items.filter(function (it) {
+      return (min == null || it.price >= min) && (max == null || it.price <= max);
+    });
     if (mode === "unit") {
       arr.sort(function (a, b) {
         if (!!a.u !== !!b.u) return a.u ? -1 : 1;
@@ -242,6 +246,10 @@ SEARCH_JS = r"""
   function render() {
     var items = sortItems(state.items).slice(0, 30);
     var ol = $("sresults"); ol.innerHTML = "";
+    if (!items.length && state.items.length) {
+      ol.innerHTML = '<li class="sr-empty">価格条件に合う商品がありません。</li>';
+      return;
+    }
     items.forEach(function (it) {
       var li = document.createElement("li"); li.className = "sr-row";
       var unitChip = it.u ? '<span class="unitchip">約' + fmt(it.price / it.u.qty) + "円/" + it.u.unit + "</span>" : "";
@@ -266,28 +274,28 @@ SEARCH_JS = r"""
     var q = $("sq").value.trim();
     if (!q) return;
     saveHist(q); hideSugg();
-    if ((!CFG.rakutenAppId || !CFG.rakutenAccessKey) && !CFG.yahooAppId) {
-      $("sstatus").textContent = "検索を使うにはAPIキーの設定が必要です(説明書をご覧ください)。"; return;
-    }
     var freeOnly = $("opt-free").checked;
     var useR = $("opt-rakuten").checked, useY = $("opt-yahoo").checked;
     $("sstatus").textContent = "検索中…"; $("sresults").innerHTML = "";
     Promise.allSettled([
-      useR ? searchRakuten(q, freeOnly) : Promise.resolve([]),
+      useR ? searchLocal(q) : Promise.resolve([]),
       useY ? searchYahoo(q, freeOnly) : Promise.resolve([]),
     ]).then(function (rs) {
       var items = [], fails = [];
       if (rs[0].status === "fulfilled") items = items.concat(rs[0].value);
-      else if (useR) fails.push("楽天");
+      else if (useR) fails.push("サイト内データ");
       if (rs[1].status === "fulfilled") items = items.concat(rs[1].value);
       else if (useY) fails.push("Yahoo!");
       items.forEach(function (it) { it.u = detectUnit(it.name); });
       state.items = items;
       var msg = esc(items.length + "件ヒット");
       if (fails.length) msg += esc("(" + fails.join("・") + "は取得できませんでした)");
-      if (!items.length && !fails.length) msg = esc("見つかりませんでした。言葉を変えてみてください。");
+      if (!items.length && !fails.length) msg = esc("検知済み商品には見つかりませんでした。外部検索も確認できます。");
       var ap = new URLSearchParams({ k: q });
       if (CFG.amazonTag) ap.set("tag", CFG.amazonTag);
+      var rp = new URLSearchParams({ sitem: q });
+      msg += ' ・ <a href="https://search.rakuten.co.jp/search/mall?' + rp.toString() +
+        '" target="_blank" rel="nofollow sponsored noopener" style="color:var(--green);font-weight:700">楽天市場で検索 →</a>';
       msg += ' ・ <a href="https://www.amazon.co.jp/s?' + ap.toString() +
         '" target="_blank" rel="nofollow sponsored noopener" style="color:var(--green);font-weight:700">Amazonでも検索 →</a>';
       $("sstatus").innerHTML = msg;
@@ -372,6 +380,8 @@ SEARCH_JS = r"""
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
   $("opt-sort").addEventListener("change", render);
+  $("opt-min").addEventListener("input", render);
+  $("opt-max").addEventListener("input", render);
   $("rates-toggle").addEventListener("click", function () { $("rates").classList.toggle("open"); });
   ["rate-rakuten", "rate-yahoo"].forEach(function (id) {
     $(id).addEventListener("change", function () { saveRates(); render(); });
