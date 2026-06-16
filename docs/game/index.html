@@ -67,10 +67,13 @@ h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-seri
 .pills { position: sticky; top: 0; z-index: 20;
   background: color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px;
-  scrollbar-width: none; box-shadow: 0 1px 0 var(--rule);
+  display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px 12px;
+  scrollbar-width: thin; scrollbar-color: #AEB6C4 transparent; box-shadow: 0 1px 0 var(--rule);
   touch-action: pan-x; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
-.pills::-webkit-scrollbar { display: none; }
+.pills::-webkit-scrollbar { height: 8px; }
+.pills::-webkit-scrollbar-track { background: transparent; }
+.pills::-webkit-scrollbar-thumb { background: #AEB6C4; border-radius: 999px; border: 2px solid transparent; background-clip: content-box; }
+.pills::-webkit-scrollbar-thumb:hover { background: #7D8796; background-clip: content-box; }
 .pill { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px;
   font: inherit; font-size: 13px; font-weight: 700; color: var(--ink);
   background: var(--card); border: 1px solid var(--rule); border-radius: 999px;
@@ -240,7 +243,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>14:15 更新</span>
+      <span class="live"><i class="pulse"></i>14:21 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -299,7 +302,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
       <a class="pill plink" href="../plush/">🧸 ぬいぐるみ・グッズ</a>
 </nav>
 <div class="toolbar">
-  <span class="sum">直近24時間の新着 <b class="">0</b> 件</span>
+  <span class="sum">直近24時間の新着 <b class="haspos">14</b> 件</span>
   <label class="onlynew"><input type="checkbox" id="onlynew"> 新着だけ表示</label>
 </div>
 
@@ -308,15 +311,15 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <section class="panel active" id="panel-ゲームソフト" role="tabpanel">
     <header class="phead">
       <h2>🎮 ゲームソフト</h2>
-      <p class="pmeta">直近24時間の新着 <b>0</b>件 ・ 14件を監視中</p>
+      <p class="pmeta">直近24時間の新着 <b>14</b>件 ・ 14件を監視中</p>
     </header>
     <ol class="cards">
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/smilesssss/cabinet/12378089/p-b0gz48cgxc-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">アドベンチャーゲーム ソフトウェア 特装版 スリーブケース付き 予約特典付き 呪われた愛の伝承が甦る</p>
-          <p class="cmeta"><span class="price">14,980<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">14,980<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">スマイルセレクション</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00usjon.kgoda79f.g00usjon.kgodb42b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsmilesssss%2Fsml-20f6c8aclu2obt9d%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsmilesssss%2Fi%2F10102209%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -325,12 +328,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12826920/p-b0c3lmxs5n-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ゲームソフト アクション 数量限定版 予約特典 ポストカードセット同梱 3Dメカアクション 傭兵 強化人間 リアルロボット 対戦 協力 ミッション攻略</p>
-          <p class="cmeta"><span class="price">61,920<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">61,920<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-49rg9yuxlrlr86xg%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10075605%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -339,12 +342,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/smilesssss/cabinet/12378155/p-b0gfkx1j8l-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ゲームソフト レース アクション 予約特典DLCコード同梱パッケージ版</p>
-          <p class="cmeta"><span class="price">9,800<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">9,800<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">スマイルセレクション</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00usjon.kgoda79f.g00usjon.kgodb42b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsmilesssss%2Fsml-40k6ur5np3w9d0n4%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsmilesssss%2Fi%2F10102690%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -353,12 +356,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/smilesssss/cabinet/12378155/p-b0gysr3plw-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">格闘シミュレーション ゲームソフト 予約特典付き 映像作品 スポーツ 対戦アクション 1人用 複数人プレイ対応</p>
-          <p class="cmeta"><span class="price">13,560<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">13,560<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">スマイルセレクション</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00usjon.kgoda79f.g00usjon.kgodb42b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsmilesssss%2Fsml-2y2z0q84b4uho2k4%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsmilesssss%2Fi%2F10103166%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -367,12 +370,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12806440/p-b08tb8fyqw-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ホラーゲーム ソフト 家庭用ゲーム機用 サバイバルホラー 1人用 予約特典プロダクトコード付き ソフトウェア</p>
-          <p class="cmeta"><span class="price">44,930<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">44,930<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-3mq4yx9pqf5hinva%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10071736%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -381,12 +384,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12831159/p-b08t9wbczk-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ホラーゲーム PS5 プレイステーション5 ソフト バイオハザード ヴィレッジ Z Version 18歳以上対象 予約特典プロダクトコード付き</p>
-          <p class="cmeta"><span class="price">13,030<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">13,030<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-0c5xqkmt452c98nc%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10102175%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -395,12 +398,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12826986/p-b08t9wbczz-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ホラーアドベンチャーゲーム PS5ソフト プレイステーション5 ゲームソフト CEROレーティングZ 予約特典付き 武器パーツ サバイバルリソースパック プロダクトコード同梱</p>
-          <p class="cmeta"><span class="price">70,640<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">70,640<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-1vsv67vus389v7z2%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10083607%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -409,12 +412,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12827284/p-b08tb53rgh-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ホラーアドベンチャーゲーム PS4用ソフト サバイバルホラー 予約特典プロダクトコード付き CERO Z指定 18歳以上対象</p>
-          <p class="cmeta"><span class="price">79,150<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">79,150<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-04tq4pa8oj6y2uyv%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10086633%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -423,12 +426,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12826984/p-b08tb5jsgt-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ホラーアドベンチャーゲーム プレイステーション5対応ソフト パッケージ版 予約特典プロダクトコード付き 武器パーツ サバイバルリソースパック同梱</p>
-          <p class="cmeta"><span class="price">51,070<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">51,070<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-31t8g8125cqyudj3%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10081363%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -437,12 +440,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/onlyons/cabinet/12826984/p-b08t9wbyh6-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">ホラーゲーム ソフト PS4 プレイステーション4 サバイバルホラー 18歳以上対象 CERO Z 予約特典 プロダクトコード付き</p>
-          <p class="cmeta"><span class="price">6,590<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">6,590<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">EverestOnline</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utl1n.kgoda69d.g00utl1n.kgodb3a1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fonlyons%2Fev-2oudii0s7f7r80i8%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fonlyons%2Fi%2F10082044%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -451,12 +454,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/enlilsss/cabinet/img_20260412_1158/p-b0g1xz3rys-01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">レースゲーム PS5 ソフト 予約特典 オリジナルライバルステッカー付 全4種ランダム封入 プレイステーション5 プレステ5</p>
-          <p class="cmeta"><span class="price">9,610<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">9,610<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">エンリルくらし館</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00uuven.kgoda2c9.g00uuven.kgodb36a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fenlilsss%2Fp-18kq9tti750256bc%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fenlilsss%2Fi%2F10057699%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -465,12 +468,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/biccamera/cabinet/product/17589/00000015195913_a01.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">【予約特典付き】【2027年02月24日発売】 Microsoft｜マイクロソフト Fable【Xbox Seriesゲームソフト】</p>
-          <p class="cmeta"><span class="price">8,820<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">8,820<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">楽天ビック(ビックカメラ×楽天)</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00r7ldn.kgoda07e.g00r7ldn.kgodbb35/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4549576295404%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F15505295%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -479,12 +482,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/nijiiromart/cabinet/05763733/06398046/10480646/4582494261847_l.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">予約特典 CD付き【Switch】 BUSTAFELLOWS（バスタフェロウズ） シーズン2 通常版 HAC-P-A74NA 4582494261847 the real cd 特典 おまけ 任天堂 スイッチ ゲーム ソフト 人気</p>
-          <p class="cmeta"><span class="price">9,000<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">9,000<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">買物サポーター にじいろマート</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00spagn.kgoda89c.g00spagn.kgodb0ef/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnijiiromart%2F4582494261847%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fnijiiromart%2Fi%2F10012622%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -493,12 +496,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card">
+      <li class="card isnew">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/r-kojima/cabinet/n0000001439/4580694044598_1.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          
+          <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">GAMESOURCEENTERTAI　PS4ゲームソフト【予約特典付き】Cats On Duty　PLJM-17379</p>
-          <p class="cmeta"><span class="price">4,930<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cmeta"><span class="price">4,930<i>円</i></span><span class="fresh">⏱ 6分前にキャッチ</span></p>
           <p class="cshop">コジマ楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00r8mvn.kgoda172.g00r8mvn.kgodb9f9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fr-kojima%2F4580694044598%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fr-kojima%2Fi%2F11605196%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -518,7 +521,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p>予約の受付状況・価格・特典は変動が激しいため、必ずリンク先の最新情報をご確認ください。本サイトは定価での予約機会を見つけるための情報サイトであり、転売を推奨するものではありません。</p>
     <p>当サイトは楽天アフィリエイト等に参加しており、リンク経由の購入により紹介料を得ることがあります。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月16日 14:15</p>
+    <p>最終更新: 2026年6月16日 14:21</p>
   </div>
 </footer>
 
