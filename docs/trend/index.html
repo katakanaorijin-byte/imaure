@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>急上昇トレンド|予約開始レーダー</title>
+<meta name="description" content="ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。">
+
+<meta property="og:title" content="急上昇トレンド|予約開始レーダー">
+<meta property="og:description" content="ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#F5F6F8; --ink:#14181F; --rule:#E7E9EF; --accent:#0BA678;
+  --accent-bg:#E3F5EE; --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var(--ink);
+  line-height:1.6; -webkit-font-smoothing:antialiased; }
+header { background:var(--card); color:var(--ink); padding:14px 16px 12px; border-bottom:1px solid var(--rule); }
+.head-inner { max-width:780px; margin:0 auto; }
+.logo { font-family:"Murecho","Noto Sans JP",sans-serif; font-size:21px; font-weight:900; }
+.logo a { color:var(--ink); text-decoration:none; }
+.logo .y { color:var(--accent); }
+.pagename { font-size:12px; font-weight:700; margin-top:3px; color:var(--muted); }
+.updated { display:inline-block; margin-top:6px; color:var(--accent);
+  font-size:12px; font-weight:700; }
+.ad-label { font-size:11px; color:var(--muted); text-align:center; padding:5px 12px;
+  border-bottom:1px solid var(--rule); }
+.demo-note { max-width:780px; margin:12px auto 0; padding:10px 14px; background:#FFF3CC;
+  border:2px dashed #D9A400; border-radius:6px; font-size:13px; font-weight:700; }
+.tabs { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 1px 0 var(--rule);
+  display:flex; gap:8px; overflow-x:auto; padding:10px 16px; scrollbar-width:none;
+  touch-action:pan-x; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; }
+.tabs::-webkit-scrollbar { display:none; }
+.tab { flex:0 0 auto; font-weight:700; font-size:13px; color:var(--ink); background:var(--card);
+  border:1px solid var(--rule); border-radius:999px;
+  padding:8px 14px; text-decoration:none; display:inline-block; white-space:nowrap; }
+.tab.active { background:var(--ink); border-color:var(--ink); color:#fff; }
+main { max-width:780px; margin:0 auto; padding:18px 14px 40px; }
+h2 { font-size:17px; font-weight:900; margin:18px 0 4px; padding-left:12px;
+  border-left:6px solid var(--accent); }
+.lead { font-size:12px; color:var(--muted); margin-bottom:12px; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip { background:var(--ink); color:#fff; text-decoration:none; font-weight:700;
+  font-size:13px; padding:8px 14px; border-radius:999px; }
+.chip b { color:#7FE7C4; font-weight:900; margin-left:3px; }
+.kwhead { font-size:15px; font-weight:900; margin:16px 0 8px; }
+.list { list-style:none; background:var(--card); border:1px solid var(--rule);
+  border-radius:16px; overflow:hidden; }
+.row { display:grid; grid-template-columns:72px 1fr auto; gap:12px; align-items:center;
+  padding:12px; border-bottom:1px solid var(--rule); }
+.row:last-child { border-bottom:none; }
+.thumb img { width:72px; height:72px; object-fit:contain; border:1px solid var(--rule);
+  border-radius:6px; background:#fff; }
+.noimg { width:72px; height:72px; display:grid; place-items:center; text-align:center;
+  border:1px dashed var(--rule); border-radius:6px; color:var(--muted); font-size:10px; }
+.iname { font-size:12.5px; display:-webkit-box; -webkit-line-clamp:2;
+  -webkit-box-orient:vertical; overflow:hidden; }
+.price { font-family:"Murecho",sans-serif; font-weight:900; font-size:17px; font-variant-numeric:tabular-nums; }
+.price small { font-size:11px; }
+.shop { font-size:11px; color:var(--muted); }
+.cta { background:var(--accent); color:#fff; font-weight:700; font-size:12px;
+  text-decoration:none; padding:9px 16px; border-radius:999px; white-space:nowrap;
+  border:none; }
+.empty { font-size:13px; color:var(--muted); padding:14px; background:#fff;
+  border:1px dashed var(--rule); border-radius:8px; }
+.news { list-style:none; background:var(--card); border:1.5px solid var(--ink);
+  border-radius:10px; overflow:hidden; }
+.nrow { padding:11px 14px; border-bottom:1px solid var(--rule); }
+.nrow:last-child { border-bottom:none; }
+.nrow a { color:var(--ink); font-size:13px; font-weight:500; text-decoration:none; }
+.nrow a:hover { text-decoration:underline; }
+.nsrc { display:block; font-size:11px; color:var(--muted); margin-top:2px; }
+footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32px;
+  font-size:12px; color:var(--muted); }
+.foot-inner { max-width:780px; margin:0 auto; }
+@media (max-width:560px) { .row { grid-template-columns:60px 1fr; }
+  .thumb img,.noimg { width:60px; height:60px; } .cta { grid-column:2; justify-self:start; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <h1 class="logo"><a href="../">予約開始<span class="y">レーダー</span></a></h1>
+    <p class="pagename">🔥 急上昇トレンド(毎日自動解析)</p>
+    <span class="updated">📅 2026年6月13日 更新</span>
+  </div>
+</header>
+<div class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</div>
+<div class="demo-note">⚠ デモデータ表示中です。本番運用が始まると実データに切り替わります。</div>
+
+<nav class="tabs">
+<a class="tab tablink" href="../">🏠 すべて</a>
+<a class="tab tablink active" href="./">🔥 急上昇</a>
+<a class="tab tablink" href="../calendar/">📅 発売カレンダー</a>
+<a class="tab tablink" href="../pokemon-card/">🃏 ポケモンカード</a>
+<a class="tab tablink" href="../onepiece-card/">🏴 ワンピースカード</a>
+<a class="tab tablink" href="../yugioh/">🎴 遊戯王・他カード</a>
+<a class="tab tablink" href="../figure/">🎎 フィギュア</a>
+<a class="tab tablink" href="../nendoroid/">🪆 ねんどろいど・figma</a>
+<a class="tab tablink" href="../gunpla/">🤖 ガンプラ・プラモデル</a>
+<a class="tab tablink" href="../game/">🎮 ゲームソフト</a>
+<a class="tab tablink" href="../anime-bd/">💿 アニメBlu-ray・CD</a>
+<a class="tab tablink" href="../tokusatsu/">🦸 特撮・なりきり玩具</a>
+<a class="tab tablink" href="../train-model/">🚃 鉄道模型</a>
+<a class="tab tablink" href="../tomica/">🚗 トミカ・ミニカー</a>
+<a class="tab tablink" href="../plush/">🧸 ぬいぐるみ・グッズ</a>
+</nav>
+
+<main>
+  <h2>いま予約が集中しているワード</h2>
+  <p class="lead">このサイトが直近7日間にキャッチした新着予約5件を頻度解析した結果です。タップで横断検索できます。</p>
+  <div class="chips">
+<a class="chip" href="../?q=%E3%83%A1%E3%82%AC%E3%83%AA%E3%82%B6%E3%83%BC%E3%83%89%E3%83%B3">メガリザードン <b>×3</b></a>
+<a class="chip" href="../?q=CELEBRATION">CELEBRATION <b>×3</b></a>
+<a class="chip" href="../?q=%E3%82%AC%E3%83%B3%E3%83%80%E3%83%A0">ガンダム <b>×2</b></a>
+<a class="chip" href="../?q=%E3%82%AD%E3%83%83%E3%83%88">キット <b>×2</b></a>
+<a class="chip" href="../?q=%E3%82%AF%E3%83%AA%E3%82%A2%E3%82%AB%E3%83%A9">クリアカラ <b>×2</b></a>
+<a class="chip" href="../?q=%E6%96%B0%E4%BD%9C">新作 <b>×2</b></a>
+  </div>
+
+  <h2>ニュース・ネットで話題のワード</h2>
+  <p class="lead">ホビー系ニュースサイトとはてなブックマークの直近48時間の見出し6本を解析した結果です。タップで横断検索できます。</p>
+  <div class="chips">
+<a class="chip" href="../?q=%E5%80%8D%E7%8E%87">倍率 <b>×2</b></a>
+<a class="chip" href="../?q=%E9%81%8E%E5%8E%BB%E6%9C%80%E9%AB%98">過去最高 <b>×2</b></a>
+<a class="chip" href="../?q=%E5%90%84%E5%BA%97">各店 <b>×2</b></a>
+<a class="chip" href="../?q=CELEBRATION">CELEBRATION <b>×2</b></a>
+<a class="chip" href="../?q=%E4%BA%88%E7%B4%84%E6%8A%BD%E9%81%B8">予約抽選 <b>×2</b></a>
+<a class="chip" href="../?q=%E6%9C%88%E7%99%BA%E5%A3%B2%E6%B1%BA%E5%AE%9A">月発売決定 <b>×2</b></a>
+<a class="chip" href="../?q=%E3%82%AC%E3%83%B3%E3%83%97%E3%83%A9">ガンプラ <b>×2</b></a>
+<a class="chip" href="../?q=%E3%82%B8%E3%83%BC%E3%82%AF%E3%82%A2%E3%82%AF%E3%82%B9">ジークアクス <b>×2</b></a>
+<a class="chip" href="../?q=%E6%96%B0%E4%BD%9C">新作 <b>×2</b></a>
+<a class="chip" href="../?q=%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA">シリーズ <b>×2</b></a>
+  </div>
+
+  <h2>注目ヘッドライン</h2>
+  <ul class="news">
+<li class="nrow"><a href="#" target="_blank" rel="noopener">「30th CELEBRATION」予約抽選が各店で開始 倍率は過去最高か</a><span class="nsrc">デモニュース ・ 1時間以内</span></li>
+<li class="nrow"><a href="#" target="_blank" rel="noopener">新作ガンプラ ジークアクス HGシリーズ 7月発売決定</a><span class="nsrc">デモニュース ・ 1時間以内</span></li>
+<li class="nrow"><a href="#" target="_blank" rel="noopener">ねんどろいど 人気キャラ再販決定 予約は明日から</a><span class="nsrc">デモニュース ・ 1時間以内</span></li>
+<li class="nrow"><a href="#" target="_blank" rel="noopener">「30th CELEBRATION」予約抽選が各店で開始 倍率は過去最高か</a><span class="nsrc">デモニュース ・ 1時間以内</span></li>
+<li class="nrow"><a href="#" target="_blank" rel="noopener">新作ガンプラ ジークアクス HGシリーズ 7月発売決定</a><span class="nsrc">デモニュース ・ 1時間以内</span></li>
+<li class="nrow"><a href="#" target="_blank" rel="noopener">ねんどろいど 人気キャラ再販決定 予約は明日から</a><span class="nsrc">デモニュース ・ 1時間以内</span></li>
+  </ul>
+
+  <h2>世間の急上昇ワードと関連商品</h2>
+  <p class="lead">Google検索で急上昇中のホビー関連ワードと、その関連商品です(1日3回解析)。</p>
+<h3 class="kwhead">🔥 30th CELEBRATION</h3>
+<ol class="list"><li class="row"><div class="meta"><p class="iname">(デモ表示)</p></div></li>
+</ol>
+<h3 class="kwhead">🔥 メガリザードン</h3>
+<ol class="list"><li class="row"><div class="meta"><p class="iname">(デモ表示)</p></div></li>
+</ol>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <p>トレンドは自動解析のため、文脈と無関係な語が混ざることがあります。価格・在庫はリンク先でご確認ください。</p>
+    <p><a href="../">← トップ(全カテゴリの新着予約)へ戻る</a> ・ <a href="../privacy/">プライバシーポリシー</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ゲームソフトの予約開始速報・新着まとめ|予約開始レーダー</title>
+<meta name="description" content="ゲームソフトの予約開始情報を15分ごとに自動更新。直近24時間の新着予約を検知して速報します。受付中の予約一覧・発売時期つき。">
+
+<meta property="og:title" content="ゲームソフトの予約開始速報・新着まとめ|予約開始レーダー">
+<meta property="og:description" content="ゲームソフトの予約開始情報を15分ごとに自動更新。直近24時間の新着予約を検知して速報します。受付中の予約一覧・発売時期つき。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="予約開始レーダー">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "ゲームソフトの予約開始速報・新着まとめ|予約開始レーダー", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "【予約】ゲームソフト 新作アイテム 第1弾 7月下旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 2, "name": "【予約】ゲームソフト 新作アイテム 第2弾 8月上旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 3, "name": "【予約】ゲームソフト 新作アイテム 第3弾 8月下旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 4, "name": "【予約】ゲームソフト 新作アイテム 第4弾 9月中旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 5, "name": "【予約】ゲームソフト 新作アイテム 第5弾 10月発売予定発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 6, "name": "【予約】ゲームソフト 新作アイテム 第6弾 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 7, "name": "【予約】ゲームソフト 新作アイテム 第7弾 7月下旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 8, "name": "【予約】ゲームソフト 新作アイテム 第8弾 8月上旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 9, "name": "【予約】ゲームソフト 新作アイテム 第9弾 8月下旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}, {"@type": "ListItem", "position": 10, "name": "【予約】ゲームソフト 新作アイテム 第10弾 9月中旬発売 特典付き", "url": "https://www.rakuten.co.jp/"}]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Murecho:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F5F6F8;
+  --card: #FFFFFF;
+  --ink: #14181F;
+  --muted: #707888;
+  --rule: #E7E9EF;
+  --green: #0BA678;       /* レーダーグリーン: 生存信号(LIVE・鮮度・選択中) */
+  --green-bg: #E3F5EE;
+  --new: #E5304F;
+  --new-bg: #FDEBEF;
+  --hot: #E8590C;
+  --hot-bg: #FFF0E3;
+  --marker: #FFE066;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background: var(--paper); color: var(--ink);
+  line-height: 1.65; -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt";
+}
+h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-serif; }
+
+/* ===== アプリバー ===== */
+.appbar { background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 16px 12px; }
+.appbar-in { max-width: 680px; margin: 0 auto; }
+.brandrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.brand { font-size: 21px; font-weight: 900; letter-spacing: 0.01em; }
+.brand a { color: inherit; text-decoration: none; }
+.live { display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap;
+  font-variant-numeric: tabular-nums; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; }
+.pulse::after { content: ""; position: absolute; inset: -4px; border-radius: 50%;
+  border: 2px solid var(--green); opacity: 0; animation: ping 2.4s ease-out infinite; }
+@keyframes ping { 0% { transform: scale(0.4); opacity: 0.7; } 70%, 100% { transform: scale(1); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pulse::after { animation: none; } }
+.tag { max-width: 680px; margin: 3px auto 0; font-size: 12px; color: var(--muted); }
+.ad-label { font-size: 10.5px; color: var(--muted); text-align: center;
+  padding: 6px 12px 0; }
+.demo-note { max-width: 680px; margin: 12px auto 0; padding: 10px 14px;
+  background: #FFF6DB; border: 1px solid #E8C84A; border-radius: 12px;
+  font-size: 12.5px; font-weight: 700; }
+
+/* ===== ピルレール(カテゴリ+新着数) ===== */
+.pills { position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: flex; gap: 8px; overflow-x: auto; padding: 10px 16px;
+  scrollbar-width: none; box-shadow: 0 1px 0 var(--rule);
+  touch-action: pan-x; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.pills::-webkit-scrollbar { display: none; }
+.pill { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 5px;
+  font: inherit; font-size: 13px; font-weight: 700; color: var(--ink);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 999px;
+  padding: 8px 14px; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.pill.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+.pill:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+.cnt { background: var(--new); color: #fff; font-size: 11px; font-weight: 900;
+  min-width: 18px; text-align: center; border-radius: 999px; padding: 1px 6px; }
+.pill.on .cnt { background: #fff; color: var(--new); }
+
+/* ===== ツールバー ===== */
+.toolbar { max-width: 680px; margin: 0 auto; padding: 12px 16px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.sum { font-size: 13px; color: var(--muted); }
+.sum b { font-family: "Murecho", sans-serif; font-size: 17px; color: var(--ink); margin: 0 2px; }
+.sum b.haspos { color: var(--new); }
+.onlynew { display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-weight: 700; cursor: pointer; color: var(--ink); }
+.onlynew input { width: 16px; height: 16px; accent-color: var(--green); }
+body.only-new .card:not(.isnew) { display: none; }
+
+/* ===== パネル ===== */
+main { max-width: 680px; margin: 0 auto; padding: 6px 16px 48px; }
+.panel { display: none; }
+.panel.active { display: block; }
+.phead { padding: 14px 2px 10px; }
+.phead h2 { font-size: 18px; font-weight: 900; }
+.pmeta { font-size: 12px; color: var(--muted); margin-top: 1px; }
+.pmeta b { color: var(--new); }
+.pnote { font-size: 11px; color: var(--muted); margin: 10px 2px 0; }
+
+/* ===== 商品カード ===== */
+.cards { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.card { display: grid; grid-template-columns: 84px 1fr; gap: 12px;
+  background: var(--card); border: 1px solid var(--rule); border-radius: 16px;
+  padding: 14px; box-shadow: 0 1px 2px rgba(20, 24, 31, 0.04); }
+.card.isnew { border-color: color-mix(in srgb, var(--new) 35%, var(--rule));
+  box-shadow: inset 3px 0 0 var(--new), 0 1px 2px rgba(20, 24, 31, 0.04); }
+.thumb img { width: 84px; height: 84px; object-fit: contain;
+  border: 1px solid var(--rule); border-radius: 12px; background: #fff; }
+.noimg { width: 84px; height: 84px; display: grid; place-items: center; text-align: center;
+  border: 1px dashed var(--rule); border-radius: 12px; color: var(--muted);
+  font-size: 10px; line-height: 1.4; }
+.cchips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 5px; }
+.cchips span { font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.chip-new { background: var(--new); color: #fff; letter-spacing: 0.04em; }
+.chip-hot { background: var(--hot-bg); color: var(--hot); }
+.chip-rel { background: var(--green-bg); color: var(--green); }
+.chip-cat { background: var(--paper); border: 1px solid var(--rule); color: var(--muted); }
+.emptyfeed { background: var(--card); border: 1px dashed var(--rule); border-radius: 16px;
+  padding: 26px 18px; text-align: center; }
+.ef-t { font-size: 14px; font-weight: 700; }
+.ef-d { font-size: 12px; color: var(--muted); margin-top: 4px; }
+body.only-new .cards:not(:has(.card.isnew))::after {
+  content: "このカテゴリに直近24時間の新着はありません";
+  display: block; padding: 16px; text-align: center; font-size: 12px; color: var(--muted);
+  background: var(--card); border: 1px dashed var(--rule); border-radius: 16px; }
+.cname { font-size: 13px; font-weight: 500; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cmeta { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+.price { font-size: 18px; font-weight: 900; font-variant-numeric: tabular-nums; }
+.price i { font-style: normal; font-size: 11px; font-weight: 700; color: var(--muted); margin-left: 1px; }
+.fresh { font-size: 11.5px; font-weight: 700; color: var(--green);
+  font-variant-numeric: tabular-nums; }
+.seen { font-size: 11px; color: var(--muted); }
+.cshop { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.acts { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.cta { background: var(--ink); color: #fff; font-size: 12.5px; font-weight: 700;
+  text-decoration: none; padding: 9px 18px; border-radius: 999px; }
+.card.isnew .cta { background: var(--new); }
+.cta.amzn { background: transparent; color: var(--ink);
+  border: 1px solid var(--rule); padding: 8px 14px; font-size: 11.5px; }
+.cta:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* ===== フッター・戻る ===== */
+footer { border-top: 1px solid var(--rule); background: var(--card);
+  padding: 24px 16px 36px; font-size: 12px; color: var(--muted); }
+.foot-inner { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.foot-inner strong { color: var(--ink); }
+.foot-inner a { color: var(--green); }
+#totop { position: fixed; right: 16px; bottom: 20px; z-index: 40;
+  width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule);
+  background: var(--card); color: var(--ink); font-size: 18px; font-weight: 700;
+  cursor: pointer; box-shadow: 0 4px 14px rgba(20, 24, 31, 0.16); display: none; }
+#totop.show { display: block; }
+
+/* ===== ダークモード ===== */
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #0E1117; --card: #171B24; --ink: #ECEEF3; --muted: #98A0B0;
+    --rule: #272C38; --green: #2EC592; --green-bg: #15302A;
+    --new: #FF5D77; --new-bg: #3A1622; --hot: #FFA94D; --hot-bg: #3A2710;
+    --marker: #5C4D12; }
+  .thumb img, .noimg { background: #0B0E14; }
+  .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
+  .pill.on { background: var(--green); border-color: var(--green); color: #08110D; }
+  .pill.on .cnt { background: #08110D; color: var(--new); }
+  .cta { color: #0E1117; background: #ECEEF3; }
+  .card.isnew .cta { background: var(--new); color: #1A0B10; }
+  .cta.amzn { background: transparent; color: var(--ink); }
+}
+
+/* ===== 横断検索 ===== */
+.search { background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 14px 12px; }
+.search-inner { max-width: 780px; margin: 0 auto; }
+.sbar { display: flex; gap: 8px; }
+.sbar input[type=search] { flex: 1; font: inherit; font-size: 15px; padding: 11px 14px;
+  border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); min-width: 0; }
+.sbar input[type=search]:focus { outline: 3px solid var(--green); outline-offset: 1px; }
+.sbar button { font: inherit; font-weight: 700; font-size: 14px; color: #fff;
+  background: var(--green); border: none; border-radius: 999px;
+  padding: 0 18px; cursor: pointer; white-space: nowrap; }
+.sopts { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
+  margin-top: 8px; font-size: 12px; color: var(--ink); }
+.sopts label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+.sopts select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var(--rule); border-radius: 5px; }
+.rates-toggle { background: none; border: none; color: var(--green); font-weight: 700;
+  font-size: 12px; cursor: pointer; text-decoration: underline; padding: 0; }
+.rates { display: none; margin-top: 8px; padding: 10px 12px; background: var(--green-bg);
+  border-radius: 8px; font-size: 12px; align-items: center; gap: 8px 16px; flex-wrap: wrap; }
+.rates.open { display: flex; }
+.rates input { width: 56px; font: inherit; font-size: 13px; padding: 3px 6px;
+  border: 1px solid var(--rule); border-radius: 5px; text-align: right; }
+.sstatus { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+.sresults { list-style: none; margin-top: 10px; background: var(--card);
+  border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
+.sresults:empty { display: none; }
+.sr-row { display: grid; grid-template-columns: 64px 1fr auto; gap: 10px;
+  padding: 11px 12px; border-bottom: 1px solid var(--rule); align-items: center; }
+.sr-row:last-child { border-bottom: none; }
+.sr-row img { width: 64px; height: 64px; object-fit: contain;
+  border: 1px solid var(--rule); border-radius: 6px; background: #fff; }
+.sr-name { font-size: 12.5px; display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; overflow: hidden; }
+.sr-sub { font-size: 12px; margin-top: 3px; }
+.sr-price { font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
+.sr-eff { color: var(--green); font-size: 11.5px; font-weight: 700; margin-left: 6px; }
+.unitchip { display: inline-block; background: var(--marker); font-weight: 700;
+  font-size: 11px; padding: 1px 7px; border-radius: 3px; margin-left: 6px; }
+.sr-shop { font-size: 11px; color: var(--muted); margin-top: 1px; }
+.sr-cta { background: var(--ink); color: #fff; font-weight: 700; font-size: 12px;
+  text-decoration: none; padding: 8px 14px; border-radius: 999px; white-space: nowrap; }
+.mall { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 7px;
+  border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
+.mall.rakuten { background: #FDEAEA; color: #BF0000; }
+.mall.yahoo { background: #EDEAFB; color: #5B21B6; }
+@media (max-width: 560px) { .sr-row { grid-template-columns: 56px 1fr; }
+  .sr-cta { grid-column: 2; justify-self: start; } .sr-row img { width: 56px; height: 56px; } }
+/* ===== 予測変換(サジェスト) ===== */
+.swrap { position: relative; flex: 1; min-width: 0; display: flex; }
+.swrap input[type=search] { width: 100%; }
+.sugg { position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 30;
+  list-style: none; background: var(--card); border: 1px solid var(--rule); border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18); overflow: hidden; }
+.sugg:empty { display: none; }
+.sugg li { padding: 10px 14px; font-size: 14px; cursor: pointer;
+  border-bottom: 1px solid var(--rule); display: flex; align-items: center; gap: 8px; }
+.sugg li:last-child { border-bottom: none; }
+.sugg li.sel, .sugg li:hover { background: var(--green-bg); }
+.sugg li .tagh { font-size: 10.5px; font-weight: 700; color: var(--muted);
+  border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; flex-shrink: 0; }
+.sugg li b { font-weight: 900; }
+
+</style>
+</head>
+<body>
+<header class="appbar">
+  <div class="appbar-in">
+    <div class="brandrow">
+      <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
+      <span class="live"><i class="pulse"></i>10:12 更新</span>
+    </div>
+  </div>
+  <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
+</header>
+<p class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</p>
+<div class="demo-note">⚠ デモデータ表示中です。説明書の手順で楽天APIキーを設定すると本物の予約情報に切り替わります。</div>
+
+<section class="search">
+  <div class="search-inner">
+    <form class="sbar" id="sform" autocomplete="off">
+      <div class="swrap">
+        <input type="search" id="sq" placeholder="商品名で楽天とYahoo!をまとめて検索(例: ねんどろいど)" aria-label="商品検索" role="combobox" aria-expanded="false" aria-controls="sugg">
+        <ul class="sugg" id="sugg" role="listbox"></ul>
+      </div>
+      <button type="submit">検索</button>
+    </form>
+    <div class="sopts">
+      <label><input type="checkbox" id="opt-free" checked> 送料無料のみ</label>
+      <label><input type="checkbox" id="opt-rakuten" checked> 楽天</label>
+      <label><input type="checkbox" id="opt-yahoo" checked> Yahoo!</label>
+      <label>並び替え
+        <select id="opt-sort">
+          <option value="price">価格が安い順</option>
+          <option value="unit">単価が安い順</option>
+          <option value="eff">ポイント込み実質順</option>
+        </select>
+      </label>
+      <button type="button" class="rates-toggle" id="rates-toggle">ポイント還元率を設定</button>
+    </div>
+    <div class="rates" id="rates">
+      <span>あなたの還元率:</span>
+      <label>楽天 <input type="number" id="rate-rakuten" min="0" max="30" step="0.5" value="1">%</label>
+      <label>Yahoo!(PayPay) <input type="number" id="rate-yahoo" min="0" max="30" step="0.5" value="1">%</label>
+      <span>→「実質順」はポイント分を引いた価格で並びます</span>
+    </div>
+    <p class="sstatus" id="sstatus"></p>
+    <ol class="sresults" id="sresults"></ol>
+  </div>
+</section>
+
+<nav class="pills" role="tablist">
+      <a class="pill plink" href="../">🏠 すべて</a>
+      <a class="pill plink" href="../trend/">🔥 急上昇</a>
+      <a class="pill plink" href="../calendar/">📅 発売カレンダー</a>
+      <a class="pill plink" href="../pokemon-card/">🃏 ポケモンカード</a>
+      <a class="pill plink" href="../onepiece-card/">🏴 ワンピースカード</a>
+      <a class="pill plink" href="../yugioh/">🎴 遊戯王・他カード</a>
+      <a class="pill plink" href="../figure/">🎎 フィギュア</a>
+      <a class="pill plink" href="../nendoroid/">🪆 ねんどろいど・figma</a>
+      <a class="pill plink" href="../gunpla/">🤖 ガンプラ・プラモデル</a>
+      <a class="pill plink on" href="../game/">🎮 ゲームソフト</a>
+      <a class="pill plink" href="../anime-bd/">💿 アニメBlu-ray・CD</a>
+      <a class="pill plink" href="../tokusatsu/">🦸 特撮・なりきり玩具</a>
+      <a class="pill plink" href="../train-model/">🚃 鉄道模型</a>
+      <a class="pill plink" href="../tomica/">🚗 トミカ・ミニカー</a>
+      <a class="pill plink" href="../plush/">🧸 ぬいぐるみ・グッズ</a>
+</nav>
+<div class="toolbar">
+  <span class="sum">直近24時間の新着 <b class="">0</b> 件</span>
+  <label class="onlynew"><input type="checkbox" id="onlynew"> 新着だけ表示</label>
+</div>
+
+<main>
+
+  <section class="panel active" id="panel-ゲームソフト" role="tabpanel">
+    <header class="phead">
+      <h2>🎮 ゲームソフト</h2>
+      <p class="pmeta">直近24時間の新着 <b>0</b>件 ・ 14件を監視中</p>
+    </header>
+    <ol class="cards">
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">7月下旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第1弾 7月下旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">4,500<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">8月上旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第2弾 8月上旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">5,330<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">8月下旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第3弾 8月下旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">6,160<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">9月中旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第4弾 9月中旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">6,990<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">10月発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第5弾 10月発売予定発売 特典付き</p>
+          <p class="cmeta"><span class="price">7,820<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第6弾 特典付き</p>
+          <p class="cmeta"><span class="price">8,650<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">7月下旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第7弾 7月下旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">9,480<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">8月上旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第8弾 8月上旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">10,310<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">8月下旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第9弾 8月下旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">11,140<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">9月中旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第10弾 9月中旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">11,970<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">10月発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第11弾 10月発売予定発売 特典付き</p>
+          <p class="cmeta"><span class="price">12,800<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第12弾 特典付き</p>
+          <p class="cmeta"><span class="price">13,630<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">7月下旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第13弾 7月下旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">14,460<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <li class="card">
+        <div class="thumb"><div class="noimg">No<br>Image</div></div>
+        <div class="cbody">
+          <p class="cchips"><span class="chip-rel">8月上旬発売</span></p>
+          <p class="cname">【予約】ゲームソフト 新作アイテム 第14弾 8月上旬発売 特典付き</p>
+          <p class="cmeta"><span class="price">15,290<i>円</i></span><span class="seen">1分前</span></p>
+          <p class="cshop">サンプルホビー店</p>
+          <div class="acts">
+            <a class="cta" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+            
+          </div>
+        </div>
+      </li>
+    </ol>
+    <p class="pnote">NEW = 直近24時間で初めてレーダーに映った商品。再販・取扱店追加を含むことがあります。受付状況はリンク先でご確認ください。</p>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <p><strong>予約開始レーダーについて</strong></p>
+    <p>楽天市場の各ホビーカテゴリを15分ごとに自動巡回し、直近24時間で初めてレーダーに映った商品を「NEW」として表示しています。検知の仕組み上、再販・価格改定・新店舗の取り扱い開始もNEWに含まれることがあります。</p>
+    <p>予約の受付状況・価格・特典は変動が激しいため、必ずリンク先の最新情報をご確認ください。本サイトは定価での予約機会を見つけるための情報サイトであり、転売を推奨するものではありません。</p>
+    <p>当サイトは楽天アフィリエイト等に参加しており、リンク経由の購入により紹介料を得ることがあります。</p>
+    <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
+    <p>最終更新: 2026年6月13日 10:12</p>
+  </div>
+</footer>
+
+<button id="totop" aria-label="ページの先頭へ">↑</button>
+<script>
+document.querySelectorAll('.pill[data-target]').forEach(function (tab) {
+  tab.addEventListener('click', function () {
+    document.querySelectorAll('.pill[data-target]').forEach(function (t) { t.classList.remove('on'); });
+    document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+    tab.classList.add('on');
+    document.getElementById(tab.dataset.target).classList.add('active');
+    tab.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    window.scrollTo({ top: 0 });
+  });
+});
+var onlyNew = document.getElementById('onlynew');
+if (onlyNew) {
+  onlyNew.addEventListener('change', function () {
+    document.body.classList.toggle('only-new', onlyNew.checked);
+  });
+}
+var totop = document.getElementById('totop');
+window.addEventListener('scroll', function () {
+  totop.classList.toggle('show', window.scrollY > 600);
+}, { passive: true });
+totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+</script>
+<script>
+(function () {
+  var CFG = {"rakutenAppId": "", "rakutenAffiliateId": "", "yahooAppId": "", "amazonTag": ""};
+  function $(id) { return document.getElementById(id); }
+  var state = { items: [] };
+
+  // ---- 単価の自動判定(サイト本体と同じ考え方のJS版) ----
+  function norm(s) {
+    s = s.normalize("NFKC").toLowerCase();
+    s = s.replace(/×/g, "✕").replace(/リットル/g, "l").replace(/ℓ/g, "l").replace(/キロ/g, "kg");
+    s = s.replace(/([0-9個袋本箱杯ル])\s*x\s*(?=[0-9])/g, "$1✕");
+    return s;
+  }
+  function pairOrMax(t, unit, scale) {
+    scale = scale || 1; var best = 0, m;
+    var rePair = new RegExp("([0-9]+(?:\\.[0-9]+)?)\\s*" + unit + "\\s*✕\\s*([0-9]+)", "g");
+    while ((m = rePair.exec(t))) best = Math.max(best, parseFloat(m[1]) * parseInt(m[2], 10) * scale);
+    var reOne = new RegExp("([0-9]+(?:\\.[0-9]+)?)\\s*" + unit, "g");
+    while ((m = reOne.exec(t))) best = Math.max(best, parseFloat(m[1]) * scale);
+    return best || null;
+  }
+  function detectUnit(name) {
+    var t = norm(name), q;
+    q = Math.max(pairOrMax(t, "kg") || 0, pairOrMax(t, "g(?![a-z])", 0.001) || 0);
+    if (q >= 0.3) return { unit: "kg", qty: q };
+    var vol = 0, m = t.match(/([0-9]+(?:\.[0-9]+)?)\s*l(?![a-z])/);
+    if (m) vol = parseFloat(m[1]);
+    if (!vol) { m = t.match(/([0-9]+(?:\.[0-9]+)?)\s*ml/); if (m) vol = parseFloat(m[1]) / 1000; }
+    if (vol) {
+      m = t.match(/✕\s*([0-9]+)\s*本/) || t.match(/([0-9]+)\s*本/);
+      var n = m ? parseInt(m[1], 10) : 1;
+      if (n <= 100) return { unit: "L", qty: vol * n };
+    }
+    q = pairOrMax(t, "ロール");
+    if (q) { m = t.match(/([0-9]+(?:\.[0-9]+)?)\s*倍/); if (m && +m[1] > 1 && +m[1] <= 8) q *= +m[1];
+      return { unit: "ロール", qty: q }; }
+    q = pairOrMax(t, "(?:箱|パック)"); if (q && q >= 3) return { unit: "箱", qty: q };
+    q = pairOrMax(t, "(?:袋|杯分|杯|包)"); if (q && q >= 10) return { unit: "杯", qty: q };
+    return null;
+  }
+  function fmt(v) { return v < 100 ? v.toFixed(1) : Math.round(v).toLocaleString(); }
+
+  // ---- 還元率の保存(ブラウザに記憶) ----
+  function loadRates() {
+    try { var r = JSON.parse(localStorage.getItem("sokone_rates") || "{}");
+      if (r.r != null) $("rate-rakuten").value = r.r;
+      if (r.y != null) $("rate-yahoo").value = r.y; } catch (e) {}
+  }
+  function saveRates() {
+    try { localStorage.setItem("sokone_rates",
+      JSON.stringify({ r: +$("rate-rakuten").value, y: +$("rate-yahoo").value })); } catch (e) {}
+  }
+
+  // ---- API呼び出し(fetchがダメならJSONPで再挑戦) ----
+  function jsonp(url) {
+    return new Promise(function (resolve, reject) {
+      var cb = "sokone_cb" + Math.random().toString(36).slice(2);
+      window[cb] = function (d) { resolve(d); cleanup(); };
+      var s = document.createElement("script");
+      function cleanup() { delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s); }
+      s.src = url + (url.indexOf("?") >= 0 ? "&" : "?") + "callback=" + cb;
+      s.onerror = function () { reject(new Error("jsonp")); cleanup(); };
+      setTimeout(function () { if (window[cb]) { reject(new Error("timeout")); cleanup(); } }, 12000);
+      document.head.appendChild(s);
+    });
+  }
+  function getJSON(url) {
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .catch(function () { return jsonp(url); });
+  }
+
+  function searchRakuten(q, freeOnly) {
+    if (!CFG.rakutenAppId) return Promise.resolve([]);
+    var p = new URLSearchParams({ applicationId: CFG.rakutenAppId, format: "json",
+      keyword: q, hits: "20", availability: "1" });
+    if (freeOnly) p.set("postageFlag", "1");
+    if (CFG.rakutenAffiliateId) p.set("affiliateId", CFG.rakutenAffiliateId);
+    var url = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601?" + p;
+    return getJSON(url).then(function (d) {
+      return (d.Items || []).map(function (e) { var it = e.Item || e;
+        var img = (it.mediumImageUrls && it.mediumImageUrls[0]) ?
+          (it.mediumImageUrls[0].imageUrl || "").replace("?_ex=128x128", "?_ex=300x300") : "";
+        return { mall: "rakuten", name: it.itemName || "", price: +it.itemPrice || 0,
+          url: it.affiliateUrl || it.itemUrl || "", image: img,
+          shop: it.shopName || "", free: true };
+      });
+    });
+  }
+  function searchYahoo(q, freeOnly) {
+    if (!CFG.yahooAppId) return Promise.resolve([]);
+    var p = new URLSearchParams({ appid: CFG.yahooAppId, query: q,
+      results: "20", in_stock: "true", condition: "new" });
+    var url = "https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?" + p;
+    return getJSON(url).then(function (d) {
+      return (d.hits || []).filter(function (it) {
+        var code = it.shipping && it.shipping.code;
+        return freeOnly ? code === 2 : true;
+      }).map(function (it) {
+        return { mall: "yahoo", name: it.name || "", price: +it.price || 0,
+          url: it.url || "", image: (it.image && it.image.medium) || "",
+          shop: (it.seller && it.seller.name) || "",
+          free: it.shipping && it.shipping.code === 2 };
+      });
+    });
+  }
+
+  // ---- 並び替えと描画 ----
+  function effPrice(it) {
+    var rate = it.mall === "rakuten" ? +$("rate-rakuten").value : +$("rate-yahoo").value;
+    return it.price * (1 - Math.min(Math.max(rate || 0, 0), 30) / 100);
+  }
+  function sortItems(items) {
+    var mode = $("opt-sort").value;
+    var arr = items.slice();
+    if (mode === "unit") {
+      arr.sort(function (a, b) {
+        if (!!a.u !== !!b.u) return a.u ? -1 : 1;
+        if (a.u && b.u) {
+          if (a.u.unit !== b.u.unit) return a.u.unit < b.u.unit ? -1 : 1;
+          return a.price / a.u.qty - b.price / b.u.qty;
+        }
+        return a.price - b.price;
+      });
+    } else if (mode === "eff") {
+      arr.sort(function (a, b) { return effPrice(a) - effPrice(b); });
+    } else {
+      arr.sort(function (a, b) { return a.price - b.price; });
+    }
+    return arr;
+  }
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+  function render() {
+    var items = sortItems(state.items).slice(0, 30);
+    var ol = $("sresults"); ol.innerHTML = "";
+    items.forEach(function (it) {
+      var li = document.createElement("li"); li.className = "sr-row";
+      var unitChip = it.u ? '<span class="unitchip">約' + fmt(it.price / it.u.qty) + "円/" + it.u.unit + "</span>" : "";
+      var rate = it.mall === "rakuten" ? +$("rate-rakuten").value : +$("rate-yahoo").value;
+      var eff = (rate > 0 && $("opt-sort").value === "eff") ?
+        '<span class="sr-eff">実質' + Math.round(effPrice(it)).toLocaleString() + "円</span>" : "";
+      var ship = it.free ? "送料無料" : "送料別の場合あり";
+      li.innerHTML =
+        (it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy">' : "<div></div>") +
+        '<div><p class="sr-name"><span class="mall ' + it.mall + '">' +
+        (it.mall === "rakuten" ? "楽天" : "Yahoo!") + "</span>" + esc(it.name) + "</p>" +
+        '<p class="sr-sub"><span class="sr-price">' + it.price.toLocaleString() + "円</span>" + eff + unitChip +
+        ' <span style="color:var(--muted)">・' + ship + '</span></p>' +
+        '<p class="sr-shop">' + esc(it.shop) + "</p></div>" +
+        '<a class="sr-cta" href="' + esc(it.url) + '" target="_blank" rel="nofollow sponsored noopener">商品を見る</a>';
+      ol.appendChild(li);
+    });
+  }
+
+  function doSearch(ev) {
+    if (ev) ev.preventDefault();
+    var q = $("sq").value.trim();
+    if (!q) return;
+    saveHist(q); hideSugg();
+    if (!CFG.rakutenAppId && !CFG.yahooAppId) {
+      $("sstatus").textContent = "検索を使うにはAPIキーの設定が必要です(説明書をご覧ください)。"; return;
+    }
+    var freeOnly = $("opt-free").checked;
+    var useR = $("opt-rakuten").checked, useY = $("opt-yahoo").checked;
+    $("sstatus").textContent = "検索中…"; $("sresults").innerHTML = "";
+    Promise.allSettled([
+      useR ? searchRakuten(q, freeOnly) : Promise.resolve([]),
+      useY ? searchYahoo(q, freeOnly) : Promise.resolve([]),
+    ]).then(function (rs) {
+      var items = [], fails = [];
+      if (rs[0].status === "fulfilled") items = items.concat(rs[0].value);
+      else if (useR) fails.push("楽天");
+      if (rs[1].status === "fulfilled") items = items.concat(rs[1].value);
+      else if (useY) fails.push("Yahoo!");
+      items.forEach(function (it) { it.u = detectUnit(it.name); });
+      state.items = items;
+      var msg = esc(items.length + "件ヒット");
+      if (fails.length) msg += esc("(" + fails.join("・") + "は取得できませんでした)");
+      if (!items.length && !fails.length) msg = esc("見つかりませんでした。言葉を変えてみてください。");
+      var ap = new URLSearchParams({ k: q });
+      if (CFG.amazonTag) ap.set("tag", CFG.amazonTag);
+      msg += ' ・ <a href="https://www.amazon.co.jp/s?' + ap.toString() +
+        '" target="_blank" rel="nofollow sponsored noopener" style="color:var(--green);font-weight:700">Amazonでも検索 →</a>';
+      $("sstatus").innerHTML = msg;
+      render();
+    });
+  }
+
+  // ---- 予測変換(ホビー用語辞書 + 検索履歴) ----
+  var DICT = ["ポケモンカード","ポケモンカード BOX","ポケモンカード ハイクラスパック","ワンピースカード","ワンピースカード BOX","遊戯王","遊戯王 BOX","デュエルマスターズ","ヴァイスシュヴァルツ","バトルスピリッツ","MTG","ドラゴンボールカード","ガンプラ","ガンプラ HG","ガンプラ MG","ガンプラ RG","ガンプラ PG","ガンプラ SD","METAL BUILD","ROBOT魂","S.H.Figuarts","S.H.MonsterArts","超合金","フィギュア","スケールフィギュア","プライズフィギュア","ねんどろいど","figma","ポップアップパレード","ルックアップ","一番くじ","ぬいぐるみ","アクリルスタンド","缶バッジ","ゲームソフト","Switch ソフト","Switch2 ソフト","PS5 ソフト","コントローラー","amiibo","鉄道模型","Nゲージ","HOゲージ","トミカ","プラレール","ミニカー","ホットウィール","チョロQ","レゴ","ベイブレード","シルバニアファミリー","リカちゃん","仮面ライダー","仮面ライダー ベルト","ウルトラマン","スーパー戦隊","プリキュア","ガンダム","エヴァンゲリオン","ポケモン","星のカービィ","スプラトゥーン","ゼルダの伝説","マリオ","どうぶつの森","モンスターハンター","ファイナルファンタジー","ドラゴンクエスト","ペルソナ","ワンピース","鬼滅の刃","呪術廻戦","SPY×FAMILY","チェンソーマン","推しの子","ブルーロック","ハイキュー","ヒロアカ","NARUTO","ドラゴンボール","スラムダンク","名探偵コナン","セーラームーン","ちいかわ","サンリオ","すみっコぐらし","ポチャッコ","シナモロール","初音ミク","ホロライブ","にじさんじ","ウマ娘","ブルーアーカイブ","原神","崩壊スターレイル","ゼンレスゾーンゼロ","Fate","アズールレーン","アイドルマスター","ラブライブ","バンドリ","東方Project","ヴァイオレット・エヴァーガーデン","ジブリ","ディズニー","スター・ウォーズ","マーベル","ゴジラ","トランスフォーマー","Blu-ray 特典","アニメ Blu-ray","サウンドトラック","予約 特典付き","限定版","コレクターズエディション"];
+  function kataToHira(s) {
+    return s.replace(/[\u30a1-\u30f6]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x60); });
+  }
+  function sNorm(s) { return kataToHira(s.normalize("NFKC").toLowerCase()); }
+  function loadHist() {
+    try { return JSON.parse(localStorage.getItem("yoyaku_hist") || "[]"); } catch (e) { return []; }
+  }
+  function saveHist(q) {
+    try { var h = loadHist().filter(function (x) { return x !== q; });
+      h.unshift(q); localStorage.setItem("yoyaku_hist", JSON.stringify(h.slice(0, 10))); } catch (e) {}
+  }
+  var selIdx = -1;
+  function hideSugg() { $("sugg").innerHTML = ""; selIdx = -1; $("sq").setAttribute("aria-expanded", "false"); }
+  function highlight(term, q) {
+    var n = sNorm(term), i = n.indexOf(sNorm(q));
+    if (i < 0 || !q) return esc(term);
+    return esc(term.slice(0, i)) + "<b>" + esc(term.slice(i, i + q.length)) + "</b>" + esc(term.slice(i + q.length));
+  }
+  function showSugg() {
+    var q = $("sq").value.trim();
+    var nq = sNorm(q);
+    var hist = loadHist();
+    var out = [];
+    if (!q) {
+      hist.slice(0, 5).forEach(function (h) { out.push({ t: h, tag: "履歴" }); });
+    } else {
+      hist.forEach(function (h) { if (sNorm(h).indexOf(nq) === 0 && out.length < 3) out.push({ t: h, tag: "履歴" }); });
+      var starts = [], includes = [];
+      DICT.forEach(function (d) {
+        var nd = sNorm(d);
+        if (out.some(function (o) { return o.t === d; })) return;
+        if (nd.indexOf(nq) === 0) starts.push(d);
+        else if (nd.indexOf(nq) >= 0) includes.push(d);
+      });
+      starts.concat(includes).slice(0, 8 - out.length).forEach(function (d) { out.push({ t: d, tag: "" }); });
+    }
+    var ul = $("sugg"); ul.innerHTML = "";
+    out.forEach(function (o, i) {
+      var li = document.createElement("li");
+      li.setAttribute("role", "option");
+      li.innerHTML = (o.tag ? '<span class="tagh">' + o.tag + "</span>" : "") + highlight(o.t, q);
+      li.addEventListener("mousedown", function (ev) { ev.preventDefault();
+        $("sq").value = o.t; hideSugg(); doSearch(); });
+      ul.appendChild(li);
+    });
+    $("sq").setAttribute("aria-expanded", out.length ? "true" : "false");
+  }
+  $("sq").addEventListener("input", showSugg);
+  $("sq").addEventListener("focus", showSugg);
+  $("sq").addEventListener("blur", function () { setTimeout(hideSugg, 150); });
+  $("sq").addEventListener("keydown", function (ev) {
+    var lis = $("sugg").children;
+    if (!lis.length) return;
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") {
+      ev.preventDefault();
+      selIdx = ev.key === "ArrowDown" ? (selIdx + 1) % lis.length : (selIdx - 1 + lis.length) % lis.length;
+      for (var i = 0; i < lis.length; i++) lis[i].classList.toggle("sel", i === selIdx);
+    } else if (ev.key === "Enter" && selIdx >= 0) {
+      ev.preventDefault();
+      $("sq").value = lis[selIdx].textContent.replace(/^履歴/, "");
+      hideSugg(); doSearch();
+    } else if (ev.key === "Escape") { hideSugg(); }
+  });
+
+  $("sform").addEventListener("submit", doSearch);
+  $("opt-sort").addEventListener("change", render);
+  $("rates-toggle").addEventListener("click", function () { $("rates").classList.toggle("open"); });
+  ["rate-rakuten", "rate-yahoo"].forEach(function (id) {
+    $(id).addEventListener("change", function () { saveRates(); render(); });
+  });
+  loadRates();
+  // トレンドページ等から「?q=ワード」付きで来たら自動で検索する
+  try {
+    var qp = new URLSearchParams(location.search).get("q");
+    if (qp) { $("sq").value = qp; doSearch(); }
+  } catch (e) {}
+})();
+</script>
+
+</body>
+</html>

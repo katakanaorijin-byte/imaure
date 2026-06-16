@@ -1,0 +1,524 @@
+{
+ "generated_at": "2026-06-13T10:12:06.458085+09:00",
+ "demo": true,
+ "site_name": "予約開始レーダー",
+ "site_url": "",
+ "genres": [
+  {
+   "name": "ポケモンカード",
+   "icon": "🃏",
+   "tag": "#ポケカ",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】ポケモンカード 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ポケモンカード 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ポケモンカード 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ポケモンカード 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ポケモンカード 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "ワンピースカード",
+   "icon": "🏴",
+   "tag": "#ワンピースカード",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】ワンピースカード 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ワンピースカード 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ワンピースカード 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ワンピースカード 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ワンピースカード 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "遊戯王・他カード",
+   "icon": "🎴",
+   "tag": "#遊戯王",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】遊戯王・他カード 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】遊戯王・他カード 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】遊戯王・他カード 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】遊戯王・他カード 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】遊戯王・他カード 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "フィギュア",
+   "icon": "🎎",
+   "tag": "#フィギュア",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】フィギュア 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】フィギュア 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】フィギュア 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】フィギュア 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】フィギュア 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "ねんどろいど・figma",
+   "icon": "🪆",
+   "tag": "#ねんどろいど",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】ねんどろいど・figma 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ねんどろいど・figma 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ねんどろいど・figma 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ねんどろいど・figma 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ねんどろいど・figma 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "ガンプラ・プラモデル",
+   "icon": "🤖",
+   "tag": "#ガンプラ",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】ガンプラ・プラモデル 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ガンプラ・プラモデル 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ガンプラ・プラモデル 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ガンプラ・プラモデル 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ガンプラ・プラモデル 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "ゲームソフト",
+   "icon": "🎮",
+   "tag": "#ゲーム",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】ゲームソフト 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ゲームソフト 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ゲームソフト 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ゲームソフト 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ゲームソフト 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "アニメBlu-ray・CD",
+   "icon": "💿",
+   "tag": "#アニメ",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】アニメBlu-ray・CD 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】アニメBlu-ray・CD 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】アニメBlu-ray・CD 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】アニメBlu-ray・CD 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】アニメBlu-ray・CD 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "特撮・なりきり玩具",
+   "icon": "🦸",
+   "tag": "#仮面ライダー",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】特撮・なりきり玩具 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】特撮・なりきり玩具 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】特撮・なりきり玩具 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】特撮・なりきり玩具 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】特撮・なりきり玩具 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "鉄道模型",
+   "icon": "🚃",
+   "tag": "#鉄道模型",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】鉄道模型 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】鉄道模型 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】鉄道模型 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】鉄道模型 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】鉄道模型 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "トミカ・ミニカー",
+   "icon": "🚗",
+   "tag": "#トミカ",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】トミカ・ミニカー 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】トミカ・ミニカー 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】トミカ・ミニカー 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】トミカ・ミニカー 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】トミカ・ミニカー 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  },
+  {
+   "name": "ぬいぐるみ・グッズ",
+   "icon": "🧸",
+   "tag": "#ぬいぐるみ",
+   "new_count": 0,
+   "items": [
+    {
+     "name": "【予約】ぬいぐるみ・グッズ 新作アイテム 第1弾 7月下旬発売 特典付き",
+     "price": 4500,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "7月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ぬいぐるみ・グッズ 新作アイテム 第2弾 8月上旬発売 特典付き",
+     "price": 5330,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月上旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ぬいぐるみ・グッズ 新作アイテム 第3弾 8月下旬発売 特典付き",
+     "price": 6160,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "8月下旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ぬいぐるみ・グッズ 新作アイテム 第4弾 9月中旬発売 特典付き",
+     "price": 6990,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "9月中旬",
+     "is_new": false
+    },
+    {
+     "name": "【予約】ぬいぐるみ・グッズ 新作アイテム 第5弾 10月発売予定発売 特典付き",
+     "price": 7820,
+     "url": "https://www.rakuten.co.jp/",
+     "release": "10月",
+     "is_new": false
+    }
+   ]
+  }
+ ]
+}

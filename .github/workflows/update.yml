@@ -1,0 +1,62 @@
+name: サイトを毎日自動更新
+
+on:
+  schedule:
+    # 15分ごとの常時監視(GitHubで安定動作する実質的な最短間隔)
+    # 重い処理(Google Trends等)は6・12・18時の回だけ自動でフル実行されます
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {} # 手動でも実行できるようにする
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+# 前の回が長引いても多重起動しない(順番待ちにする)
+concurrency:
+  group: site-update
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: コードを取得
+        uses: actions/checkout@v4
+
+      - name: Pythonを準備
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: トレンド解析ライブラリを準備(失敗しても続行)
+        run: pip install pytrends || true
+
+      - name: サイトを生成
+        env:
+          RAKUTEN_APP_ID: ${{ secrets.RAKUTEN_APP_ID }}
+          RAKUTEN_AFFILIATE_ID: ${{ secrets.RAKUTEN_AFFILIATE_ID }}
+          YAHOO_APP_ID: ${{ secrets.YAHOO_APP_ID }}
+          VC_PID: ${{ secrets.VC_PID }}
+          AMAZON_PARTNER_TAG: ${{ secrets.AMAZON_PARTNER_TAG }}
+          ADSENSE_CLIENT: ${{ secrets.ADSENSE_CLIENT }}
+        run: python generate.py
+
+      - name: SNSに自動投稿(キー未設定ならスキップ)
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: python post_sns.py
+
+      - name: 変更をコミットして公開
+        run: |
+          git config user.name "auto-update-bot"
+          git config user.email "actions@github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "自動更新 $(date +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin main || true
+          git push
