@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#F5F6F8"/>
+<rect x="72" y="70" width="1056" height="490" rx="32" fill="#FFFFFF" stroke="#E7E9EF" stroke-width="3"/>
+<circle cx="190" cy="198" r="72" fill="#E3F5EE"/>
+<circle cx="190" cy="198" r="48" fill="none" stroke="#0BA678" stroke-width="12"/>
+<path d="M190 198 232 170" stroke="#E5304F" stroke-width="12" stroke-linecap="round"/>
+<circle cx="190" cy="198" r="12" fill="#14181F"/>
+<text x="300" y="205" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="76" font-weight="800" fill="#14181F">予約開始レーダー</text>
+<text x="304" y="282" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="34" font-weight="700" fill="#0BA678">ホビーの予約開始を毎日自動キャッチ</text>
+<text x="304" y="354" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="28" fill="#707888">ポケカ / ガンプラ / フィギュア / ゲーム / グッズ</text>
+<rect x="304" y="414" width="380" height="62" rx="31" fill="#14181F"/>
+<text x="342" y="456" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">新着予約をすばやく確認</text>
+</svg>
