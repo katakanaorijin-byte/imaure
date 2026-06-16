@@ -86,14 +86,23 @@ h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-seri
 
 /* ===== ツールバー ===== */
 .toolbar { max-width: 680px; margin: 0 auto; padding: 12px 16px 0;
-  display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .sum { font-size: 13px; color: var(--muted); }
 .sum b { font-family: "Murecho", sans-serif; font-size: 17px; color: var(--ink); margin: 0 2px; }
 .sum b.haspos { color: var(--new); }
-.onlynew { display: inline-flex; align-items: center; gap: 6px;
+.listtools { display: flex; align-items: center; gap: 8px 12px; flex-wrap: wrap; justify-content: flex-end; }
+.onlynew, .toolcheck { display: inline-flex; align-items: center; gap: 6px;
   font-size: 12.5px; font-weight: 700; cursor: pointer; color: var(--ink); }
-.onlynew input { width: 16px; height: 16px; accent-color: var(--green); }
+.onlynew input, .toolcheck input { width: 16px; height: 16px; accent-color: var(--green); }
+.pricefilter { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--ink); }
+.pricefilter input { width: 76px; font: inherit; font-size: 12px; padding: 5px 7px;
+  border: 1px solid var(--rule); border-radius: 7px; background: var(--card); color: var(--ink); }
+.toolbtn { font: inherit; font-size: 12px; font-weight: 700; color: var(--muted);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 6px 10px; cursor: pointer; }
 body.only-new .card:not(.isnew) { display: none; }
+body.only-hot .card:not(.ishot) { display: none; }
+body.only-image .card:not(.hasimg) { display: none; }
+.card.is-filtered { display: none !important; }
 
 /* ===== パネル ===== */
 main { max-width: 680px; margin: 0 auto; padding: 6px 16px 48px; }
@@ -197,6 +206,11 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 .rates input { width: 56px; font: inherit; font-size: 13px; padding: 3px 6px;
   border: 1px solid var(--rule); border-radius: 5px; text-align: right; }
 .sstatus { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+.sactions { display: none; margin-top: 10px; }
+.sactions.show { display: flex; gap: 8px; flex-wrap: wrap; }
+.shome { font: inherit; font-size: 12px; font-weight: 700; color: var(--ink);
+  background: var(--card); border: 1px solid var(--rule); border-radius: 999px;
+  padding: 7px 12px; cursor: pointer; }
 .sresults { list-style: none; margin-top: 10px; background: var(--card);
   border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; }
 .sresults:empty { display: none; }
@@ -243,7 +257,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>14:26 更新</span>
+      <span class="live"><i class="pulse"></i>14:38 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -280,6 +294,9 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
       <span>→「実質順」はポイント分を引いた価格で並びます</span>
     </div>
     <p class="sstatus" id="sstatus"></p>
+    <div class="sactions" id="sactions">
+      <button type="button" class="shome" id="search-home">ホームに戻る</button>
+    </div>
     <ol class="sresults" id="sresults"></ol>
   </div>
 </section>
@@ -303,7 +320,14 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 </nav>
 <div class="toolbar">
   <span class="sum">直近24時間の新着 <b class="haspos">14</b> 件</span>
-  <label class="onlynew"><input type="checkbox" id="onlynew"> 新着だけ表示</label>
+  <div class="listtools">
+    <label class="onlynew"><input type="checkbox" id="onlynew"> 新着だけ</label>
+    <label class="toolcheck"><input type="checkbox" id="sortcheap"> 安い順</label>
+    <label class="toolcheck"><input type="checkbox" id="onlyhot"> 注目だけ</label>
+    <label class="toolcheck"><input type="checkbox" id="onlyimage"> 画像あり</label>
+    <label class="pricefilter">価格 <input type="number" id="minprice" min="0" step="100" placeholder="下限"> - <input type="number" id="maxprice" min="0" step="100" placeholder="上限"></label>
+    <button type="button" class="toolbtn" id="resetfilters">リセット</button>
+  </div>
 </div>
 
 <main>
@@ -314,12 +338,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
       <p class="pmeta">直近24時間の新着 <b>14</b>件 ・ 14件を監視中</p>
     </header>
     <ol class="cards">
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="7110">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/251/figure-203834.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 崩壊：スターレイル アナイクス[グッドスマイルカンパニー]【送料無料】《12月予約》</p>
-          <p class="cmeta"><span class="price">7,110<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,110<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-203834%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13056221%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -328,12 +352,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="4770">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/251/figure-203842.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ヱヴァンゲリヲン新劇場版 綾波レイ（再販）[グッドスマイルカンパニー]《02月予約》</p>
-          <p class="cmeta"><span class="price">4,770<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,770<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-203842%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13056220%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -342,12 +366,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="7020">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/251/figure-203832.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ウマ娘 プリティーダービー マチカネタンホイザ（再販）[グッドスマイルカンパニー]【送料無料】《11月予約》</p>
-          <p class="cmeta"><span class="price">7,020<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,020<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-203832%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13056219%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -356,12 +380,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="4770">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/251/figure-203843.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ヱヴァンゲリヲン新劇場版 式波・アスカ・ラングレー（再販）[グッドスマイルカンパニー]《02月予約》</p>
-          <p class="cmeta"><span class="price">4,770<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,770<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-203843%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13056218%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -370,12 +394,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="4320">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/251/figure-203836.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいどどーる おようふくセット 崩壊：スターレイル ファイノン 列車巡遊Ver.[グッドスマイルカンパニー]《02月予約》</p>
-          <p class="cmeta"><span class="price">4,320<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,320<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-203836%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13056217%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -384,12 +408,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="8820">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/251/figure-203835.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいどどーる 崩壊：スターレイル ファイノン 列車巡遊Ver.[グッドスマイルカンパニー]《02月予約》</p>
-          <p class="cmeta"><span class="price">8,820<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">8,820<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-203835%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13056216%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -398,12 +422,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="7900">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/hobbygarage/cabinet/12868315/13365454/imgrc0120367218.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいどもあ ペルソナ30周年コラボヴィネット グッドスマイルカンパニー【11月予約】</p>
-          <p class="cmeta"><span class="price">7,900<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,900<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">ホビーガレージ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00uugbn.kgoda09b.g00uugbn.kgodb8f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhobbygarage%2F20260616r006%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhobbygarage%2Fi%2F10002260%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -412,12 +436,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="5780">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/172000/yf170121.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど らき☆すた 泉こなた 2.0 グッドスマイルカンパニー フィギュア 【6月予約】</p>
-          <p class="cmeta"><span class="price">5,780<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,780<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">でじたみん 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyf170121%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10318988%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -426,12 +450,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="7500">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/hobbygarage/cabinet/12868315/13365454/imgrc0120367055.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ブルーアーカイブ -Blue Archive- 小鳥遊ホシノ(臨戦) グッドスマイルカンパニー【11月予約】</p>
-          <p class="cmeta"><span class="price">7,500<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,500<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">ホビーガレージ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00uugbn.kgoda09b.g00uugbn.kgodb8f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhobbygarage%2F20260616r005%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhobbygarage%2Fi%2F10002259%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -440,12 +464,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="7500">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/hobbygarage/cabinet/12868315/13365454/imgrc0120366599.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ファイナルファンタジーXIV ヤ・シュトラ グッドスマイルカンパニー【11月予約】</p>
-          <p class="cmeta"><span class="price">7,500<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,500<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">ホビーガレージ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00uugbn.kgoda09b.g00uugbn.kgodb8f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhobbygarage%2F20260616r004%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhobbygarage%2Fi%2F10002258%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -454,12 +478,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="6500">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/hobbygarage/cabinet/12868315/13365454/imgrc0120365889.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 都市伝説解体センター 福来あざみ グッドスマイルカンパニー【10月予約】</p>
-          <p class="cmeta"><span class="price">6,500<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">6,500<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">ホビーガレージ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00uugbn.kgoda09b.g00uugbn.kgodb8f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhobbygarage%2F20260616r003%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhobbygarage%2Fi%2F10002257%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -468,12 +492,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="6800">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/toyhero7/4571697189720.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">『崩壊：スターレイル』ねんどろいど ファイノン　塗装済み可動フィギュア〔グッドスマイルカンパニー〕（250725予約開始）</p>
-          <p class="cmeta"><span class="price">6,800<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">6,800<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">イエローサブマリン楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4571697189720%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10182667%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -482,12 +506,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="8600">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/toyheroin10/4571697189225.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">『やはり俺の青春ラブコメはまちがっている。完』ねんどろいどどーる 雪ノ下雪乃 塗装済み可動フィギュア〔グッドスマイルカンパニー〕（250826予約開始）</p>
-          <p class="cmeta"><span class="price">8,600<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">8,600<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">イエローサブマリン楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4571697189225%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10183185%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -496,12 +520,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew">
+      <li class="card isnew ishot hasimg" data-price="5700">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/gs01/4580828665286.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">『Mouthwashing』ねんどろいど アーニャ　塗装済み可動フィギュア〔グッドスマイルカンパニー〕（251016予約開始）</p>
-          <p class="cmeta"><span class="price">5,700<i>円</i></span><span class="fresh">⏱ 11分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,700<i>円</i></span><span class="fresh">⏱ 23分前にキャッチ</span></p>
           <p class="cshop">イエローサブマリン楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4580828665286%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10184304%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -521,7 +545,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p>予約の受付状況・価格・特典は変動が激しいため、必ずリンク先の最新情報をご確認ください。本サイトは定価での予約機会を見つけるための情報サイトであり、転売を推奨するものではありません。</p>
     <p>当サイトは楽天アフィリエイト等に参加しており、リンク経由の購入により紹介料を得ることがあります。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月16日 14:26</p>
+    <p>最終更新: 2026年6月16日 14:38</p>
   </div>
 </footer>
 
@@ -538,9 +562,49 @@ document.querySelectorAll('.pill[data-target]').forEach(function (tab) {
   });
 });
 var onlyNew = document.getElementById('onlynew');
+var sortCheap = document.getElementById('sortcheap');
+var onlyHot = document.getElementById('onlyhot');
+var onlyImage = document.getElementById('onlyimage');
+var minPrice = document.getElementById('minprice');
+var maxPrice = document.getElementById('maxprice');
+var resetFilters = document.getElementById('resetfilters');
+document.querySelectorAll('.cards').forEach(function (list) {
+  Array.prototype.forEach.call(list.children, function (card, i) {
+    card.dataset.order = i;
+  });
+});
+function applyListTools() {
+  document.body.classList.toggle('only-new', !!(onlyNew && onlyNew.checked));
+  document.body.classList.toggle('only-hot', !!(onlyHot && onlyHot.checked));
+  document.body.classList.toggle('only-image', !!(onlyImage && onlyImage.checked));
+  var min = minPrice && minPrice.value !== '' ? Number(minPrice.value) : null;
+  var max = maxPrice && maxPrice.value !== '' ? Number(maxPrice.value) : null;
+  document.querySelectorAll('.card').forEach(function (card) {
+    var price = Number(card.dataset.price || 0);
+    card.classList.toggle('is-filtered',
+      (min !== null && price < min) || (max !== null && price > max));
+  });
+  document.querySelectorAll('.cards').forEach(function (list) {
+    var cards = Array.prototype.slice.call(list.children);
+    cards.sort(function (a, b) {
+      if (sortCheap && sortCheap.checked) {
+        return Number(a.dataset.price || 0) - Number(b.dataset.price || 0);
+      }
+      return Number(a.dataset.order || 0) - Number(b.dataset.order || 0);
+    });
+    cards.forEach(function (card) { list.appendChild(card); });
+  });
+}
 if (onlyNew) {
-  onlyNew.addEventListener('change', function () {
-    document.body.classList.toggle('only-new', onlyNew.checked);
+  [onlyNew, sortCheap, onlyHot, onlyImage, minPrice, maxPrice].forEach(function (el) {
+    if (!el) return;
+    el.addEventListener(el.type === 'number' ? 'input' : 'change', applyListTools);
+  });
+  resetFilters.addEventListener('click', function () {
+    [onlyNew, sortCheap, onlyHot, onlyImage].forEach(function (el) { if (el) el.checked = false; });
+    if (minPrice) minPrice.value = '';
+    if (maxPrice) maxPrice.value = '';
+    applyListTools();
   });
 }
 var totop = document.getElementById('totop');
@@ -733,6 +797,7 @@ totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior
       msg += ' ・ <a href="https://www.amazon.co.jp/s?' + ap.toString() +
         '" target="_blank" rel="nofollow sponsored noopener" style="color:var(--green);font-weight:700">Amazonでも検索 →</a>';
       $("sstatus").innerHTML = msg;
+      $("sactions").classList.add("show");
       render();
     });
   }
@@ -804,6 +869,14 @@ totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior
   });
 
   $("sform").addEventListener("submit", doSearch);
+  $("search-home").addEventListener("click", function () {
+    state.items = [];
+    $("sq").value = "";
+    $("sstatus").textContent = "";
+    $("sresults").innerHTML = "";
+    $("sactions").classList.remove("show");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
   $("opt-sort").addEventListener("change", render);
   $("rates-toggle").addEventListener("click", function () { $("rates").classList.toggle("open"); });
   ["rate-rakuten", "rate-yahoo"].forEach(function (id) {
