@@ -175,6 +175,17 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   cursor: pointer; box-shadow: 0 4px 14px rgba(20, 24, 31, 0.16); display: none; }
 #totop.show { display: block; }
 
+/* ===== PC幅: 商品カード一覧をグリッド表示に(スマホは縦リストのまま) ===== */
+@media (min-width: 860px) {
+  .appbar-in, .tag, .demo-note, main, .toolbar, .foot-inner { max-width: 1100px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px; }
+  .card { grid-template-columns: 1fr; }
+  .thumb img, .noimg { width: 100%; height: 160px; }
+  .cname { -webkit-line-clamp: 3; }
+  body.only-new .cards:not(:has(.card.isnew))::after { grid-column: 1 / -1; }
+}
+
 /* ===== ダークモード ===== */
 @media (prefers-color-scheme: dark) {
   :root { --paper: #0E1117; --card: #171B24; --ink: #ECEEF3; --muted: #98A0B0;
@@ -274,6 +285,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 .sugg li .tagh { font-size: 10.5px; font-weight: 700; color: var(--muted);
   border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; flex-shrink: 0; }
 .sugg li b { font-weight: 900; }
+
 </style>
 </head>
 <body>
@@ -281,7 +293,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>12:14 更新</span>
+      <span class="live"><i class="pulse"></i>12:31 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -370,7 +382,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">4月発売</span></p>
           <p class="cname">4月発売 予約 バンダイ BANDAI ONE PIECEカードゲーム スタートデッキEX ルフィ＆エース【ST-30】</p>
-          <p class="cmeta"><span class="price">23,800<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">23,800<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">hankuroom 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardbox-o-020%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015137%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -392,7 +404,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p><strong>運営者:</strong> 予約開始レーダー運営 / 問い合わせ先は準備中です</p>
     <p>掲載内容に誤りがある場合や削除依頼がある場合は、上記連絡先からお知らせください。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../released/">✅発売済みまとめ</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月17日 12:14</p>
+    <p>最終更新: 2026年6月17日 12:31</p>
   </div>
 </footer>
 

@@ -175,6 +175,17 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   cursor: pointer; box-shadow: 0 4px 14px rgba(20, 24, 31, 0.16); display: none; }
 #totop.show { display: block; }
 
+/* ===== PC幅: 商品カード一覧をグリッド表示に(スマホは縦リストのまま) ===== */
+@media (min-width: 860px) {
+  .appbar-in, .tag, .demo-note, main, .toolbar, .foot-inner { max-width: 1100px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px; }
+  .card { grid-template-columns: 1fr; }
+  .thumb img, .noimg { width: 100%; height: 160px; }
+  .cname { -webkit-line-clamp: 3; }
+  body.only-new .cards:not(:has(.card.isnew))::after { grid-column: 1 / -1; }
+}
+
 /* ===== ダークモード ===== */
 @media (prefers-color-scheme: dark) {
   :root { --paper: #0E1117; --card: #171B24; --ink: #ECEEF3; --muted: #98A0B0;
@@ -274,6 +285,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 .sugg li .tagh { font-size: 10.5px; font-weight: 700; color: var(--muted);
   border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; flex-shrink: 0; }
 .sugg li b { font-weight: 900; }
+
 </style>
 </head>
 <body>
@@ -281,7 +293,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>12:14 更新</span>
+      <span class="live"><i class="pulse"></i>12:31 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -370,7 +382,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">【シュリンク付き新品未開封 予約商品】 ポケモンカード 30th CELEBRATION 1BOX Pokemon 30周年 拡張パック カードゲーム セレブレーション 新品 未開封 シュリンク付き</p>
-          <p class="cmeta"><span class="price">52,780<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">52,780<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">松竹堂</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00unq6n.kgoda6e3.g00unq6n.kgodbaf0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsyochikudo12%2Fpokemon30thbox%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsyochikudo12%2Fi%2F10000201%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -384,7 +396,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">9月中旬発売</span></p>
           <p class="cname">【予約商品 9月中旬発売】ポケモンカードゲーム MEGA 30th CELEBRATION FUTURISTIC BOX 30周年 カードゲーム セレブレーション 新品 未開封</p>
-          <p class="cmeta"><span class="price">178,000<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">178,000<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">松竹堂</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00unq6n.kgoda6e3.g00unq6n.kgodbaf0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsyochikudo12%2Ffuturisticbox%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsyochikudo12%2Fi%2F10000203%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -398,7 +410,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">月間優良ショップ受賞店 ポケモンカードゲーム MEGA 拡張パック 30th CELEBRATION BOX 予約商品入荷後の発送になります</p>
-          <p class="cmeta"><span class="price">52,800<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">52,800<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">14promo</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tth2n.kgoda3c5.g00tth2n.kgodba58/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2F14promo%2F10019556-8000%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2F14promo%2Fi%2F10028031%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -412,7 +424,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">月間優良ショップ受賞店 ポケモンカードゲーム 30th CELEBRATION FUTURISTIC BOX 9月16日発売予定 予約商品入荷後の発送になります</p>
-          <p class="cmeta"><span class="price">219,500<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">219,500<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">14promo</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tth2n.kgoda3c5.g00tth2n.kgodba58/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2F14promo%2F10019556-100000%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2F14promo%2Fi%2F10028030%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -426,7 +438,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">【レッド予約商品】【期間限定DEALポイントバック15％】 カード用 トレカ収納 トリプル サウザンドBOX トップローダー 全2色 大きめ収納 デッキ収納 収納ボックス ケース カード用 大容量 ポケモンカード ポケカ 保護 ケース カード保護</p>
-          <p class="cmeta"><span class="price">6,570<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">6,570<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">futurshop</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ub31n.kgoda0ad.g00ub31n.kgodbabb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffuturshop%2F20240418-5126%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ffuturshop%2Fi%2F10005447%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -440,7 +452,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">【レッド予約商品】カード用 トレカ収納 トリプル サウザンドBOX トップローダー 全2色 大きめ収納 デッキ収納 収納ボックス ケース カード用 大容量 ポケモンカード ポケカ 保護 ケース カード保護 防護 防塵 収納 趣味</p>
-          <p class="cmeta"><span class="price">5,940<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,940<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">AiO Online Store</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00thbcn.kgodaa7d.g00thbcn.kgodb34d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faio-shop%2F20240418-5126%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Faio-shop%2Fi%2F10006871%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -454,7 +466,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">11月発売</span></p>
           <p class="cname">ラッピングOP 11月発売 予約 レビューくじ特典あり BOX ハイクラスパック MEGAドリームex ポケモンカードゲーム ポケカ メガドリーム シュリンク付き</p>
-          <p class="cmeta"><span class="price">18,600<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">18,600<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">hankuroom 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardbox-p-046%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015077%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -468,7 +480,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">予約 レビューくじ特典あり 新品未開封 インフェルノX BOX ポケモンカードゲーム MEGA メガ 拡張パック シュリンク付き ボックス</p>
-          <p class="cmeta"><span class="price">27,000<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">27,000<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">and moa</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00utoin.kgoda268.g00utoin.kgodb89d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fandmoa%2Fcardbox-p-045%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fandmoa%2Fi%2F10000096%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -482,7 +494,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">9月26日発売 予約 レビューくじ特典あり 新品未開封 インフェルノX BOX ポケモンカードゲーム MEGA メガ 拡張パック シュリンク付き ボックス</p>
-          <p class="cmeta"><span class="price">27,500<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">27,500<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">ソフィアゲート</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00u7dxn.kgodaa95.g00u7dxn.kgodb18a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoysbox2nd%2Fcardbox-p-045%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoysbox2nd%2Fi%2F10015933%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -496,7 +508,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">12月発売</span></p>
           <p class="cname">ラッピングOP 12月発売 予約 1箱/2箱/3箱セット ポケモンカードゲーム MEGA スタートデッキ100 バトルコレクション ポケットモンスター</p>
-          <p class="cmeta"><span class="price">5,500<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,500<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">ソフィアゲート</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00u7dxn.kgodaa95.g00u7dxn.kgodb18a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoysbox2nd%2Fcardspbox-p-020%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoysbox2nd%2Fi%2F10016092%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -510,7 +522,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">12月発売</span></p>
           <p class="cname">ラッピングOP 12月発売 予約 1箱/2箱/3箱セット ポケモンカードゲーム MEGA スタートデッキ100 バトルコレクション ポケットモンスター</p>
-          <p class="cmeta"><span class="price">5,450<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,450<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">hankuroom 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardspbox-p-020%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015075%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -524,7 +536,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span></p>
           <p class="cname">7月19日発売 予約 新品未開封 ステラミラクル BOX ポケモンカードゲーム スカーレット&amp;バイオレット 強化拡張パック シュリンク付き ポケカ ボックス</p>
-          <p class="cmeta"><span class="price">14,350<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">14,350<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">ソフィアゲート</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00u7dxn.kgodaa95.g00u7dxn.kgodb18a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoysbox2nd%2Fcardbox-p-034%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoysbox2nd%2Fi%2F10013351%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -538,7 +550,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">9月発売</span></p>
           <p class="cname">9月発売予定 予約 新品未開封 スペシャルBOX ポケモンセンターフクオカ ポケモンカードゲーム ボックス ポケセン 福岡</p>
-          <p class="cmeta"><span class="price">39,800<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">39,800<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">hankuroom 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardspbox-p-016%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10014935%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -552,7 +564,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">9月発売</span></p>
           <p class="cname">9月発売予定 予約 新品未開封 スペシャルBOX ポケモンセンターヒロシマ ポケモンカードゲーム ボックス ポケセン 広島</p>
-          <p class="cmeta"><span class="price">37,400<i>円</i></span><span class="fresh">⏱ 21時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">37,400<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">hankuroom 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardspbox-p-015%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10014934%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -574,7 +586,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p><strong>運営者:</strong> 予約開始レーダー運営 / 問い合わせ先は準備中です</p>
     <p>掲載内容に誤りがある場合や削除依頼がある場合は、上記連絡先からお知らせください。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../released/">✅発売済みまとめ</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月17日 12:14</p>
+    <p>最終更新: 2026年6月17日 12:31</p>
   </div>
 </footer>
 
