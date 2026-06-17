@@ -44,13 +44,15 @@ body {
 }
 h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-serif; }
 
-/* ===== アプリバー ===== */
+
+/* ===== アプリバー(全ページ共通) ===== */
 .appbar { background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 16px 12px; }
 .appbar-in { max-width: 680px; margin: 0 auto; }
 .brandrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.brand { font-size: 21px; font-weight: 900; letter-spacing: 0.01em; }
+.brand { font-size: 21px; font-weight: 900; letter-spacing: 0.01em;
+  font-family: "Murecho", "Noto Sans JP", sans-serif; }
 .brand a { color: inherit; text-decoration: none; }
-.live { display: inline-flex; align-items: center; gap: 6px;
+.live { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto;
   font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap;
   font-variant-numeric: tabular-nums; }
 .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; }
@@ -59,11 +61,17 @@ h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-seri
 @keyframes ping { 0% { transform: scale(0.4); opacity: 0.7; } 70%, 100% { transform: scale(1); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .pulse::after { animation: none; } }
 .tag { max-width: 680px; margin: 3px auto 0; font-size: 12px; color: var(--muted); }
-.ad-label { font-size: 10.5px; color: var(--muted); text-align: center;
-  padding: 6px 12px 0; }
+.ad-label { font-size: 10.5px; color: var(--muted); text-align: center; padding: 6px 12px 0; }
 .demo-note { max-width: 680px; margin: 12px auto 0; padding: 10px 14px;
   background: #FFF6DB; border: 1px solid #E8C84A; border-radius: 12px;
   font-size: 12.5px; font-weight: 700; }
+@media (min-width: 860px) {
+  .appbar-in, .tag, .demo-note { max-width: 1100px; }
+}
+@media (prefers-color-scheme: dark) {
+  .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
+}
+
 
 /* ===== ピルレール(カテゴリ+新着数) ===== */
 .pills { position: sticky; top: 0; z-index: 20;
@@ -177,7 +185,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 
 /* ===== PC幅: 商品カード一覧をグリッド表示に(スマホは縦リストのまま) ===== */
 @media (min-width: 860px) {
-  .appbar-in, .tag, .demo-note, main, .toolbar, .foot-inner { max-width: 1100px; }
+  main, .toolbar, .foot-inner { max-width: 1100px; }
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 14px; }
   .card { grid-template-columns: 1fr; }
@@ -287,6 +295,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 .sugg li .tagh { font-size: 10.5px; font-weight: 700; color: var(--muted);
   border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; flex-shrink: 0; }
 .sugg li b { font-weight: 900; }
+
 </style>
 </head>
 <body>
@@ -294,7 +303,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>12:38 更新</span>
+      <span class="live"><i class="pulse"></i>13:09 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -383,7 +392,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">【ご予約 8月再入荷予定】 あたしンち ぬいぐるみ ユズヒコ【バンダイナムコヌイ】大人気 漫画キャラクター ぬい撮り ギフト ちびぬい</p>
-          <p class="cmeta"><span class="price">1,980<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">1,980<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">逸品shopコレコレ</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pzvqn.kgodaf20.g00pzvqn.kgodbc3a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcollecolle-teddy%2F661887%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fcollecolle-teddy%2Fi%2F10014413%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -397,7 +406,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">きぐるみ〜ず サンリオキャラクターズ2　10個入りBOX (食玩)[バンダイ]《08月予約》</p>
-          <p class="cmeta"><span class="price">4,310<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,310<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04795969%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13017482%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -411,7 +420,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">キャラクター・ボーカル・シリーズ01 初音ミク バルーン風ぬいぐるみ[グッドスマイルカンパニー]【送料無料】《08月予約》</p>
-          <p class="cmeta"><span class="price">4,950<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,950<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04766651%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F12979034%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -425,7 +434,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">おおきなぬいぐるみ キャラクター・ボーカル・シリーズ01 初音ミク シンフォニー 2019Ver.[グッドスマイルカンパニー]【送料無料】《09月予約》</p>
-          <p class="cmeta"><span class="price">16,830<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">16,830<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04773919%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F12990118%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -439,7 +448,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">キャラクター・ボーカル・シリーズ01 初音ミク ぬいぐるみ 初音ミク MIKU EXPO 10th Anniversary Ver.[グッドスマイルカンパニー]【送料無料】《07月予約》</p>
-          <p class="cmeta"><span class="price">4,950<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,950<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04753282%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F12958489%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -453,7 +462,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ぬいぐるみ キャラクター・ボーカル・シリーズ01 初音ミクシンフォニー 2025 札幌公演Ver.[グッドスマイルカンパニー]【送料無料】《06月予約》</p>
-          <p class="cmeta"><span class="price">4,950<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">4,950<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04737482%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F12938045%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -467,7 +476,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ぬいぐるみ キャラクター・ボーカル・シリーズ01 初音ミク Digital Stars 2021Ver.[グッドスマイルカンパニー]【送料無料】《06月予約》</p>
-          <p class="cmeta"><span class="price">3,960<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">3,960<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04721274%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F12917386%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -481,7 +490,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">【6月予約】【送料無料】ナルミヤキャラクターズ フェイスぬいぐるみ 全4種 コンプリート</p>
-          <p class="cmeta"><span class="price">2,180<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">2,180<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ノリーズコレクション</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tomgn.kgodaa37.g00tomgn.kgodb4d8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoris-collection%2F8640970686622%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fnoris-collection%2Fi%2F10007792%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -490,10 +499,10 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew hasimg" data-price="2530">
+      <li class="card isnew ishot hasimg" data-price="2530">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/0101marui/cabinet/cg024/021/46cg024-02146-04b.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">予約/ミニぬいぐるみチャーム【ベリエちゃん】【デビリーちゃん】【ブルーベリエちゃん】【ナカムラくん】／ナルミヤキャラクターズ（NARUMIYACHARACTERS）</p>
           <p class="cmeta"><span class="price">2,530<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">丸井(マルイ)楽天市場店</p>
@@ -532,10 +541,10 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew ishot hasimg" data-price="1540">
+      <li class="card isnew hasimg" data-price="1540">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/collecolle-teddy/cabinet/08274649/imgrc0128294074.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span><span class="chip-rel">7月発売</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">7月発売</span></p>
           <p class="cname">【再販決定 ご予約 7月入荷予定】 劇場版 魔法少女まどか☆マギカ 新編 叛逆の物語 Chibiぬい マスコット 美樹 さやか【バンダイナムコヌイ】ボールチェーン付き キーチェーン</p>
           <p class="cmeta"><span class="price">1,540<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">逸品shopコレコレ</p>
@@ -546,10 +555,10 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew ishot hasimg" data-price="1540">
+      <li class="card isnew hasimg" data-price="1540">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/collecolle-teddy/cabinet/08274649/imgrc0128294072.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span><span class="chip-rel">7月発売</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">7月発売</span></p>
           <p class="cname">【再販決定 ご予約 7月入荷予定】 劇場版 魔法少女まどか☆マギカ 新編 叛逆の物語 Chibiぬい マスコット 暁美 ほむら【バンダイナムコヌイ】ボールチェーン付き キーチェーン</p>
           <p class="cmeta"><span class="price">1,540<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">逸品shopコレコレ</p>
@@ -560,10 +569,10 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew ishot hasimg" data-price="1540">
+      <li class="card isnew hasimg" data-price="1540">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/collecolle-teddy/cabinet/08274649/imgrc0128294071.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span><span class="chip-rel">7月発売</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-rel">7月発売</span></p>
           <p class="cname">【再販決定 ご予約 7月入荷予定】 劇場版 魔法少女まどか☆マギカ 新編 叛逆の物語 Chibiぬい マスコット 鹿目 まどか【バンダイナムコヌイ】ボールチェーン付き キーチェーン</p>
           <p class="cmeta"><span class="price">1,540<i>円</i></span><span class="fresh">⏱ 22時間前にキャッチ</span></p>
           <p class="cshop">逸品shopコレコレ</p>
@@ -587,7 +596,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p><strong>運営者:</strong> 予約開始レーダー運営 / 問い合わせ先は準備中です</p>
     <p>掲載内容に誤りがある場合や削除依頼がある場合は、上記連絡先からお知らせください。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../released/">✅発売済みまとめ</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月17日 12:38</p>
+    <p>最終更新: 2026年6月17日 13:09</p>
   </div>
 </footer>
 

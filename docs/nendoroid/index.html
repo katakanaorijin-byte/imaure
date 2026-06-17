@@ -44,13 +44,15 @@ body {
 }
 h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-serif; }
 
-/* ===== アプリバー ===== */
+
+/* ===== アプリバー(全ページ共通) ===== */
 .appbar { background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 16px 12px; }
 .appbar-in { max-width: 680px; margin: 0 auto; }
 .brandrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.brand { font-size: 21px; font-weight: 900; letter-spacing: 0.01em; }
+.brand { font-size: 21px; font-weight: 900; letter-spacing: 0.01em;
+  font-family: "Murecho", "Noto Sans JP", sans-serif; }
 .brand a { color: inherit; text-decoration: none; }
-.live { display: inline-flex; align-items: center; gap: 6px;
+.live { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto;
   font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap;
   font-variant-numeric: tabular-nums; }
 .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; }
@@ -59,11 +61,17 @@ h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-seri
 @keyframes ping { 0% { transform: scale(0.4); opacity: 0.7; } 70%, 100% { transform: scale(1); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .pulse::after { animation: none; } }
 .tag { max-width: 680px; margin: 3px auto 0; font-size: 12px; color: var(--muted); }
-.ad-label { font-size: 10.5px; color: var(--muted); text-align: center;
-  padding: 6px 12px 0; }
+.ad-label { font-size: 10.5px; color: var(--muted); text-align: center; padding: 6px 12px 0; }
 .demo-note { max-width: 680px; margin: 12px auto 0; padding: 10px 14px;
   background: #FFF6DB; border: 1px solid #E8C84A; border-radius: 12px;
   font-size: 12.5px; font-weight: 700; }
+@media (min-width: 860px) {
+  .appbar-in, .tag, .demo-note { max-width: 1100px; }
+}
+@media (prefers-color-scheme: dark) {
+  .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
+}
+
 
 /* ===== ピルレール(カテゴリ+新着数) ===== */
 .pills { position: sticky; top: 0; z-index: 20;
@@ -177,7 +185,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 
 /* ===== PC幅: 商品カード一覧をグリッド表示に(スマホは縦リストのまま) ===== */
 @media (min-width: 860px) {
-  .appbar-in, .tag, .demo-note, main, .toolbar, .foot-inner { max-width: 1100px; }
+  main, .toolbar, .foot-inner { max-width: 1100px; }
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 14px; }
   .card { grid-template-columns: 1fr; }
@@ -287,6 +295,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 .sugg li .tagh { font-size: 10.5px; font-weight: 700; color: var(--muted);
   border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; flex-shrink: 0; }
 .sugg li b { font-weight: 900; }
+
 </style>
 </head>
 <body>
@@ -294,7 +303,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>12:38 更新</span>
+      <span class="live"><i class="pulse"></i>13:09 更新</span>
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
@@ -383,7 +392,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">再販 ねんどろいど 文豪ストレイドッグス 中原中也 オランジュ・ルージュ フィギュア 【8月予約】</p>
-          <p class="cmeta"><span class="price">5,580<i>円</i></span><span class="fresh">⏱ 7分前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,580<i>円</i></span><span class="fresh">⏱ 38分前にキャッチ</span></p>
           <p class="cshop">でじたみん 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyf171585%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10320301%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -420,12 +429,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew hasimg" data-price="7566">
+      <li class="card isnew ishot hasimg" data-price="7566">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/185/4570232586185.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど マチカネタンホイザ [ウマ娘 プリティーダービー] 2412【再販】 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">7,566<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,566<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ぐるぐる王国 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pvcan.kgoda2aa.g00pvcan.kgodb575/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru2%2F4570232586185%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru2%2Fi%2F14236695%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -434,12 +443,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew hasimg" data-price="7664">
+      <li class="card isnew ishot hasimg" data-price="7664">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/597/4570232583597.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど アナイクス［崩壊：スターレイル］ 2969 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">7,664<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,664<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ぐるぐる王国 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pvcan.kgoda2aa.g00pvcan.kgodb575/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru2%2F4570232583597%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru2%2Fi%2F14236693%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -448,12 +457,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew hasimg" data-price="8918">
+      <li class="card isnew ishot hasimg" data-price="8918">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/970/4570232586970.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいどどーる ファイノン 列車巡遊Ver. [崩壊：スターレイル] 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">8,918<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">8,918<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ぐるぐる王国 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pvcan.kgoda2aa.g00pvcan.kgodb575/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru2%2F4570232586970%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru2%2Fi%2F14236698%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -462,12 +471,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew hasimg" data-price="7274">
+      <li class="card isnew ishot hasimg" data-price="7274">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/161/4570232586161.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ガッツ [TVアニメ「ベルセルク」] 2134【再販】 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">7,274<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">7,274<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ぐるぐる王国 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pvcan.kgoda2aa.g00pvcan.kgodb575/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru2%2F4570232586161%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru2%2Fi%2F14236694%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -481,7 +490,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 式波・アスカ・ラングレー [ヱヴァンゲリヲン新劇場版] 1202【二次再販】 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">5,221<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,221<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ぐるぐる王国 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pvcan.kgoda2aa.g00pvcan.kgodb575/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru2%2F4570232582149%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru2%2Fi%2F14236692%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -495,7 +504,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 綾波レイ [ヱヴァンゲリヲン新劇場版] 1197【二次再販】 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">5,221<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,221<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ぐるぐる王国 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pvcan.kgoda2aa.g00pvcan.kgodb575/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru2%2F4570232582132%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru2%2Fi%2F14236691%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -504,12 +513,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         </div>
       </li>
 
-      <li class="card isnew hasimg" data-price="9555">
+      <li class="card isnew ishot hasimg" data-price="9555">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru-ds/cabinet/970/4570232586970.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="cbody">
-          <p class="cchips"><span class="chip-new">NEW</span></p>
+          <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいどどーる ファイノン 列車巡遊Ver. [崩壊：スターレイル] 塗装済み可動フィギュア【予約】</p>
-          <p class="cmeta"><span class="price">9,555<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">9,555<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">ポプカル 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00r2din.kgoda8a0.g00r2din.kgodb3dc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fguruguru-ds%2F4570232586970%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fguruguru-ds%2Fi%2F13455034%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -523,7 +532,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 呪術廻戦 脹相（再販）[グッドスマイルカンパニー]【送料無料】《09月予約》</p>
-          <p class="cmeta"><span class="price">5,850<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,850<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-202258%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13027922%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -537,7 +546,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 呪術廻戦 宿儺（再販）[グッドスマイルカンパニー]【送料無料】《09月予約》</p>
-          <p class="cmeta"><span class="price">5,670<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,670<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-202257%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13027929%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -551,7 +560,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど 呪術廻戦 五条悟（再販）[グッドスマイルカンパニー]【送料無料】《09月予約》</p>
-          <p class="cmeta"><span class="price">5,670<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">5,670<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-202256%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13027918%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -565,7 +574,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
         <div class="cbody">
           <p class="cchips"><span class="chip-new">NEW</span><span class="chip-hot">注目</span></p>
           <p class="cname">ねんどろいど ドキドキ文芸部！ ユリ（再販）[グッドスマイルカンパニー]《12月予約》</p>
-          <p class="cmeta"><span class="price">6,210<i>円</i></span><span class="fresh">⏱ 8時間前にキャッチ</span></p>
+          <p class="cmeta"><span class="price">6,210<i>円</i></span><span class="fresh">⏱ 9時間前にキャッチ</span></p>
           <p class="cshop">あみあみ 楽天市場店</p>
           <div class="acts">
             <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-201708%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13022244%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
@@ -587,7 +596,7 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
     <p><strong>運営者:</strong> 予約開始レーダー運営 / 問い合わせ先は準備中です</p>
     <p>掲載内容に誤りがある場合や削除依頼がある場合は、上記連絡先からお知らせください。</p>
     <p><a href="../privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="../trend/">🔥急上昇トレンド</a> / <a href="../calendar/">📅発売カレンダー</a> / <a href="../released/">✅発売済みまとめ</a> / <a href="../pokemon-card/">ポケモンカード</a> / <a href="../onepiece-card/">ワンピースカード</a> / <a href="../yugioh/">遊戯王・他カード</a> / <a href="../figure/">フィギュア</a> / <a href="../nendoroid/">ねんどろいど・figma</a> / <a href="../gunpla/">ガンプラ・プラモデル</a> / <a href="../game/">ゲームソフト</a> / <a href="../anime-bd/">アニメBlu-ray・CD</a> / <a href="../tokusatsu/">特撮・なりきり玩具</a> / <a href="../train-model/">鉄道模型</a> / <a href="../tomica/">トミカ・ミニカー</a> / <a href="../plush/">ぬいぐるみ・グッズ</a></p>
-    <p>最終更新: 2026年6月17日 12:38</p>
+    <p>最終更新: 2026年6月17日 13:09</p>
   </div>
 </footer>
 
