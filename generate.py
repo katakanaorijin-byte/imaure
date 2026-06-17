@@ -949,7 +949,10 @@ def main():
         print("エラー: 商品を1件も取得できませんでした。", file=sys.stderr)
         sys.exit(1)
 
-    out_dir = os.path.join(HERE, "docs")
+    # APIキー未設定(デモ)時は本番の docs/ を上書きしないよう別フォルダに出力する
+    out_dir = os.path.join(HERE, "docs_preview" if demo else "docs")
+    if demo:
+        print(f"[情報] デモデータのため本番の docs/ には書き込まず {out_dir} に出力します。", file=sys.stderr)
     os.makedirs(out_dir, exist_ok=True)
 
     if not demo:  # デモデータで記録を汚さない
