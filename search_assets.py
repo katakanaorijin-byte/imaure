@@ -59,6 +59,19 @@ SEARCH_CSS = """
   font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
 @media (max-width: 560px) { .sr-row { grid-template-columns: 56px 1fr; }
   .sr-cta { grid-column: 2; justify-self: start; } .sr-row img { width: 56px; height: 56px; } }
+/* ===== PC幅: 検索結果をカードのグリッド表示に(スマホは縦リストのまま) ===== */
+@media (min-width: 860px) {
+  .search-inner { max-width: 1100px; }
+  .sresults { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px; background: none; border: none; border-radius: 0; }
+  .sresults:empty { display: none; }
+  .sr-row { grid-template-columns: 1fr; border: 1px solid var(--rule); border-radius: 14px;
+    background: var(--card); padding: 12px; align-items: stretch; }
+  .sr-row img, .sr-row > div:first-child { width: 100%; height: 150px; }
+  .sr-cta { width: 100%; text-align: center; margin-top: 4px; }
+  .sr-name { -webkit-line-clamp: 3; margin-top: 2px; }
+  .sr-empty { grid-column: 1 / -1; }
+}
 /* ===== 予測変換(サジェスト) ===== */
 .swrap { position: relative; flex: 1; min-width: 0; display: flex; }
 .swrap input[type=search] { width: 100%; }

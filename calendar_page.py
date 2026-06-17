@@ -13,6 +13,8 @@ import re
 from datetime import datetime, timezone, timedelta
 from html import escape
 
+from search_assets import SEARCH_CSS, SEARCH_HTML, SEARCH_JS
+
 JST = timezone(timedelta(hours=9))
 
 SUB_ORDER = {"": 0, "上旬": 1, "中旬": 2, "下旬": 3, "末": 3}
@@ -104,6 +106,16 @@ def build_calendar_page(out_dir, data, site_name, site_url, demo):
     desc = "ポケカ・フィギュア・ガンプラなど予約受付中アイテムの発売予定を月別に自動整理。月ごとの必要予算もわかります。"
     demo_note = ('<div class="demo-note">⚠ デモデータ表示中です。</div>' if demo else "")
 
+    search_cfg = {
+        "yahooAppId": os.environ.get("YAHOO_APP_ID", "").strip(),
+        "amazonTag": os.environ.get("AMAZON_PARTNER_TAG", "").strip(),
+        "dataUrl": "../data.json",
+        "searchApiUrl": os.environ.get("SEARCH_API_URL", "").strip(),
+    }
+    search_js = ('<script id="cross-search-script">'
+                 + SEARCH_JS.replace("__SEARCH_CONFIG__", json.dumps(search_cfg, ensure_ascii=False))
+                 + "</script>")
+
     html = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -181,6 +193,17 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 .foot-inner {{ max-width:780px; margin:0 auto; }}
 @media (max-width:560px) {{ .row {{ grid-template-columns:56px 1fr; }}
   .thumb img,.noimg {{ width:56px; height:56px; }} .cta {{ grid-column:2; justify-self:start; }} }}
+/* ===== PC幅: カード一覧をグリッド表示に ===== */
+@media (min-width:860px) {{
+  .head-inner, main, .foot-inner {{ max-width:1100px; }}
+  .list {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:14px; background:none; border:none; border-radius:0; }}
+  .row {{ grid-template-columns:1fr; border:1px solid var(--rule); border-radius:14px;
+    background:var(--card); border-bottom:1px solid var(--rule); align-items:stretch; }}
+  .thumb img, .noimg {{ width:100%; height:150px; }}
+  .cta {{ width:100%; text-align:center; margin-top:4px; }}
+  .iname {{ -webkit-line-clamp:3; }}
+}}
 @media (prefers-color-scheme: dark) {{
   :root {{ --paper:#F5F6F8; --ink:#14181F; --rule:#E7E9EF; --accent:#0BA678;
   --accent-bg:#E3F5EE; --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }}
@@ -190,6 +213,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
   .demo-note {{ background:#3A3210; border-color:#9A8410; color:#F4E9B0; }}
   .cta {{ color:#0E1117; }}
 }}
+{SEARCH_CSS}
 </style>
 </head>
 <body>
@@ -202,7 +226,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 </header>
 <div class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</div>
 {demo_note}
-
+{SEARCH_HTML}
 <nav class="tabs">
 {tabs}
 </nav>
@@ -217,6 +241,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
     <p><a href="../">← トップ(全カテゴリの新着予約)へ戻る</a> ・ <a href="../privacy/">プライバシーポリシー</a></p>
   </div>
 </footer>
+{search_js}
 </body>
 </html>
 """

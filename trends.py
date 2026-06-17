@@ -24,6 +24,8 @@ from collections import Counter
 from datetime import datetime, timezone, timedelta
 from html import escape
 
+from search_assets import SEARCH_CSS, SEARCH_HTML, SEARCH_JS
+
 JST = timezone(timedelta(hours=9))
 HERE = os.path.dirname(os.path.abspath(__file__))
 API_URL = "https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601"
@@ -327,7 +329,7 @@ def build_trend_page(out_dir, categories, site_name, site_url, demo,
     news_count = len(news_heads)
 
     news_chips = "\n".join(
-        f'<a class="chip" href="../?q={urllib.parse.quote(w)}">{escape(w)} <b>×{c}</b></a>'
+        f'<a class="chip" href="./?q={urllib.parse.quote(w)}">{escape(w)} <b>×{c}</b></a>'
         for w, c in news_words) or '<p class="empty">本日はニューストレンドを取得できませんでした(自動で再試行します)</p>'
     heads_html = "\n".join(
         f'<li class="nrow"><a href="{escape(h["link"], quote=True)}" target="_blank" rel="noopener">'
@@ -375,7 +377,7 @@ def build_trend_page(out_dir, categories, site_name, site_url, demo,
     cache_ts = f"・最終解析 {cache['ts']}" if cache.get("ts") else ""
 
     own_chips = "\n".join(
-        f'<a class="chip" href="../?q={urllib.parse.quote(w)}">{escape(w)} <b>×{c}</b></a>'
+        f'<a class="chip" href="./?q={urllib.parse.quote(w)}">{escape(w)} <b>×{c}</b></a>'
         for w, c, _ in own) or '<p class="empty">データ蓄積中です(新着予約が貯まると表示されます)</p>'
 
     rising_html = "\n".join(rising_blocks) or \
@@ -396,6 +398,16 @@ def build_trend_page(out_dir, categories, site_name, site_url, demo,
     desc = "ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。"
     demo_note = ('<div class="demo-note">⚠ デモデータ表示中です。本番運用が始まると実データに切り替わります。</div>'
                  if demo else "")
+
+    search_cfg = {
+        "yahooAppId": os.environ.get("YAHOO_APP_ID", "").strip(),
+        "amazonTag": os.environ.get("AMAZON_PARTNER_TAG", "").strip(),
+        "dataUrl": "../data.json",
+        "searchApiUrl": os.environ.get("SEARCH_API_URL", "").strip(),
+    }
+    search_js = ('<script id="cross-search-script">'
+                 + SEARCH_JS.replace("__SEARCH_CONFIG__", json.dumps(search_cfg, ensure_ascii=False))
+                 + "</script>")
 
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -483,6 +495,18 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 .foot-inner {{ max-width:780px; margin:0 auto; }}
 @media (max-width:560px) {{ .row {{ grid-template-columns:60px 1fr; }}
   .thumb img,.noimg {{ width:60px; height:60px; }} .cta {{ grid-column:2; justify-self:start; }} }}
+/* ===== PC幅: 関連商品をグリッド表示に ===== */
+@media (min-width:860px) {{
+  .head-inner, main, .foot-inner {{ max-width:1100px; }}
+  .list {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:14px; background:none; border:none; border-radius:0; }}
+  .row {{ grid-template-columns:1fr; border:1px solid var(--rule); border-radius:14px;
+    background:var(--card); border-bottom:1px solid var(--rule); align-items:stretch; }}
+  .thumb img, .noimg {{ width:100%; height:150px; }}
+  .cta {{ width:100%; text-align:center; margin-top:4px; }}
+  .iname {{ -webkit-line-clamp:3; }}
+}}
+{SEARCH_CSS}
 </style>
 </head>
 <body>
@@ -495,7 +519,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 </header>
 <div class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</div>
 {demo_note}
-
+{SEARCH_HTML}
 <nav class="tabs">
 {tabs}
 </nav>
@@ -529,6 +553,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
     <p><a href="../">← トップ(全カテゴリの新着予約)へ戻る</a> ・ <a href="../privacy/">プライバシーポリシー</a></p>
   </div>
 </footer>
+{search_js}
 </body>
 </html>
 """

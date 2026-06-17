@@ -705,6 +705,17 @@ footer {{ border-top: 1px solid var(--rule); background: var(--card);
   cursor: pointer; box-shadow: 0 4px 14px rgba(20, 24, 31, 0.16); display: none; }}
 #totop.show {{ display: block; }}
 
+/* ===== PC幅: 商品カード一覧をグリッド表示に(スマホは縦リストのまま) ===== */
+@media (min-width: 860px) {{
+  .appbar-in, .tag, .demo-note, main, .toolbar, .foot-inner {{ max-width: 1100px; }}
+  .cards {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px; }}
+  .card {{ grid-template-columns: 1fr; }}
+  .thumb img, .noimg {{ width: 100%; height: 160px; }}
+  .cname {{ -webkit-line-clamp: 3; }}
+  body.only-new .cards:not(:has(.card.isnew))::after {{ grid-column: 1 / -1; }}
+}}
+
 /* ===== ダークモード ===== */
 @media (prefers-color-scheme: dark) {{
   :root {{ --paper: #0E1117; --card: #171B24; --ink: #ECEEF3; --muted: #98A0B0;
