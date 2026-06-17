@@ -1,107 +1,67 @@
 # -*- coding: utf-8 -*-
 """
-発売日カレンダー自動生成(予約開始レーダー用)
+発売済み・販売中まとめページ自動生成(予約開始レーダー用)
 
-監視中の全予約商品の「発売時期」(商品名から抽出済み)を月別に整理し、
-docs/calendar/index.html を作ります。コレクターの「いつ・いくら必要か」が
-ひと目でわかるページです。generate.py から呼ばれます。
+商品名は「予約」のままでも、商品名から読み取った発売時期が過ぎている商品を
+カテゴリ別にまとめ、docs/released/index.html を作ります。
+予約中の商品一覧(各カテゴリページ・新着フィード)からはこれらを取り除き、
+「今すぐ買える」商品をここに集約します。generate.py から呼ばれます。
 """
 
-import json
 import os
-import re
 from datetime import datetime, timezone, timedelta
 from html import escape
 
 JST = timezone(timedelta(hours=9))
 
-SUB_ORDER = {"": 0, "上旬": 1, "中旬": 2, "下旬": 3, "末": 3}
-
-
-def parse_release_key(rel: str, now=None):
-    """「2026年8月下旬」「8月」「2026年10月31日」→ (並べ替えキー, 月ラベル, 詳細ラベル)"""
-    if not rel:
-        return None
-    now = now or datetime.now(JST)
-    m = re.match(r"(?:(20\d{2})年)?(\d{1,2})月(?:(\d{1,2})日?)?(上旬|中旬|下旬|末)?", rel)
-    if not m:
-        return None
-    month = int(m.group(2))
-    if not (1 <= month <= 12):
-        return None
-    year = int(m.group(1)) if m.group(1) else (now.year if month >= now.month else now.year + 1)
-    day = int(m.group(3)) if m.group(3) else None
-    sub = m.group(4) or ""
-    if day:
-        order = day
-        detail = f"{day}日"
-    else:
-        order = {0: 0, 1: 5, 2: 15, 3: 25}[SUB_ORDER[sub]]
-        detail = sub
-    return ((year, month, order), f"{year}年{month}月", detail)
-
 
 def _row(it, g):
     img = (f'<img src="{escape(it["image"], quote=True)}" alt="" loading="lazy">'
            if it.get("image") else '<div class="noimg">画像<br>なし</div>')
-    detail = f'<span class="when">{escape(it["_detail"])}</span>' if it.get("_detail") else ""
+    rel = f'<span class="when">{escape(it["release"])}発売</span>' if it.get("release") else ""
     return f"""
       <li class="row">
         <div class="thumb">{img}</div>
         <div class="meta">
           <p class="iname"><span class="cicon">{g["icon"]}</span>{escape(it["name"])}</p>
-          <p class="sub"><span class="price">{it['price']:,}<small>円</small></span> {detail}</p>
+          <p class="sub"><span class="price">{it['price']:,}<small>円</small></span> {rel}</p>
           <p class="shop">{escape(it.get("shop", ""))}</p>
         </div>
-        <a class="cta" href="{escape(it['url'], quote=True)}" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+        <a class="cta" href="{escape(it['url'], quote=True)}" target="_blank" rel="nofollow sponsored noopener">商品ページへ</a>
       </li>"""
 
 
-def build_calendar_page(out_dir, data, site_name, site_url, demo):
+def build_released_page(out_dir, data, site_name, site_url, demo):
     now = datetime.now(JST)
     updated = f"{now.year}年{now.month}月{now.day}日 {now.hour:02d}:{now.minute:02d}"
 
-    # 発売時期が読めた商品を (年, 月) ごとにまとめる
-    months = {}
-    for g in data:
-        for it in g["items"]:
-            parsed = parse_release_key(it.get("release", ""), now)
-            if not parsed:
-                continue
-            key, label, detail = parsed
-            entry = dict(it)
-            entry["_detail"] = detail
-            entry["_order"] = key[2]
-            months.setdefault((key[0], key[1]), {"label": label, "items": [], "g": {}})
-            months[(key[0], key[1])]["items"].append((entry, g))
-
     sections = []
     total = 0
-    for key in sorted(months):
-        blk = months[key]
-        blk["items"].sort(key=lambda x: x[0]["_order"])
-        rows = "\n".join(_row(it, g) for it, g in blk["items"])
-        budget = sum(it["price"] for it, _ in blk["items"])
-        total += len(blk["items"])
+    for g in data:
+        items = g.get("released_items") or []
+        if not items:
+            continue
+        total += len(items)
+        rows = "\n".join(_row(it, g) for it in items)
         sections.append(
-            f'<h2>{escape(blk["label"])}発売<span class="count">{len(blk["items"])}件'
-            f'・合計{budget:,}円</span></h2>\n<ol class="list">{rows}\n</ol>')
+            f'<h2>{g["icon"]} {escape(g["name"])}<span class="count">{len(items)}件</span></h2>\n'
+            f'<ol class="list">{rows}\n</ol>')
     sections_html = "\n".join(sections) or \
-        '<p class="empty">発売時期を読み取れた商品がまだありません(運用が進むと貯まります)</p>'
+        '<p class="empty">発売済み・販売中と判定された商品はまだありません(運用が進むと貯まります)</p>'
 
     tabs = ('<a class="tab tablink" href="../">🏠 すべて</a>\n'
             '<a class="tab tablink" href="../trend/">🔥 急上昇</a>\n'
-            '<a class="tab tablink active" href="./">📅 発売カレンダー</a>\n'
-            '<a class="tab tablink" href="../released/">✅ 発売済み</a>\n'
+            '<a class="tab tablink" href="../calendar/">📅 発売カレンダー</a>\n'
+            '<a class="tab tablink active" href="./">✅ 発売済み</a>\n'
             + "\n".join(f'<a class="tab tablink" href="../{g["slug"]}/">{g["icon"]} {escape(g["name"])}</a>'
                         for g in data))
     _ads = os.environ.get("ADSENSE_CLIENT", "").strip()
     adsense = (f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
                f'?client={escape(_ads, quote=True)}" crossorigin="anonymous"></script>') if _ads else ""
-    canonical = (f'<link rel="canonical" href="{escape(site_url + "calendar/", quote=True)}">'
+    canonical = (f'<link rel="canonical" href="{escape(site_url + "released/", quote=True)}">'
                  if site_url else "")
-    title = f"発売日カレンダー|{site_name}"
-    desc = "ポケカ・フィギュア・ガンプラなど予約受付中アイテムの発売予定を月別に自動整理。月ごとの必要予算もわかります。"
+    title = f"発売済み・販売中まとめ|{site_name}"
+    desc = "予約受付中だった商品のうち、発売時期を過ぎて発売済み・通常販売になったと思われる商品をまとめています。"
     demo_note = ('<div class="demo-note">⚠ デモデータ表示中です。</div>' if demo else "")
 
     html = f"""<!DOCTYPE html>
@@ -196,7 +156,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 <header>
   <div class="head-inner">
     <h1 class="logo"><a href="../">予約開始<span class="y">レーダー</span></a></h1>
-    <p class="pagename">📅 発売日カレンダー(予約受付中アイテムの発売予定)</p>
+    <p class="pagename">✅ 発売済み・販売中まとめ(予約期間が終わった商品)</p>
     <span class="updated">📅 {updated} 更新</span>
   </div>
 </header>
@@ -208,7 +168,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 </nav>
 
 <main>
-  <p class="lead">現在予約受付中の{total}件を発売月別に整理しました。「合計◯円」はその月の全部を買った場合の予算目安です。発売時期は商品名からの自動読み取りのため、必ずリンク先でご確認ください。</p>
+  <p class="lead">発売時期を過ぎ、発売済み・通常販売になったと思われる商品({total}件)をまとめました。商品名に「予約」が残っていても、出品者がタイトルを更新していないだけのことがあります。判定は商品名からの自動推定のため、必ずリンク先で在庫・価格をご確認ください。</p>
 {sections_html}
 </main>
 
@@ -220,8 +180,8 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 </body>
 </html>
 """
-    page_dir = os.path.join(out_dir, "calendar")
+    page_dir = os.path.join(out_dir, "released")
     os.makedirs(page_dir, exist_ok=True)
     with open(os.path.join(page_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"カレンダーページ生成: {total}件を{len(months)}か月分に整理")
+    print(f"発売済みページ生成: {total}件")

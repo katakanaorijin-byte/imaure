@@ -55,6 +55,8 @@ SEARCH_CSS = """
   border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
 .mall.rakuten { background: #FDEAEA; color: #BF0000; }
 .mall.yahoo { background: #EDEAFB; color: #5B21B6; }
+.reschip { display: inline-block; background: var(--new-bg); color: var(--new); font-weight: 700;
+  font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
 @media (max-width: 560px) { .sr-row { grid-template-columns: 56px 1fr; }
   .sr-cta { grid-column: 2; justify-self: start; } .sr-row img { width: 56px; height: 56px; } }
 /* ===== 予測変換(サジェスト) ===== */
@@ -174,6 +176,9 @@ SEARCH_JS = r"""
     return null;
   }
   function fmt(v) { return v < 100 ? v.toFixed(1) : Math.round(v).toLocaleString(); }
+  function isReservationItem(name) {
+    return /予約|発売予定|入荷予定|再販|受注|特典/.test(name || "");
+  }
 
   // ---- 還元率の保存(ブラウザに記憶) ----
   function loadRates() {
@@ -253,6 +258,20 @@ SEARCH_JS = r"""
     var rate = it.mall === "rakuten" ? +$("rate-rakuten").value : +$("rate-yahoo").value;
     return it.price * (1 - Math.min(Math.max(rate || 0, 0), 30) / 100);
   }
+  function baseComparator(mode) {
+    if (mode === "unit") {
+      return function (a, b) {
+        if (!!a.u !== !!b.u) return a.u ? -1 : 1;
+        if (a.u && b.u) {
+          if (a.u.unit !== b.u.unit) return a.u.unit < b.u.unit ? -1 : 1;
+          return a.price / a.u.qty - b.price / b.u.qty;
+        }
+        return a.price - b.price;
+      };
+    }
+    if (mode === "eff") return function (a, b) { return effPrice(a) - effPrice(b); };
+    return function (a, b) { return a.price - b.price; };
+  }
   function sortItems(items) {
     var mode = $("opt-sort").value;
     var min = $("opt-min").value !== "" ? +$("opt-min").value : null;
@@ -260,20 +279,13 @@ SEARCH_JS = r"""
     var arr = items.filter(function (it) {
       return (min == null || it.price >= min) && (max == null || it.price <= max);
     });
-    if (mode === "unit") {
-      arr.sort(function (a, b) {
-        if (!!a.u !== !!b.u) return a.u ? -1 : 1;
-        if (a.u && b.u) {
-          if (a.u.unit !== b.u.unit) return a.u.unit < b.u.unit ? -1 : 1;
-          return a.price / a.u.qty - b.price / b.u.qty;
-        }
-        return a.price - b.price;
-      });
-    } else if (mode === "eff") {
-      arr.sort(function (a, b) { return effPrice(a) - effPrice(b); });
-    } else {
-      arr.sort(function (a, b) { return a.price - b.price; });
-    }
+    var base = baseComparator(mode);
+    // 「予約開始レーダー」らしく、予約・発売予定の商品を常に上位に出す
+    arr.sort(function (a, b) {
+      var ar = isReservationItem(a.name), br = isReservationItem(b.name);
+      if (ar !== br) return ar ? -1 : 1;
+      return base(a, b);
+    });
     return arr;
   }
   function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
@@ -303,9 +315,10 @@ SEARCH_JS = r"""
       var eff = (rate > 0 && $("opt-sort").value === "eff") ?
         '<span class="sr-eff">実質' + Math.round(effPrice(it)).toLocaleString() + "円</span>" : "";
       var ship = it.free ? "送料無料" : "送料別の場合あり";
+      var resChip = isReservationItem(it.name) ? '<span class="reschip">予約</span>' : "";
       li.innerHTML =
         (it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy">' : "<div></div>") +
-        '<div><p class="sr-name"><span class="mall ' + it.mall + '">' +
+        '<div><p class="sr-name">' + resChip + '<span class="mall ' + it.mall + '">' +
         (it.mall === "rakuten" ? "楽天" : "Yahoo!") + "</span>" + esc(it.name) + "</p>" +
         '<p class="sr-sub"><span class="sr-price">' + it.price.toLocaleString() + "円</span>" + eff + unitChip +
         ' <span style="color:var(--muted)">・' + ship + '</span></p>' +

@@ -33,6 +33,8 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from html import escape
 
+import calendar_page
+
 from search_assets import SEARCH_CSS, SEARCH_HTML, SEARCH_JS
 
 # ============================================================
@@ -156,6 +158,16 @@ def ago_text(ts: str) -> str:
     if mins < 24 * 60:
         return f"{mins // 60}時間前"
     return f"{d.month}/{d.day}掲載"
+
+
+def is_released_item(it, now) -> bool:
+    """商品名から読み取った発売時期が今日より前なら「発売済み」とみなす
+    (商品名に「予約」が残っていても、出品者がタイトルを更新していないだけで
+    実際は発売済み・通常販売になっていることが多いため)"""
+    parsed = calendar_page.parse_release_key(it.get("release", ""), now)
+    if not parsed:
+        return False  # 発売時期が読み取れない場合は安全側で「予約中」に残す
+    return parsed[0] < (now.year, now.month, now.day)
 
 
 # ============================================================
@@ -299,6 +311,7 @@ def collect_data():
             it["first_seen"] = first_seen
             it["is_new"] = is_recent(first_seen, hours=24) and not first_run and not demo
             it["hot"] = any(w in it["name"] for w in hot_words)
+            it["released"] = is_released_item(it, now)
 
         if first_run and not demo:
             first_run_cats.append(cat["name"])
@@ -307,14 +320,18 @@ def collect_data():
         items.sort(key=lambda x: (not x["is_new"], x["first_seen"]), reverse=False)
         items.sort(key=lambda x: x["first_seen"], reverse=True)
         items.sort(key=lambda x: not x["is_new"])
-        items = items[:ITEMS_PER_CATEGORY]
+
+        # 発売時期が過ぎた商品(タイトルは「予約」のままでも実質発売済み)は別ページへ
+        active_items = [it for it in items if not it["released"]][:ITEMS_PER_CATEGORY]
+        released_items = [it for it in items if it["released"]][:ITEMS_PER_CATEGORY]
 
         # 古い記録を掃除
         for code in [c for c, d in cat_seen.items() if d[:10] < cutoff]:
             del cat_seen[code]
 
-        if items:
-            result.append({**cat, "items": items, "new_count": sum(1 for i in items if i["is_new"])})
+        if active_items or released_items:
+            result.append({**cat, "items": active_items, "released_items": released_items,
+                            "new_count": sum(1 for i in active_items if i["is_new"])})
         else:
             print(f"[警告] {cat['name']}: 商品なし(今回はスキップ)", file=sys.stderr)
 
@@ -424,6 +441,7 @@ def build_html(data, demo, single=None):
         tabs = (f'      <a class="pill plink" href="{prefix}">🏠 すべて</a>\n'
                 f'      <a class="pill plink" href="{prefix}trend/">🔥 急上昇</a>\n'
                 f'      <a class="pill plink" href="{prefix}calendar/">📅 発売カレンダー</a>\n'
+                f'      <a class="pill plink" href="{prefix}released/">✅ 発売済み</a>\n'
                 + "\n".join(
             f'      <a class="pill plink{" on" if g["slug"] == single["slug"] else ""}" '
             f'href="{prefix}{g["slug"]}/">{g["icon"]} {escape(g["name"])}</a>'
@@ -436,6 +454,7 @@ def build_html(data, demo, single=None):
                 f'🆕 新着フィード{f"<b class=cnt>{total_new}</b>" if total_new else ""}</button>\n'
                 '      <a class="pill plink" href="trend/">🔥 急上昇</a>\n'
                 '      <a class="pill plink" href="calendar/">📅 発売カレンダー</a>\n'
+                '      <a class="pill plink" href="released/">✅ 発売済み</a>\n'
                 + "\n".join(
             f'      <button class="pill" role="tab" '
             f'data-target="panel-{re.sub(r"\W", "", g["name"])}">'
@@ -462,6 +481,7 @@ def build_html(data, demo, single=None):
                 '<p><strong>ページ一覧:</strong> '
                 + f'<a href="{prefix}trend/">🔥急上昇トレンド</a> / '
                 + f'<a href="{prefix}calendar/">📅発売カレンダー</a> / '
+                + f'<a href="{prefix}released/">✅発売済みまとめ</a> / '
                 + " / ".join(f'<a href="{prefix}{g["slug"]}/">{escape(g["name"])}</a>' for g in data)
                 + "</p>")
 
@@ -971,7 +991,7 @@ def main():
     # sitemap.xml と robots.txt(SITE_URLを設定すると検索エンジンに全ページを案内できる)
     today = datetime.now(JST).strftime("%Y-%m-%d")
     if SITE_URL:
-        urls = ([SITE_URL, f"{SITE_URL}trend/", f"{SITE_URL}calendar/", f"{SITE_URL}privacy/"]
+        urls = ([SITE_URL, f"{SITE_URL}trend/", f"{SITE_URL}calendar/", f"{SITE_URL}released/", f"{SITE_URL}privacy/"]
                 + [f"{SITE_URL}{g['slug']}/" for g in data])
         sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'
               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -995,10 +1015,16 @@ def main():
 
     # 発売日カレンダー。失敗してもサイト本体は止めない
     try:
-        import calendar_page
         calendar_page.build_calendar_page(out_dir, data, SITE_NAME, SITE_URL, demo)
     except Exception as e:
         print(f"[警告] カレンダー生成に失敗(本体には影響なし): {e}", file=sys.stderr)
+
+    # 発売済み・販売中まとめページ。失敗してもサイト本体は止めない
+    try:
+        import released_page
+        released_page.build_released_page(out_dir, data, SITE_NAME, SITE_URL, demo)
+    except Exception as e:
+        print(f"[警告] 発売済みページ生成に失敗(本体には影響なし): {e}", file=sys.stderr)
 
     # トレンドページ(自前頻度解析+Google Trends)。失敗してもサイト本体は止めない
     try:

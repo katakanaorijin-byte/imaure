@@ -384,6 +384,7 @@ def build_trend_page(out_dir, categories, site_name, site_url, demo,
     tabs = ('<a class="tab tablink" href="../">🏠 すべて</a>\n'
             '<a class="tab tablink active" href="./">🔥 急上昇</a>\n'
             '<a class="tab tablink" href="../calendar/">📅 発売カレンダー</a>\n'
+            '<a class="tab tablink" href="../released/">✅ 発売済み</a>\n'
             + "\n".join(f'<a class="tab tablink" href="../{g["slug"]}/">{g["icon"]} {escape(g["name"])}</a>'
                         for g in categories))
     _ads = os.environ.get("ADSENSE_CLIENT", "").strip()
