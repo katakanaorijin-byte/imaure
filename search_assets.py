@@ -85,7 +85,7 @@ SEARCH_HTML = """
     </form>
     <div class="sopts">
       <label><input type="checkbox" id="opt-free" checked> 送料無料のみ</label>
-      <label title="楽天市場の全商品ではなく、このサイトが検知した商品の中から探します"><input type="checkbox" id="opt-rakuten" checked> 楽天(検知済み商品)</label>
+      <label id="rakuten-label" title="楽天市場の全商品ではなく、このサイトが検知した商品の中から探します"><input type="checkbox" id="opt-rakuten" checked> <span id="rakuten-label-text">楽天(検知済み商品)</span></label>
       <label><input type="checkbox" id="opt-yahoo" checked> Yahoo!</label>
       <label>並び替え
         <select id="opt-sort">
@@ -117,11 +117,13 @@ SEARCH_JS = r"""
   var CFG = __SEARCH_CONFIG__;
   function $(id) { return document.getElementById(id); }
   var state = { items: [] };
+  // searchApiUrl(中継Worker)が設定されていれば、楽天もYahoo!もWorker経由で全件検索する。
+  // 未設定の場合は、楽天はaccessKeyをブラウザに出せないためサイト内検知済み商品のみ、
+  // Yahoo!はyahooAppIdがあればブラウザから直接検索する(従来どおりのフォールバック)。
+  var useRemote = !!CFG.searchApiUrl;
 
   // ---- 見た目とAPI設定のズレを防ぐ: 未設定のモールはチェックボックスを無効化して明示する ----
-  // (楽天はaccessKeyが必須でブラウザに出せないため、ブラウザからの全商品検索は行わない。
-  //  サイト内検知済み商品のみ検索し、それ以外は楽天市場の検索リンクへ案内する)
-  if (!CFG.yahooAppId) {
+  if (!useRemote && !CFG.yahooAppId) {
     var yCb = $("opt-yahoo");
     if (yCb) {
       yCb.checked = false;
@@ -129,6 +131,12 @@ SEARCH_JS = r"""
       var yLabel = yCb.closest("label");
       if (yLabel) yLabel.title = "Yahoo!のアプリケーションIDが未設定のため、現在Yahoo!検索は利用できません";
     }
+  }
+  if (useRemote) {
+    var rLabel = $("rakuten-label"), rText = $("rakuten-label-text"), sq0 = $("sq");
+    if (rLabel) rLabel.removeAttribute("title");
+    if (rText) rText.textContent = "楽天";
+    if (sq0) sq0.placeholder = "商品名で楽天とYahoo!をまとめて検索(例: ねんどろいど)";
   }
 
   // ---- 単価の自動判定(サイト本体と同じ考え方のJS版) ----
@@ -210,6 +218,18 @@ SEARCH_JS = r"""
   function getJSON(url) {
     return fetch(url).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); });
   }
+  function searchRemote(q, freeOnly) {
+    if (!CFG.searchApiUrl) return Promise.resolve([]);
+    var p = new URLSearchParams({ q: q });
+    if (freeOnly) p.set("free", "1");
+    var url = CFG.searchApiUrl.replace(/\/+$/, "") + "?" + p;
+    return getJSON(url).then(function (d) {
+      return (d.items || []).map(function (it) {
+        return { mall: it.mall === "yahoo" ? "yahoo" : "rakuten", name: it.name || "", price: +it.price || 0,
+          url: it.url || "", image: it.image || "", shop: it.shop || "", free: !!it.free };
+      });
+    });
+  }
   function searchYahoo(q, freeOnly) {
     if (!CFG.yahooAppId) return Promise.resolve([]);
     var p = new URLSearchParams({ appid: CFG.yahooAppId, query: q,
@@ -265,7 +285,7 @@ SEARCH_JS = r"""
       var ap = new URLSearchParams({ k: state.query });
       if (CFG.amazonTag) ap.set("tag", CFG.amazonTag);
       ol.innerHTML =
-        '<li class="sr-empty">検知済み商品には見つかりませんでした。' +
+        '<li class="sr-empty">' + (useRemote ? "見つかりませんでした。" : "検知済み商品には見つかりませんでした。") +
         '<br><br><a class="sr-cta" href="https://search.rakuten.co.jp/search/mall?' + rp.toString() +
         '" target="_blank" rel="nofollow sponsored noopener">楽天市場で検索</a> ' +
         '<a class="sr-cta" href="https://www.amazon.co.jp/s?' + ap.toString() +
@@ -306,11 +326,13 @@ SEARCH_JS = r"""
     $("sstatus").textContent = "検索中…"; $("sresults").innerHTML = "";
     Promise.allSettled([
       useR ? searchLocal(q) : Promise.resolve([]),
-      useY ? searchYahoo(q, freeOnly) : Promise.resolve([]),
+      useRemote ? searchRemote(q, freeOnly) : (useY ? searchYahoo(q, freeOnly) : Promise.resolve([])),
     ]).then(function (rs) {
       var items = [], fails = [], seen = {};
       function addRows(rows) {
         (rows || []).forEach(function (it) {
+          if (it.mall === "rakuten" && !useR) return;
+          if (it.mall === "yahoo" && !useY) return;
           var key = (it.url || it.mall + ":" + it.name).split("?")[0];
           if (key && !seen[key]) { seen[key] = 1; items.push(it); }
         });
@@ -318,12 +340,16 @@ SEARCH_JS = r"""
       if (rs[0].status === "fulfilled") addRows(rs[0].value);
       else if (useR) fails.push("サイト内データ");
       if (rs[1].status === "fulfilled") addRows(rs[1].value);
+      else if (useRemote) fails.push("検索API");
       else if (useY) fails.push("Yahoo!");
       items.forEach(function (it) { it.u = detectUnit(it.name); });
       state.items = items;
       var msg = esc(items.length + "件ヒット");
       if (fails.length) msg += esc("(" + fails.join("・") + "は取得できませんでした)");
-      if (!items.length && !fails.length) msg = esc("検知済み商品には見つかりませんでした。外部検索も確認できます。");
+      if (!items.length && !fails.length) {
+        msg = useRemote ? esc("見つかりませんでした。外部検索も確認できます。")
+                         : esc("検知済み商品には見つかりませんでした。外部検索も確認できます。");
+      }
       var ap = new URLSearchParams({ k: q });
       if (CFG.amazonTag) ap.set("tag", CFG.amazonTag);
       var rp = new URLSearchParams({ sitem: q });

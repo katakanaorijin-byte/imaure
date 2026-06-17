@@ -14,9 +14,11 @@
 
 【注意】RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY はサーバー側の商品巡回専用です(ブラウザには出ません)。
 楽天の現行APIはこの2つをセットで要求するため、accessKeyを安全に置けないブラウザから
-楽天市場の全商品を直接検索することはできません。横断検索バーは「サイト内で検知済みの商品」
-だけを検索し、それ以外は楽天市場の検索リンクへ案内します。
-YAHOO_APP_ID を設定するとYahoo!ショッピングは検索バーから直接(全件)検索できます。
+楽天市場の全商品を直接検索することはできません。
+SEARCH_API_URL(別途用意するCloudflare Workers等の中継API。worker/ディレクトリ参照)を設定すると、
+横断検索バーが中継APIを通じて楽天・Yahoo!の全商品を検索できるようになります。
+未設定の場合は、横断検索バーは「サイト内で検知済みの商品」だけを検索し、それ以外は
+楽天市場の検索リンクへ案内します(YAHOO_APP_ID があればYahoo!だけは直接全件検索できます)。
 """
 
 import json
@@ -497,6 +499,7 @@ def build_html(data, demo, single=None):
         "yahooAppId": os.environ.get("YAHOO_APP_ID", "").strip(),
         "amazonTag": AMAZON_TAG,
         "dataUrl": f"{prefix}data.json",
+        "searchApiUrl": os.environ.get("SEARCH_API_URL", "").strip(),
     }
     search_js = ('<script id="cross-search-script">'
                  + SEARCH_JS.replace("__SEARCH_CONFIG__", json.dumps(cfg, ensure_ascii=False))

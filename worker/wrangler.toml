@@ -1,0 +1,10 @@
+name = "yoyaku-radar-search"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+# Secretsはここに書かない。デプロイ後にCLIで設定する:
+#   wrangler secret put RAKUTEN_APP_ID
+#   wrangler secret put RAKUTEN_ACCESS_KEY
+#   wrangler secret put RAKUTEN_AFFILIATE_ID   (任意)
+#   wrangler secret put YAHOO_APP_ID           (任意。無いとYahoo!は空で返る)
+#   wrangler secret put ALLOWED_ORIGIN         (任意。未設定なら "*")

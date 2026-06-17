@@ -5,10 +5,11 @@
 | 機能 | 設定しないと | 設定すると |
 |---|---|---|
 | Yahoo!ショッピング連携 | 楽天だけで動く(問題なし) | 毎日の底値リストと検索が**2モール横断**になる |
-| 横断検索バー | キー未設定だと案内文を表示 | 検知済み商品+Yahoo!の**全件検索**ができる |
+| 横断検索バー | キー未設定だと検知済み商品のみ検索 | 検知済み商品+Yahoo!の**全件検索**ができる |
+| 中継API(Cloudflare Workers) | 楽天は検知済み商品のみ検索 | 楽天市場・Yahoo!ショッピングの**全商品**を横断検索バーから検索できる |
 | Yahoo!リンクの収益化 | Yahoo!リンクは報酬なし | ValueCommerce経由で**Yahoo!でも紹介料**が入る |
 
-> ℹ️ 楽天の現行APIは`accessKey`(秘密情報)が必須のため、ブラウザから楽天の全商品を直接検索することはできません。横断検索バーの「楽天」は**サイトが検知済みの商品の中だけ**を探し、それ以外は「楽天市場で検索」リンクに案内する仕組みです。Yahoo!だけは別のAPIキーで全件検索に対応できます。
+> ℹ️ 楽天の現行APIは`accessKey`(秘密情報)が必須のため、ブラウザから楽天の全商品を直接検索することはできません。横断検索バーの「楽天」は標準では**サイトが検知済みの商品の中だけ**を探し、それ以外は「楽天市場で検索」リンクに案内します。`SEARCH_API_URL`(パートA')を設定すると、楽天もYahoo!も全商品を横断検索バーから検索できるようになります。
 
 どれも後回しにできます。**楽天だけでもサイトは完全に動きます。**
 
@@ -38,11 +39,51 @@ Yahoo!のAPIキー(Client ID)を1つ取るだけです。
 
 ---
 
-## パートA':なぜ楽天は検索バーから「全商品」を直接検索できないのか
+## パートA':楽天市場・Yahoo!の全商品を横断検索バーで検索できるようにする(Cloudflare Workers・無料・約20分)
 
 `RAKUTEN_APP_ID`/`RAKUTEN_ACCESS_KEY`(説明書①参照)は**毎日の自動巡回専用**です。楽天の現行APIは`applicationId`と`accessKey`をセットで要求する仕様のため、`accessKey`を安全に置けないブラウザから楽天の商品検索APIを直接叩くことができません(`accessKey`をページに埋め込んだ瞬間、誰でも見えてしまうため)。
 
-そのため横断検索バーの「楽天」は**サイトが検知済みの商品の中だけ**を探す仕様にしています。検知済み商品に無い場合は、検索結果の下に出る「**楽天市場で検索 →**」リンクから楽天市場本体の検索結果に進めます。Yahoo!ショッピングは別のAPI(`YAHOO_APP_ID`、パートA参照)で全件検索に対応できます。
+これを解決するため、`accessKey`を安全に保管できる小さな中継サーバー(**Cloudflare Workers**、無料枠で十分動きます)を1つ用意します。設定しなくてもサイトは問題なく動きます(楽天は検知済み商品のみの検索になります)。
+
+### A'-1. Cloudflare Workersをデプロイする
+
+このフォルダの `worker/` ディレクトリに中継API一式が入っています。
+
+1. **Cloudflareアカウント**(dash.cloudflare.com)を無料登録
+2. パソコンに **Node.js** をインストール済みなら、`worker/` フォルダで以下を実行:
+   ```
+   cd worker
+   npm install
+   npx wrangler login        ← ブラウザが開くのでCloudflareでログイン
+   npx wrangler deploy       ← デプロイ実行
+   ```
+3. デプロイが終わると `https://yoyaku-radar-search.あなたのサブドメイン.workers.dev` のようなURLが表示されます。これがあなたの**中継APIのURL**です(末尾に何も付けない状態でメモ)
+
+### A'-2. Cloudflare Workersに秘密のキーを設定する
+
+`accessKey`はここにだけ保存します(GitHub・ブラウザには出ません)。`worker/` フォルダで:
+
+```
+npx wrangler secret put RAKUTEN_APP_ID
+npx wrangler secret put RAKUTEN_ACCESS_KEY
+npx wrangler secret put RAKUTEN_AFFILIATE_ID
+npx wrangler secret put YAHOO_APP_ID
+```
+
+それぞれ実行すると値の入力を求められるので、説明書①・パートAでメモした値を貼り付けます(`RAKUTEN_AFFILIATE_ID`・`YAHOO_APP_ID`は持っていれば)。
+
+### A'-3. GitHubに中継APIのURLを登録する
+
+1. GitHubのリポジトリ →「Settings」→「Secrets and variables」→「Actions」
+2. 「New repository secret」で登録:
+
+| Name(この通り正確に) | Secret |
+|---|---|
+| `SEARCH_API_URL` | A'-1でメモした中継APIのURL + `/search`(例: `https://yoyaku-radar-search.xxx.workers.dev/search`) |
+
+3. 「Actions」タブから「Run workflow」で再生成すると、横断検索バーの「楽天(検知済み商品)」表記が「楽天」に変わり、商品名で検索すると**楽天市場・Yahoo!ショッピングの全商品**がヒットするようになります
+
+> 💡 ローカルで検索バーの見た目だけ確認・修正したい場合は、`SEARCH_API_URL` を環境変数に入れて `python sync_search_widget.py` を実行すると、APIキー不要でこのURLだけをページに反映できます。
 
 ---
 
@@ -97,8 +138,9 @@ python sync_search_widget.py
 
 | 症状 | 対処 |
 |---|---|
-| 検索バーの「Yahoo!」チェックがグレーで押せない | `YAHOO_APP_ID` が未設定です(意図した挙動)。パートAの手順で設定して再生成すると有効になります |
-| 検索で「Yahoo!は取得できませんでした」(チェックは押せる状態) | Client IDの貼り間違いか、一時的なAPI不調です。Secretを確認 → サイト再生成 |
+| 検索バーで楽天が「検知済み商品」しか出ない | 仕様です。`SEARCH_API_URL`(パートA')を設定すると楽天市場の全商品も検索できるようになります |
+| 検索バーの「Yahoo!」チェックがグレーで押せない | `YAHOO_APP_ID`・`SEARCH_API_URL`のどちらも未設定です(意図した挙動)。パートA/A'の手順で設定して再生成すると有効になります |
+| 検索で「検索API」または「Yahoo!は取得できませんでした」(チェックは押せる状態) | `SEARCH_API_URL`/Client IDの貼り間違いか、一時的なAPI不調です。Secretを確認 → サイト再生成。Workerの場合はCloudflareダッシュボードのログも確認できます |
 | Yahoo!の商品が底値リストに出ない | そのカテゴリで「送料無料」の商品が見つからなかっただけの場合があります(異常ではない) |
 | 検索結果が0件 | 「米10kg」→「米 10kg」のように**スペース区切り**にすると改善します |
 | Amazonは? | 下の「パートF」を参照。段階的に対応できます |
