@@ -15,6 +15,7 @@ SEARCH_CSS = """
 .sopts { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
   margin-top: 8px; font-size: 12px; color: var(--ink); }
 .sopts label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+.sopts label:has(input:disabled) { opacity: .55; cursor: not-allowed; }
 .sopts select { font: inherit; font-size: 12px; padding: 2px 4px; border: 1px solid var(--rule); border-radius: 5px; }
 .sprice input { width: 76px; font: inherit; font-size: 12px; padding: 3px 6px;
   border: 1px solid var(--rule); border-radius: 5px; background: var(--card); color: var(--ink); }
@@ -77,14 +78,14 @@ SEARCH_HTML = """
   <div class="search-inner">
     <form class="sbar" id="sform" autocomplete="off">
       <div class="swrap">
-        <input type="search" id="sq" placeholder="商品名で楽天とYahoo!をまとめて検索(例: ねんどろいど)" aria-label="商品検索" role="combobox" aria-expanded="false" aria-controls="sugg">
+        <input type="search" id="sq" placeholder="商品名で検索(楽天は検知済み商品/Yahoo!は全件、例: ねんどろいど)" aria-label="商品検索" role="combobox" aria-expanded="false" aria-controls="sugg">
         <ul class="sugg" id="sugg" role="listbox"></ul>
       </div>
       <button type="submit">検索</button>
     </form>
     <div class="sopts">
       <label><input type="checkbox" id="opt-free" checked> 送料無料のみ</label>
-      <label><input type="checkbox" id="opt-rakuten" checked> 楽天</label>
+      <label title="楽天市場の全商品ではなく、このサイトが検知した商品の中から探します"><input type="checkbox" id="opt-rakuten" checked> 楽天(検知済み商品)</label>
       <label><input type="checkbox" id="opt-yahoo" checked> Yahoo!</label>
       <label>並び替え
         <select id="opt-sort">
@@ -116,6 +117,19 @@ SEARCH_JS = r"""
   var CFG = __SEARCH_CONFIG__;
   function $(id) { return document.getElementById(id); }
   var state = { items: [] };
+
+  // ---- 見た目とAPI設定のズレを防ぐ: 未設定のモールはチェックボックスを無効化して明示する ----
+  // (楽天はaccessKeyが必須でブラウザに出せないため、ブラウザからの全商品検索は行わない。
+  //  サイト内検知済み商品のみ検索し、それ以外は楽天市場の検索リンクへ案内する)
+  if (!CFG.yahooAppId) {
+    var yCb = $("opt-yahoo");
+    if (yCb) {
+      yCb.checked = false;
+      yCb.disabled = true;
+      var yLabel = yCb.closest("label");
+      if (yLabel) yLabel.title = "Yahoo!のアプリケーションIDが未設定のため、現在Yahoo!検索は利用できません";
+    }
+  }
 
   // ---- 単価の自動判定(サイト本体と同じ考え方のJS版) ----
   function norm(s) {
@@ -246,6 +260,18 @@ SEARCH_JS = r"""
   function render() {
     var items = sortItems(state.items).slice(0, 30);
     var ol = $("sresults"); ol.innerHTML = "";
+    if (!items.length && state.query) {
+      var rp = new URLSearchParams({ sitem: state.query });
+      var ap = new URLSearchParams({ k: state.query });
+      if (CFG.amazonTag) ap.set("tag", CFG.amazonTag);
+      ol.innerHTML =
+        '<li class="sr-empty">検知済み商品には見つかりませんでした。' +
+        '<br><br><a class="sr-cta" href="https://search.rakuten.co.jp/search/mall?' + rp.toString() +
+        '" target="_blank" rel="nofollow sponsored noopener">楽天市場で検索</a> ' +
+        '<a class="sr-cta" href="https://www.amazon.co.jp/s?' + ap.toString() +
+        '" target="_blank" rel="nofollow sponsored noopener">Amazonで検索</a></li>';
+      return;
+    }
     if (!items.length && state.items.length) {
       ol.innerHTML = '<li class="sr-empty">価格条件に合う商品がありません。</li>';
       return;
@@ -273,6 +299,7 @@ SEARCH_JS = r"""
     if (ev) ev.preventDefault();
     var q = $("sq").value.trim();
     if (!q) return;
+    state.query = q;
     saveHist(q); hideSugg();
     var freeOnly = $("opt-free").checked;
     var useR = $("opt-rakuten").checked, useY = $("opt-yahoo").checked;
@@ -281,10 +308,16 @@ SEARCH_JS = r"""
       useR ? searchLocal(q) : Promise.resolve([]),
       useY ? searchYahoo(q, freeOnly) : Promise.resolve([]),
     ]).then(function (rs) {
-      var items = [], fails = [];
-      if (rs[0].status === "fulfilled") items = items.concat(rs[0].value);
+      var items = [], fails = [], seen = {};
+      function addRows(rows) {
+        (rows || []).forEach(function (it) {
+          var key = (it.url || it.mall + ":" + it.name).split("?")[0];
+          if (key && !seen[key]) { seen[key] = 1; items.push(it); }
+        });
+      }
+      if (rs[0].status === "fulfilled") addRows(rs[0].value);
       else if (useR) fails.push("サイト内データ");
-      if (rs[1].status === "fulfilled") items = items.concat(rs[1].value);
+      if (rs[1].status === "fulfilled") addRows(rs[1].value);
       else if (useY) fails.push("Yahoo!");
       items.forEach(function (it) { it.u = detectUnit(it.name); });
       state.items = items;

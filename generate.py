@@ -8,9 +8,15 @@
 横断検索バー(楽天+Yahoo!)は search_assets.py から読み込みます。
 
 使い方:
-  RAKUTEN_APP_ID と RAKUTEN_AFFILIATE_ID を環境変数に入れて実行
+  RAKUTEN_APP_ID と RAKUTEN_ACCESS_KEY と RAKUTEN_AFFILIATE_ID を環境変数に入れて実行
     python generate.py
   未設定ならデモデータで生成します(見た目確認用)。
+
+【注意】RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY はサーバー側の商品巡回専用です(ブラウザには出ません)。
+楽天の現行APIはこの2つをセットで要求するため、accessKeyを安全に置けないブラウザから
+楽天市場の全商品を直接検索することはできません。横断検索バーは「サイト内で検知済みの商品」
+だけを検索し、それ以外は楽天市場の検索リンクへ案内します。
+YAHOO_APP_ID を設定するとYahoo!ショッピングは検索バーから直接(全件)検索できます。
 """
 
 import json
@@ -59,6 +65,7 @@ CATEGORIES = [
     {"name": "ガンプラ・プラモデル", "icon": "🤖", "slug": "gunpla", "tag": "#ガンプラ", "keyword": "ガンプラ 予約",
      "ng": "中古 ジャンク 素組 完成品", "min_price": 1500},
     {"name": "ゲームソフト", "icon": "🎮", "slug": "game", "tag": "#ゲーム", "keyword": "ゲームソフト 予約 特典",
+     "keywords": ["スプラトゥーン 予約", "Splatoon 予約", "amiibo 予約", "Switch2 ソフト 予約", "任天堂 Switch 予約"],
      "ng": "中古 レンタル", "min_price": 3000},
     {"name": "アニメBlu-ray・CD", "icon": "💿", "slug": "anime-bd", "tag": "#アニメ", "keyword": "アニメ Blu-ray 予約 特典",
      "ng": "中古 レンタル落ち", "min_price": 3500},
@@ -156,64 +163,66 @@ def ago_text(ts: str) -> str:
 def fetch_rakuten(app_id, access_key, affiliate_id, cat, pages=FETCH_PAGES):
     """楽天検索APIを新着順で叩き、「予約」商品だけ集める"""
     items, seen_codes = [], set()
-    for page in range(1, pages + 1):
-        params = {
-            "applicationId": app_id, "accessKey": access_key, "format": "json", "formatVersion": 2,
-            "keyword": cat["keyword"], "NGKeyword": cat["ng"],
-            "hits": 30, "page": page,
-            "sort": "-updateTimestamp",  # 新着・更新が新しい順
-            "availability": 1, "minPrice": cat["min_price"],
-        }
-        if affiliate_id:
-            params["affiliateId"] = affiliate_id
-        url = API_URL + "?" + urllib.parse.urlencode(params)
-        headers = {"User-Agent": "yoyaku-radar-generator"}
-        if SITE_URL:
-            headers["Referer"] = SITE_URL
-            headers["Referrer"] = SITE_URL
-            headers["Origin"] = SITE_URL.rstrip("/")
-        req = urllib.request.Request(url, headers=headers)
-        try:
-            with urllib.request.urlopen(req, timeout=30) as res:
-                data = json.loads(res.read().decode("utf-8"))
-        except urllib.error.HTTPError as e:
+    keywords = list(dict.fromkeys([cat["keyword"]] + cat.get("keywords", [])))
+    for keyword in keywords:
+        for page in range(1, pages + 1):
+            params = {
+                "applicationId": app_id, "accessKey": access_key, "format": "json", "formatVersion": 2,
+                "keyword": keyword, "NGKeyword": cat["ng"],
+                "hits": 30, "page": page,
+                "sort": "-updateTimestamp",  # 新着・更新が新しい順
+                "availability": 1, "minPrice": cat["min_price"],
+            }
+            if affiliate_id:
+                params["affiliateId"] = affiliate_id
+            url = API_URL + "?" + urllib.parse.urlencode(params)
+            headers = {"User-Agent": "yoyaku-radar-generator"}
+            if SITE_URL:
+                headers["Referer"] = SITE_URL
+                headers["Referrer"] = SITE_URL
+                headers["Origin"] = SITE_URL.rstrip("/")
+            req = urllib.request.Request(url, headers=headers)
             try:
-                body = e.read().decode("utf-8", errors="replace")[:500]
-            except Exception:
-                body = ""
-            print(f"[警告] {cat['name']} p{page} 取得失敗: HTTP {e.code} {body}", file=sys.stderr)
-            data = {}
-        except Exception as e:
-            print(f"[警告] {cat['name']} p{page} 取得失敗: {e}", file=sys.stderr)
-            data = {}
-        for e in data.get("Items") or data.get("items") or []:
-            it = e.get("Item") or e.get("item") or e
-            code = it.get("itemCode", "")
-            name = it.get("itemName", "")
-            if not code or code in seen_codes:
-                continue
-            seen_codes.add(code)
-            if "予約" not in name:   # 商品名に「予約」が無いものは除外(精度優先)
-                continue
-            image = ""
-            if it.get("mediumImageUrls"):
-                first_image = it["mediumImageUrls"][0]
-                if isinstance(first_image, dict):
-                    image = first_image.get("imageUrl", "")
-                else:
-                    image = str(first_image or "")
-                image = image.replace("?_ex=128x128", "?_ex=300x300")
-            items.append({
-                "code": code,
-                "name": name,
-                "price": int(it.get("itemPrice", 0) or 0),
-                "shop": it.get("shopName", ""),
-                "url": it.get("affiliateUrl") or it.get("itemUrl", ""),
-                "image": image,
-                "release": parse_release(name),
-                "review_count": int(it.get("reviewCount", 0) or 0),
-            })
-        time.sleep(1.2)  # 楽天のルール(1秒1回まで)を守る
+                with urllib.request.urlopen(req, timeout=30) as res:
+                    data = json.loads(res.read().decode("utf-8"))
+            except urllib.error.HTTPError as e:
+                try:
+                    body = e.read().decode("utf-8", errors="replace")[:500]
+                except Exception:
+                    body = ""
+                print(f"[警告] {cat['name']} {keyword} p{page} 取得失敗: HTTP {e.code} {body}", file=sys.stderr)
+                data = {}
+            except Exception as e:
+                print(f"[警告] {cat['name']} {keyword} p{page} 取得失敗: {e}", file=sys.stderr)
+                data = {}
+            for e in data.get("Items") or data.get("items") or []:
+                it = e.get("Item") or e.get("item") or e
+                code = it.get("itemCode", "")
+                name = it.get("itemName", "")
+                if not code or code in seen_codes:
+                    continue
+                seen_codes.add(code)
+                if "予約" not in name:   # 商品名に「予約」が無いものは除外(精度優先)
+                    continue
+                image = ""
+                if it.get("mediumImageUrls"):
+                    first_image = it["mediumImageUrls"][0]
+                    if isinstance(first_image, dict):
+                        image = first_image.get("imageUrl", "")
+                    else:
+                        image = str(first_image or "")
+                    image = image.replace("?_ex=128x128", "?_ex=300x300")
+                items.append({
+                    "code": code,
+                    "name": name,
+                    "price": int(it.get("itemPrice", 0) or 0),
+                    "shop": it.get("shopName", ""),
+                    "url": it.get("affiliateUrl") or it.get("itemUrl", ""),
+                    "image": image,
+                    "release": parse_release(name),
+                    "review_count": int(it.get("reviewCount", 0) or 0),
+                })
+            time.sleep(1.2)  # 楽天のルール(1秒1回まで)を守る
     return items
 
 
@@ -253,6 +262,8 @@ def collect_data():
     affiliate_id = os.environ.get("RAKUTEN_AFFILIATE_ID", "").strip()
     demo = not (app_id and access_key)
     print(f"楽天API設定: app_id={'あり' if app_id else 'なし'} access_key={'あり' if access_key else 'なし'} site_url={'あり' if SITE_URL else 'なし'}")
+    if not os.environ.get("YAHOO_APP_ID", "").strip():
+        print("[警告] YAHOO_APP_ID が未設定のため、検索バーのYahoo!検索は無効化されます。", file=sys.stderr)
     now = datetime.now(JST)
     now_iso = now.strftime("%Y-%m-%dT%H:%M")
     cutoff = (now - timedelta(days=SEEN_KEEP_DAYS)).strftime("%Y-%m-%d")
@@ -483,13 +494,13 @@ def build_html(data, demo, single=None):
                f'?client={escape(ads_client, quote=True)}" crossorigin="anonymous"></script>') if ads_client else ""
 
     cfg = {
-        "rakutenAppId": os.environ.get("RAKUTEN_APP_ID", "").strip(),
-        "rakutenAffiliateId": os.environ.get("RAKUTEN_AFFILIATE_ID", "").strip(),
         "yahooAppId": os.environ.get("YAHOO_APP_ID", "").strip(),
         "amazonTag": AMAZON_TAG,
         "dataUrl": f"{prefix}data.json",
     }
-    search_js = "<script>" + SEARCH_JS.replace("__SEARCH_CONFIG__", json.dumps(cfg)) + "</script>"
+    search_js = ('<script id="cross-search-script">'
+                 + SEARCH_JS.replace("__SEARCH_CONFIG__", json.dumps(cfg, ensure_ascii=False))
+                 + "</script>")
     vc_pid = os.environ.get("VC_PID", "").strip()
     linkswitch = (f'<script>var vc_pid = "{escape(vc_pid, quote=True)}";</script>\n'
                   '<script src="//aml.valuecommerce.com/vcdal.js" async></script>') if vc_pid else ""
