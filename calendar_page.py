@@ -13,6 +13,7 @@ import re
 from datetime import datetime, timezone, timedelta
 from html import escape
 
+from page_chrome import HEADER_CSS, render_header
 from search_assets import SEARCH_CSS, SEARCH_HTML, SEARCH_JS
 
 JST = timezone(timedelta(hours=9))
@@ -61,7 +62,7 @@ def _row(it, g):
 
 def build_calendar_page(out_dir, data, site_name, site_url, demo):
     now = datetime.now(JST)
-    updated = f"{now.year}年{now.month}月{now.day}日 {now.hour:02d}:{now.minute:02d}"
+    updated = f"{now.hour:02d}:{now.minute:02d}"
 
     # 発売時期が読めた商品を (年, 月) ごとにまとめる
     months = {}
@@ -134,22 +135,12 @@ def build_calendar_page(out_dir, data, site_name, site_url, demo):
 <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {{ --paper:#F5F6F8; --ink:#14181F; --rule:#E7E9EF; --accent:#0BA678;
-  --accent-bg:#E3F5EE; --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }}
+  --accent-bg:#E3F5EE; --green:#0BA678; --green-bg:#E3F5EE;
+  --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 body {{ font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var(--ink);
   line-height:1.6; -webkit-font-smoothing:antialiased; }}
-header {{ background:var(--card); color:var(--ink); padding:14px 16px 12px; border-bottom:1px solid var(--rule); }}
-.head-inner {{ max-width:780px; margin:0 auto; }}
-.logo {{ font-family:"Murecho","Noto Sans JP",sans-serif; font-size:21px; font-weight:900; }}
-.logo a {{ color:var(--ink); text-decoration:none; }}
-.logo .y {{ color:var(--accent); }}
-.pagename {{ font-size:12px; font-weight:700; margin-top:3px; color:var(--muted); }}
-.updated {{ display:inline-block; margin-top:6px; color:var(--accent);
-  font-size:12px; font-weight:700; }}
-.ad-label {{ font-size:11px; color:var(--muted); text-align:center; padding:5px 12px;
-  border-bottom:1px solid var(--rule); }}
-.demo-note {{ max-width:780px; margin:12px auto 0; padding:10px 14px; background:#FFF3CC;
-  border:2px dashed #D9A400; border-radius:6px; font-size:13px; font-weight:700; }}
+{HEADER_CSS}
 .tabs {{ position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
   backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 1px 0 var(--rule);
   display:flex; gap:8px; overflow-x:auto; padding:10px 16px 12px; scrollbar-width:thin; scrollbar-color:#AEB6C4 transparent;
@@ -195,7 +186,7 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
   .thumb img,.noimg {{ width:56px; height:56px; }} .cta {{ grid-column:2; justify-self:start; }} }}
 /* ===== PC幅: カード一覧をグリッド表示に ===== */
 @media (min-width:860px) {{
-  .head-inner, main, .foot-inner {{ max-width:1100px; }}
+  main, .foot-inner {{ max-width:1100px; }}
   .list {{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
     gap:14px; background:none; border:none; border-radius:0; }}
   .row {{ grid-template-columns:1fr; border:1px solid var(--rule); border-radius:14px;
@@ -205,26 +196,19 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
   .iname {{ -webkit-line-clamp:3; }}
 }}
 @media (prefers-color-scheme: dark) {{
-  :root {{ --paper:#F5F6F8; --ink:#14181F; --rule:#E7E9EF; --accent:#0BA678;
-  --accent-bg:#E3F5EE; --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }}
-  header {{ background:var(--card); }} .tab.active {{ background:var(--accent); border-color:var(--accent); color:#08110D; }}
+  :root {{ --paper:#0E1117; --ink:#ECEEF3; --rule:#272C38; --accent:#2EC592;
+  --accent-bg:#15302A; --green:#2EC592; --green-bg:#15302A;
+  --marker:#5C4D12; --muted:#98A0B0; --card:#171B24; --new:#FF5D77; }}
+  .tab.active {{ background:var(--accent); border-color:var(--accent); color:#08110D; }}
   footer {{ background:var(--card); }}
   .empty, .thumb img, .noimg {{ background:var(--card); }}
-  .demo-note {{ background:#3A3210; border-color:#9A8410; color:#F4E9B0; }}
   .cta {{ color:#0E1117; }}
 }}
 {SEARCH_CSS}
 </style>
 </head>
 <body>
-<header>
-  <div class="head-inner">
-    <h1 class="logo"><a href="../">予約開始<span class="y">レーダー</span></a></h1>
-    <p class="pagename">📅 発売日カレンダー(予約受付中アイテムの発売予定)</p>
-    <span class="updated">📅 {updated} 更新</span>
-  </div>
-</header>
-<div class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</div>
+{render_header("../", updated, "📅 発売日カレンダー(予約受付中アイテムの発売予定)")}
 {demo_note}
 {SEARCH_HTML}
 <nav class="tabs">

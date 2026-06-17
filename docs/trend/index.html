@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root { --paper:#F5F6F8; --ink:#14181F; --rule:#E7E9EF; --accent:#0BA678;
-  --accent-bg:#E3F5EE; --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }
+  --accent-bg:#E3F5EE; --green:#0BA678; --green-bg:#E3F5EE; --marker:#FFE066; --muted:#707888; --card:#fff; --new:#E5304F; }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var(--ink);
   line-height:1.6; -webkit-font-smoothing:antialiased; }
@@ -24,7 +24,7 @@ header { background:var(--card); color:var(--ink); padding:14px 16px 12px; borde
 .head-inner { max-width:780px; margin:0 auto; }
 .logo { font-family:"Murecho","Noto Sans JP",sans-serif; font-size:21px; font-weight:900; }
 .logo a { color:var(--ink); text-decoration:none; }
-.logo .y { color:var(--accent); }
+.logo .y { color:var(--ink); }
 .pagename { font-size:12px; font-weight:700; margin-top:3px; color:var(--muted); }
 .updated { display:inline-block; margin-top:6px; color:var(--accent);
   font-size:12px; font-weight:700; }
@@ -99,13 +99,13 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
 /* ===== 横断検索 ===== */
 .search { background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 14px 12px; }
 .search-inner { max-width: 780px; margin: 0 auto; }
-.sbar { display: flex; gap: 8px; }
+.sbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: stretch; }
 .sbar input[type=search] { flex: 1; font: inherit; font-size: 15px; padding: 11px 14px;
   border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); min-width: 0; }
 .sbar input[type=search]:focus { outline: 3px solid var(--green); outline-offset: 1px; }
 .sbar button { font: inherit; font-weight: 700; font-size: 14px; color: #fff;
   background: var(--green); border: none; border-radius: 999px;
-  padding: 0 18px; cursor: pointer; white-space: nowrap; }
+  min-width: 76px; min-height: 46px; padding: 0 18px; cursor: pointer; white-space: nowrap; }
 .sopts { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
   margin-top: 8px; font-size: 12px; color: var(--ink); }
 .sopts label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
@@ -152,6 +152,8 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
 .reschip { display: inline-block; background: var(--new-bg); color: var(--new); font-weight: 700;
   font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
 @media (max-width: 560px) { .sr-row { grid-template-columns: 56px 1fr; }
+  .sbar { grid-template-columns: minmax(0, 1fr) 72px; }
+  .sbar button { min-width: 72px; padding: 0 12px; }
   .sr-cta { grid-column: 2; justify-self: start; } .sr-row img { width: 56px; height: 56px; } }
 /* ===== PC幅: 検索結果をカードのグリッド表示に(スマホは縦リストのまま) ===== */
 @media (min-width: 860px) {
@@ -180,7 +182,6 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
 .sugg li .tagh { font-size: 10.5px; font-weight: 700; color: var(--muted);
   border: 1px solid var(--rule); border-radius: 3px; padding: 0 5px; flex-shrink: 0; }
 .sugg li b { font-weight: 900; }
-
 </style>
 </head>
 <body>

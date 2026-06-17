@@ -35,6 +35,7 @@ from html import escape
 
 import calendar_page
 
+from page_chrome import HEADER_CSS, render_header
 from search_assets import SEARCH_CSS, SEARCH_HTML, SEARCH_JS
 
 # ============================================================
@@ -574,26 +575,7 @@ body {{
 }}
 h1, h2, .brand, .price, .cnt {{ font-family: "Murecho", "Noto Sans JP", sans-serif; }}
 
-/* ===== アプリバー ===== */
-.appbar {{ background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 16px 12px; }}
-.appbar-in {{ max-width: 680px; margin: 0 auto; }}
-.brandrow {{ display: flex; align-items: center; justify-content: space-between; gap: 10px; }}
-.brand {{ font-size: 21px; font-weight: 900; letter-spacing: 0.01em; }}
-.brand a {{ color: inherit; text-decoration: none; }}
-.live {{ display: inline-flex; align-items: center; gap: 6px;
-  font-size: 12px; font-weight: 700; color: var(--green); white-space: nowrap;
-  font-variant-numeric: tabular-nums; }}
-.pulse {{ width: 8px; height: 8px; border-radius: 50%; background: var(--green); position: relative; }}
-.pulse::after {{ content: ""; position: absolute; inset: -4px; border-radius: 50%;
-  border: 2px solid var(--green); opacity: 0; animation: ping 2.4s ease-out infinite; }}
-@keyframes ping {{ 0% {{ transform: scale(0.4); opacity: 0.7; }} 70%, 100% {{ transform: scale(1); opacity: 0; }} }}
-@media (prefers-reduced-motion: reduce) {{ .pulse::after {{ animation: none; }} }}
-.tag {{ max-width: 680px; margin: 3px auto 0; font-size: 12px; color: var(--muted); }}
-.ad-label {{ font-size: 10.5px; color: var(--muted); text-align: center;
-  padding: 6px 12px 0; }}
-.demo-note {{ max-width: 680px; margin: 12px auto 0; padding: 10px 14px;
-  background: #FFF6DB; border: 1px solid #E8C84A; border-radius: 12px;
-  font-size: 12.5px; font-weight: 700; }}
+{HEADER_CSS}
 
 /* ===== ピルレール(カテゴリ+新着数) ===== */
 .pills {{ position: sticky; top: 0; z-index: 20;
@@ -707,7 +689,7 @@ footer {{ border-top: 1px solid var(--rule); background: var(--card);
 
 /* ===== PC幅: 商品カード一覧をグリッド表示に(スマホは縦リストのまま) ===== */
 @media (min-width: 860px) {{
-  .appbar-in, .tag, .demo-note, main, .toolbar, .foot-inner {{ max-width: 1100px; }}
+  main, .toolbar, .foot-inner {{ max-width: 1100px; }}
   .cards {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 14px; }}
   .card {{ grid-template-columns: 1fr; }}
@@ -734,16 +716,7 @@ footer {{ border-top: 1px solid var(--rule); background: var(--card);
 </style>
 </head>
 <body>
-<header class="appbar">
-  <div class="appbar-in">
-    <div class="brandrow">
-      <h1 class="brand"><a href="{prefix if single else './'}">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>{updated} 更新</span>
-    </div>
-  </div>
-  <p class="tag">{escape(SITE_TAGLINE)}。15分ごとに新しい予約だけを検知します。</p>
-</header>
-<p class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</p>
+{render_header(prefix if single else './', updated, escape(SITE_TAGLINE) + "。15分ごとに新しい予約だけを検知します。")}
 {demo_note}
 {SEARCH_HTML}
 <nav class="pills" role="tablist">

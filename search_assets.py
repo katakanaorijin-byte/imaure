@@ -5,13 +5,13 @@ SEARCH_CSS = """
 /* ===== 横断検索 ===== */
 .search { background: var(--card); border-bottom: 1px solid var(--rule); padding: 14px 14px 12px; }
 .search-inner { max-width: 780px; margin: 0 auto; }
-.sbar { display: flex; gap: 8px; }
+.sbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: stretch; }
 .sbar input[type=search] { flex: 1; font: inherit; font-size: 15px; padding: 11px 14px;
   border: 1px solid var(--rule); border-radius: 999px; background: var(--paper); min-width: 0; }
 .sbar input[type=search]:focus { outline: 3px solid var(--green); outline-offset: 1px; }
 .sbar button { font: inherit; font-weight: 700; font-size: 14px; color: #fff;
   background: var(--green); border: none; border-radius: 999px;
-  padding: 0 18px; cursor: pointer; white-space: nowrap; }
+  min-width: 76px; min-height: 46px; padding: 0 18px; cursor: pointer; white-space: nowrap; }
 .sopts { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;
   margin-top: 8px; font-size: 12px; color: var(--ink); }
 .sopts label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
@@ -58,6 +58,8 @@ SEARCH_CSS = """
 .reschip { display: inline-block; background: var(--new-bg); color: var(--new); font-weight: 700;
   font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
 @media (max-width: 560px) { .sr-row { grid-template-columns: 56px 1fr; }
+  .sbar { grid-template-columns: minmax(0, 1fr) 72px; }
+  .sbar button { min-width: 72px; padding: 0 12px; }
   .sr-cta { grid-column: 2; justify-self: start; } .sr-row img { width: 56px; height: 56px; } }
 /* ===== PC幅: 検索結果をカードのグリッド表示に(スマホは縦リストのまま) ===== */
 @media (min-width: 860px) {
