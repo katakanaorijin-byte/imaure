@@ -28,8 +28,13 @@ function corsHeaders(origin) {
   };
 }
 
+function rakutenReferer(env) {
+  return env.SITE_URL || env.RAKUTEN_REFERER || "https://katakanaorijin-byte.github.io/imaure/";
+}
+
 async function searchRakuten(env, q, freeOnly) {
   if (!env.RAKUTEN_APP_ID || !env.RAKUTEN_ACCESS_KEY) return [];
+  const referer = rakutenReferer(env);
   const params = new URLSearchParams({
     applicationId: env.RAKUTEN_APP_ID,
     accessKey: env.RAKUTEN_ACCESS_KEY,
@@ -44,9 +49,17 @@ async function searchRakuten(env, q, freeOnly) {
   if (freeOnly) params.set("postageFlag", "1");
 
   const res = await fetch(`${RAKUTEN_API_URL}?${params.toString()}`, {
-    headers: { "User-Agent": "yoyaku-radar-search-worker" },
+    headers: {
+      "User-Agent": "yoyaku-radar-search-worker",
+      "Referer": referer,
+      "Referrer": referer,
+      "Origin": referer.replace(/\/+$/, ""),
+    },
   });
-  if (!res.ok) throw new Error(`rakuten ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`rakuten ${res.status}: ${body.slice(0, 500)}`);
+  }
   const data = await res.json();
   const rows = data.Items || data.items || [];
 
@@ -78,7 +91,10 @@ async function searchYahoo(env, q, freeOnly) {
   });
 
   const res = await fetch(`${YAHOO_API_URL}?${params.toString()}`);
-  if (!res.ok) throw new Error(`yahoo ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`yahoo ${res.status}: ${body.slice(0, 500)}`);
+  }
   const data = await res.json();
   const hits = (data.hits || []).filter((it) => {
     const code = it.shipping && it.shipping.code;
@@ -116,6 +132,7 @@ export default {
       });
     }
     const freeOnly = url.searchParams.get("free") === "1";
+    const debug = url.searchParams.get("debug") === "1";
 
     const [rakuten, yahoo] = await Promise.allSettled([
       searchRakuten(env, q, freeOnly),
@@ -126,7 +143,24 @@ export default {
       .concat(rakuten.status === "fulfilled" ? rakuten.value : [])
       .concat(yahoo.status === "fulfilled" ? yahoo.value : []);
 
-    return new Response(JSON.stringify({ items }), {
+    const payload = { items };
+    if (debug) {
+      payload.debug = {
+        rakuten: rakuten.status === "fulfilled"
+          ? { ok: true, count: rakuten.value.length }
+          : { ok: false, error: String(rakuten.reason && rakuten.reason.message || rakuten.reason) },
+        yahoo: yahoo.status === "fulfilled"
+          ? { ok: true, count: yahoo.value.length }
+          : { ok: false, error: String(yahoo.reason && yahoo.reason.message || yahoo.reason) },
+        hasRakutenAppId: !!env.RAKUTEN_APP_ID,
+        hasRakutenAccessKey: !!env.RAKUTEN_ACCESS_KEY,
+        hasRakutenAffiliateId: !!env.RAKUTEN_AFFILIATE_ID,
+        hasYahooAppId: !!env.YAHOO_APP_ID,
+        referer: rakutenReferer(env),
+      };
+    }
+
+    return new Response(JSON.stringify(payload), {
       headers: { "Content-Type": "application/json", ...headers },
     });
   },
