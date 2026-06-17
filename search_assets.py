@@ -60,6 +60,9 @@ SEARCH_CSS = """
 .mall.yahoo { background: #EDEAFB; color: #5B21B6; }
 .reschip { display: inline-block; background: var(--new-bg); color: var(--new); font-weight: 700;
   font-size: 10.5px; padding: 1px 7px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; }
+/* ===== 検索中はタブ・カテゴリ一覧を隠し、検索パネルだけを浮かせて表示する ===== */
+body.search-open .search { position: relative; z-index: 50; box-shadow: 0 14px 34px rgba(0,0,0,.18); padding-bottom: 20px; }
+body.search-open .search ~ * { display: none !important; }
 @media (max-width: 560px) { .sr-row { grid-template-columns: 56px 1fr; }
   .sbar input[type=search] { padding-right: 88px; }
   .sbar button { width: 72px; padding: 0 12px; }
@@ -351,6 +354,7 @@ SEARCH_JS = r"""
     var q = $("sq").value.trim();
     if (!q) return;
     state.query = q;
+    document.body.classList.add("search-open");
     saveHist(q); hideSugg();
     var freeOnly = $("opt-free").checked;
     var useR = $("opt-rakuten").checked, useY = $("opt-yahoo").checked;
@@ -463,10 +467,12 @@ SEARCH_JS = r"""
   $("sform").addEventListener("submit", doSearch);
   $("search-home").addEventListener("click", function () {
     state.items = [];
+    state.query = "";
     $("sq").value = "";
     $("sstatus").textContent = "";
     $("sresults").innerHTML = "";
     $("sactions").classList.remove("show");
+    document.body.classList.remove("search-open");
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
   $("opt-sort").addEventListener("change", render);
