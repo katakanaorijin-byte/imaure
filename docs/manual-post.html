@@ -99,7 +99,12 @@ button.secondary:hover { background: #111827; }
   border-radius: 8px;
   padding: 10px;
   background: #fff;
+  cursor: pointer;
+  transition: border-color .12s, background .12s, box-shadow .12s;
 }
+.item:hover { border-color: #9ca3af; }
+.item.selected { border-color: var(--accent); background: #ecfdf5; box-shadow: inset 0 0 0 1px var(--accent); }
+.item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .item img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; background: #f3f4f6; }
 .item strong { display: block; font-size: 14px; line-height: 1.45; }
 .meta { color: var(--muted); font-size: 12px; margin-top: 4px; }
@@ -173,7 +178,7 @@ button.secondary:hover { background: #111827; }
     </section>
 
     <section class="panel">
-      <label>投稿候補</label>
+      <label>投稿候補(タップで選択 / もう一度タップで解除)</label>
       <div id="items" class="items"></div>
     </section>
   </div>
@@ -184,6 +189,8 @@ const state = {
   data: null,
   tagRules: null,
   fresh: [],
+  pool: [],
+  selected: new Set(),
   offset: 0
 };
 
@@ -239,15 +246,53 @@ function flattenFresh(data) {
   return rows;
 }
 
-function selectedRows() {
+function rowKey(row) {
+  return row.item.url || (row.genre.name + "::" + row.item.name);
+}
+
+// いま選べる候補(カテゴリで絞り込んだ新着予約すべて)
+function candidatePool() {
   const genreName = els.genre.value;
   let rows = state.fresh;
   if (genreName !== "__all") rows = rows.filter(row => row.genre.name === genreName);
-  if (!rows.length) return [];
-  const count = Number(els.limit.value);
-  const start = state.offset % rows.length;
-  const rotated = rows.slice(start).concat(rows.slice(0, start));
-  return rotated.slice(0, count);
+  return rows;
+}
+
+// 候補の先頭から自動でN件選ぶ(手動選択していないときの初期状態)
+function autoSelect() {
+  state.selected = new Set();
+  const pool = state.pool;
+  if (!pool.length) return;
+  const count = els.mode.value === "single" ? 1 : Number(els.limit.value);
+  const start = state.offset % pool.length;
+  const rotated = pool.slice(start).concat(pool.slice(0, start));
+  for (const row of rotated.slice(0, count)) state.selected.add(rowKey(row));
+}
+
+// 実際に投稿文へ入れる商品(選択済みのものを候補の並び順で)
+function postRows() {
+  const rows = state.pool.filter(row => state.selected.has(rowKey(row)));
+  return els.mode.value === "single" ? rows.slice(0, 1) : rows;
+}
+
+// 候補をタップしたときの選択切り替え
+function toggleSelect(row) {
+  const key = rowKey(row);
+  if (els.mode.value === "single") {
+    state.selected = new Set([key]);
+  } else if (state.selected.has(key)) {
+    state.selected.delete(key);
+  } else {
+    state.selected.add(key);
+  }
+  updatePost();
+}
+
+// カテゴリ・モード・件数が変わったら候補を作り直して自動選択し直す
+function refreshPool() {
+  state.pool = candidatePool();
+  autoSelect();
+  updatePost();
 }
 
 function normalizeForMatch(value) {
@@ -320,85 +365,199 @@ function humanLine(rows, kind) {
   return formatTemplate(pool[seed % pool.length], rows);
 }
 
-function buildSummary(rows) {
+// data.jsonにslugが無い移行期でもカテゴリページURLを作れるようにフォールバックを持つ
+const SLUG_BY_NAME = {
+  "ポケモンカード": "pokemon-card",
+  "ワンピースカード": "onepiece-card",
+  "遊戯王・他カード": "yugioh",
+  "フィギュア": "figure",
+  "ねんどろいど・figma": "nendoroid",
+  "ガンプラ・プラモデル": "gunpla",
+  "ゲームソフト": "game",
+  "アニメBlu-ray・CD": "anime-bd",
+  "特撮・なりきり玩具": "tokusatsu",
+  "鉄道模型": "train-model",
+  "トミカ・ミニカー": "tomica",
+  "ぬいぐるみ・グッズ": "plush"
+};
+
+function siteBase() {
+  const url = (state.data && state.data.site_url) || "https://katakanaorijin-byte.github.io/imaure/";
+  return url.endsWith("/") ? url : url + "/";
+}
+
+function genreSlug(genre) {
+  return cleanText(genre.slug) || SLUG_BY_NAME[cleanText(genre.name)] || "";
+}
+
+// 投稿に載せるURL。同一カテゴリならそのカテゴリページ、複数カテゴリ混在ならトップ。
+function pageUrlForRows(rows) {
+  const home = siteBase();
+  if (rows.length && rows.every(row => row.genre.name === rows[0].genre.name)) {
+    const slug = genreSlug(rows[0].genre);
+    if (slug) return home + slug + "/";
+  }
+  return home;
+}
+
+// Twitterの上限は重み付き280(日本語1文字=2)=日本語で約140文字。
+// 数え方の差を吸収する安全マージンを取り、生成は268以内に収める。
+const MAX_WEIGHTED = 268;
+
+function buildSummary(rows, opts) {
+  opts = opts || {};
+  const nameLimit = opts.nameLimit || 32;
+  const withOpener = opts.withOpener !== false;
   const now = new Date();
   const date = `${now.getMonth() + 1}/${now.getDate()}`;
-  const siteUrl = state.data.site_url || "https://katakanaorijin-byte.github.io/imaure/";
-  const lines = [
-    `【${date} 新着予約】`,
-    humanLine(rows, "summary") || "ホビー商品の予約開始をチェックしました。"
-  ];
-  for (const row of rows) {
-    const name = trimText(row.item.name, 34);
-    const rel = row.item.release ? `（${cleanText(row.item.release)}発売）` : "";
-    const price = priceText(row.item.price);
-    lines.push(`・${name}${rel}${price ? " / " + price : ""}`);
+  if (!rows.length) return "";
+  const siteUrl = pageUrlForRows(rows);
+  const sameGenre = rows.every(row => row.genre.name === rows[0].genre.name);
+  const genreName = cleanText(rows[0].genre.name);
+  const head = sameGenre
+    ? `【${date} 予約開始】${genreName}に新着${rows.length}件🆕`
+    : `【${date} 予約開始】新着${rows.length}件まとめ🆕`;
+  const lines = [head];
+  if (withOpener) {
+    const opener = humanLine(rows, "summary");
+    if (opener) lines.push(opener);
   }
   lines.push("");
+  for (const row of rows) {
+    const icon = cleanText(row.genre.icon) || "・";
+    const name = trimText(row.item.name, nameLimit);
+    const rel = row.item.release ? `（${cleanText(row.item.release)}発売）` : "";
+    const price = priceText(row.item.price);
+    lines.push(`${icon} ${name}${rel}${price ? " " + price : ""}`);
+  }
+  lines.push("");
+  lines.push("▼一覧はこちら");
   lines.push(siteUrl);
   lines.push(buildHashtags(rows));
   return lines.join("\n");
 }
 
-function buildSingle(rows) {
+function buildSingle(rows, opts) {
+  opts = opts || {};
+  const nameLimit = opts.nameLimit || 64;
+  const withOpener = opts.withOpener !== false;
+  const withShop = opts.withShop !== false;
   const row = rows[0];
   if (!row) return "";
-  const siteUrl = state.data.site_url || "https://katakanaorijin-byte.github.io/imaure/";
+  const siteUrl = pageUrlForRows(rows);
+  const icon = cleanText(row.genre.icon);
   const price = priceText(row.item.price);
-  const release = row.item.release ? `発売時期: ${cleanText(row.item.release)}` : "";
-  const note = humanLine(rows, "single");
-  return [
-    note || "新着予約をチェックしました。",
-    "",
-    trimText(row.item.name, 72),
-    price ? `価格: ${price}` : "",
-    release,
-    "",
-    siteUrl,
-    buildHashtags(rows)
-  ].filter(Boolean).join("\n");
+  const release = row.item.release ? `${cleanText(row.item.release)}発売` : "";
+  const shop = cleanText(row.item.shop);
+  const detail = [price ? `価格 ${price}` : "", release].filter(Boolean).join(" / ");
+  const lines = [];
+  if (withOpener) {
+    const opener = humanLine(rows, "single") || `${cleanText(row.genre.name)}で予約開始を確認しました。`;
+    lines.push(opener + (row.item.hot ? " 🔥注目です。" : ""));
+    lines.push("");
+  }
+  lines.push(`${icon ? icon + " " : ""}${trimText(row.item.name, nameLimit)}`);
+  if (detail) lines.push(detail);
+  if (withShop && shop) lines.push(`ショップ ${shop}`);
+  lines.push("");
+  lines.push("▼在庫チェックはこちら");
+  lines.push(siteUrl);
+  lines.push(buildHashtags(rows));
+  return lines.join("\n");
 }
 
-function renderItems(rows) {
+// 重み付き文字数が上限を超えないよう、商品名短縮→ひとこと省略→(まとめは)件数削減の順で詰める
+function buildFitted(rows, mode) {
+  const variants = mode === "single"
+    ? [
+        { nameLimit: 64, withOpener: true, withShop: true },
+        { nameLimit: 44, withOpener: true, withShop: true },
+        { nameLimit: 36, withOpener: true, withShop: false },
+        { nameLimit: 30, withOpener: false, withShop: false },
+        { nameLimit: 22, withOpener: false, withShop: false }
+      ]
+    : [
+        { nameLimit: 32, withOpener: true },
+        { nameLimit: 24, withOpener: true },
+        { nameLimit: 18, withOpener: false },
+        { nameLimit: 12, withOpener: false }
+      ];
+  let text = "";
+  for (const opt of variants) {
+    text = mode === "single" ? buildSingle(rows, opt) : buildSummary(rows, opt);
+    if (weightedLength(text) <= MAX_WEIGHTED) return { text, rows };
+  }
+  if (mode !== "single" && rows.length > 1) {
+    return buildFitted(rows.slice(0, rows.length - 1), mode);
+  }
+  return { text, rows };
+}
+
+function renderItems() {
   els.items.innerHTML = "";
-  if (!rows.length) {
-    els.items.textContent = "新着予約の候補がありません。";
+  const pool = state.pool;
+  if (!pool.length) {
+    els.items.textContent = "新着予約の候補がありません。カテゴリを変えてみてください。";
     return;
   }
-  for (const row of rows) {
+  const shown = pool.slice(0, 50);
+  for (const row of shown) {
+    const selected = state.selected.has(rowKey(row));
     const node = document.createElement("div");
-    node.className = "item";
+    node.className = "item" + (selected ? " selected" : "");
+    node.setAttribute("role", "button");
+    node.tabIndex = 0;
+    node.setAttribute("aria-pressed", selected ? "true" : "false");
     const img = document.createElement("img");
     img.src = row.item.image || "";
     img.alt = "";
     const body = document.createElement("div");
     const title = document.createElement("strong");
-    title.textContent = cleanText(row.item.name);
+    title.textContent = (selected ? "✓ " : "") + cleanText(row.item.name);
     const meta = document.createElement("div");
     meta.className = "meta";
     meta.textContent = [
       cleanText(row.genre.name),
       cleanText(row.item.shop),
-      priceText(row.item.price)
+      priceText(row.item.price),
+      row.item.release ? cleanText(row.item.release) + "発売" : ""
     ].filter(Boolean).join(" / ");
     body.append(title, meta);
     node.append(img, body);
+    node.addEventListener("click", () => toggleSelect(row));
+    node.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleSelect(row);
+      }
+    });
     els.items.append(node);
+  }
+  if (pool.length > shown.length) {
+    const more = document.createElement("div");
+    more.className = "count";
+    more.textContent = `ほか${pool.length - shown.length}件あります。カテゴリで絞ると選びやすいです。`;
+    els.items.append(more);
   }
 }
 
 function updatePost() {
-  const rows = selectedRows();
-  const text = els.mode.value === "single" ? buildSingle(rows) : buildSummary(rows);
-  els.postText.value = text;
-  renderItems(rows);
+  const selected = postRows();
+  const fit = buildFitted(selected, els.mode.value);
+  els.postText.value = fit.text;
+  renderItems();
   updateCount();
+  if (els.mode.value !== "single" && fit.rows.length < selected.length) {
+    els.status.textContent = `文字数制限に収めるため、選択${selected.length}件のうち${fit.rows.length}件で作成しました。`;
+  } else {
+    els.status.textContent = "";
+  }
 }
 
 function updateCount() {
   const len = weightedLength(els.postText.value);
-  els.count.textContent = `目安文字数: ${len} / 280`;
-  els.count.classList.toggle("over", len > 280);
+  els.count.textContent = `目安文字数: ${len} / ${MAX_WEIGHTED}（日本語で約${Math.ceil(len / 2)}字）`;
+  els.count.classList.toggle("over", len > MAX_WEIGHTED);
   els.openX.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(els.postText.value);
 }
 
@@ -433,7 +592,7 @@ async function boot() {
     state.tagRules = tagRes.ok ? await tagRes.json() : null;
     state.fresh = flattenFresh(state.data);
     fillGenres();
-    updatePost();
+    refreshPool();
     els.status.textContent = `${state.fresh.length}件の新着候補を読み込みました。`;
   } catch (error) {
     els.status.textContent = "data.jsonを読み込めませんでした。GitHub Pages上で開くか、ローカルサーバー経由で開いてください。";
@@ -441,13 +600,18 @@ async function boot() {
 }
 
 els.refresh.addEventListener("click", updatePost);
-els.mode.addEventListener("change", () => { state.offset = 0; updatePost(); });
-els.genre.addEventListener("change", () => { state.offset = 0; updatePost(); });
-els.limit.addEventListener("change", updatePost);
+els.mode.addEventListener("change", () => { state.offset = 0; refreshPool(); });
+els.genre.addEventListener("change", () => { state.offset = 0; refreshPool(); });
+els.limit.addEventListener("change", () => { state.offset = 0; refreshPool(); });
 els.tone.addEventListener("change", updatePost);
 els.postText.addEventListener("input", updateCount);
 els.copy.addEventListener("click", copyPost);
-els.next.addEventListener("click", () => { state.offset += Number(els.limit.value); updatePost(); });
+els.next.addEventListener("click", () => {
+  const step = els.mode.value === "single" ? 1 : (Number(els.limit.value) || 1);
+  state.offset += step;
+  autoSelect();
+  updatePost();
+});
 
 boot();
 </script>

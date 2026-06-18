@@ -1044,6 +1044,7 @@ def main():
         "genres": [
             {
                 "name": g["name"], "icon": g["icon"], "tag": g.get("tag", ""),
+                "slug": g.get("slug", ""),
                 "new_count": g["new_count"],
                 "items": [
                     {"name": it["name"], "price": it["price"], "url": it["url"],
