@@ -48,7 +48,11 @@ jobs:
           X_ACCOUNT_URL: ${{ secrets.X_ACCOUNT_URL }}
         run: python generate.py
 
+      - name: X投稿用ハッシュタグルールを学習
+        run: python learn_hashtags.py
+
       - name: SNSに自動投稿(キー未設定ならスキップ)
+        if: ${{ vars.ENABLE_API_AUTO_POST == 'true' }}
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
