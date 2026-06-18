@@ -223,6 +223,33 @@ function priceText(value) {
   return Number(value).toLocaleString("ja-JP") + "円";
 }
 
+// 商品名の「主な部分」を取り出す。先頭の宣伝(【予約商品】[予約:8/7]等)を除き、
+// 学習したタイトル語(作品名・シリーズ名)に当たるまで先頭のノイズ単語を落とす。
+// 中間・末尾の作品名カッコ(【推しの子】等)は残す。
+const NAME_LEAD_BRACKET = /^[\s　]*[【［\[（(][^】］\]）)]*[】］\]）)]/;
+const NOISE_IN_BRACKET = /予約|発送|発売|入荷|お届け|クーポン|OFF|ポイント|送料|特典|限定|抽選|即納|受付|新品|中古|セール|数量|先着|残り|楽天|ランキング|位|人気|キャンペーン|割引|円|%|％|\d|TCG|ACC|カートン|前日/;
+const NOISE_TOKEN = /^(ご?予約(販売|商品|受付)?|前日発送|発送|発売|入荷|お届け|ばら売り|バラ売り|単品|特典|レビュー特典|送料無料|送料込み?|限定|限定販売|数量限定|抽選|即納|新品|新品未開封|未開封|中古|セール|先着|残りわずか|TCG|ACC|カートン)$/;
+const NOISE_TOKEN_LOOSE = /^\d+(パック|個|点|箱|枚|本|セット|円|%|％|周年|th|nd|st|期)?$|^\d+[年月日/.\-]|^.+月\d+日|.+(OFF|オフ)$/;
+
+function coreName(raw) {
+  let s = cleanText(raw).normalize("NFKC");
+  for (let i = 0; i < 6; i++) {
+    const m = s.match(NAME_LEAD_BRACKET);
+    if (m && NOISE_IN_BRACKET.test(m[0])) s = s.slice(m[0].length).trim();
+    else break;
+  }
+  const titles = (state.tagRules && state.tagRules.title_keywords) || [];
+  let tokens = s.split(/[\s　]+/).filter(Boolean);
+  let guard = 0;
+  while (tokens.length > 1 && guard++ < 12) {
+    const head = tokens[0];
+    if (titles.some(t => head.includes(t))) break;
+    if (NOISE_TOKEN.test(head) || NOISE_TOKEN_LOOSE.test(head)) { tokens.shift(); continue; }
+    break;
+  }
+  return tokens.join(" ").trim() || cleanText(raw);
+}
+
 function weightedLength(text) {
   let total = 0;
   for (const part of text.split(/\s+/)) {
@@ -425,7 +452,7 @@ function buildSummary(rows, opts) {
   lines.push("");
   for (const row of rows) {
     const icon = cleanText(row.genre.icon) || "・";
-    const name = trimText(row.item.name, nameLimit);
+    const name = trimText(coreName(row.item.name), nameLimit);
     const rel = row.item.release ? `（${cleanText(row.item.release)}発売）` : "";
     const price = priceText(row.item.price);
     lines.push(`${icon} ${name}${rel}${price ? " " + price : ""}`);
@@ -456,7 +483,7 @@ function buildSingle(rows, opts) {
     lines.push(opener + (row.item.hot ? " 🔥注目です。" : ""));
     lines.push("");
   }
-  lines.push(`${icon ? icon + " " : ""}${trimText(row.item.name, nameLimit)}`);
+  lines.push(`${icon ? icon + " " : ""}${trimText(coreName(row.item.name), nameLimit)}`);
   if (detail) lines.push(detail);
   if (withShop && shop) lines.push(`ショップ ${shop}`);
   lines.push("");

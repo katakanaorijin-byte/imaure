@@ -89,6 +89,52 @@ SEED_RULES = [
 ]
 
 
+# 商品名の「主な部分」を残すための学習用。タイトル語(作品名・シリーズ名)を守り、
+# 商品の種類を表す一般語(パック等)はタイトル扱いしない。
+TITLE_STOP = {
+    "ブースターパック", "ブースター", "パック", "ボックス", "カートン", "セット",
+    "フィギュア", "プラモデル", "プラモ", "モデル", "キット", "プライズ", "スケール",
+    "クーポン", "ポイント", "シリーズ", "バージョン", "エディション", "スターター",
+    "デッキ", "ストレージ", "スリーブ", "ホビー", "アイテム", "グッズ", "コレクション",
+    "ニンテンドー", "スイッチ", "ソフト", "コントローラー", "ヘッドセット", "ポーチ",
+    "カバー", "ケース", "クリア", "ラバー", "アクリル", "スタンド", "キーホルダー",
+    "ストラップ", "オリジナル", "リミテッド", "プレミアム", "コンプリート",
+    "ディスプレイ", "ジオラマ", "ミニチュア", "ドールハウス", "ランダム",
+    # 宣伝・汎用語(タイトルではないので除外。先頭ノイズ除去を妨げないため)
+    "レビュー", "レビュー特典", "ショップ", "ストア", "センター", "プレゼント",
+    "ライセンス", "ラッピング", "シュリンク", "トップローダー", "キャンペーン",
+    "ノベルティ", "ラインナップ", "イラスト", "キャラクター", "リニューアル",
+    "ホワイト", "ブラック", "ブルーグレー", "カラー", "ソーラー", "トリプル",
+    "ドリーム", "ヨーロッパ", "タイトル", "リアルフィギュア", "プレステージモデル",
+}
+SEED_TITLES = [
+    "推しの子", "葬送のフリーレン", "鬼滅の刃", "呪術廻戦", "ワンピース", "ドラゴンボール",
+    "ポケモン", "ガンダム", "エヴァンゲリオン", "初音ミク", "ブルーアーカイブ", "ホロライブ",
+    "にじさんじ", "ウマ娘", "原神", "崩壊スターレイル", "スプラトゥーン", "ゼルダの伝説",
+    "あつまれ どうぶつの森", "どうぶつの森", "チェンソーマン", "SPY×FAMILY", "ハイキュー",
+    "ヴァイスシュヴァルツ", "遊戯王", "デュエルマスターズ", "僕のヒーローアカデミア",
+    "名探偵コナン", "ちいかわ", "サンリオ", "アイドルマスター", "ラブライブ", "仮面ライダー",
+    "ウルトラマン", "プリキュア", "フリーレン",
+]
+KATAKANA_RUN = re.compile(r"[ァ-ヶー]{4,}")
+_TITLE_BAD_PART = ("パック", "ボックス", "セット", "クーポン", "シリーズ", "バージョン")
+
+
+def learn_title_keywords(corpus_parts):
+    """商品名から作品名・シリーズ名らしい語を頻度学習する(商品名の主な部分を守るため)。"""
+    counter = Counter()
+    for part in corpus_parts:
+        for run in KATAKANA_RUN.findall(part):
+            if run in TITLE_STOP or any(bad in run for bad in _TITLE_BAD_PART):
+                continue
+            counter[run] += 1
+    keywords = [word for word, hits in counter.most_common(80) if hits >= 2]
+    for seed in SEED_TITLES:
+        if seed not in keywords and any(seed in part for part in corpus_parts):
+            keywords.append(seed)
+    return keywords
+
+
 def tag_from_text(text: str) -> str:
     text = re.sub(r"[#＃\s　/／・|｜（）()\[\]【】<>＜＞,，.。:：;；!！?？]+", "", text)
     return f"#{text}" if text else ""
@@ -135,6 +181,7 @@ def main() -> None:
 
     keyword_rules.sort(key=lambda rule: rule["score"], reverse=True)
     learned_popular_tags = [tag for tag, _ in observed.most_common(12)]
+    title_keywords = learn_title_keywords(corpus_parts)
 
     payload = {
         "generated_at": datetime.now(JST).isoformat(),
@@ -142,10 +189,11 @@ def main() -> None:
         "genre_tags": genre_tags,
         "keyword_rules": keyword_rules,
         "learned_popular_tags": learned_popular_tags,
+        "title_keywords": title_keywords,
         "copy_rules": COPY_RULES,
     }
     OUT_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"wrote {OUT_PATH.relative_to(HERE)} ({len(keyword_rules)} keyword rules)")
+    print(f"wrote {OUT_PATH.relative_to(HERE)} ({len(keyword_rules)} keyword rules, {len(title_keywords)} title keywords)")
 
 
 if __name__ == "__main__":
