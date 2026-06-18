@@ -560,5 +560,5 @@ footer {{ border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32
 
 if __name__ == "__main__":
     # 単体デモ実行(本番の docs/ を上書きしないよう docs_preview/ に出力)
-    demo_cats = [{"slug": "pokemon-card", "icon": "🃏", "name": "ポケモンカード"}]
+    demo_cats = [{"slug": "pokemon-card", "icon": "⚡", "name": "ポケモンカード"}]
     build_trend_page(os.path.join(HERE, "docs_preview"), demo_cats, "予約開始レーダー", "", True)

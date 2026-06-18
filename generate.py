@@ -57,7 +57,7 @@ SEEN_KEEP_DAYS = 120      # 既出商品の記録を保持する日数
 
 # 監視カテゴリ(keyword: 楽天で検索する言葉 / ng: 除外する言葉)
 CATEGORIES = [
-    {"name": "ポケモンカード", "icon": "🃏", "slug": "pokemon-card", "tag": "#ポケカ", "keyword": "ポケモンカード 予約 BOX",
+    {"name": "ポケモンカード", "icon": "⚡", "slug": "pokemon-card", "tag": "#ポケカ", "keyword": "ポケモンカード 予約 BOX",
      "keywords": ["ポケモンカード 予約 拡張パック", "ポケモンカード 予約 ハイクラスパック"],
      "ng": "中古 オリパ スリーブ デッキシールド プレイマット", "min_price": 3000},
     {"name": "ワンピースカード", "icon": "🏴", "slug": "onepiece-card", "tag": "#ワンピースカード", "keyword": "ワンピースカード 予約 BOX",
