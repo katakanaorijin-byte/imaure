@@ -427,9 +427,10 @@ function pageUrlForRows(rows) {
   return home;
 }
 
-// Twitterの上限は重み付き280(日本語1文字=2)=日本語で約140文字。
-// 数え方の差を吸収する安全マージンを取り、生成は268以内に収める。
-const MAX_WEIGHTED = 268;
+// 標準投稿は重み付き280(日本語1文字=2)=日本語で約140文字。
+// X Premium(長文投稿)契約済みのため、商品名は短縮せず全文表示する。
+// 280を超える分は長文投稿として送信される(カウンターで目安を表示)。
+const STD_LIMIT = 280;
 
 function buildSummary(rows, opts) {
   opts = opts || {};
@@ -493,30 +494,13 @@ function buildSingle(rows, opts) {
   return lines.join("\n");
 }
 
-// 重み付き文字数が上限を超えないよう、商品名短縮→ひとこと省略→(まとめは)件数削減の順で詰める
+// X Premium(長文投稿)契約済みのため、商品名は短縮せず全文を出す。
+// 先頭の宣伝はcoreName()で除去済み。文字数による削減はしない。
 function buildFitted(rows, mode) {
-  const variants = mode === "single"
-    ? [
-        { nameLimit: 64, withOpener: true, withShop: true },
-        { nameLimit: 44, withOpener: true, withShop: true },
-        { nameLimit: 36, withOpener: true, withShop: false },
-        { nameLimit: 30, withOpener: false, withShop: false },
-        { nameLimit: 22, withOpener: false, withShop: false }
-      ]
-    : [
-        { nameLimit: 32, withOpener: true },
-        { nameLimit: 24, withOpener: true },
-        { nameLimit: 18, withOpener: false },
-        { nameLimit: 12, withOpener: false }
-      ];
-  let text = "";
-  for (const opt of variants) {
-    text = mode === "single" ? buildSingle(rows, opt) : buildSummary(rows, opt);
-    if (weightedLength(text) <= MAX_WEIGHTED) return { text, rows };
-  }
-  if (mode !== "single" && rows.length > 1) {
-    return buildFitted(rows.slice(0, rows.length - 1), mode);
-  }
+  const opt = mode === "single"
+    ? { nameLimit: 999, withOpener: true, withShop: true }
+    : { nameLimit: 999, withOpener: true };
+  const text = mode === "single" ? buildSingle(rows, opt) : buildSummary(rows, opt);
   return { text, rows };
 }
 
@@ -574,17 +558,16 @@ function updatePost() {
   els.postText.value = fit.text;
   renderItems();
   updateCount();
-  if (els.mode.value !== "single" && fit.rows.length < selected.length) {
-    els.status.textContent = `文字数制限に収めるため、選択${selected.length}件のうち${fit.rows.length}件で作成しました。`;
-  } else {
-    els.status.textContent = "";
-  }
+  els.status.textContent = "";
 }
 
 function updateCount() {
   const len = weightedLength(els.postText.value);
-  els.count.textContent = `目安文字数: ${len} / ${MAX_WEIGHTED}（日本語で約${Math.ceil(len / 2)}字）`;
-  els.count.classList.toggle("over", len > MAX_WEIGHTED);
+  const jp = Math.ceil(len / 2);
+  els.count.textContent = len > STD_LIMIT
+    ? `目安文字数: ${len}（日本語で約${jp}字）・標準280超はX長文投稿で送信`
+    : `目安文字数: ${len} / ${STD_LIMIT}（日本語で約${jp}字）`;
+  els.count.classList.toggle("over", len > 25000);
   els.openX.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(els.postText.value);
 }
 
