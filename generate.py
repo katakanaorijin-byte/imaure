@@ -436,8 +436,46 @@ def render_category(g, active):
   </section>"""
 
 
-def build_html(data, demo, single=None):
-    """single=カテゴリ辞書 を渡すと、そのカテゴリ専用ページ(SEO用)を作る"""
+def pick_card_src(genres):
+    """SNSカードに使う先頭商品画像(楽天URL)を、全ジャンル横断で1つ選ぶ。"""
+    for g in genres:
+        for it in g["items"]:
+            if it.get("image"):
+                return it["image"].replace("?_ex=300x300", "?_ex=600x600")
+    return ""
+
+
+def localize_card_image(out_dir, slug, src_url, manifest):
+    """楽天の商品画像 src_url を docs/cards/<slug>.jpg に保存し、相対パス 'cards/<slug>.jpg' を返す。
+    Xは外部ホストの画像取得に時々失敗するので、自サイトに置いて同一ドメインから配信する狙い。
+    先頭商品が前回と同じ(=manifestのsrcと一致)ならDLし直さない。これによりファイルが無変更=
+    コミットされず、9分間隔の自動更新でもリポジトリが肥大化しない。
+    取得失敗時は、既存ファイルがあればそれを使い、無ければ None(og-image.pngにフォールバック)。"""
+    if not src_url:
+        return None
+    rel = f"cards/{slug}.jpg"
+    dst = os.path.join(out_dir, "cards", f"{slug}.jpg")
+    if manifest.get(slug) == src_url and os.path.exists(dst):
+        return rel  # 先頭商品が変わっていない → 再DLしない
+    os.makedirs(os.path.join(out_dir, "cards"), exist_ok=True)
+    try:
+        req = urllib.request.Request(src_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=20) as res:
+            blob = res.read()
+        if len(blob) < 500:
+            raise ValueError(f"画像が小さすぎます({len(blob)}B)")
+        with open(dst, "wb") as f:
+            f.write(blob)
+        manifest[slug] = src_url
+        return rel
+    except Exception as e:
+        print(f"カード画像DL失敗 {slug}: {e}", file=sys.stderr)
+        return rel if os.path.exists(dst) else None
+
+
+def build_html(data, demo, single=None, card_image=None):
+    """single=カテゴリ辞書 を渡すと、そのカテゴリ専用ページ(SEO用)を作る。
+    card_image=自サイトに保存したカード画像の絶対URL(SNSのリンクカード用)。"""
     now = datetime.now(JST)
     updated = f"{now.hour:02d}:{now.minute:02d}"
     updated_full = f"{now.year}年{now.month}月{now.day}日 {updated}"
@@ -477,17 +515,11 @@ def build_html(data, demo, single=None):
             f'{g["icon"]} {escape(g["name"])}{f"<b class=cnt>{g['new_count']}</b>" if g["new_count"] else ""}</button>'
             for g in data))
 
-    # SNSのリンクカード用画像。先頭商品の実写真があればそれを大きく出す。
-    # 先頭ジャンルに写真が無くても画像なしカードにならないよう、全ジャンルを横断して探す。
-    # (XのカードはSVG非対応なので、楽天の実写真JPG→無ければ自前のog-image.pngにフォールバック)
-    og_image = ""
-    for g in data_use:
-        for it in g["items"]:
-            if it.get("image"):
-                og_image = it["image"].replace("?_ex=300x300", "?_ex=600x600")
-                break
-        if og_image:
-            break
+    # SNSリンクカード画像。Xは外部ホスト(楽天)の画像取得をたびたび失敗するため、
+    # main()で先頭商品の写真を自サイト(cards/<slug>.jpg)に保存し、その自ドメインURLを
+    # card_imageとして受け取る。同一ドメインの画像はXがほぼ確実に取得できる。
+    # 取得できなかった場合は、確実に表示できる自前のog-image.pngにフォールバック。
+    og_image = card_image or ""
     if not og_image and SITE_URL:
         og_image = SITE_URL + "og-image.png"  # 1200x630のラスター画像(Xが確実に描画できる)
     # 商品写真でもフォールバックPNG(1200x630)でも横長で大カードに適するので常に大画像
@@ -974,15 +1006,35 @@ def main():
         with open(os.path.join(out_dir, "seen.json"), "w", encoding="utf-8") as f:
             json.dump(seen, f, ensure_ascii=False)
 
+    # SNSカード画像を自サイトに保存(Xの外部画像取得失敗を避ける)。
+    # 先頭商品が変わった時だけDLし直すためのマニフェストを読み込む。
+    cards_manifest_path = os.path.join(out_dir, "cards", ".sources.json")
+    try:
+        with open(cards_manifest_path, encoding="utf-8") as f:
+            cards_manifest = json.load(f)
+    except Exception:
+        cards_manifest = {}
+
+    def card_url(slug, genres):
+        rel = localize_card_image(out_dir, slug, pick_card_src(genres), cards_manifest)
+        return (SITE_URL + rel) if (rel and SITE_URL) else None
+
     with open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8") as f:
-        f.write(build_html(data, demo))
+        f.write(build_html(data, demo, card_image=card_url("home", data)))
 
     # カテゴリ別ページ(「◯◯ 予約」系の検索流入を受けるSEOページ)
     for g in data:
         page_dir = os.path.join(out_dir, g["slug"])
         os.makedirs(page_dir, exist_ok=True)
         with open(os.path.join(page_dir, "index.html"), "w", encoding="utf-8") as f:
-            f.write(build_html(data, demo, single=g))
+            f.write(build_html(data, demo, single=g, card_image=card_url(g["slug"], [g])))
+
+    try:
+        os.makedirs(os.path.join(out_dir, "cards"), exist_ok=True)
+        with open(cards_manifest_path, "w", encoding="utf-8") as f:
+            json.dump(cards_manifest, f, ensure_ascii=False)
+    except Exception as e:
+        print(f"カード画像マニフェスト保存に失敗: {e}", file=sys.stderr)
 
     feed_path = os.path.join(out_dir, "feed_items.json")
     feed_items = []
