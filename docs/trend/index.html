@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>急上昇トレンド|予約開始レーダー</title>
-<meta name="description" content="ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。">
+<title>ホビー予約 急上昇トレンド・話題ワード 最新|予約開始レーダー</title>
+<meta name="description" content="ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。予約開始・再販・抽選の注目ワードを確認できます。">
 <link rel="canonical" href="https://katakanaorijin-byte.github.io/imaure/trend/">
-<meta property="og:title" content="急上昇トレンド|予約開始レーダー">
-<meta property="og:description" content="ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。">
+<meta property="og:title" content="ホビー予約 急上昇トレンド・話題ワード 最新|予約開始レーダー">
+<meta property="og:description" content="ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。予約開始・再販・抽選の注目ワードを確認できます。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
 
@@ -38,14 +38,37 @@ body { font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var
 @keyframes ping { 0% { transform: scale(0.4); opacity: 0.7; } 70%, 100% { transform: scale(1); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .pulse::after { animation: none; } }
 .tag { max-width: 680px; margin: 3px auto 0; font-size: 12px; color: var(--muted); }
+.follow-strip { max-width: 680px; margin: 10px auto 0; padding: 10px 12px;
+  background: color-mix(in srgb, var(--green-bg) 72%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--green) 28%, var(--rule));
+  border-radius: 10px; display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; }
+.follow-copy { min-width: 0; }
+.follow-kicker { display: block; font-size: 11px; font-weight: 900; color: var(--green);
+  letter-spacing: 0.02em; }
+.follow-text { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 700;
+  color: var(--ink); line-height: 1.45; }
+.follow-actions { display: flex; gap: 7px; flex: 0 0 auto; flex-wrap: wrap; justify-content: flex-end; }
+.follow-action { font: inherit; font-size: 12px; font-weight: 900; line-height: 1;
+  color: var(--ink); background: var(--card); border: 1px solid var(--rule);
+  border-radius: 999px; padding: 8px 10px; text-decoration: none; cursor: pointer;
+  white-space: nowrap; }
+.follow-action.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+.follow-action.share { border-color: color-mix(in srgb, var(--green) 32%, var(--rule)); }
+.follow-action:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
 .ad-label { font-size: 10.5px; color: var(--muted); text-align: center; padding: 6px 12px 0; }
 .demo-note { max-width: 680px; margin: 12px auto 0; padding: 10px 14px;
   background: #FFF6DB; border: 1px solid #E8C84A; border-radius: 12px;
   font-size: 12.5px; font-weight: 700; }
 @media (min-width: 860px) {
-  .appbar-in, .tag, .demo-note { max-width: 1100px; }
+  .appbar-in, .tag, .follow-strip, .demo-note { max-width: 1100px; }
+}
+@media (max-width: 520px) {
+  .follow-strip { align-items: flex-start; flex-direction: column; }
+  .follow-actions { width: 100%; justify-content: flex-start; }
 }
 @media (prefers-color-scheme: dark) {
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
 }
 
@@ -112,7 +135,12 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
   .cta { width:100%; text-align:center; margin-top:4px; }
   .iname { -webkit-line-clamp:3; }
 }
+@media (max-width: 520px) {
+  .follow-strip { align-items: flex-start; flex-direction: column; }
+  .follow-actions { width: 100%; justify-content: flex-start; }
+}
 @media (prefers-color-scheme: dark) {
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   :root { --paper:#0E1117; --ink:#ECEEF3; --rule:#272C38; --accent:#2EC592;
   --accent-bg:#15302A; --green:#2EC592; --green-bg:#15302A;
   --marker:#5C4D12; --muted:#98A0B0; --card:#171B24; --new:#FF5D77; }
@@ -227,6 +255,17 @@ body.search-open .search ~ * { display: none !important; }
     </div>
   </div>
   <p class="tag">🔥 急上昇トレンド(毎日自動解析)</p>
+  <div class="follow-strip">
+    <p class="follow-copy">
+      <span class="follow-kicker">見逃し防止に</span>
+      <span class="follow-text">人気商品の予約開始・再販・抽選情報を自動チェック。あとで見返す人はブックマークへ。</span>
+    </p>
+    <div class="follow-actions">
+      <button class="follow-action" type="button" onclick="alert('ブラウザのブックマークに追加して、あとで新着予約をチェックできます。');">ブックマーク</button>
+      <button class="follow-action share" type="button" onclick="var u=location.href.split('#')[0];var t=document.title.replace('|予約開始レーダー','');window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t+'\\n'+u),'_blank','noopener');">このページをシェア</button>
+      <a class="follow-action" href="../feed.xml">RSS</a>
+    </div>
+  </div>
 </header>
 <p class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</p>
 

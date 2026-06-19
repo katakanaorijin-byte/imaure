@@ -54,6 +54,8 @@ def build_released_page(out_dir, data, site_name, site_url, demo):
         '<p class="empty">発売済み・販売中と判定された商品はまだありません(運用が進むと貯まります)</p>'
 
     tabs = ('<a class="tab tablink" href="../">🏠 すべて</a>\n'
+            '<a class="tab tablink" href="../weekly/">🗓 今週まとめ</a>\n'
+            '<a class="tab tablink" href="../monthly/">📌 今月まとめ</a>\n'
             '<a class="tab tablink" href="../trend/">🔥 急上昇</a>\n'
             '<a class="tab tablink" href="../calendar/">📅 発売カレンダー</a>\n'
             '<a class="tab tablink active" href="./">✅ 発売済み</a>\n'
@@ -64,8 +66,8 @@ def build_released_page(out_dir, data, site_name, site_url, demo):
                f'?client={escape(_ads, quote=True)}" crossorigin="anonymous"></script>') if _ads else ""
     canonical = (f'<link rel="canonical" href="{escape(site_url + "released/", quote=True)}">'
                  if site_url else "")
-    title = f"発売済み・販売中まとめ|{site_name}"
-    desc = "予約受付中だった商品のうち、発売時期を過ぎて発売済み・通常販売になったと思われる商品をまとめています。"
+    title = f"発売済み・販売中ホビーまとめ 最新|{site_name}"
+    desc = "予約受付中だった商品のうち、発売時期を過ぎて発売済み・通常販売になったと思われる商品をカテゴリ別にまとめています。"
     demo_note = ('<div class="demo-note">⚠ デモデータ表示中です。</div>' if demo else "")
 
     search_cfg = {

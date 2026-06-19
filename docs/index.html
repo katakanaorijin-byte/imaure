@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>予約開始レーダー|ホビーの“予約開始”を毎日自動キャッチ</title>
-<meta name="description" content="ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。昨日まで無かった新着予約だけを検知して速報します。">
+<title>ホビー予約 一覧 最新・予約開始速報|予約開始レーダー</title>
+<meta name="description" content="ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。予約一覧・再販・抽選・発売予定をカテゴリ別にチェックできます。">
 <link rel="canonical" href="https://katakanaorijin-byte.github.io/imaure/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="予約開始レーダー|ホビーの“予約開始”を毎日自動キャッチ">
-<meta property="og:description" content="ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。昨日まで無かった新着予約だけを検知して速報します。">
+<meta property="og:title" content="ホビー予約 一覧 最新・予約開始速報|予約開始レーダー">
+<meta property="og:description" content="ポケモンカード・ワンピースカード・フィギュア・ガンプラ・ゲームソフトの予約開始情報を毎日自動更新。予約一覧・再販・抽選・発売予定をカテゴリ別にチェックできます。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="予約開始レーダー">
 <meta property="og:url" content="https://katakanaorijin-byte.github.io/imaure/">
@@ -62,14 +62,36 @@ h1, h2, .brand, .price, .cnt { font-family: "Murecho", "Noto Sans JP", sans-seri
 @keyframes ping { 0% { transform: scale(0.4); opacity: 0.7; } 70%, 100% { transform: scale(1); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .pulse::after { animation: none; } }
 .tag { max-width: 680px; margin: 3px auto 0; font-size: 12px; color: var(--muted); }
-.ad-label { font-size: 10.5px; color: var(--muted); text-align: center; padding: 6px 12px 0; }
+.follow-strip { max-width: 680px; margin: 10px auto 0; padding: 10px 12px;
+  background: color-mix(in srgb, var(--green-bg) 72%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--green) 28%, var(--rule));
+  border-radius: 10px; display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; }
+.follow-copy { min-width: 0; }
+.follow-kicker { display: block; font-size: 11px; font-weight: 900; color: var(--green);
+  letter-spacing: 0.02em; }
+.follow-text { display: block; margin-top: 1px; font-size: 12.5px; font-weight: 700;
+  color: var(--ink); line-height: 1.45; }
+.follow-actions { display: flex; gap: 7px; flex: 0 0 auto; flex-wrap: wrap; justify-content: flex-end; }
+.follow-action { font: inherit; font-size: 12px; font-weight: 900; line-height: 1;
+  color: var(--ink); background: var(--card); border: 1px solid var(--rule);
+  border-radius: 999px; padding: 8px 10px; text-decoration: none; cursor: pointer;
+  white-space: nowrap; }
+.follow-action.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+.follow-action.share { border-color: color-mix(in srgb, var(--green) 32%, var(--rule)); }
+.follow-action:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }.ad-label { font-size: 10.5px; color: var(--muted); text-align: center; padding: 6px 12px 0; }
 .demo-note { max-width: 680px; margin: 12px auto 0; padding: 10px 14px;
   background: #FFF6DB; border: 1px solid #E8C84A; border-radius: 12px;
   font-size: 12.5px; font-weight: 700; }
 @media (min-width: 860px) {
-  .appbar-in, .tag, .demo-note { max-width: 1100px; }
+  .appbar-in, .tag, .follow-strip, .demo-note { max-width: 1100px; }
+}
+@media (max-width: 520px) {
+  .follow-strip { align-items: flex-start; flex-direction: column; }
+  .follow-actions { width: 100%; justify-content: flex-start; }
 }
 @media (prefers-color-scheme: dark) {
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
 }
 
@@ -196,7 +218,12 @@ footer { border-top: 1px solid var(--rule); background: var(--card);
 }
 
 /* ===== ダークモード ===== */
+@media (max-width: 520px) {
+  .follow-strip { align-items: flex-start; flex-direction: column; }
+  .follow-actions { width: 100%; justify-content: flex-start; }
+}
 @media (prefers-color-scheme: dark) {
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   :root { --paper: #0E1117; --card: #171B24; --ink: #ECEEF3; --muted: #98A0B0;
     --rule: #272C38; --green: #2EC592; --green-bg: #15302A;
     --new: #FF5D77; --new-bg: #3A1622; --hot: #FFA94D; --hot-bg: #3A2710;
@@ -314,6 +341,17 @@ body.search-open .search ~ * { display: none !important; }
     </div>
   </div>
   <p class="tag">ホビーの“予約開始”を毎日自動キャッチ。15分ごとに新しい予約だけを検知します。</p>
+  <div class="follow-strip">
+    <p class="follow-copy">
+      <span class="follow-kicker">見逃し防止に</span>
+      <span class="follow-text">人気商品の予約開始・再販・抽選情報を自動チェック。あとで見返す人はブックマークへ。</span>
+    </p>
+    <div class="follow-actions">
+      <button class="follow-action" type="button" onclick="alert('ブラウザのブックマークに追加して、あとで新着予約をチェックできます。');">ブックマーク</button>
+      <button class="follow-action share" type="button" onclick="var u=location.href.split('#')[0];var t=document.title.replace('|予約開始レーダー','');window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t+'\\n'+u),'_blank','noopener');">このページをシェア</button>
+      <a class="follow-action" href="./feed.xml">RSS</a>
+    </div>
+  </div>
 </header>
 <p class="ad-label">本ページはプロモーション(楽天・Yahoo!ショッピング等のアフィリエイト広告)を含みます</p>
 
@@ -357,6 +395,8 @@ body.search-open .search ~ * { display: none !important; }
 
 <nav class="pills" role="tablist">
       <button class="pill on" role="tab" data-target="panel-feed">🆕 新着フィード<b class=cnt>92</b></button>
+      <a class="pill plink" href="weekly/">🗓 今週まとめ</a>
+      <a class="pill plink" href="monthly/">📌 今月まとめ</a>
       <a class="pill plink" href="trend/">🔥 急上昇</a>
       <a class="pill plink" href="calendar/">📅 発売カレンダー</a>
       <a class="pill plink" href="released/">✅ 発売済み</a>
@@ -3141,7 +3181,7 @@ body.search-open .search ~ * { display: none !important; }
     <p>当サイトは楽天アフィリエイト等に参加しており、リンク経由の購入により紹介料を得ることがあります。</p>
     <p><strong>運営者:</strong> 予約開始レーダー運営 / 問い合わせ先は準備中です</p>
     <p>掲載内容に誤りがある場合や削除依頼がある場合は、上記連絡先からお知らせください。</p>
-    <p><a href="privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="trend/">🔥急上昇トレンド</a> / <a href="calendar/">📅発売カレンダー</a> / <a href="released/">✅発売済みまとめ</a> / <a href="pokemon-card/">ポケモンカード</a> / <a href="onepiece-card/">ワンピースカード</a> / <a href="yugioh/">遊戯王・他カード</a> / <a href="figure/">フィギュア</a> / <a href="nendoroid/">ねんどろいど・figma</a> / <a href="gunpla/">ガンプラ・プラモデル</a> / <a href="game/">ゲームソフト</a> / <a href="anime-bd/">アニメBlu-ray・CD</a> / <a href="tokusatsu/">特撮・なりきり玩具</a> / <a href="train-model/">鉄道模型</a> / <a href="tomica/">トミカ・ミニカー</a> / <a href="plush/">ぬいぐるみ・グッズ</a></p>
+    <p><a href="privacy/">プライバシーポリシー</a></p><p><strong>ページ一覧:</strong> <a href="weekly/">🗓今週の予約開始まとめ</a> / <a href="monthly/">📌今月の予約開始まとめ</a> / <a href="trend/">🔥急上昇トレンド</a> / <a href="calendar/">📅発売カレンダー</a> / <a href="released/">✅発売済みまとめ</a> / <a href="pokemon-card/">ポケモンカード</a> / <a href="onepiece-card/">ワンピースカード</a> / <a href="yugioh/">遊戯王・他カード</a> / <a href="figure/">フィギュア</a> / <a href="nendoroid/">ねんどろいど・figma</a> / <a href="gunpla/">ガンプラ・プラモデル</a> / <a href="game/">ゲームソフト</a> / <a href="anime-bd/">アニメBlu-ray・CD</a> / <a href="tokusatsu/">特撮・なりきり玩具</a> / <a href="train-model/">鉄道模型</a> / <a href="tomica/">トミカ・ミニカー</a> / <a href="plush/">ぬいぐるみ・グッズ</a></p>
     <p>最終更新: 2026年6月19日 10:41</p>
   </div>
 </footer>

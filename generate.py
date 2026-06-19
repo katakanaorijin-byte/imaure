@@ -446,11 +446,13 @@ def build_html(data, demo, single=None):
     prefix = "../" if single else ""
 
     if single:
-        page_title = f"{single['name']}の予約開始速報・新着まとめ|{SITE_NAME}"
+        page_title = f"{single['name']} 予約 一覧 最新・予約開始速報|{SITE_NAME}"
         page_desc = (f"{single['name']}の予約開始情報を15分ごとに自動更新。直近24時間の新着予約を"
-                     f"検知して速報します。受付中の予約一覧・発売時期つき。")
+                     f"検知して速報します。受付中の予約一覧・発売時期・再販/抽選の確認に。")
         page_url = f"{SITE_URL}{single['slug']}/" if SITE_URL else ""
         tabs = (f'      <a class="pill plink" href="{prefix}">🏠 すべて</a>\n'
+                f'      <a class="pill plink" href="{prefix}weekly/">🗓 今週まとめ</a>\n'
+                f'      <a class="pill plink" href="{prefix}monthly/">📌 今月まとめ</a>\n'
                 f'      <a class="pill plink" href="{prefix}trend/">🔥 急上昇</a>\n'
                 f'      <a class="pill plink" href="{prefix}calendar/">📅 発売カレンダー</a>\n'
                 f'      <a class="pill plink" href="{prefix}released/">✅ 発売済み</a>\n'
@@ -459,11 +461,13 @@ def build_html(data, demo, single=None):
             f'href="{prefix}{g["slug"]}/">{g["icon"]} {escape(g["name"])}</a>'
             for g in data))
     else:
-        page_title = f"{SITE_NAME}|{SITE_TAGLINE}"
-        page_desc = SITE_DESCRIPTION
+        page_title = f"ホビー予約 一覧 最新・予約開始速報|{SITE_NAME}"
+        page_desc = SITE_DESCRIPTION + " 予約一覧・再販・抽選・発売予定をカテゴリ別にチェックできます。"
         page_url = SITE_URL
         tabs = (f'      <button class="pill on" role="tab" data-target="panel-feed">'
                 f'🆕 新着フィード{f"<b class=cnt>{total_new}</b>" if total_new else ""}</button>\n'
+                '      <a class="pill plink" href="weekly/">🗓 今週まとめ</a>\n'
+                '      <a class="pill plink" href="monthly/">📌 今月まとめ</a>\n'
                 '      <a class="pill plink" href="trend/">🔥 急上昇</a>\n'
                 '      <a class="pill plink" href="calendar/">📅 発売カレンダー</a>\n'
                 '      <a class="pill plink" href="released/">✅ 発売済み</a>\n'
@@ -503,6 +507,8 @@ def build_html(data, demo, single=None):
               + "</script>")
     catlinks = (f'<p><a href="{prefix}privacy/">プライバシーポリシー</a></p>'
                 '<p><strong>ページ一覧:</strong> '
+                + f'<a href="{prefix}weekly/">🗓今週の予約開始まとめ</a> / '
+                + f'<a href="{prefix}monthly/">📌今月の予約開始まとめ</a> / '
                 + f'<a href="{prefix}trend/">🔥急上昇トレンド</a> / '
                 + f'<a href="{prefix}calendar/">📅発売カレンダー</a> / '
                 + f'<a href="{prefix}released/">✅発売済みまとめ</a> / '
@@ -1001,7 +1007,8 @@ def main():
     # sitemap.xml と robots.txt(SITE_URLを設定すると検索エンジンに全ページを案内できる)
     today = datetime.now(JST).strftime("%Y-%m-%d")
     if SITE_URL:
-        urls = ([SITE_URL, f"{SITE_URL}trend/", f"{SITE_URL}calendar/", f"{SITE_URL}released/", f"{SITE_URL}privacy/"]
+        urls = ([SITE_URL, f"{SITE_URL}weekly/", f"{SITE_URL}monthly/", f"{SITE_URL}trend/",
+                 f"{SITE_URL}calendar/", f"{SITE_URL}released/", f"{SITE_URL}privacy/"]
                 + [f"{SITE_URL}{g['slug']}/" for g in data])
         sm = ('<?xml version="1.0" encoding="UTF-8"?>\n'
               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -1022,6 +1029,13 @@ def main():
         pub_id = ads_client.replace("ca-", "")
         with open(os.path.join(out_dir, "ads.txt"), "w", encoding="utf-8") as f:
             f.write(f"google.com, {pub_id}, DIRECT, f08c47fec0942fa0\n")
+
+    # 発売日カレンダー。失敗してもサイト本体は止めない
+    try:
+        import summary_page
+        summary_page.build_summary_pages(out_dir, data, SITE_NAME, SITE_URL, demo)
+    except Exception as e:
+        print(f"[警告] まとめページ生成に失敗(本体には影響なし): {e}", file=sys.stderr)
 
     # 発売日カレンダー。失敗してもサイト本体は止めない
     try:

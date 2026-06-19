@@ -385,6 +385,8 @@ def build_trend_page(out_dir, categories, site_name, site_url, demo,
         '<p class="empty">本日は世間トレンドを取得できませんでした(自動で再試行します)</p>'
 
     tabs = ('<a class="tab tablink" href="../">🏠 すべて</a>\n'
+            '<a class="tab tablink" href="../weekly/">🗓 今週まとめ</a>\n'
+            '<a class="tab tablink" href="../monthly/">📌 今月まとめ</a>\n'
             '<a class="tab tablink active" href="./">🔥 急上昇</a>\n'
             '<a class="tab tablink" href="../calendar/">📅 発売カレンダー</a>\n'
             '<a class="tab tablink" href="../released/">✅ 発売済み</a>\n'
@@ -395,8 +397,8 @@ def build_trend_page(out_dir, categories, site_name, site_url, demo,
                f'?client={escape(_ads, quote=True)}" crossorigin="anonymous"></script>') if _ads else ""
     canonical = (f'<link rel="canonical" href="{escape(site_url + "trend/", quote=True)}">'
                  if site_url else "")
-    title = f"急上昇トレンド|{site_name}"
-    desc = "ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。"
+    title = f"ホビー予約 急上昇トレンド・話題ワード 最新|{site_name}"
+    desc = "ホビー界隈でいま話題のワードと、予約が集中している商品を毎日自動解析。予約開始・再販・抽選の注目ワードを確認できます。"
     demo_note = ('<div class="demo-note">⚠ デモデータ表示中です。本番運用が始まると実データに切り替わります。</div>'
                  if demo else "")
 

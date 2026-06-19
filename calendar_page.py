@@ -93,6 +93,8 @@ def build_calendar_page(out_dir, data, site_name, site_url, demo):
         '<p class="empty">発売時期を読み取れた商品がまだありません(運用が進むと貯まります)</p>'
 
     tabs = ('<a class="tab tablink" href="../">🏠 すべて</a>\n'
+            '<a class="tab tablink" href="../weekly/">🗓 今週まとめ</a>\n'
+            '<a class="tab tablink" href="../monthly/">📌 今月まとめ</a>\n'
             '<a class="tab tablink" href="../trend/">🔥 急上昇</a>\n'
             '<a class="tab tablink active" href="./">📅 発売カレンダー</a>\n'
             '<a class="tab tablink" href="../released/">✅ 発売済み</a>\n'
@@ -103,8 +105,8 @@ def build_calendar_page(out_dir, data, site_name, site_url, demo):
                f'?client={escape(_ads, quote=True)}" crossorigin="anonymous"></script>') if _ads else ""
     canonical = (f'<link rel="canonical" href="{escape(site_url + "calendar/", quote=True)}">'
                  if site_url else "")
-    title = f"発売日カレンダー|{site_name}"
-    desc = "ポケカ・フィギュア・ガンプラなど予約受付中アイテムの発売予定を月別に自動整理。月ごとの必要予算もわかります。"
+    title = f"ホビー予約 発売日カレンダー・発売予定一覧 最新|{site_name}"
+    desc = "ポケカ・フィギュア・ガンプラなど予約受付中アイテムの発売予定を月別に自動整理。予約一覧と月ごとの必要予算もわかります。"
     demo_note = ('<div class="demo-note">⚠ デモデータ表示中です。</div>' if demo else "")
 
     search_cfg = {
