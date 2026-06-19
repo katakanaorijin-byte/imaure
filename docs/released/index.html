@@ -68,8 +68,8 @@ body { font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var
   .follow-actions { width: 100%; justify-content: flex-start; }
 }
 @media (prefers-color-scheme: dark) {
-  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
 }
 
 .tabs { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
@@ -126,12 +126,7 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
   .cta { width:100%; text-align:center; margin-top:4px; }
   .iname { -webkit-line-clamp:3; }
 }
-@media (max-width: 520px) {
-  .follow-strip { align-items: flex-start; flex-direction: column; }
-  .follow-actions { width: 100%; justify-content: flex-start; }
-}
 @media (prefers-color-scheme: dark) {
-  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   :root { --paper:#0E1117; --ink:#ECEEF3; --rule:#272C38; --accent:#2EC592;
   --accent-bg:#15302A; --green:#2EC592; --green-bg:#15302A;
   --marker:#5C4D12; --muted:#98A0B0; --card:#171B24; --new:#FF5D77; }
@@ -241,7 +236,7 @@ body.search-open .search ~ * { display: none !important; }
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>10:41 更新</span>
+      <span class="live"><i class="pulse"></i>12:47 更新</span>
     </div>
   </div>
   <p class="tag">✅ 発売済み・販売中まとめ(予約期間が終わった商品)</p>
@@ -252,7 +247,8 @@ body.search-open .search ~ * { display: none !important; }
     </p>
     <div class="follow-actions">
       <button class="follow-action" type="button" onclick="alert('ブラウザのブックマークに追加して、あとで新着予約をチェックできます。');">ブックマーク</button>
-      <button class="follow-action share" type="button" onclick="var u=location.href.split('#')[0];var t=document.title.replace('|予約開始レーダー','');window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t+'\\n'+u),'_blank','noopener');">このページをシェア</button>
+      <button class="follow-action share" type="button" onclick="var u=location.href.split(&#x27;#&#x27;)[0];var t=document.title.replace(&#x27;|予約開始レーダー&#x27;,&#x27;&#x27;);window.open(&#x27;https://twitter.com/intent/tweet?text=&#x27;+encodeURIComponent(t+&#x27;\n&#x27;+u),&#x27;_blank&#x27;,&#x27;noopener&#x27;);">このページをシェア</button>
+
       <a class="follow-action" href="../feed.xml">RSS</a>
     </div>
   </div>
@@ -319,39 +315,7 @@ body.search-open .search ~ * { display: none !important; }
 </nav>
 
 <main>
-  <p class="lead">発売時期を過ぎ、発売済み・通常販売になったと思われる商品(8件)をまとめました。商品名に「予約」が残っていても、出品者がタイトルを更新していないだけのことがあります。判定は商品名からの自動推定のため、必ずリンク先で在庫・価格をご確認ください。</p>
-<h2>🎎 フィギュア<span class="count">3件</span></h2>
-<ol class="list">
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/homeshop/cabinet/ado01/s5902-myz-5006_1.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🎎</span>【6月発売予定 予約受付】 スターウォーズ フィギュア マンダロリアン グローグー ZD toys ディン・ジャリン ＆グローグー セット Infinity Action Xシリーズ スター・ウオーズ マンドー ベビー ヨーダ</p>
-          <p class="sub"><span class="price">10,800<small>円</small></span> <span class="when">6月発売</span></p>
-          <p class="shop">ホームショッピング</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00pssbn.kgoda452.g00pssbn.kgodbaa3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhomeshop%2Fs5902-myz-5006%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhomeshop%2Fi%2F10360938%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">商品ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/kadenshop/cabinet/ado01/s5902-myz-5006_1.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🎎</span>【6月発売予定 予約受付】 スターウォーズ フィギュア マンダロリアン グローグー ZD toys ディン・ジャリン ＆グローグー セット Infinity Action Xシリーズ スター・ウオーズ マンドー ベビー ヨーダ（デジタルライフ）</p>
-          <p class="sub"><span class="price">10,800<small>円</small></span> <span class="when">6月発売</span></p>
-          <p class="shop">デジタルライフ</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00qo16n.kgoda530.g00qo16n.kgodb096/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkadenshop%2Fs5902-myz-5006%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fkadenshop%2Fi%2F10591622%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">商品ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/benefitshop/cabinet/ado01/s5902-myz-5006_1.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🎎</span>【6月発売予定 予約受付】 スターウォーズ フィギュア マンダロリアン グローグー ZD toys ディン・ジャリン ＆グローグー セット Infinity Action Xシリーズ スター・ウオーズ マンドー ベビー ヨーダ（.QL）</p>
-          <p class="sub"><span class="price">10,800<small>円</small></span> <span class="when">6月発売</span></p>
-          <p class="shop">テンクール(.QL)</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00txz2n.kgoda133.g00txz2n.kgodb15e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbenefitshop%2Fs5902-myz-5006%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fbenefitshop%2Fi%2F10033661%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">商品ページへ</a>
-      </li>
-</ol>
+  <p class="lead">発売時期を過ぎ、発売済み・通常販売になったと思われる商品(5件)をまとめました。商品名に「予約」が残っていても、出品者がタイトルを更新していないだけのことがあります。判定は商品名からの自動推定のため、必ずリンク先で在庫・価格をご確認ください。</p>
 <h2>🦸 特撮・なりきり玩具<span class="count">5件</span></h2>
 <ol class="list">
       <li class="row">

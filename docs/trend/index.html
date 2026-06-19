@@ -68,8 +68,8 @@ body { font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var
   .follow-actions { width: 100%; justify-content: flex-start; }
 }
 @media (prefers-color-scheme: dark) {
-  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
 }
 
 .tabs { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
@@ -135,12 +135,7 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
   .cta { width:100%; text-align:center; margin-top:4px; }
   .iname { -webkit-line-clamp:3; }
 }
-@media (max-width: 520px) {
-  .follow-strip { align-items: flex-start; flex-direction: column; }
-  .follow-actions { width: 100%; justify-content: flex-start; }
-}
 @media (prefers-color-scheme: dark) {
-  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   :root { --paper:#0E1117; --ink:#ECEEF3; --rule:#272C38; --accent:#2EC592;
   --accent-bg:#15302A; --green:#2EC592; --green-bg:#15302A;
   --marker:#5C4D12; --muted:#98A0B0; --card:#171B24; --new:#FF5D77; }
@@ -262,7 +257,8 @@ body.search-open .search ~ * { display: none !important; }
     </p>
     <div class="follow-actions">
       <button class="follow-action" type="button" onclick="alert('ブラウザのブックマークに追加して、あとで新着予約をチェックできます。');">ブックマーク</button>
-      <button class="follow-action share" type="button" onclick="var u=location.href.split('#')[0];var t=document.title.replace('|予約開始レーダー','');window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t+'\\n'+u),'_blank','noopener');">このページをシェア</button>
+      <button class="follow-action share" type="button" onclick="var u=location.href.split(&#x27;#&#x27;)[0];var t=document.title.replace(&#x27;|予約開始レーダー&#x27;,&#x27;&#x27;);window.open(&#x27;https://twitter.com/intent/tweet?text=&#x27;+encodeURIComponent(t+&#x27;\n&#x27;+u),&#x27;_blank&#x27;,&#x27;noopener&#x27;);">このページをシェア</button>
+
       <a class="follow-action" href="../feed.xml">RSS</a>
     </div>
   </div>
@@ -309,6 +305,8 @@ body.search-open .search ~ * { display: none !important; }
 
 <nav class="tabs">
 <a class="tab tablink" href="../">🏠 すべて</a>
+<a class="tab tablink" href="../weekly/">🗓 今週まとめ</a>
+<a class="tab tablink" href="../monthly/">📌 今月まとめ</a>
 <a class="tab tablink active" href="./">🔥 急上昇</a>
 <a class="tab tablink" href="../calendar/">📅 発売カレンダー</a>
 <a class="tab tablink" href="../released/">✅ 発売済み</a>
@@ -330,47 +328,47 @@ body.search-open .search ~ * { display: none !important; }
   <h2>いま予約が集中しているワード</h2>
   <p class="lead">このサイトが直近7日間にキャッチした新着予約60件を頻度解析した結果です。タップで横断検索できます。</p>
   <div class="chips">
-<a class="chip" href="./?q=%E6%9C%88%E4%BA%88%E7%B4%84">月予約 <b>×14</b></a>
-<a class="chip" href="./?q=%E3%83%9F%E3%83%8B%E3%82%AB">ミニカ <b>×6</b></a>
-<a class="chip" href="./?q=MODEL">MODEL <b>×4</b></a>
-<a class="chip" href="./?q=%E3%83%96%E3%83%BC%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF">ブースターパック <b>×4</b></a>
-<a class="chip" href="./?q=%E3%82%B2%E3%83%BC%E3%82%B8">ゲージ <b>×3</b></a>
-<a class="chip" href="./?q=%E3%83%A1%E3%82%AC%E3%83%9F%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9">メガミデバイス <b>×3</b></a>
-<a class="chip" href="./?q=%E3%83%97%E3%83%A9%E3%83%A2%E3%83%87%E3%83%AB%E3%83%91%E3%83%BC%E3%83%84">プラモデルパーツ <b>×3</b></a>
-<a class="chip" href="./?q=%E3%82%B9%E3%82%AD%E3%83%B3%E3%82%AB%E3%83%A9">スキンカラ <b>×3</b></a>
-<a class="chip" href="./?q=%E5%AE%8C%E6%88%90%E5%93%81">完成品 <b>×3</b></a>
-<a class="chip" href="./?q=Television">Television <b>×3</b></a>
-<a class="chip" href="./?q=POP">POP <b>×3</b></a>
-<a class="chip" href="./?q=Funko">Funko <b>×3</b></a>
+<a class="chip" href="./?q=%E3%82%A2%E3%82%AF%E3%83%AA%E3%83%AB%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89">アクリルスタンド <b>×13</b></a>
+<a class="chip" href="./?q=%E6%9C%88%E4%BA%88%E7%B4%84">月予約 <b>×12</b></a>
+<a class="chip" href="./?q=%E3%82%A2%E3%83%8B%E3%83%A1">アニメ <b>×8</b></a>
+<a class="chip" href="./?q=%E5%8A%87%E5%A0%B4%E7%89%88">劇場版 <b>×7</b></a>
+<a class="chip" href="./?q=%E3%82%B0%E3%83%83%E3%83%89%E3%82%B9%E3%83%9E%E3%82%A4%E3%83%AB%E3%82%AB%E3%83%B3%E3%83%91%E3%83%8B">グッドスマイルカンパニ <b>×7</b></a>
+<a class="chip" href="./?q=%E6%9D%B1%E4%BA%AC">東京 <b>×6</b></a>
+<a class="chip" href="./?q=%E3%83%AA%E3%83%99%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA">リベンジャーズ <b>×6</b></a>
+<a class="chip" href="./?q=%E3%83%90%E3%83%8B%E3%83%BC%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3">バニーガーデン <b>×6</b></a>
+<a class="chip" href="./?q=%E3%82%AB%E3%83%BC%E3%83%86%E3%83%B3">カーテン <b>×6</b></a>
+<a class="chip" href="./?q=Blu-ray">Blu-ray <b>×6</b></a>
+<a class="chip" href="./?q=%E4%B8%AD%E8%8F%AF">中華 <b>×5</b></a>
+<a class="chip" href="./?q=%E3%82%AB%E3%83%95%E3%82%A7">カフェ <b>×5</b></a>
   </div>
 
   <h2>ニュース・ネットで話題のワード</h2>
   <p class="lead">ホビー系ニュースサイトとはてなブックマークの直近48時間の見出し10本を解析した結果です。タップで横断検索できます。</p>
   <div class="chips">
+<a class="chip" href="./?q=%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA">シリーズ <b>×8</b></a>
+<a class="chip" href="./?q=%E9%96%8B%E5%82%AC">開催 <b>×8</b></a>
 <a class="chip" href="./?q=%E3%82%B3%E3%83%A9%E3%83%9C">コラボ <b>×7</b></a>
-<a class="chip" href="./?q=%E6%97%A5%E7%99%BA%E5%A3%B2">日発売 <b>×7</b></a>
-<a class="chip" href="./?q=%E9%96%8B%E5%82%AC">開催 <b>×6</b></a>
-<a class="chip" href="./?q=%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA">シリーズ <b>×6</b></a>
-<a class="chip" href="./?q=%E3%82%A2%E3%83%8B%E3%83%A1">アニメ <b>×5</b></a>
-<a class="chip" href="./?q=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3">ポケモン <b>×5</b></a>
+<a class="chip" href="./?q=%E6%97%A5%E7%99%BA%E5%A3%B2">日発売 <b>×6</b></a>
+<a class="chip" href="./?q=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3">ポケモン <b>×6</b></a>
+<a class="chip" href="./?q=%E3%82%A2%E3%83%8B%E3%83%A1">アニメ <b>×4</b></a>
 <a class="chip" href="./?q=Switch">Switch <b>×4</b></a>
-<a class="chip" href="./?q=%E5%AE%9F%E6%96%BD">実施 <b>×4</b></a>
-<a class="chip" href="./?q=%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3">デザイン <b>×4</b></a>
-<a class="chip" href="./?q=%E5%8F%8E%E9%8C%B2">収録 <b>×3</b></a>
+<a class="chip" href="./?q=Switch2">Switch2 <b>×3</b></a>
+<a class="chip" href="./?q=%E7%99%BA%E5%A3%B2%E6%B1%BA%E5%AE%9A">発売決定 <b>×3</b></a>
+<a class="chip" href="./?q=%E6%96%B0%E4%BD%9C">新作 <b>×3</b></a>
   </div>
 
   <h2>注目ヘッドライン</h2>
   <ul class="news">
-<li class="nrow"><a href="https://hobby.dengeki.com/news/3053141/" target="_blank" rel="noopener">『コードギアス 奪還のロゼ』Zi-アルテミスが完全新規造形で「HG」プラモデル化！フォートレスモードへの変形やZi-オルテギア状態も再現可能！</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
-<li class="nrow"><a href="https://hobby.watch.impress.co.jp/docs/news/2117457.html" target="_blank" rel="noopener">「グリッドマン ユニバース」より宝多六花と新条アカネが「TENITOL TALL」シリーズに登場。予約開始スポーツがテーマの新規イラストをもとに立体化。2体セットも用意</a><span class="nsrc">HOBBY Watch ・ 1時間以内</span></li>
-<li class="nrow"><a href="https://hobby.dengeki.com/news/3050108/" target="_blank" rel="noopener">『グリッドマン ユニバース』から躍動感溢れるスポーツウェア姿の宝多六花と新条アカネがフリューの「TENITOL」にてフィギュア化！スぺシャル2体セットには追加表情パーツが付属!!</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
-<li class="nrow"><a href="https://hobby.dengeki.com/news/3050369/" target="_blank" rel="noopener">劇場版『ラブライブ！蓮ノ空女学院スクールアイドルクラブ 』の日野下花帆、村野さやか、大沢瑠璃乃とその豪華3体セットがフリューの「F:NEX」ブランドからフィギュア化！華やかな『光の中で花咲いて』衣装でステージの高揚が蘇る!!</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
-<li class="nrow"><a href="https://hobby.dengeki.com/news/3052396/" target="_blank" rel="noopener">放送30周年を迎えた『機動新世紀ガンダムX』より、ユーズドスタイルのMS柄Tシャツが「STRICT-G」に登場！ガンダムXディバイダー、ガンダムヴァサーゴの2種！</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
-<li class="nrow"><a href="https://hobby.dengeki.com/news/3053069/" target="_blank" rel="noopener">刺繍デザインが可愛い！『名探偵コナン』の缶バッジビスケットがバンダイの食玩に登場！12個入りセットがプレバンで予約受付開始!!</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
-<li class="nrow"><a href="https://game.watch.impress.co.jp/docs/news/2118099.html" target="_blank" rel="noopener">“現代の高校生”がヒロインのディズニー・アニメーション映画「ビリーと魔法のはじまり」12月4日公開ティザーポスター＆予告も公開</a><span class="nsrc">GAME Watch ・ 2時間前</span></li>
-<li class="nrow"><a href="https://www.4gamer.net/games/018/G101846/20260619001/" target="_blank" rel="noopener">歌の力で敵を操れ！ オルフェウスが冥界に挑む，レトロなパズルADV「ORPHEUS: TO HELL AND BACK」が7月に発売。Steamで体験版が公開中</a><span class="nsrc">4Gamer ・ 10時間前</span></li>
-<li class="nrow"><a href="https://game.watch.impress.co.jp/docs/news/2117331.html" target="_blank" rel="noopener">「星のカービィ」の絵本シリーズ「いつでもカービィ」のイラストを使用した新商品が6月19日発売新刊発売を記念してマスコットなど全10アイテムが登場</a><span class="nsrc">GAME Watch ・ 10時間前</span></li>
-<li class="nrow"><a href="https://game.watch.impress.co.jp/docs/news/2117318.html" target="_blank" rel="noopener">GU×「パペットスンスン」コラボ第2弾アイテムが本日6月19日より販売開始アイスクリームショップなどをデザインしたグラフィックTシャツやミニポーチが登場</a><span class="nsrc">GAME Watch ・ 10時間前</span></li>
+<li class="nrow"><a href="https://www.4gamer.net/games/018/G101851/20260619012/" target="_blank" rel="noopener">Switch2版「SHINOBI 復讐の斬撃」，2026年9月24日に発売決定。忍者「ジョー・ムサシ」の復讐の旅を描くアクションゲーム</a><span class="nsrc">4Gamer ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://hobby.watch.impress.co.jp/docs/news/2118484.html" target="_blank" rel="noopener">「ガンダム アーティファクト ベストセレクション(10個入)」10月発売！　「高機動型ザクII」、「キュベレイ」などをセレクト</a><span class="nsrc">HOBBY Watch ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://game.watch.impress.co.jp/docs/news/2118481.html" target="_blank" rel="noopener">「FF10」25周年記念のスクエニPOP UP STOREが大丸心斎橋店・大丸東京店で開催決定記念アートデザインのグッズ販売やノベルティプレゼントも</a><span class="nsrc">GAME Watch ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://www.4gamer.net/games/993/G099337/20260618062/" target="_blank" rel="noopener">「COCORO」，8月27日に発売決定。少年と，ロボットであることを隠して生きる少女「ココロ」の初恋を描くノベルゲーム</a><span class="nsrc">4Gamer ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://game.watch.impress.co.jp/docs/news/2118409.html" target="_blank" rel="noopener">ノベルゲーム「COCORO」の発売日が8月27日に決定！「ATRI -My Dear Moments-」6周年記念コラボキャンペーンも開催</a><span class="nsrc">GAME Watch ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://hobby.dengeki.com/news/3051272/" target="_blank" rel="noopener">ホロライブEnglish -Promise-「ハコス・ベールズ」がねんどろいど化！笑顔、ウインク顔、ニシシ顔に加え、ミスター・スクイークスやチーズが付属！</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://hobby.dengeki.com/news/3051747/" target="_blank" rel="noopener">歌声も造形も未来へ進化！『V4X』版の「巡音ルカ」のねんどろいどが登場！さらに「ねんどろいど 初音ミク V4X」が再販!!</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://hobby.dengeki.com/news/3051778/" target="_blank" rel="noopener">3機のゲットマシンから驚異の完全合体＆変形！コンパクトサイズにギミックを詰め込んだ「ゲッタードラゴン」がMODEROIDよりプラモデル化!!</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://hobby.dengeki.com/news/3052789/" target="_blank" rel="noopener">電撃文庫『魔法科高校の劣等生』のPOP UP SHOPが東京の有楽町マルイにて2026年6月20日（土）より開催！美麗イラストの数々を使った新作グッズが多数登場！</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
+<li class="nrow"><a href="https://hobby.dengeki.com/news/3052880/" target="_blank" rel="noopener">ノーマルモードからスーパーモードへ完全変形！『ビーロボ カブタック』コブランダーとガニランの変形フィギュアがプレミアムバンダイに登場！</a><span class="nsrc">電撃ホビー ・ 1時間以内</span></li>
   </ul>
 
   <h2>世間の急上昇ワードと関連商品</h2>

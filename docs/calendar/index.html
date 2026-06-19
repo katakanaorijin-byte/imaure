@@ -68,8 +68,8 @@ body { font-family:"Noto Sans JP",sans-serif; background:var(--paper); color:var
   .follow-actions { width: 100%; justify-content: flex-start; }
 }
 @media (prefers-color-scheme: dark) {
-  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   .demo-note { background: #332B0E; border-color: #8A7A1E; color: #F2E7AE; }
+  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
 }
 
 .tabs { position:sticky; top:0; z-index:20; background:color-mix(in srgb, var(--paper) 88%, transparent);
@@ -126,12 +126,7 @@ footer { border-top:2px solid var(--ink); background:#fff; padding:22px 16px 32p
   .cta { width:100%; text-align:center; margin-top:4px; }
   .iname { -webkit-line-clamp:3; }
 }
-@media (max-width: 520px) {
-  .follow-strip { align-items: flex-start; flex-direction: column; }
-  .follow-actions { width: 100%; justify-content: flex-start; }
-}
 @media (prefers-color-scheme: dark) {
-  .follow-action.primary { background: var(--green); border-color: var(--green); color: #08110D; }
   :root { --paper:#0E1117; --ink:#ECEEF3; --rule:#272C38; --accent:#2EC592;
   --accent-bg:#15302A; --green:#2EC592; --green-bg:#15302A;
   --marker:#5C4D12; --muted:#98A0B0; --card:#171B24; --new:#FF5D77; }
@@ -241,7 +236,7 @@ body.search-open .search ~ * { display: none !important; }
   <div class="appbar-in">
     <div class="brandrow">
       <h1 class="brand"><a href="../">予約開始レーダー</a></h1>
-      <span class="live"><i class="pulse"></i>10:41 更新</span>
+      <span class="live"><i class="pulse"></i>12:47 更新</span>
     </div>
   </div>
   <p class="tag">📅 発売日カレンダー(予約受付中アイテムの発売予定)</p>
@@ -252,7 +247,8 @@ body.search-open .search ~ * { display: none !important; }
     </p>
     <div class="follow-actions">
       <button class="follow-action" type="button" onclick="alert('ブラウザのブックマークに追加して、あとで新着予約をチェックできます。');">ブックマーク</button>
-      <button class="follow-action share" type="button" onclick="var u=location.href.split('#')[0];var t=document.title.replace('|予約開始レーダー','');window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t+'\\n'+u),'_blank','noopener');">このページをシェア</button>
+      <button class="follow-action share" type="button" onclick="var u=location.href.split(&#x27;#&#x27;)[0];var t=document.title.replace(&#x27;|予約開始レーダー&#x27;,&#x27;&#x27;);window.open(&#x27;https://twitter.com/intent/tweet?text=&#x27;+encodeURIComponent(t+&#x27;\n&#x27;+u),&#x27;_blank&#x27;,&#x27;noopener&#x27;);">このページをシェア</button>
+
       <a class="follow-action" href="../feed.xml">RSS</a>
     </div>
   </div>
@@ -319,19 +315,9 @@ body.search-open .search ~ * { display: none !important; }
 </nav>
 
 <main>
-  <p class="lead">現在予約受付中の26件を発売月別に整理しました。「合計◯円」はその月の全部を買った場合の予算目安です。発売時期は商品名からの自動読み取りのため、必ずリンク先でご確認ください。</p>
-<h2>2026年7月発売<span class="count">12件・合計25,686円</span></h2>
+  <p class="lead">現在予約受付中の27件を発売月別に整理しました。「合計◯円」はその月の全部を買った場合の予算目安です。発売時期は商品名からの自動読み取りのため、必ずリンク先でご確認ください。</p>
+<h2>2026年7月発売<span class="count">1件・合計4,158円</span></h2>
 <ol class="list">
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13465909/sp_0000071223_crd2.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🤖</span>【エントリーで全品P10倍】【予約】 ガイアノーツ G-29 目盛り付き スジ彫り用 ガイドテープ(シート 2 枚 入り) プラモデル 【2026年7月発売予定】</p>
-          <p class="sub"><span class="price">1,728<small>円</small></span> </p>
-          <p class="shop">セプライ 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071223%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10014824%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
       <li class="row">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plaza/cabinet/k-gangu15/gng-sg-oks-317-0321.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="meta">
@@ -341,109 +327,129 @@ body.search-open .search ~ * { display: none !important; }
         </div>
         <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00psiin.kgoda5d9.g00psiin.kgodb335/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffestival-plaza%2Fgng-sg-oks-317-0321%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ffestival-plaza%2Fi%2F10066782%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
       </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869539.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／東峰 旭</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683831%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024254%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869537.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／菅原孝支</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683824%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024253%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869535.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／澤村大地</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683817%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024252%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869533.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／縁下 力</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683800%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024251%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869531.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／田中龍之介</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683794%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024250%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869528.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／西谷 夕</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683787%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024249%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869526.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／山口 忠</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683770%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024248%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869524.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／月島 蛍</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683763%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024247%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869523.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／影山飛雄</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683756%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024246%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869520.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年7月発売予約商品！】 「ハイキュー!!（アニメ版）」ふちからすたんど（アクリルスタンド）／日向翔陽</p>
-          <p class="sub"><span class="price">1,980<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550621683749%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024245%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
 </ol>
-<h2>2026年8月発売<span class="count">2件・合計15,682円</span></h2>
+<h2>2026年8月発売<span class="count">14件・合計73,973円</span></h2>
 <ol class="list">
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/dd42599f45104eee.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 BOPTOYS(潮玩波普) Baobao フラッフィーファンタジーシリーズ トレーディングプラッシュ BOX 6個入り 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">15,234<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071637%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015239%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/46ac2f9793f507b3.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 アクリルフィギュアL/結衣/プリンセス グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,681<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071663%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015265%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/85385792ca3e8675.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 立体アクリルフィギュア/結衣バースデー2023 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">4,761<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071670%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015272%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/f4813d3e958fcdc9.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。続 アクリルフィギュアL/由比ヶ浜結衣ドレス グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,681<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071659%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015261%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/a57d4cbfbaa5606b.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 アクリルフィギュアL/由比ヶ浜結衣お花柄 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,681<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071661%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015263%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/e385f56b7c1a98c2.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 アクリルフィギュアL/結衣バースデー2025 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,681<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071654%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015256%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/2ae95a3dd13eda94.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 アクリルフィギュアL/結衣バースデー2023 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,681<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071669%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015271%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/cf512c107a22b32a.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 アクリルフィギュアL/結衣バースデー2022 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,344<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071666%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015268%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/3105de23b98a93de.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。続 アクリルフィギュアL/由比ヶ浜結衣 制服Ver. グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,344<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071657%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015259%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/3c256729638729ba.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 アクリルフィギュアL/結衣バースデー2026 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">3,681<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071641%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015243%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/dae24a3b91d26db4.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 立体アクリルフィギュア/結衣バースデー2025 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">4,761<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071671%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015273%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/190620649fa77fe6.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🎎</span>【予約】 TBSグロウディア やはり俺の青春ラブコメはまちがっている。完 立体アクリルフィギュア/結衣バースデー2026 グッズ 【2026年8月発売予定】</p>
+          <p class="sub"><span class="price">4,761<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071649%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015251%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
       <li class="row">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plus/cabinet/k-gangu15/gng-sg-oks-321-0321.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="meta">
@@ -464,28 +470,8 @@ body.search-open .search ~ * { display: none !important; }
         <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00psiin.kgoda5d9.g00psiin.kgodb335/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffestival-plaza%2Fgng-sg-oks-321-0321%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Ffestival-plaza%2Fi%2F10066783%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
       </li>
 </ol>
-<h2>2026年9月発売<span class="count">7件・合計223,869円</span></h2>
+<h2>2026年9月発売<span class="count">3件・合計185,760円</span></h2>
 <ol class="list">
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13465909/sp_0000071226_crd2.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🤖</span>【エントリーで全品P10倍】【予約】 SOSKILL×御模道EASTERN MODEL 九尾の狐 妲己 1/12スケールプラスチックモデルキット 通常版 プラモデル 【2026年09月発売予定】</p>
-          <p class="sub"><span class="price">9,012<small>円</small></span> </p>
-          <p class="shop">セプライ 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071226%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10014827%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13465909/sp_0000071225_crd2.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🤖</span>【エントリーで全品P10倍】【予約】 SOSKILL×御模道EASTERN MODEL 九尾の狐 妲己 1/12スケールプラスチックモデルキット 豪華版 プラモデル 【2026年9月発売予定】</p>
-          <p class="sub"><span class="price">9,242<small>円</small></span> </p>
-          <p class="shop">セプライ 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071225%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10014826%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
       <li class="row">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages59/stoy-13108-0.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="meta">
@@ -507,26 +493,6 @@ body.search-open .search ~ * { display: none !important; }
       </li>
 
       <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/4550451420484_0.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年9月発売予約商品！】 「名探偵コナン」トレーディンググリッター缶バッジ　きゃらペコはちみつ　1BOX11個入り</p>
-          <p class="sub"><span class="price">6,655<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4550451903536%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024260%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/electrictoys/cabinet/11353905/12358084/13068560/imgrc0104869340.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🧸</span>【2026年9月発売予約商品！】 サンリオキャラクターズぬいピン　サンリオキャラクターズ Part.2（BOX)</p>
-          <p class="sub"><span class="price">13,200<small>円</small></span> </p>
-          <p class="shop">electric toys 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00tci0n.kgodaa1d.g00tci0n.kgodb731/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectrictoys%2F4571617939022%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Felectrictoys%2Fi%2F10024239%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/syochikudo12/cabinet/11113845/11113850/imgrc0113961397.jpg?_ex=300x300" alt="" loading="lazy"></div>
         <div class="meta">
           <p class="iname"><span class="cicon">⚡</span>【予約商品 9月中旬発売】ポケモンカードゲーム MEGA 30th CELEBRATION FUTURISTIC BOX 30周年 カードゲーム セレブレーション 新品 未開封</p>
@@ -536,7 +502,69 @@ body.search-open .search ~ * { display: none !important; }
         <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00unq6n.kgoda6e3.g00unq6n.kgodbaf0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsyochikudo12%2Ffuturisticbox%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsyochikudo12%2Fi%2F10000203%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
       </li>
 </ol>
-<h2>2026年11月発売<span class="count">3件・合計27,259円</span></h2>
+<h2>2026年10月発売<span class="count">6件・合計17,550円</span></h2>
+<ol class="list">
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/7b27e9ca39d06a03.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🧸</span>【予約】 カーテン魂 バニーガーデン2 アクリルスタンド(花奈) グッズ 【2026年10月発売予定】</p>
+          <p class="sub"><span class="price">2,925<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071681%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015283%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/b6c4ba4528462a4d.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🧸</span>【予約】 カーテン魂 バニーガーデン2 アクリルスタンド(英梨紗) グッズ 【2026年10月発売予定】</p>
+          <p class="sub"><span class="price">2,925<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071684%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015286%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/2df92b7272e25c1c.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🧸</span>【予約】 カーテン魂 バニーガーデン2 アクリルスタンド(瑠那) グッズ 【2026年10月発売予定】</p>
+          <p class="sub"><span class="price">2,925<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071686%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015288%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/d8e711f58433ade6.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🧸</span>【予約】 カーテン魂 バニーガーデン2 アクリルスタンド(黒音) グッズ 【2026年10月発売予定】</p>
+          <p class="sub"><span class="price">2,925<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071685%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015287%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/ecf1726fe5090ffc.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🧸</span>【予約】 カーテン魂 バニーガーデン2 アクリルスタンド(凜) グッズ 【2026年10月発売予定】</p>
+          <p class="sub"><span class="price">2,925<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071682%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015284%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+
+      <li class="row">
+        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_43/8ff6772ac889d132.jpg?_ex=300x300" alt="" loading="lazy"></div>
+        <div class="meta">
+          <p class="iname"><span class="cicon">🧸</span>【予約】 カーテン魂 バニーガーデン2 アクリルスタンド(美羽香) グッズ 【2026年10月発売予定】</p>
+          <p class="sub"><span class="price">2,925<small>円</small></span> </p>
+          <p class="shop">セプライ 楽天市場店</p>
+        </div>
+        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071683%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10015285%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
+      </li>
+</ol>
+<h2>2026年11月発売<span class="count">2件・合計23,250円</span></h2>
 <ol class="list">
       <li class="row">
         <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/hankuroom/cabinet/goq001/524-15p.jpg?_ex=300x300" alt="" loading="lazy"></div>
@@ -556,28 +584,6 @@ body.search-open .search ~ * { display: none !important; }
           <p class="shop">hankuroom 楽天市場店</p>
         </div>
         <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardbox-p-046%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015077%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/princeton/cabinet/product/hobby/hbybr99lcarrier_m01.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🎎</span>【予約(2026年11月発売予定)】グッドスマイルカンパニー BRICKROID 機動警察パトレイバー 99式特型レイバーキャリア [キャンセル期限7/13まで] ブリックロイド 機動警察パトレイバー レイバーキャリア 塗装済み フィギュア</p>
-          <p class="sub"><span class="price">4,009<small>円</small></span> </p>
-          <p class="shop">プリンストンダイレクトモール</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00po8tn.kgoda96d.g00po8tn.kgodb089/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprinceton%2Fhbybr99lcarrier%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fprinceton%2Fi%2F10007095%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
-      </li>
-</ol>
-<h2>2026年12月発売<span class="count">1件・合計17,043円</span></h2>
-<ol class="list">
-      <li class="row">
-        <div class="thumb"><img src="https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13465909/sp_0000071224_crd2.jpg?_ex=300x300" alt="" loading="lazy"></div>
-        <div class="meta">
-          <p class="iname"><span class="cicon">🤖</span>【エントリーで全品P10倍】【予約】 AniMester×核金重構 核心晶者 3号機 轟天号 1/72 プラスチックキット プラモデル 【2026年12月発売予定】</p>
-          <p class="sub"><span class="price">17,043<small>円</small></span> </p>
-          <p class="shop">セプライ 楽天市場店</p>
-        </div>
-        <a class="cta" href="https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000071224%2F&amp;m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10014825%2F&amp;rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec" target="_blank" rel="nofollow sponsored noopener">予約ページへ</a>
       </li>
 </ol>
 <h2>2027年4月発売<span class="count">1件・合計23,800円</span></h2>
