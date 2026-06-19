@@ -186,6 +186,13 @@ button.secondary:hover { background: #111827; }
           </select>
         </div>
         <div>
+          <label for="scope">表示する商品</label>
+          <select id="scope">
+            <option value="new">新着のみ</option>
+            <option value="all">すべての予約</option>
+          </select>
+        </div>
+        <div>
           <button id="refresh" type="button">投稿文を作る</button>
         </div>
       </div>
@@ -226,6 +233,7 @@ const els = {
   genre: document.getElementById("genre"),
   limit: document.getElementById("limit"),
   tone: document.getElementById("tone"),
+  scope: document.getElementById("scope"),
   refresh: document.getElementById("refresh"),
   postText: document.getElementById("postText"),
   count: document.getElementById("count"),
@@ -291,11 +299,13 @@ function weightedLength(text) {
   return Math.max(0, total - 1);
 }
 
-function flattenFresh(data) {
+// 候補にする商品を集める。scope="new"なら新着のみ、"all"なら予約商品すべて。
+function collectRows(data) {
+  const onlyNew = !els.scope || els.scope.value === "new";
   const rows = [];
   for (const genre of data.genres || []) {
     for (const item of genre.items || []) {
-      if (item.is_new) rows.push({ genre, item });
+      if (!onlyNew || item.is_new) rows.push({ genre, item });
     }
   }
   return rows;
@@ -470,9 +480,14 @@ function buildSummary(rows, opts) {
   const siteUrl = pageUrlForRows(rows);
   const sameGenre = rows.every(row => row.genre.name === rows[0].genre.name);
   const genreName = cleanText(rows[0].genre.name);
-  const head = sameGenre
-    ? `【${date} 予約開始】${genreName}に新着${rows.length}件🆕`
-    : `【${date} 予約開始】新着${rows.length}件まとめ🆕`;
+  const isNew = !els.scope || els.scope.value === "new";
+  const head = isNew
+    ? (sameGenre
+        ? `【${date} 予約開始】${genreName}に新着${rows.length}件🆕`
+        : `【${date} 予約開始】新着${rows.length}件まとめ🆕`)
+    : (sameGenre
+        ? `【${date}】${genreName}の予約${rows.length}件📦`
+        : `【${date}】予約${rows.length}件まとめ📦`);
   const lines = [head];
   if (withOpener) {
     const opener = humanLine(rows, "summary");
@@ -536,7 +551,7 @@ function renderItems() {
   els.items.innerHTML = "";
   const pool = state.pool;
   if (!pool.length) {
-    els.items.textContent = "新着予約の候補がありません。カテゴリを変えてみてください。";
+    els.items.textContent = "候補がありません。カテゴリや「表示する商品」を変えてみてください。";
     return;
   }
   const shown = pool.slice(0, 50);
@@ -600,19 +615,32 @@ function updateCount() {
 }
 
 function fillGenres() {
+  const onlyNew = els.scope.value === "new";
+  const prev = els.genre.value;
   els.genre.innerHTML = "";
   const all = document.createElement("option");
   all.value = "__all";
   all.textContent = "すべて";
   els.genre.append(all);
   for (const genre of state.data.genres || []) {
-    const freshCount = (genre.items || []).filter(item => item.is_new).length;
-    if (!freshCount) continue;
+    const items = genre.items || [];
+    const count = onlyNew ? items.filter(item => item.is_new).length : items.length;
+    if (!count) continue;
     const opt = document.createElement("option");
     opt.value = genre.name;
-    opt.textContent = `${cleanText(genre.name)}（${freshCount}件）`;
+    opt.textContent = `${cleanText(genre.name)}（${count}件）`;
     els.genre.append(opt);
   }
+  // 切り替え前のカテゴリが残っていれば選択を維持する
+  if ([...els.genre.options].some(o => o.value === prev)) els.genre.value = prev;
+}
+
+// 「新着のみ / すべての予約」を切り替えたときに候補とカテゴリを作り直す
+function rebuildScope() {
+  state.fresh = collectRows(state.data);
+  state.offset = 0;
+  fillGenres();
+  refreshPool();
 }
 
 async function copyPost() {
@@ -644,10 +672,10 @@ async function boot() {
     ]);
     state.data = await dataRes.json();
     state.tagRules = tagRes.ok ? await tagRes.json() : null;
-    state.fresh = flattenFresh(state.data);
+    state.fresh = collectRows(state.data);
     fillGenres();
     refreshPool();
-    els.status.textContent = `${state.fresh.length}件の新着候補を読み込みました。`;
+    els.status.textContent = `${state.fresh.length}件の候補を読み込みました。`;
   } catch (error) {
     els.status.textContent = "data.jsonを読み込めませんでした。GitHub Pages上で開くか、ローカルサーバー経由で開いてください。";
   }
@@ -658,6 +686,7 @@ els.mode.addEventListener("change", () => { state.offset = 0; refreshPool(); });
 els.genre.addEventListener("change", () => { state.offset = 0; refreshPool(); });
 els.limit.addEventListener("change", () => { state.offset = 0; refreshPool(); });
 els.tone.addEventListener("change", updatePost);
+els.scope.addEventListener("change", rebuildScope);
 els.postText.addEventListener("input", updateCount);
 els.copy.addEventListener("click", copyPost);
 els.next.addEventListener("click", () => {
