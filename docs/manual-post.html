@@ -299,14 +299,11 @@ function weightedLength(text) {
   return Math.max(0, total - 1);
 }
 
-// 候補にする商品を集める。scope="new"なら新着のみ、"all"なら予約商品すべて。
+// 候補にする商品(予約商品すべて)を集める。新着/すべての切替はcandidatePool側で行う。
 function collectRows(data) {
-  const onlyNew = !els.scope || els.scope.value === "new";
   const rows = [];
   for (const genre of data.genres || []) {
-    for (const item of genre.items || []) {
-      if (!onlyNew || item.is_new) rows.push({ genre, item });
-    }
+    for (const item of genre.items || []) rows.push({ genre, item });
   }
   return rows;
 }
@@ -315,11 +312,16 @@ function rowKey(row) {
   return row.item.url || (row.genre.name + "::" + row.item.name);
 }
 
-// いま選べる候補(カテゴリで絞り込んだ新着予約すべて)
+// いま選べる候補。カテゴリで絞り込み、「新着のみ」なら新着を優先。
+// ただし選んだカテゴリに新着が無ければ、空にせず予約商品全体にフォールバックする。
 function candidatePool() {
   const genreName = els.genre.value;
   let rows = state.fresh;
   if (genreName !== "__all") rows = rows.filter(row => row.genre.name === genreName);
+  if (els.scope.value === "new") {
+    const fresh = rows.filter(row => row.item.is_new);
+    return fresh.length ? fresh : rows;
+  }
   return rows;
 }
 
@@ -480,7 +482,7 @@ function buildSummary(rows, opts) {
   const siteUrl = pageUrlForRows(rows);
   const sameGenre = rows.every(row => row.genre.name === rows[0].genre.name);
   const genreName = cleanText(rows[0].genre.name);
-  const isNew = !els.scope || els.scope.value === "new";
+  const isNew = rows.length > 0 && rows.every(row => row.item.is_new);
   const head = isNew
     ? (sameGenre
         ? `【${date} 予約開始】${genreName}に新着${rows.length}件🆕`
@@ -601,7 +603,17 @@ function updatePost() {
   els.postText.value = fit.text;
   renderItems();
   updateCount();
-  els.status.textContent = "";
+  // 新着のみ表示で、選んだカテゴリに新着が無く予約商品にフォールバックした場合は知らせる
+  const gname = els.genre.value;
+  if (els.scope.value === "new" && gname !== "__all") {
+    const gRows = state.fresh.filter(row => row.genre.name === gname);
+    const hasNew = gRows.some(row => row.item.is_new);
+    els.status.textContent = (gRows.length && !hasNew)
+      ? "このカテゴリは新着がないため、予約商品から表示しています。"
+      : "";
+  } else {
+    els.status.textContent = "";
+  }
 }
 
 function updateCount() {
@@ -622,22 +634,26 @@ function fillGenres() {
   all.value = "__all";
   all.textContent = "すべて";
   els.genre.append(all);
+  // 予約商品があるカテゴリは新着の有無に関わらず常に表示する
   for (const genre of state.data.genres || []) {
     const items = genre.items || [];
-    const count = onlyNew ? items.filter(item => item.is_new).length : items.length;
-    if (!count) continue;
+    if (!items.length) continue;
+    const newCount = items.filter(item => item.is_new).length;
+    let label;
+    if (!onlyNew) label = `${cleanText(genre.name)}（${items.length}件）`;
+    else if (newCount) label = `${cleanText(genre.name)}（新着${newCount}件）`;
+    else label = `${cleanText(genre.name)}（予約${items.length}件）`;
     const opt = document.createElement("option");
     opt.value = genre.name;
-    opt.textContent = `${cleanText(genre.name)}（${count}件）`;
+    opt.textContent = label;
     els.genre.append(opt);
   }
   // 切り替え前のカテゴリが残っていれば選択を維持する
   if ([...els.genre.options].some(o => o.value === prev)) els.genre.value = prev;
 }
 
-// 「新着のみ / すべての予約」を切り替えたときに候補とカテゴリを作り直す
+// 「新着のみ / すべての予約」を切り替えたときにカテゴリ表示と候補を作り直す
 function rebuildScope() {
-  state.fresh = collectRows(state.data);
   state.offset = 0;
   fillGenres();
   refreshPool();
