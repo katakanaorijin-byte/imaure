@@ -66,7 +66,6 @@ HEADER_CSS = """
 def render_header(home_href: str, updated: str, tagline: str) -> str:
     """appbar(ロゴ+更新時刻+説明文)のHTMLを作る。tagline は呼び出し側でエスケープ済みのHTML文字列を渡すこと"""
     x_account_url = os.environ.get("X_ACCOUNT_URL", "").strip()
-    feed_href = home_href.rstrip("/") + "/feed.xml" if home_href not in ("", "./") else "./feed.xml"
     x_link = (f'\n      <a class="follow-action primary" href="{escape(x_account_url, quote=True)}" '
               'target="_blank" rel="noopener">Xで受け取る</a>') if x_account_url else ""
     share_js = ("var u=location.href.split('#')[0];"
@@ -89,7 +88,6 @@ def render_header(home_href: str, updated: str, tagline: str) -> str:
       <button class="follow-action" type="button" onclick="alert('ブラウザのブックマークに追加して、あとで新着予約をチェックできます。');">ブックマーク</button>
       <button class="follow-action share" type="button" onclick="{escape(share_js, quote=True)}">このページをシェア</button>
 {x_link}
-      <a class="follow-action" href="{escape(feed_href, quote=True)}">RSS</a>
     </div>
   </div>
 </header>

@@ -971,7 +971,6 @@ def main():
         with open(os.path.join(page_dir, "index.html"), "w", encoding="utf-8") as f:
             f.write(build_html(data, demo, single=g))
 
-    # RSSフィード(新着予約の蓄積。リーダー登録・通知ツール連携用)
     feed_path = os.path.join(out_dir, "feed_items.json")
     feed_items = []
     if os.path.exists(feed_path):
@@ -992,17 +991,6 @@ def main():
         feed_items = feed_items[:60]
         with open(feed_path, "w", encoding="utf-8") as f:
             json.dump(feed_items, f, ensure_ascii=False)
-    rss_entries = "\n".join(
-        f"<item><title>{escape(x['name'])}({x['price']:,}円/{escape(x['cat'])})</title>"
-        f"<link>{escape(x['url'])}</link><guid isPermaLink=\"false\">{escape(x['url'])}</guid>"
-        f"<pubDate>{x['pub']}</pubDate></item>"
-        for x in feed_items)
-    rss = (f'<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
-           f"<title>{escape(SITE_NAME)} 新着予約</title>"
-           f"<link>{escape(SITE_URL) or 'https://example.com/'}</link>"
-           f"<description>{escape(SITE_DESCRIPTION)}</description>\n{rss_entries}\n</channel></rss>")
-    with open(os.path.join(out_dir, "feed.xml"), "w", encoding="utf-8") as f:
-        f.write(rss)
 
     # sitemap.xml と robots.txt(SITE_URLを設定すると検索エンジンに全ページを案内できる)
     today = datetime.now(JST).strftime("%Y-%m-%d")
