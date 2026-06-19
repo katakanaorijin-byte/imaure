@@ -113,6 +113,16 @@ def trim(name: str, limit: int) -> str:
     return name if len(name) <= limit else name[: limit - 1] + "…"
 
 
+def _busted(url: str) -> str:
+    """Xのリンクカードを日替わりで更新させる。
+    毎時バストするとXが毎回コールドスクレイプを強いられ、楽天画像の取得失敗で
+    カード画像が出ないことがあるため、1日1回(=Xのキャッシュを使い回せる粒度)に抑える。"""
+    if not url:
+        return url
+    sep = "&" if "?" in url else "?"
+    return f"{url}{sep}ref={datetime.now(JST).strftime('%Y%m%d')}"
+
+
 def build_post(data: dict, name_limit: int, posted=frozenset()):
     """未投稿の新着予約から速報文を作る。対象が無ければ None(投稿しない)"""
     now = datetime.now(JST)
@@ -145,7 +155,7 @@ def build_post(data: dict, name_limit: int, posted=frozenset()):
         return None
     lines.append(footer)
     if site_url:
-        lines.append(site_url)
+        lines.append(_busted(site_url))
     lines.append(" ".join(["#予約開始"] + tags[:3]))
     return "\n".join(lines), used
 
@@ -199,7 +209,7 @@ def build_summary_post(data: dict, mode: str, name_limit=16):
     is_weekly = mode == "weekly"
     label = "今週" if is_weekly else "今月"
     path = "weekly/" if is_weekly else "monthly/"
-    url = site_url + path
+    url = _busted(site_url + path)
     cat_text = " / ".join(trim(name, name_limit) for _, name, _ in cats)
     lines = [
         f"{label}のホビー予約開始まとめを更新しました。",

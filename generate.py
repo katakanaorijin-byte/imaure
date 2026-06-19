@@ -477,24 +477,28 @@ def build_html(data, demo, single=None):
             f'{g["icon"]} {escape(g["name"])}{f"<b class=cnt>{g['new_count']}</b>" if g["new_count"] else ""}</button>'
             for g in data))
 
-    # SNSのリンクカード用画像。先頭商品の実写真があればそれを大きく出す(summary_large_image)。
-    # 無ければ従来のロゴ画像(summary)にフォールバック。
+    # SNSのリンクカード用画像。先頭商品の実写真があればそれを大きく出す。
+    # 先頭ジャンルに写真が無くても画像なしカードにならないよう、全ジャンルを横断して探す。
+    # (XのカードはSVG非対応なので、楽天の実写真JPG→無ければ自前のog-image.pngにフォールバック)
     og_image = ""
-    for it in data_use[0]["items"]:
-        if it.get("image"):
-            og_image = it["image"].replace("?_ex=300x300", "?_ex=600x600")
+    for g in data_use:
+        for it in g["items"]:
+            if it.get("image"):
+                og_image = it["image"].replace("?_ex=300x300", "?_ex=600x600")
+                break
+        if og_image:
             break
-    has_real_image = bool(og_image)
     if not og_image and SITE_URL:
-        og_image = SITE_URL + "og-image.svg"
-    card_type = "summary_large_image" if has_real_image else "summary"
+        og_image = SITE_URL + "og-image.png"  # 1200x630のラスター画像(Xが確実に描画できる)
+    # 商品写真でもフォールバックPNG(1200x630)でも横長で大カードに適するので常に大画像
+    card_type = "summary_large_image"
     og = (f'<meta property="og:title" content="{escape(page_title, quote=True)}">\n'
           f'<meta property="og:description" content="{escape(page_desc, quote=True)}">\n'
           f'<meta property="og:type" content="website">\n'
           f'<meta property="og:site_name" content="{escape(SITE_NAME, quote=True)}">\n'
           + (f'<meta property="og:url" content="{escape(page_url, quote=True)}">\n' if page_url else "")
           + (f'<meta property="og:image" content="{escape(og_image, quote=True)}">\n' if og_image else "")
-          + (f'<meta name="twitter:image" content="{escape(og_image, quote=True)}">\n' if has_real_image else "")
+          + (f'<meta name="twitter:image" content="{escape(og_image, quote=True)}">\n' if og_image else "")
           + f'<meta name="twitter:card" content="{card_type}">')
     jsonld_items = [
         {"@type": "ListItem", "position": i + 1, "name": it["name"], "url": it["url"]}
