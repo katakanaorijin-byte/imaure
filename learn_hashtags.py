@@ -21,6 +21,130 @@ JST = timezone(timedelta(hours=9))
 
 DEFAULT_TAGS = ["#予約開始レーダー", "#ホビー予約"]
 
+CATEGORY_COPY = {
+    "ポケモンカード": {
+        "short": "ポケカ",
+        "focus": "BOXや拡張パック",
+        "audience": "開封勢・コレクション勢",
+        "watch": "在庫や価格差",
+    },
+    "ワンピースカード": {
+        "short": "ワンピカード",
+        "focus": "BOXやブースターパック",
+        "audience": "デッキ強化勢・コレクター",
+        "watch": "再販や予約枠",
+    },
+    "遊戯王・他カード": {
+        "short": "TCG",
+        "focus": "BOXやブースターパック",
+        "audience": "デュエリスト・カード勢",
+        "watch": "予約枠や価格",
+    },
+    "フィギュア": {
+        "short": "フィギュア",
+        "focus": "スケールフィギュアや完成品",
+        "audience": "推しを飾りたい人",
+        "watch": "予約締切や価格",
+    },
+    "ねんどろいど・figma": {
+        "short": "ねんどろいど・figma",
+        "focus": "可動・デフォルメ系",
+        "audience": "推しを手元に置きたい人",
+        "watch": "再販や特典",
+    },
+    "ガンプラ・プラモデル": {
+        "short": "ガンプラ・プラモ",
+        "focus": "新作や再販キット",
+        "audience": "積みプラ予定の人",
+        "watch": "再販枠や在庫",
+    },
+    "ゲームソフト": {
+        "short": "ゲーム予約",
+        "focus": "新作ソフトや特典付き",
+        "audience": "発売日に遊びたい人",
+        "watch": "店舗特典や在庫",
+    },
+    "アニメBlu-ray・CD": {
+        "short": "アニメBD/CD",
+        "focus": "初回特典や限定版",
+        "audience": "特典まで追いたい人",
+        "watch": "予約特典や締切",
+    },
+    "特撮・なりきり玩具": {
+        "short": "特撮玩具",
+        "focus": "変身アイテムや関連玩具",
+        "audience": "なりきり玩具を追う人",
+        "watch": "発売直後の在庫",
+    },
+    "鉄道模型": {
+        "short": "鉄道模型",
+        "focus": "Nゲージや車両セット",
+        "audience": "編成をそろえたい人",
+        "watch": "再生産や予約枠",
+    },
+    "トミカ・ミニカー": {
+        "short": "トミカ・ミニカー",
+        "focus": "初回特別仕様や新車",
+        "audience": "コレクション勢",
+        "watch": "初回仕様や在庫",
+    },
+    "ぬいぐるみ・グッズ": {
+        "short": "キャラグッズ",
+        "focus": "ぬいぐるみやアクスタ",
+        "audience": "推し活用に探している人",
+        "watch": "予約枠や再入荷",
+    },
+}
+
+
+def build_category_openers() -> dict[str, dict[str, dict[str, list[str]]]]:
+    openers = {}
+    for category, rule in CATEGORY_COPY.items():
+        short = rule["short"]
+        focus = rule["focus"]
+        audience = rule["audience"]
+        watch = rule["watch"]
+        openers[category] = {
+            "summary": {
+                "soft": [
+                    f"{short}の新着予約、{focus}中心に気になる動きを拾いました。",
+                    f"{audience}向けに見返しやすく、{category}の予約情報をまとめます。",
+                    f"{category}まわり、今日の予約チェック用に少し整理しておきます。",
+                ],
+                "watch": [
+                    f"{short}まわりに予約開始の動きあり。{watch}も変わりやすいので確認用です。",
+                    f"{focus}を追っている人向けに、{{count}}件だけまとめてチェックします。",
+                    f"{category}はタイミングで見え方が変わるので、気になるものは早めに確認を。",
+                ],
+                "calm": [
+                    f"{audience}に届けばいいな、くらいの温度で{category}の新着を置いておきます。",
+                    f"{short}探しのメモとして、見返しやすいようにまとめました。",
+                    f"急ぎすぎず、でも見落としにくいように{category}の予約情報を残しておきます。",
+                ],
+                "none": [""],
+            },
+            "single": {
+                "soft": [
+                    f"{short}で{focus}まわりの新着予約を見つけました。",
+                    f"{audience}向けに、{category}の予約情報をひとつメモ。",
+                    f"{short}探しのメモとして、気になる予約を置いておきます。",
+                ],
+                "watch": [
+                    f"{short}は{watch}が出やすいので、気になる人は早めに確認を。",
+                    f"{category}の予約開始を確認。{focus}狙いならチェックしておきたいところです。",
+                    f"見落とし防止用に、{short}の新着予約をピックアップ。",
+                ],
+                "calm": [
+                    f"{audience}に届けば十分、{category}の予約情報を静かに置いておきます。",
+                    f"急がせたいわけではないですが、{short}の確認用にメモしておきます。",
+                    f"{category}まわり、あとで探し直しやすいようにひとつ残しておきます。",
+                ],
+                "none": [""],
+            },
+        }
+    return openers
+
+
 COPY_RULES = {
     "tag_policy": [
         "ハッシュタグは最大4個まで",
@@ -64,6 +188,7 @@ COPY_RULES = {
         ],
         "none": [""],
     },
+    "category_openers": build_category_openers(),
 }
 
 

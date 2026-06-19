@@ -403,10 +403,149 @@ function formatTemplate(template, rows) {
     .replaceAll("{count}", String(rows.length));
 }
 
+const CATEGORY_COPY = {
+  "ポケモンカード": {
+    short: "ポケカ",
+    focus: "BOXや拡張パック",
+    audience: "開封勢・コレクション勢",
+    watch: "在庫や価格差"
+  },
+  "ワンピースカード": {
+    short: "ワンピカード",
+    focus: "BOXやブースターパック",
+    audience: "デッキ強化勢・コレクター",
+    watch: "再販や予約枠"
+  },
+  "遊戯王・他カード": {
+    short: "TCG",
+    focus: "BOXやブースターパック",
+    audience: "デュエリスト・カード勢",
+    watch: "予約枠や価格"
+  },
+  "フィギュア": {
+    short: "フィギュア",
+    focus: "スケールフィギュアや完成品",
+    audience: "推しを飾りたい人",
+    watch: "予約締切や価格"
+  },
+  "ねんどろいど・figma": {
+    short: "ねんどろいど・figma",
+    focus: "可動・デフォルメ系",
+    audience: "推しを手元に置きたい人",
+    watch: "再販や特典"
+  },
+  "ガンプラ・プラモデル": {
+    short: "ガンプラ・プラモ",
+    focus: "新作や再販キット",
+    audience: "積みプラ予定の人",
+    watch: "再販枠や在庫"
+  },
+  "ゲームソフト": {
+    short: "ゲーム予約",
+    focus: "新作ソフトや特典付き",
+    audience: "発売日に遊びたい人",
+    watch: "店舗特典や在庫"
+  },
+  "アニメBlu-ray・CD": {
+    short: "アニメBD/CD",
+    focus: "初回特典や限定版",
+    audience: "特典まで追いたい人",
+    watch: "予約特典や締切"
+  },
+  "特撮・なりきり玩具": {
+    short: "特撮玩具",
+    focus: "変身アイテムや関連玩具",
+    audience: "なりきり玩具を追う人",
+    watch: "発売直後の在庫"
+  },
+  "鉄道模型": {
+    short: "鉄道模型",
+    focus: "Nゲージや車両セット",
+    audience: "編成をそろえたい人",
+    watch: "再生産や予約枠"
+  },
+  "トミカ・ミニカー": {
+    short: "トミカ・ミニカー",
+    focus: "初回特別仕様や新車",
+    audience: "コレクション勢",
+    watch: "初回仕様や在庫"
+  },
+  "ぬいぐるみ・グッズ": {
+    short: "キャラグッズ",
+    focus: "ぬいぐるみやアクスタ",
+    audience: "推し活用に探している人",
+    watch: "予約枠や再入荷"
+  }
+};
+
+function builtInCategoryOpeners(category, kind) {
+  const rule = CATEGORY_COPY[category];
+  if (!rule) return null;
+  const short = rule.short || category;
+  const focus = rule.focus || "新着予約";
+  const audience = rule.audience || "必要な人";
+  const watch = rule.watch || "在庫や価格の動き";
+  if (kind === "single") {
+    return {
+      soft: [
+        `${short}で${focus}まわりの新着予約を見つけました。`,
+        `${audience}向けに、${category}の予約情報をひとつメモ。`,
+        `${short}探しのメモとして、気になる予約を置いておきます。`
+      ],
+      watch: [
+        `${short}は${watch}が出やすいので、気になる人は早めに確認を。`,
+        `${category}の予約開始を確認。${focus}狙いならチェックしておきたいところです。`,
+        `見落とし防止用に、${short}の新着予約をピックアップ。`
+      ],
+      calm: [
+        `${audience}に届けば十分、${category}の予約情報を静かに置いておきます。`,
+        `急がせたいわけではないですが、${short}の確認用にメモしておきます。`,
+        `${category}まわり、あとで探し直しやすいようにひとつ残しておきます。`
+      ],
+      none: [""]
+    };
+  }
+  return {
+    soft: [
+      `${short}の新着予約、${focus}中心に気になる動きを拾いました。`,
+      `${audience}向けに見返しやすく、${category}の予約情報をまとめます。`,
+      `${category}まわり、今日の予約チェック用に少し整理しておきます。`
+    ],
+    watch: [
+      `${short}まわりに予約開始の動きあり。${watch}も変わりやすいので確認用です。`,
+      `${focus}を追っている人向けに、{count}件だけまとめてチェックします。`,
+      `${category}はタイミングで見え方が変わるので、気になるものは早めに確認を。`
+    ],
+    calm: [
+      `${audience}に届けばいいな、くらいの温度で${category}の新着を置いておきます。`,
+      `${short}探しのメモとして、見返しやすいようにまとめました。`,
+      `急ぎすぎず、でも見落としにくいように${category}の予約情報を残しておきます。`
+    ],
+    none: [""]
+  };
+}
+
+function tonePool(groups, tone) {
+  if (!groups) return [];
+  if (tone === "none") return Array.isArray(groups.none) ? groups.none : [];
+  if (Array.isArray(groups)) return groups;
+  const pool = groups[tone] || groups.soft || [];
+  return Array.isArray(pool) ? pool : [];
+}
+
+function categoryOpeners(copyRules, category, kind, tone) {
+  const rules = copyRules && copyRules.category_openers;
+  const byCategory = rules && rules[category];
+  if (!byCategory) return tonePool(builtInCategoryOpeners(category, kind), tone);
+  const group = byCategory[kind === "single" ? "single" : "summary"] || byCategory;
+  return tonePool(group, tone);
+}
+
 function humanLine(rows, kind) {
   const tone = els.tone.value;
   const count = rows.length;
   const category = rows[0] ? cleanText(rows[0].genre.name) : "ホビー";
+  const sameCategory = rows.length > 0 && rows.every(row => cleanText(row.genre.name) === category);
   const copyRules = state.tagRules && state.tagRules.copy_rules;
   const learned = copyRules && copyRules[kind === "single" ? "single_openers" : "summary_openers"];
   const lines = learned || {
@@ -427,7 +566,8 @@ function humanLine(rows, kind) {
     ],
     none: [""]
   };
-  const pool = lines[tone] || lines.soft;
+  const specific = sameCategory ? categoryOpeners(copyRules, category, kind, tone) : [];
+  const pool = specific.length ? specific : tonePool(lines, tone);
   const seed = rows.reduce((sum, row) => sum + cleanText(row.item.name).length, count);
   return formatTemplate(pool[seed % pool.length], rows);
 }
