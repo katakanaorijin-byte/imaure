@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-12T05:29:13.034787+09:00",
+ "generated_at": "2026-07-12T08:38:38.246847+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -853,7 +853,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/akaikumasan/cabinet/picture20260510/4907953565081.jpg?_ex=300x300",
      "shop": "赤い熊さん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】Nintendo Switch 2 ブリガンダイン アビス Limited Edition[ハピネット]【送料無料】《08月予約》",
@@ -933,7 +933,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1049/0/cg10490223.jpg?_ex=300x300",
      "shop": "メディアワールド 販売&買取SHOP",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【あみあみ限定特典】Nintendo Switch 学校であった怖い話と晦-つきこもり 限定版『晦-つきこもり』エディション[D3パブリッシャー]《09月予約》",
@@ -1439,8 +1439,28 @@
    "icon": "🚗",
    "tag": "#トミカ",
    "slug": "tomica",
-   "new_count": 6,
+   "new_count": 8,
    "items": [
+    {
+     "name": "ミニカー　1/43 ジャガー　Eタイプ　ボンネット、ドア、トランク開閉　赤色　 Jaguar E-Type 4.2 Litre in Red (335)　CORGI【予約商品】",
+     "price": 13980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106564%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008383%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0103443846.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
+     "hot": false
+    },
+    {
+     "name": "ミニカー　 007 　アストンマーチン　DB5　3台セット　CORGI70周年特別記念セット　1/36　多国籍ナンバーシール付き　最新ギミック付き！　007ジェームズボンド　ボンドカー　ノータイムトゥダイ　CORGI【限定予約商品】",
+     "price": 34980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106563%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008380%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0103443841.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
+     "hot": false
+    },
     {
      "name": "トミカリミテッドヴィンテージ ネオ LV-N377a ホンダ ストリートV 4WD (グレー) 1997年式[トミーテック]《09月予約》",
      "price": 3080,
@@ -1560,26 +1580,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/283/toy-scl3-99215.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
      "hot": true
-    },
-    {
-     "name": "トミカリミテッド ヴィンテージ LV-N362d ダイハツ ミゼットII カーゴ D Type(白) 97年式[トミーテック]《12月予約》",
-     "price": 3000,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ftoy-scl3-99217%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13074366%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/283/toy-scl3-99217.jpg?_ex=300x300",
-     "shop": "あみあみ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "トミカリミテッド ヴィンテージ LV-N362c ダイハツ ミゼットII カーゴ R Type(深緑)カスタム仕様 97年式[トミーテック]《12月予約》",
-     "price": 3000,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ftoy-scl3-99216%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13074359%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/283/toy-scl3-99216.jpg?_ex=300x300",
-     "shop": "あみあみ 楽天市場店",
-     "hot": true
     }
    ]
   },
@@ -1588,7 +1588,7 @@
    "icon": "🧸",
    "tag": "#ぬいぐるみ",
    "slug": "plush",
-   "new_count": 6,
+   "new_count": 5,
    "items": [
     {
      "name": "TVアニメ『BLEACH 千年血戦篇』 トレーディング ホログラム缶バッジ 黒崎一護 6個入りBOX[ベルファイン]《07月予約》",
@@ -1634,16 +1634,6 @@
      "name": "ぬらりひょんの孫〜千年魔京〜 トレーディング ぬらりひょん オンリー 場面写和紙缶バッジ 8個入りBOX[アルマビアンカ]《10月予約》",
      "price": 4350,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04835293%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13076956%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
-     "shop": "あみあみ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "ぬらりひょんの孫〜千年魔京〜 トレーディング 奴良リクオ オンリー 場面写和紙缶バッジ 8個入りBOX[アルマビアンカ]《10月予約》",
-     "price": 4350,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgoods-04835292%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13076927%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
@@ -1728,6 +1718,16 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/283/goods-04834224.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約受付中】一番くじ キン肉マン 超人血盟軍+ ラストワン賞含む+Wチャンス券　一番くじ1ロット 一番くじまとめ売り 2026年10月17日発売予定　一番くじ 1ロット",
+     "price": 94800,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00srdkn.kgoda03e.g00srdkn.kgodb003/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsancube%2Fcompass1783528046%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsancube%2Fi%2F10002254%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sancube/cabinet/kinnikuman_bana.jpg?_ex=300x300",
+     "shop": "サンキューブ",
      "hot": true
     }
    ]
