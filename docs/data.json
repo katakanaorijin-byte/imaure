@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-18T19:57:39.826279+09:00",
+ "generated_at": "2026-07-18T20:50:14.357673+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -188,7 +188,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/b-yumekobo/cabinet/09703705/10654987/4582770012132_1.jpg?_ex=300x300",
      "shop": "バルーン夢工房+ベビー",
-     "hot": true
+     "hot": false
     },
     {
      "name": "予約受付品 2026年7月11日発売予定 O BANDAI (バンダイ) ONE PIECEカードゲーム スタートデッキ 黄 ユースタス・キッド【ST-36】【単品・1BOX6個入】正規品 カード おもちゃ プレゼント 誕生日 お祝い 贈り物 ワンピース アニメ ワンピカード",
@@ -198,7 +198,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/b-yumekobo/cabinet/09703705/10654987/4582770012156_1.jpg?_ex=300x300",
      "shop": "バルーン夢工房+ベビー",
-     "hot": true
+     "hot": false
     },
     {
      "name": "11月発売 予約 BOX 新品未開封 ブースターパック 蒼海の七傑 OP-14 ONE PIECEカードゲーム ワンピース ボックス バンダイ BANDAI",
@@ -396,18 +396,8 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 11,
+   "new_count": 10,
    "items": [
-    {
-     "name": "[7月25日発売予約][バンダイ] S.H.フィギュアーツ スパイダーマン（スパイダーマン ブランド ニュー デイ）",
-     "price": 7500,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001111498%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432598%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/305/4573102698506.jpg?_ex=300x300",
-     "shop": "Outlet Plaza",
-     "hot": true
-    },
     {
      "name": "[7月25日発売予約][バンダイ] S.H.フィギュアーツ ハルク（スパイダーマン ブランド ニュー デイ）",
      "price": 10480,
@@ -415,6 +405,16 @@
      "release": "",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/304/4573102698490.jpg?_ex=300x300",
+     "shop": "Outlet Plaza",
+     "hot": true
+    },
+    {
+     "name": "[7月25日発売予約][バンダイ] S.H.フィギュアーツ スパイダーマン（スパイダーマン ブランド ニュー デイ）",
+     "price": 7500,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001111498%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432598%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/305/4573102698506.jpg?_ex=300x300",
      "shop": "Outlet Plaza",
      "hot": true
     },
@@ -439,16 +439,6 @@
      "hot": true
     },
     {
-     "name": "[7月25日発売予約][再販][バンダイ] S.H.フィギュアーツ ピッコロ スーパーヒーロー",
-     "price": 4280,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001111527%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432589%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/319/4573102723000.jpg?_ex=300x300",
-     "shop": "Outlet Plaza",
-     "hot": true
-    },
-    {
      "name": "[7月25日発売予約][バンダイ] S.H.フィギュアーツ 超サイヤ人ゴッド超サイヤ人孫悟空 限界を超えし蒼き力",
      "price": 4000,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001111522%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432588%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -465,6 +455,16 @@
      "release": "",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/316/4573102698346.jpg?_ex=300x300",
+     "shop": "Outlet Plaza",
+     "hot": true
+    },
+    {
+     "name": "[7月25日発売予約][再販][バンダイ] S.H.フィギュアーツ ピッコロ スーパーヒーロー",
+     "price": 4280,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001111527%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432589%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/319/4573102723000.jpg?_ex=300x300",
      "shop": "Outlet Plaza",
      "hot": true
     },
@@ -499,16 +499,6 @@
      "hot": true
     },
     {
-     "name": "POP UP PARADE ダーリン・イン・ザ・フランキス ゼロツー L size 完成品フィギュア[グッドスマイルカンパニー]《12月予約》",
-     "price": 7920,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Ffigure-205614%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13080574%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/293/figure-205614.jpg?_ex=300x300",
-     "shop": "あみあみ 楽天市場店",
-     "hot": true
-    },
-    {
      "name": "【感謝デー★全品P2倍】【予約】 DA KONG STUDIO/大空山海 STUDIO 神獣シリーズ 玄武(げんぶ) ノンスケールフィギュア 【2026年9月発売予定】",
      "price": 9185,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000074292%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10018013%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -526,7 +516,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_51/397853f290958bef.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【感謝デー★全品P2倍】【予約】 フリュー TVアニメ『千歳くんはラムネ瓶のなか』内田優空 1/7スケールフィギュア 【2027年2月発売予定】",
@@ -536,7 +526,17 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_51/c466ca4b0ddb0565.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": true
+     "hot": false
+    },
+    {
+     "name": "【感謝デー★全品P2倍】【予約】 フリュー TVアニメ『千歳くんはラムネ瓶のなか』七瀬悠月 1/7スケールフィギュア 【2027年1月発売予定】",
+     "price": 25189,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000074080%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10017801%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2027年1月",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_51/f5aaa96939f0a592.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
     }
    ]
   },
@@ -697,22 +697,22 @@
    "new_count": 6,
    "items": [
     {
-     "name": "[7月25日発売予約][バンダイ] プラモデル 30MS 島村卯月 (20th Anniv. YOU AND アイ！)",
-     "price": 4500,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001112770%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432604%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/180/4573102742575.jpg?_ex=300x300",
-     "shop": "Outlet Plaza",
-     "hot": false
-    },
-    {
      "name": "[7月25日発売予約][バンダイ] プラモデル 30MM 1/144 xEXM-000 ゼノヴァルト",
      "price": 2700,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001112766%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432603%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/178/4573102742551.jpg?_ex=300x300",
+     "shop": "Outlet Plaza",
+     "hot": false
+    },
+    {
+     "name": "[7月25日発売予約][バンダイ] プラモデル 30MS 島村卯月 (20th Anniv. YOU AND アイ！)",
+     "price": 4500,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001112770%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11432604%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/180/4573102742575.jpg?_ex=300x300",
      "shop": "Outlet Plaza",
      "hot": false
     },
@@ -843,7 +843,7 @@
    "icon": "🎮",
    "tag": "#ゲーム",
    "slug": "game",
-   "new_count": 12,
+   "new_count": 5,
    "items": [
     {
      "name": "【あみあみ限定特典】Nintendo Switch 2 みんなでポイっと！プリニーすごろく[日本一ソフトウェア]《11月予約》",
@@ -900,7 +900,7 @@
      "price": 4980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F1062051%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007415%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0136013695.jpg?_ex=300x300",
      "shop": "仙台ホークス",
      "hot": true
@@ -910,7 +910,7 @@
      "price": 5480,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F1062050%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007414%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0136013692.jpg?_ex=300x300",
      "shop": "仙台ホークス",
      "hot": true
@@ -920,7 +920,7 @@
      "price": 4980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F1062049%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007413%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0136013689.jpg?_ex=300x300",
      "shop": "仙台ホークス",
      "hot": true
@@ -930,7 +930,7 @@
      "price": 3980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F1062048%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007412%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0136013670.jpg?_ex=300x300",
      "shop": "仙台ホークス",
      "hot": true
@@ -940,7 +940,7 @@
      "price": 4980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F1062047%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007411%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0136013666.jpg?_ex=300x300",
      "shop": "仙台ホークス",
      "hot": true
@@ -950,7 +950,7 @@
      "price": 8980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F1062046%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007410%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0136013663.jpg?_ex=300x300",
      "shop": "仙台ホークス",
      "hot": true
@@ -960,7 +960,7 @@
      "price": 8160,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00skv0n.kgoda37c.g00skv0n.kgodb63e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmediaworldkaitoriworld%2F10490228000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmediaworldkaitoriworld%2Fi%2F11112375%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1049/0/cg10490228.jpg?_ex=300x300",
      "shop": "メディアワールド 販売&買取SHOP",
      "hot": true
@@ -1082,7 +1082,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/7206/2100015087206.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】BD うちの弟どもがすみません 1 完全生産限定版 (Blu-ray Disc)[アニプレックス]《09月予約》",
@@ -1102,7 +1102,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/joshin-cddvd/cabinet/646/vpxy-72164.jpg?_ex=300x300",
      "shop": "Joshin web CD/DVD楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典付】【Blu-ray】【予約】 迷宮のしおり 特装限定版 Blu-ray",
@@ -1290,18 +1290,8 @@
    "icon": "🚃",
    "tag": "#鉄道模型",
    "slug": "train-model",
-   "new_count": 7,
+   "new_count": 6,
    "items": [
-    {
-     "name": "【予約 2027年1月予定】No:97643 TOMIX E2-0系東北・上越新幹線（やまびこ・赤帯）セット（8両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 23275,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5163%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000642%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5163_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
     {
      "name": "【予約 2027年1月予定】No:97990 TOMIX 特別企画品 望郷の平成筑豊鉄道 田川線セット 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 10067,
@@ -1310,7 +1300,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5171_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2026年12月予定】No:98362 TOMIX 24系25形（トワイライトエクスプレス）基本セットB（6両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1320,7 +1310,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-04_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2026年12月予定】No:98744 TOMIX 小田急ロマンスカー70000形GSE（第2編成）セット（7両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1330,7 +1320,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5173_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年2月予定】No:97625 TOMIX 20系特急寝台客車（ナハネ20）増結セット（6両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1340,7 +1330,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5162_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年1月予定】No:97250 TOMIX 373系特急電車基本セット（3両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1350,7 +1340,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5166-01_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年2月予定】No:97644 TOMIX E3-0系秋田新幹線（こまち・前期型）セット（6両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1360,7 +1350,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5164_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2026年12月予定】No:98361 TOMIX 24系25形（トワイライトエクスプレス）増結セットB（4両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1370,7 +1360,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-03_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2026年12月予定】No:98360 TOMIX 24系25形（トワイライトエクスプレス）増結セットA（4両） 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1380,7 +1370,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-02_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年1月予定】No:HO-9139 TOMIX 10系客車（急行津軽）セット（3両） 鉄道模型 HOゲージ TOMIX トミックス",
@@ -1390,7 +1380,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5174_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年1月予定】No:HO-5036 TOMIX スハネ16形 鉄道模型 HOゲージ TOMIX トミックス",
@@ -1400,17 +1390,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51768_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年1月予定】No:HO-5029 TOMIX オロネ10形（青色） 鉄道模型 HOゲージ TOMIX トミックス",
-     "price": 17555,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5175%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000654%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5175_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年1月予定】No:HO-5031 TOMIX スロ62形（帯入り） 鉄道模型 HOゲージ TOMIX トミックス",
@@ -1420,7 +1400,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51767_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2027年1月予定】No:HO-5038 TOMIX オハネフ12形 鉄道模型 HOゲージ TOMIX トミックス",
@@ -1430,7 +1410,27 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51770_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
-     "hot": false
+     "hot": true
+    },
+    {
+     "name": "【予約 2027年1月予定】No:HO-5029 TOMIX オロネ10形（青色） 鉄道模型 HOゲージ TOMIX トミックス",
+     "price": 17555,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5175%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000654%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5175_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約 2027年1月予定】No:HO-5030 TOMIX オシ17形（3次形・青色） 鉄道模型 HOゲージ TOMIX トミックス",
+     "price": 17867,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5176%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000655%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5176_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": true
     }
    ]
   },
