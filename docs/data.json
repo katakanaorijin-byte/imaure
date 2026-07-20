@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21T06:23:41.988571+09:00",
+ "generated_at": "2026-07-21T07:30:41.046008+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -39,6 +39,16 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/toysbox2nd/cabinet/11800184/imgrc0114074327.jpg?_ex=300x300",
      "shop": "ソフィアゲート",
+     "hot": false
+    },
+    {
+     "name": "【BOX】 ポケモンカードゲーム MEGA 拡張パック ストームエメラルダ BOX ｜【予約 2026/7/31】発売日前日出荷｜ シュリンク付き 未開封 ポケカ トレカ トレーディングカード",
+     "price": 27500,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00uojbn.kgodad98.g00uojbn.kgodb105/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsuns-online-store%2Fpc-smed-box%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsuns-online-store%2Fi%2F10004057%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/suns-online-store/cabinet/tradingcard/pokemon-card/imgrc0131474792.jpg?_ex=300x300",
+     "shop": "サンズオンラインストア",
      "hot": false
     },
     {
@@ -139,16 +149,6 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/cochume1234/cabinet/13289814/imgrc0117687809.jpg?_ex=300x300",
      "shop": "こっちゅめ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "10月16日発売 予約 ポケモンカードゲーム MEGA 30th CELEBRATION カードセット ツタージャ・ポカブ・ミジュマル",
-     "price": 10500,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00u7dxn.kgodaa95.g00u7dxn.kgodb18a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoysbox2nd%2Fcardbox-psp-029%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoysbox2nd%2Fi%2F10016788%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/toysbox2nd/cabinet/goq010/8648_1.jpg?_ex=300x300",
-     "shop": "ソフィアゲート",
      "hot": false
     }
    ]
@@ -287,18 +287,8 @@
    "icon": "🎴",
    "tag": "#遊戯王",
    "slug": "yugioh",
-   "new_count": 4,
+   "new_count": 3,
    "items": [
-    {
-     "name": "10月2日発売 予約 BOX マジック：ザ・ギャザリング ファウンデーションズ 統率者デッキ Keen Engineering 英語版 MTG トレカ ウィザーズ・オブ・ザ・コースト FRA D59310000",
-     "price": 11770,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00utoin.kgoda268.g00utoin.kgodb89d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fandmoa%2Fcardbox-mt-028%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fandmoa%2Fi%2F10000564%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/andmoa/cabinet/goq001/8675_1.jpg?_ex=300x300",
-     "shop": "and moa",
-     "hot": false
-    },
     {
      "name": "【予約】[TCG] (BOX) 遊戯王OCGデュエルモンスターズ UTILITY SELECTION(ユーティリティ セレクション) コナミデジタルエンタテインメント(CG2128)(15パック)(20260808)",
      "price": 6938,
@@ -427,6 +417,16 @@
      "is_new": false,
      "image": "",
      "shop": "播州セレクト",
+     "hot": false
+    },
+    {
+     "name": "【予約販売】バトルスピリッツ ブースターパック 幻惑の翔風 BOX 【26RBS02】2026年7月18日(土)発売予定 カードゲーム バトル",
+     "price": 5680,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00sz7hn.kgoda663.g00sz7hn.kgodbf56/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-crown%2Fspirits-genwaku%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ft-crown%2Fi%2F10002449%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/t-crown/cabinet/06514851/10644009/imgrc0144993509.jpg?_ex=300x300",
+     "shop": "T-CROWN",
      "hot": false
     }
    ]
@@ -1343,12 +1343,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2026年12月予定】No:98362 TOMIX 24系25形（トワイライトエクスプレス）基本セットB（6両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 11846,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5172-04%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000648%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年1月予定】No:97990 TOMIX 特別企画品 望郷の平成筑豊鉄道 田川線セット 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 10067,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5171%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000643%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-04_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5171_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1359,6 +1359,16 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5173_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2026年12月予定】No:98362 TOMIX 24系25形（トワイライトエクスプレス）基本セットB（6両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 11846,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5172-04%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000648%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-04_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1413,6 +1423,16 @@
      "hot": false
     },
     {
+     "name": "【予約 2027年1月予定】No:HO-9139 TOMIX 10系客車（急行津軽）セット（3両） 鉄道模型 HOゲージ TOMIX トミックス",
+     "price": 51043,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5174%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000650%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5174_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
      "name": "【予約 2027年1月予定】No:HO-5036 TOMIX スハネ16形 鉄道模型 HOゲージ TOMIX トミックス",
      "price": 17555,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51768%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000651%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1439,26 +1459,6 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51770_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年1月予定】No:HO-9139 TOMIX 10系客車（急行津軽）セット（3両） 鉄道模型 HOゲージ TOMIX トミックス",
-     "price": 51043,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5174%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000650%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5174_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年1月予定】No:HO-5030 TOMIX オシ17形（3次形・青色） 鉄道模型 HOゲージ TOMIX トミックス",
-     "price": 17867,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5176%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000655%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5176_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
