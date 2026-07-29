@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-29T23:39:43.987215+09:00",
+ "generated_at": "2026-07-30T01:10:16.619462+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -112,6 +112,16 @@
      "hot": false
     },
     {
+     "name": "10月16日発売 予約 ポケモンカードゲーム MEGA 30th CELEBRATION カードセット ハリマロン・フォッコ・ケロマツ",
+     "price": 10500,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00u7dxn.kgodaa95.g00u7dxn.kgodb18a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoysbox2nd%2Fcardbox-psp-030%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ftoysbox2nd%2Fi%2F10016789%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/toysbox2nd/cabinet/goq010/8649_1.jpg?_ex=300x300",
+     "shop": "ソフィアゲート",
+     "hot": false
+    },
+    {
      "name": "送料無料『予約：7月31日発売』ストームエメラルダ【20パック・ばら】ポケモンカードゲーム ソード＆シールド 拡張パック 『パラダイムトリガー』　人気",
      "price": 13598,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00ud38n.kgoda462.g00ud38n.kgodbdd4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcochume1234%2Fegthrytjuyy6%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcochume1234%2Fi%2F10016325%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -138,16 +148,6 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/cochume1234/cabinet/13289814/imgrc0117688095.jpg?_ex=300x300",
-     "shop": "こっちゅめ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "送料無料『予約：7月31日発売』ストームエメラルダ【10パック・ばら】ポケモンカードゲーム ソード＆シールド 拡張パック 『パラダイムトリガー』　人気",
-     "price": 6998,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ud38n.kgoda462.g00ud38n.kgodbdd4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcochume1234%2Fjmghnfgdsd%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcochume1234%2Fi%2F10016322%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/cochume1234/cabinet/13289814/imgrc0117688093.jpg?_ex=300x300",
      "shop": "こっちゅめ楽天市場店",
      "hot": false
     }
@@ -496,7 +496,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mirakikaku/cabinet/guideline/reservefigure.jpg?_ex=300x300",
      "shop": "アミュームショップ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "きゃらごん 桃源暗鬼 2種セット【2026年12月予約】",
@@ -506,7 +506,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mirakikaku/cabinet/guideline/reservefigure.jpg?_ex=300x300",
      "shop": "アミュームショップ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約】 ブシロードクリエイティブ BUSHIROAD THE BOX アニメ「ぼっち・ざ・ろっく!」 ぼっちちゃんがいっぱいフィギュアvol.3≪全5種≫ 1BOX入数:6 6個入り 【2026年12月発売予定】",
@@ -714,7 +714,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yp187268.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "送料無料◆GM-032 1/12 ハングオン筐体 『ライドオンタイプ』 プラモデル 2個セット WAVE 【11月予約】",
@@ -724,7 +724,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yp187269.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "HJM003WP HJモデラーズウェポン03 フォトンアークガトリングガン プラモデル ホビージャパン 【9月予約】",
@@ -734,7 +734,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yp187356.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約】 グッドスマイルカンパニー PLAMATEA 斬魔大聖デモンベイン アル・アジフ プラモデル 【2027年4月発売予定】",
@@ -754,7 +754,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187101.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約】 SHEIK MAINLAND 3 min projectシリーズ ヤマネコ戦闘車&ヤマアラシ戦闘車 1/18スケールプラスチックモデルキット(グリーン) プラモデル 【2026年9月発売予定】",
@@ -863,7 +863,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/232/game-0034494.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】クライムライト／CRYMELIGHT ティーパーティBOX　Switch2版(【予約外付特典】DLC2種セット（アクセサリー「涙の理念」、アクセサリー「はなまるじるし」 ）)",
@@ -873,7 +873,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8293/4562240238293.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【楽天ブックス限定特典+特典】クライムライト／CRYMELIGHT ティーパーティBOX　Switch2版(アクリルキーホルダー+【予約外付特典】DLC2種セット（アクセサリー「涙の理念」、アクセサリー「はなまるじるし」 ）)",
@@ -883,7 +883,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8262/2100014958262_1_2.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【楽天ブックス限定特典+特典】アノマリス／ANOMALITH 数量限定 危険区画対策室BOX　Switch2版(両面アクリルコースター（スタンド付き）+【予約外付特典】DLC)",
@@ -893,7 +893,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5675/2100015005675.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】アノマリス／ANOMALITH　Switch2版(【予約外付特典】DLC)",
@@ -903,7 +903,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8248/4562240238248.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【楽天ブックス限定特典+特典】アノマリス／ANOMALITH　Switch2版(両面アクリルコースター（スタンド付き）+【予約外付特典】DLC)",
@@ -913,7 +913,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/5668/2100015005668_1_2.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】アノマリス／ANOMALITH 数量限定 危険区画対策室BOX　Switch2版(【予約外付特典】DLC)",
@@ -923,7 +923,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8255/4562240238255.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【楽天ブックス限定特典+特典】クライムライト／CRYMELIGHT　Switch2版(アクリルキーホルダー+【予約外付特典】DLC2種セット（アクセサリー「涙の理念」、アクセサリー「はなまるじるし」 ）)",
@@ -933,7 +933,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8255/2100014958255.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】蒼き雷霆 ガンヴォルト トライアングル エディション Nintendo Switch 2 Edition 限定版(【予約外付特典】A4クリアファイル)",
@@ -953,7 +953,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/8286/4562240238286.jpg?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【07/30発売★予約】【新品】【amiibo】amiibo レオン・S・ケネディ 【バイオハザード レクイエム】（バイオハザードシリーズ）[予約品]",
@@ -973,7 +973,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/181/game-0034329.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【あみあみ限定特典】【特典】Nintendo Switch 2 アノマリス/ANOMALITH 数量限定 危険区画対策室BOX[フリュー]《10月予約》",
@@ -983,7 +983,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/213/game-0034456.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【あみあみ限定特典】【特典】Nintendo Switch 2 クライムライト/CRYMELIGHT ティーパーティBOX[フリュー]《11月予約》",
@@ -993,7 +993,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/181/game-0034330.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     }
    ]
   },
@@ -1012,7 +1012,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2025/513/med-dvd2-59636.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】BD らんま1/2 Blu-ray Disc BOX Vol.2 完全生産限定版[アニプレックス]【送料無料】《10月予約》",
@@ -1022,7 +1022,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2025/511/med-dvd2-59591.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【Amazon.co.jp限定】マクロスF ギャラクシーライブ 2021 [リベンジ] 〜まだまだふたりはこれから! 私たちの歌を聴け! ! 〜 [1万セット完全生産限定ゴ~~ジャス盤] [2Blu-ray + CD + グッズ] (W特典 / 早期予約",
@@ -1062,7 +1062,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/311/med-dvd2-60880.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【楽天ブックス限定全巻購入特典+早期予約特典】『二十世紀電氣目録ーユーレカ・エヴリカー』上巻【Blu-ray】(木製スタンド+アクリルコースター2種セット+B2番宣ポスター) [ 内田雄馬 ]",
@@ -1122,7 +1122,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/303/med-dvd2-60863.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】BD 「ポケモン feat. 初音ミク VOLTAGE Live！」 Blu-ray特装盤[ビクターエンタテインメント]《08月予約》",
@@ -1132,7 +1132,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/131/med-dvd2-60090.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【あみあみ限定特典】BD 『初音ミク「マジカルミライ 2026」』 Blu-ray限定盤[ビクターエンタテインメント]《02月予約》",
@@ -1142,7 +1142,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/303/med-dvd2-60855.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     }
    ]
   },
@@ -1181,7 +1181,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plus/cabinet/k-gangu16/gng-sg-oks-505-0722p.jpg?_ex=300x300",
      "shop": "フェスティバルプラザPLUS",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約品 2027年1月発売予定 】 バンダイ 仮面ライダー ソフビパッケージチャーム2＆チョコビスケット 10個装入 代引・後払い決済不可 沖縄・離島発送不可{ 食玩 景品玩具 フィギュア キーホルダー }{ おもちゃ 食玩 おかし コレクション }302[26G22]",
@@ -1191,7 +1191,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plaza/cabinet/k-gangu16/gng-sg-oks-505-0722.jpg?_ex=300x300",
      "shop": "フェスティバルプラザ",
-     "hot": true
+     "hot": false
     },
     {
      "name": "2026年12月発売 予約 TAMASHII NATIONS S.H.フィギュアーツ 真骨彫製法 仮面ライダーBLACK キングストーンフラッシュエディション 初回限定台座付属 約150mm ABS&PVC製 塗装済み可動フィギュア",
@@ -1363,22 +1363,22 @@
      "hot": false
     },
     {
-     "name": "【予約 2026年12月予定】No:98360 TOMIX 24系25形（トワイライトエクスプレス）増結セットA（4両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 8299,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5172-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000647%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-02_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
      "name": "【予約 2026年12月予定】No:98361 TOMIX 24系25形（トワイライトエクスプレス）増結セットB（4両） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 7259,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5172-03%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000646%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-03_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2026年12月予定】No:98360 TOMIX 24系25形（トワイライトエクスプレス）増結セットA（4両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 8299,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5172-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000647%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-02_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1601,143 +1601,143 @@
    "new_count": 14,
    "items": [
     {
-     "name": "『スパイダーマン：ブランド・ニュー・デイ』 ぶら下がりアクリルスタンド グッズ インロック 【8月予約】",
-     "price": 2090,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187536%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335759%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア コナン＆新一ver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720393%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222796%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187536.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720393.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "『スパイダーマン：ブランド・ニュー・デイ』 アクリルスタンド グッズ インロック 【8月予約】",
-     "price": 1980,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187535%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335758%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア コナン＆灰原ver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720392%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222791%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187535.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720392.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 4種セット (07/クレープver. 春宮ゆくり・08/クレープver. 此花輝夜・09/クレープver. 山田真緑・10/クレープver. 佐々木翔音) (描き下ろしイラスト) A3◆ゆうパケット送料無料 【10月予約】",
-     "price": 6780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187460%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335720%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア 新一＆蘭ver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720391%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222785%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187460.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720391.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 10/クレープver. 佐々木翔音 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187459%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335719%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア コナン＆怪盗キッドver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720390%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222767%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187459.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720390.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 09/クレープver. 山田真緑 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187458%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335718%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア 新一＆平次ver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720389%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222749%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187458.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720389.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 08/クレープver. 此花輝夜 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187457%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335715%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア 赤井＆世良ver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720388%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222762%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187457.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720388.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 07/クレープver. 春宮ゆくり (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187456%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335714%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア 蘭＆灰原ver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720387%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222772%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187456.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720387.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 3種セット (04/クレープver. 駒形花火・05/クレープver. 金澤奇跡・06/クレープver. 調布のりこ) (描き下ろしイラスト) A3◆ゆうパケット送料無料 【10月予約】",
-     "price": 5180,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187455%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335716%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "名探偵コナン アクリルスタンドフィギュア ペア 新一＆怪盗キッドver.【予約 12/未定 発売予定】",
+     "price": 2200,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720386%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222739%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187455.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720386.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 06/クレープver. 調布のりこ (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187454%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335713%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "死亡遊戯で飯を食う。 アクリルスタンドフィギュア 御城 GOLDEN BATH【予約 11/未定 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720376%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222695%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187454.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720376.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 05/クレープver. 金澤奇跡 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187453%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335709%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "死亡遊戯で飯を食う。 アクリルスタンドフィギュア 幽鬼 GOLDEN BATH【予約 11/未定 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720375%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222689%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187453.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item603/99720375.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 04/クレープver. 駒形花火 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187452%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335710%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "デート・ア・ライブ 【KADOMIX】 アクリルスタンド 時崎狂三 YAOguoguo Ver.【予約 10/下 発売予定】",
+     "price": 1760,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720351%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222554%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187452.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item602/99720351.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 3種セット (01/クレープver. 高橋ポルカ・02/クレープver. 麻布麻衣・03/クレープver. 五桐 玲) (描き下ろしイラスト) A3◆ゆうパケット送料無料 【10月予約】",
-     "price": 5180,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187451%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335707%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "デート・ア・ライブ 【KADOMIX】 アクリルスタンド 時崎狂三 むにんしきVer.【予約 10/下 発売予定】",
+     "price": 1760,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720350%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222545%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187451.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item602/99720350.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 03/クレープver. 五桐 玲 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187450%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335706%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "デート・ア・ライブ 【KADOMIX】 アクリルスタンド 夜刀神十香 るろおVer.【予約 10/下 発売予定】",
+     "price": 1760,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720349%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222509%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187450.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item602/99720349.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "アクリルスタンド 「イキヅライブ！ LOVELIVE！ BLUEBIRD」 02/クレープver. 麻布麻衣 (描き下ろしイラスト) A3 【10月予約】",
-     "price": 1780,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg187449%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10335708%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "デート・ア・ライブ 【KADOMIX】 アクリルスタンド 夜刀神十香 みやま零Ver.【予約 10/下 発売予定】",
+     "price": 1760,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99720348%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12222517%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/188000/yg187449.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item602/99720348.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     }
    ]
