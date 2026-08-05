@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-06T05:29:15.275945+09:00",
+ "generated_at": "2026-08-06T06:46:59.405276+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -446,7 +446,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/3441040cf46c0e60.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【全品P2倍★クーポン】【予約】 HEATBOYS ミュータント・タートルズ ミケランジェロ スケール可動フィギュア 通常版 【2026年12月発売予定】",
@@ -496,7 +496,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/40f618d0d96f7b7c.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【全品P2倍★クーポン】【予約】 ウイング 『アズールレーン』アンカレッジ 交流宿舎ver. 1/7スケール完成品フィギュア 【2027年3月発売予定】",
@@ -506,7 +506,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/6761d1ec20a41233.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "[ムービー・マスターピース DIECAST]『アイアンマン』1/6スケールフィギュア アイアンマン・マーク3（アーマー・スーツアップ版）　塗装済み完成品〔ホットトイズ〕（250818予約開始）",
@@ -516,7 +516,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/yoyaku/yoyaku.gif?_ex=300x300",
      "shop": "イエローサブマリン楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【全品P2倍★クーポン】【予約】 BEAST KINGDOM ハリー・ポッターシリーズ 手のひらサイズ ビニール・ファンクショナル・フィギュア:マンドレイク 【2026年9月発売予定】",
@@ -1353,22 +1353,22 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年1月予定】No:97990 TOMIX 特別企画品 望郷の平成筑豊鉄道 田川線セット 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 10067,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5171%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000643%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5171_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
      "name": "【予約 2027年1月予定】No:97643 TOMIX E2-0系東北・上越新幹線（やまびこ・赤帯）セット（8両） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 23275,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5163%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000642%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5163_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2027年1月予定】No:97990 TOMIX 特別企画品 望郷の平成筑豊鉄道 田川線セット 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 10067,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5171%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000643%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5171_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1389,6 +1389,16 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5173_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2027年1月予定】No:97250 TOMIX 373系特急電車基本セット（3両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 13083,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5166-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000636%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5166-01_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1431,16 +1441,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-02_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
-    },
-    {
-     "name": "【予約 2027年2月予定】No:12109 TOMIX EF58形(127号機・宮原機関区・青色) 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 14331,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5169%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000633%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5169_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
     }
    ]
   },
@@ -1459,7 +1459,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ookinidesu/cabinet/08438100/13519372/4904810944881-001.jpg?_ex=300x300",
      "shop": "おおきにです",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Porshe 911 Carrera RS 2.7 ガルフブルー/ブラックリバリー(右ハンドル) MGT01365-R 完成品ミニカー【予約】",
@@ -1469,7 +1469,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/060/0840456397060.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Porshe 911 Carrera RS 2.7 ガルフブルー/ブラックリバリー(左ハンドル) ブリスター仕様 MGT01365-BL 完成品ミニカー【予約】",
@@ -1479,7 +1479,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/046/0840456397046.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Porshe 911 Carrera RS 2.7 ガルフブルー/ブラックリバリー(左ハンドル) MGT01365-L 完成品ミニカー【予約】",
@@ -1489,7 +1489,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/039/0840456397039.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Range Rover 1971 ブリティッシュ・トランス-アメリカ・エクスペディション VXC-765K(左ハンドル) MGT01364-L 完成品ミニカー【予約】",
@@ -1499,7 +1499,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/971/0840456396971.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Ford MUSTANG ダークホース ブルーエンバー(右ハンドル) MGT01363-R 完成品ミニカー【予約】",
@@ -1509,7 +1509,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/933/0840456396933.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Ford MUSTANG ダークホース ブルーエンバー(左ハンドル) MGT01363-L 完成品ミニカー【予約】",
@@ -1519,7 +1519,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/902/0840456396902.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Ford MUSTANG ダークホース ブルーエンバー(左ハンドル) ブリスター仕様 MGT01363-BL 完成品ミニカー【予約】",
@@ -1529,7 +1529,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/919/0840456396919.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "1/64 Nissan GT-R Nismo 2024 シルバー(左ハンドル) ブリスター仕様 MGT01361-BL 完成品ミニカー【予約】",
@@ -1539,7 +1539,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/guruguru2/cabinet/797/0840456396797.jpg?_ex=300x300",
      "shop": "ぐるぐる王国 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【2026年8月15日発売 予約商品】トミカ ギフト Honda MUGEN COLLECTION",
@@ -1579,7 +1579,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/geexcollection/cabinet/s/286.jpg?_ex=300x300",
      "shop": "GEEX COLLECTION",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約商品】 トミカ tomica custom works BK26 Honda NSX タカラトミー(TAKARA TOMY) ミニカー",
@@ -1589,7 +1589,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/geexcollection/cabinet/s/285.jpg?_ex=300x300",
      "shop": "GEEX COLLECTION",
-     "hot": true
+     "hot": false
     }
    ]
   },
@@ -1598,8 +1598,28 @@
    "icon": "🧸",
    "tag": "#ぬいぐるみ",
    "slug": "plush",
-   "new_count": 6,
+   "new_count": 8,
    "items": [
+    {
+     "name": "【予約】 アクリルスタンド Trick or Heart 五月 TVスペシャルアニメ「五等分の花嫁*」",
+     "price": 1980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00sctin.kgoda6e8.g00sctin.kgodb1b2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakaikumasan%2F4573677031494%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fakaikumasan%2Fi%2F10075480%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/akaikumasan/cabinet/picture20260716/4573677031494.jpg?_ex=300x300",
+     "shop": "赤い熊さん 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "2026年12月発売予定 予約 BOX Disney Characters 刺繍缶バッジビスケット3 ビスケット 食玩 BOX販売/12個セット ボックス",
+     "price": 9500,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00u8hdn.kgoda32d.g00u8hdn.kgodbff3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flaffeystore%2Fzzz-20260711-05-box%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flaffeystore%2Fi%2F10003154%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2026年12月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/laffeystore/cabinet/goq006/8635_1.jpg?_ex=300x300",
+     "shop": "LaffeyStore",
+     "hot": false
+    },
     {
      "name": "【予約】 アズメーカー 青春ブタ野郎はバニーガール先輩の夢を見ない アクリルキャラスタンド 桜島麻衣・古賀朋絵 グッズ 【2026年10月発売予定】",
      "price": 1938,
@@ -1719,26 +1739,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_54/06c0faacd46fc537.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": false
-    },
-    {
-     "name": "【全品P2倍★クーポン】【予約】 aniplus 「BROTHERS CONFLICT」アクリルスタンドD グッズ 【2026年10月発売予定】",
-     "price": 2699,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000075168%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10018921%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年10月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_54/f78a018550cc104d.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【全品P2倍★クーポン】【予約】 aniplus 「BROTHERS CONFLICT」アクリルスタンドE グッズ 【2026年10月発売予定】",
-     "price": 2699,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000075169%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10018922%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年10月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_54/78891ee3d03715eb.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
     }
    ]
   }
