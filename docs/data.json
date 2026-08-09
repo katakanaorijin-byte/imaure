@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-10T00:06:24.706545+09:00",
+ "generated_at": "2026-08-10T00:45:55.994035+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -406,8 +406,18 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 13,
+   "new_count": 14,
    "items": [
+    {
+     "name": "【P2倍★8/10 00:00~8/12 9:59】 【お一人さま1点限り】【予約商品/セット販売】RE-MENT　ジョジョの奇妙な冒険 スターダストクルセイダース STAND on DESK -宿命-　コンプリートセット（全6種）【10月初旬お渡し予定】",
+     "price": 9900,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00u2h5n.kgodad28.g00u2h5n.kgodbcb9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Faeon-kyushu%2F2007945003682%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Faeon-kyushu%2Fi%2F10015507%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aeon-kyushu/cabinet/item/kids/character/2007945003682_1.jpg?_ex=300x300",
+     "shop": "イオン九州オンライン",
+     "hot": false
+    },
     {
      "name": "【予約】 グッドスマイルカンパニー ねんどろいど「モンスターハンター」シリーズ リオレウス フィギュア 【2027年3月発売予定】",
      "price": 10201,
@@ -535,16 +545,6 @@
      "release": "2026年12月",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_57/5798925816ecae55.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【全品P2倍★クーポン】【予約】 タカラトミー ダイアクロン トレッドヴァーサルター/CU 陸上機甲部隊 Ver. 【2027年1月発売予定】",
-     "price": 10030,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000075370%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10019123%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/2e2f4acd265eb8e9.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": false
     }
@@ -863,7 +863,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/242/game-0034532.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約前日発送】[Switch2] Minecraft(マインクラフト) 日本マイクロソフト(20261028)",
@@ -883,7 +883,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/152/game-0034207.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "Nintendo Switch 2 KINGDOM HEARTS Collection [I〜III][スクウェア・エニックス]【送料無料】《10月予約》",
@@ -893,7 +893,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/243/game-0034556.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】Nintendo Switch Sullyland Nursery Rhyme 通常版[アイディアファクトリー]【送料無料】《10月予約》",
@@ -903,7 +903,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/191/game-0034389.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "Nintendo switch 超翼戦騎エスティーク (通常版) ゲームソフト 初回特典付き キャット・ホイ商事 【11月予約】",
@@ -913,7 +913,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yc188282.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "Nintendo Switch 2 ミステリーの歩き方2 人魚伝説殺人事件[イマジニア]《09月予約》",
@@ -923,7 +923,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/212/game-0034447.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】Nintendo Switch 2 真・三國無双2 with 猛将伝 Remastered[コーエーテクモゲームス]【送料無料】《10月予約》",
@@ -933,7 +933,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/232/game-0034494.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【あみあみ限定特典】【特典】Nintendo Switch 2 アノマリス/ANOMALITH 数量限定 危険区画対策室BOX[フリュー]《10月予約》",
@@ -943,7 +943,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/213/game-0034456.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【あみあみ限定特典】【特典】Nintendo Switch 2 クライムライト/CRYMELIGHT ティーパーティBOX[フリュー]《11月予約》",
@@ -963,7 +963,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/311/game-0034731.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】Nintendo Switch むちむちポーク！＆ピンクスゥイーツ Boosted[シティコネクション]【送料無料】《10月予約》",
@@ -973,7 +973,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/222/game-0034457.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約分】amiibo ウツホ(スプラトゥーンシリーズ) アミーボ11月17日発売価格、納期にご納得が頂けない場合はご購入をお控え願います。生産中止の場合はご注文はキャンセルとなります。お客様都合による注文後のキャンルセル不可。即日発送不可。",
@@ -1012,7 +1012,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/321/med-cd2-50729.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】CD アニメ「ドロヘドロ」CD-BOX『DOROHEDORO Season1＆2 “BEST”』[東宝]《09月予約》",
@@ -1022,7 +1022,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/232/med-cd2-50291.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【楽天ブックス限定先着特典+早期予約特典】極限選別演劇『HUNDRED LINE -最終防衛学園ー』(完全生産限定版)【Blu-ray】(ブロマイドセット D+全公演全景映像視聴シリアルコード) [ 田村心 ]",
@@ -1042,7 +1042,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【同時購入特典対象】【オリ特付】【Blu-ray】【予約】 TVアニメ「バンドリ! ゆめ∞みた」Blu-ray 上巻 Blu-ray 夢限大みゅーたいぷ",
@@ -1072,7 +1072,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【早期予約特典付】【Blu-ray】【予約】 ラブライブ!蓮ノ空女学院スクールアイドルクラブ 6th Live Dream -Bloom Garden Party- Blu-ray Memorial BOX",
@@ -1112,7 +1112,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/192/med-dvd2-60338.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "Resonance: A Plague Tale Legacy オリジナル・サウンドトラック (カラーヴァイナル仕様 / 2枚組アナログレコード)　※入荷数がご予約数に満たない場合は先着順となります。 【LP】",
@@ -1132,7 +1132,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/313/med-cd2-50664.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【あみあみ限定特典】CD DIALOGUE+ / DIALOGUE+ 4th Album「NOVEL+」 通常盤[ポニーキャニオン]《12月予約》",
@@ -1142,7 +1142,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/313/med-cd2-50663.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   },
@@ -1310,7 +1310,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yn188847.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2026年8月予定】98499 TOMIX JR E5系東北 北海道新幹線 はやぶさ 増結3両セットB 鉄道模型 Nゲージ TOMIX トミックス",
