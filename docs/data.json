@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-11T21:10:31.170794+09:00",
+ "generated_at": "2026-08-11T22:40:43.829256+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -188,7 +188,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/justrich/cabinet/09508048/imgrc0147434877.jpg?_ex=300x300",
      "shop": "Colulu - コルル",
-     "hot": false
+     "hot": true
     },
     {
      "name": "2026年8月22日発売 予約 レビュー特典あり ONE PIECEカードゲーム 世界最強の戦士 OP-17 BOX 24パック入り　ワンピース バンダイ BANDAI ボックス",
@@ -238,7 +238,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hankuroom/cabinet/imgrc0146589147.jpg?_ex=300x300",
      "shop": "hankuroom 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   },
@@ -377,7 +377,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/pagedata/non.jpg?_ex=300x300",
      "shop": "メディアワールド 販売&買取SHOP",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約】[TCG] (カートン) バトルスピリッツ コラボブースター アイカツ! 新たなる煌めき【26RCB02】 バンダイ(16BOX)(20261226)",
@@ -387,7 +387,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/pagedata/non.jpg?_ex=300x300",
      "shop": "メディアワールド 販売&買取SHOP",
-     "hot": false
+     "hot": true
     }
    ]
   },
@@ -406,7 +406,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/geexcollection/cabinet/s/357.jpg?_ex=300x300",
      "shop": "GEEX COLLECTION",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約】 グッドスマイルカンパニー ねんどろいど TVアニメ「ベルセルク」ガッツ 狂戦士の甲冑Ver. BLOOD EDITION フィギュア 【2027年1月発売予定】",
@@ -694,7 +694,7 @@
    "icon": "🤖",
    "tag": "#ガンプラ",
    "slug": "gunpla",
-   "new_count": 7,
+   "new_count": 6,
    "items": [
     {
      "name": "（予約）SMP グレートマジンガー プラモデル 食玩 2026年12月発売予定 SHOKUGAN MODELING PROJECT スクランブルダッシュ付属 可動モデル クリスマス バンダイ 送料無料",
@@ -704,7 +704,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/dreamtoys/cabinet/3/925757.jpg?_ex=300x300",
      "shop": "ドリームトイズ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "マルチビルダーズケース　プラモデル〔BANDAI SPIRITS〕（230323予約開始）",
@@ -753,16 +753,6 @@
      "release": "",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/pla1/4967834659001.jpg?_ex=300x300",
-     "shop": "イエローサブマリン楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "『科学忍者隊ガッチャマン』白鳥のジュン （特殊ヨーヨー）　1/12レジンキット〔ハセガワ〕（260403予約開始）",
-     "price": 6800,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4967834524941%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10187459%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/pla1/4967834524941.jpg?_ex=300x300",
      "shop": "イエローサブマリン楽天市場店",
      "hot": false
     },
@@ -833,6 +823,16 @@
      "release": "2026年12月",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/76b88cbc557a338b.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約】 アオシマ PLAfig. モンスターハンター リオレウス プラモデル 【2026年12月発売予定】",
+     "price": 7690,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000075362%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10019115%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2026年12月",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/cf4a1a3a6d70728e.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": false
     }
@@ -923,7 +923,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1049/0/cg10490189.jpg?_ex=300x300",
      "shop": "メディアワールド 販売&買取SHOP",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約前日発送】[Switch2] 早期購入者特典付(ダイカットステッカー4種セット クリアポーチ付き) マモンキング(MAMON KING) LUCAS GAMES(20261008)",
@@ -943,7 +943,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1049/0/cg10490202.jpg?_ex=300x300",
      "shop": "メディアワールド 販売&買取SHOP",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約前日発送】[Switch2] ツーポイントホスピタル:ハートフルコレクション セガ(20261106)",
@@ -1181,7 +1181,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hankuroom/cabinet/goq002/8690_1.jpg?_ex=300x300",
      "shop": "hankuroom 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "2027年3月発売 予約 S.H.Figuarts 真骨彫製法 ウルトラマン Aタイプ -ウルトラマン誕生- バンダイ",
@@ -1191,7 +1191,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/toysbox2nd/cabinet/goq010/8690_1.jpg?_ex=300x300",
      "shop": "ソフィアゲート",
-     "hot": false
+     "hot": true
     },
     {
      "name": "2026年12月発売 予約 TAMASHII NATIONS S.H.フィギュアーツ 真骨彫製法 仮面ライダーBLACK キングストーンフラッシュエディション 初回限定台座付属 約150mm ABS&PVC製 塗装済み可動フィギュア",
@@ -1271,7 +1271,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plus/cabinet/k-gangu15/gng-sg-oks-113-0525.jpg?_ex=300x300",
      "shop": "フェスティバルプラザPLUS",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約品 2026/9/7以降 発送】 バンダイ ウルトラマン シールウエハース -60TH Anniversary- 20個装入 代引・後払い決済不可 沖縄・離島発送不可{ 食玩 景品玩具 シール ウエハース 60周年 }{ おかし 食玩 コレクション }302[26G17]",
@@ -1281,7 +1281,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plaza/cabinet/k-gangu15/gng-sg-oks-113-0525.jpg?_ex=300x300",
      "shop": "フェスティバルプラザ",
-     "hot": false
+     "hot": true
     }
    ]
   },
