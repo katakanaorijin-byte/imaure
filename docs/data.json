@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-12T20:29:05.171870+09:00",
+ "generated_at": "2026-08-12T21:09:30.970596+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -1112,7 +1112,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/akaikumasan/cabinet/picture20260726/4540774809943.jpg?_ex=300x300",
      "shop": "赤い熊さん 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【楽天ブックス限定先着特典+早期予約特典】ラブライブ！蓮ノ空女学院スクールアイドルクラブ 6th Live Dream ～Bloom Garden Party～ Blu-ray Memorial BOX【Blu-ray】(A5キャラファイングラフ+L判ブロマイド11種セット+A3イラストボード)",
@@ -1122,7 +1122,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/book/cabinet/0070/2100015130070.gif?_ex=300x300",
      "shop": "楽天ブックス",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【特典】BD あかね噺 Blu-ray Disc BOX 完全生産限定版[アニプレックス]【送料無料】《09月予約》",
@@ -1591,6 +1591,16 @@
    "new_count": 14,
    "items": [
     {
+     "name": "[8月24日発売予約][バンダイ] にじさんじ 缶バッジビスケット3 [1ボックス販売12個入]",
+     "price": 4500,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00pm32n.kgodad51.g00pm32n.kgodb09e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Foutletplaza%2F40001114195%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Foutletplaza%2Fi%2F11441417%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/outletplaza/cabinet/311/4570117934032.jpg?_ex=300x300",
+     "shop": "Outlet Plaza",
+     "hot": false
+    },
+    {
      "name": "暗殺教室 BIGペアアクリルスタンド 100時間カレーコラボver. 制服【予約 12/未定 発売予定】",
      "price": 3850,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99723147%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12230015%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1598,7 +1608,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item607/99723147.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "暗殺教室 BIGペアアクリルスタンド 100時間カレーコラボver. 店員【予約 12/未定 発売予定】",
@@ -1608,7 +1618,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item607/99723146.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "お隣の天使様にいつの間にか駄目人間にされていた件2 BIGペアアクリルスタンド【予約 10/未定 発売予定】",
@@ -1618,7 +1628,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item607/99723119.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "お隣の天使様にいつの間にか駄目人間にされていた件2 描き下ろしBIGアクリルスタンド 2【予約 11/上 発売予定】",
@@ -1628,7 +1638,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723066.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "お隣の天使様にいつの間にか駄目人間にされていた件2 描き下ろしBIGアクリルスタンド 1【予約 11/上 発売予定】",
@@ -1638,7 +1648,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723065.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "オタクに優しいギャルはいない!? BIGアクリルスタンド 4【予約 10/下 発売予定】",
@@ -1648,7 +1658,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723042.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "オタクに優しいギャルはいない!? BIGアクリルスタンド 3【予約 10/下 発売予定】",
@@ -1658,7 +1668,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723041.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "オタクに優しいギャルはいない!? BIGアクリルスタンド 2【予約 10/下 発売予定】",
@@ -1668,7 +1678,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723040.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "オタクに優しいギャルはいない!? BIGアクリルスタンド 1【予約 10/下 発売予定】",
@@ -1678,7 +1688,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723039.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ダイヤのA act II -Second Season- 描き下ろしBIGアクリルスタンド【ハーネススーツver.】 6 奥村光舟【予約 11/上 発売予定】",
@@ -1688,7 +1698,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723031.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ダイヤのA act II -Second Season- 描き下ろしBIGアクリルスタンド【ハーネススーツver.】 5 倉持洋一【予約 11/上 発売予定】",
@@ -1698,7 +1708,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723030.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ダイヤのA act II -Second Season- 描き下ろしBIGアクリルスタンド【ハーネススーツver.】 4 御幸一也【予約 11/上 発売予定】",
@@ -1708,7 +1718,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723029.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ダイヤのA act II -Second Season- 描き下ろしBIGアクリルスタンド【ハーネススーツver.】 3 小湊春市【予約 11/上 発売予定】",
@@ -1718,17 +1728,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723028.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "ダイヤのA act II -Second Season- 描き下ろしBIGアクリルスタンド【ハーネススーツver.】 2 降谷暁【予約 11/上 発売予定】",
-     "price": 1925,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99723027%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12230155%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item606/99723027.jpg?_ex=300x300",
-     "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   }
