@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-19T00:55:51.192071+09:00",
+ "generated_at": "2026-08-19T01:22:09.089271+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -19,16 +19,6 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/p-g-shop/cabinet/imgrc0220459826.jpg?_ex=300x300",
      "shop": "P-G-shop",
-     "hot": false
-    },
-    {
-     "name": "※シュリンクなり ぺりぺり付き 予約商品 2026年9月16日発売予定 ポケモンカードゲーム MEGA 拡張パック 30th CELEBRATION BOX 30周年",
-     "price": 45000,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00tkd8n.kgodae7c.g00tkd8n.kgodb25a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjugem2020%2F40001451%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fjugem2020%2Fi%2F10003857%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/jugem2020/cabinet/12637066/imgrc0136659204.jpg?_ex=300x300",
-     "shop": "JUGEM 楽天市場店",
      "hot": false
     },
     {
@@ -148,6 +138,16 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/andmoa/cabinet/goq001/8645_1.jpg?_ex=300x300",
+     "shop": "and moa",
+     "hot": false
+    },
+    {
+     "name": "10月16日発売 予約 ポケモンカードゲーム MEGA 30th CELEBRATION カードセット サルノリ・ヒバニー・メッソン",
+     "price": 10470,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00utoin.kgoda268.g00utoin.kgodb89d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fandmoa%2Fcardbox-psp-032%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fandmoa%2Fi%2F10000541%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/andmoa/cabinet/goq001/8651_1.jpg?_ex=300x300",
      "shop": "and moa",
      "hot": false
     }
@@ -317,7 +317,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/341/goods-04855630.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "遊☆戯☆王5D’s ミニアクリルスタンド 8個入りBOX[ジーベック]《11月予約》",
@@ -337,7 +337,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/341/goods-04855628.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "楽譜 SR-193 G. フィンガー ソナタ集 第5巻 ／ リコーダーJP【予約商品】",
@@ -536,7 +536,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/176000/yf175747.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "送料無料◆再販 ユニオンクリエイティブ 『To LOVEる ダークネス』 籾岡里紗 ダークネスver. リニューアルパッケージ版 1/6スケール フィギュア 【4月予約】",
@@ -546,7 +546,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yf189616.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "スウィーターズ フィギュアコレクション カプセル版 全6種セット【2026年8月予約】",
@@ -556,7 +556,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mirakikaku/cabinet/item/202603/c2608143_c0.jpg?_ex=300x300",
      "shop": "アミュームショップ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約】 フリュー 周防パトラ バニーver. 1/6スケールフィギュア 【2027年6月発売予定】",
@@ -735,7 +735,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/322/figure-206708.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   },
@@ -754,7 +754,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yp189849.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "送料無料◆再販 コトブキヤ 『シン・エヴァンゲリオン劇場版』 1/400 汎用ヒト型決戦兵器 エヴァンゲリオン 正規実用型 新2号機α プラモデル KP536 【4月予約】",
@@ -764,7 +764,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yp189848.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "送料無料◆再販 コトブキヤ 『銀河英雄伝説 Die Neue These』 1/3000 戦艦 2種セット (ブリュンヒルト/ヒューベリオン) セット商品 【4月予約】",
@@ -774,7 +774,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yp189847.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "再販 コトブキヤ 『銀河英雄伝説 Die Neue These』 1/3000 自由惑星同盟軍 戦艦 ヒューベリオン プラモデル KP770 【4月予約】",
@@ -784,7 +784,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yp189846.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "再販 コトブキヤ 『銀河英雄伝説 Die Neue These』 1/3000 銀河帝国軍 戦艦 ブリュンヒルト プラモデル KP768 【4月予約】",
@@ -794,7 +794,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yp189845.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ミニチャンプス 1/64 Porsche 911 GT3 (992) Yellow/Black ミニカー T64MC-024-YB 【未定予約】",
@@ -1013,7 +1013,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yc188282.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "Nintendo Switch あやかしごはん 〜おかわりっ！〜 for S 特装版[エディア]【送料無料】《08月予約》",
@@ -1023,7 +1023,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/142/game-0034159.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約分】amiibo ウツホ(スプラトゥーンシリーズ) アミーボ11月17日発売価格、納期にご納得が頂けない場合はご購入をお控え願います。生産中止の場合はご注文はキャンセルとなります。お客様都合による注文後のキャンルセル不可。即日発送不可。",
@@ -1052,7 +1052,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/341/med-cd2-50771.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典付】【Blu-ray】【予約】 『左ききのエレン』Blu-ray BOX",
@@ -1102,7 +1102,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【あみあみ限定特典】CD 『ヤマトよ永遠に REBEL3199』オリジナル・サウンドトラック Vol.02[バンダイナムコミュージックライブ]《10月予約》",
@@ -1112,7 +1112,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【あみあみ限定特典】【特典】CD RAISE A SUILEN / I AM WHO I AM Blu-ray付生産限定盤[ブシロードミュージック]《11月予約》",
@@ -1122,7 +1122,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/323/med-cd2-50730.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】CD RAISE A SUILEN / I AM WHO I AM Blu-ray付生産限定盤[ブシロードミュージック]《11月予約》",
@@ -1132,7 +1132,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/323/med-cd2-50727.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約】 『映画名探偵プリキュア!不思議な庭と2人の秘密』オリジナル・サウンドトラック CD サントラ",
@@ -1152,7 +1152,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/321/med-cd2-50729.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【特典】CD アニメ「ドロヘドロ」CD-BOX『DOROHEDORO Season1＆2 “BEST”』[東宝]《09月予約》",
@@ -1162,7 +1162,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/232/med-cd2-50291.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "Resonance: A Plague Tale Legacy オリジナル・サウンドトラック (カラーヴァイナル仕様 / 2枚組アナログレコード)　※入荷数がご予約数に満たない場合は先着順となります。 【LP】",
@@ -1182,7 +1182,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/313/med-cd2-50664.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   },
@@ -1360,7 +1360,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yn188847.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約 2026年8月予定】98499 TOMIX JR E5系東北 北海道新幹線 はやぶさ 増結3両セットB 鉄道模型 Nゲージ TOMIX トミックス",
@@ -1668,7 +1668,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189868.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ティームエンタテインメント 『おねがいアイプリ』 アクリルスタンド エマ 【10月予約】",
