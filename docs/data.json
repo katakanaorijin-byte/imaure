@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-19T03:25:28.139838+09:00",
+ "generated_at": "2026-08-19T04:06:58.070139+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -327,7 +327,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/341/goods-04855629.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "遊☆戯☆王5D’s アクリルキーホルダー 8個入りBOX[ジーベック]《11月予約》",
@@ -387,7 +387,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item607/99723578.jpg?_ex=300x300",
      "shop": "O-TRAP 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "遊☆戯☆王 5D's アクリルキーホルダー 1BOX【予約 11/下 発売予定】",
@@ -446,8 +446,18 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 10,
+   "new_count": 11,
    "items": [
+    {
+     "name": "山本由伸 ロサンゼルス・ドジャース 2025 ワールドシリーズ MVP 記念 ミニ ボブルヘッド 限定525体 山本選手 MPV受賞記念 チャンピオン ドジャース優勝 コレクション バブルヘッド フィギュア MLB ※予約販売2026年下旬頃順次発送※",
+     "price": 19000,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00uklgn.kgoda3f1.g00uklgn.kgodb63c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Flad25-404%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpalmsamerica%2Fi%2F10042069%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/palmsamerica/cabinet/12433945/404-1.jpg?_ex=300x300",
+     "shop": "パームスアメリカ",
+     "hot": false
+    },
     {
      "name": "2026年9月12日発売 予約 BEYBLADE X ベイブレードX CX-19 ランダムブースター クロコトレッドセレクト タカラトミー TAKARA TOMY",
      "price": 4830,
@@ -529,13 +539,13 @@
      "hot": true
     },
     {
-     "name": "卓上 本田紗来 2027年カレンダー 11月21日発売予定 絶賛ご予約承り中",
-     "price": 3630,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00s8bfn.kgoda2e8.g00s8bfn.kgodb697/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhinokiyashop%2F2027cl-185%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhinokiyashop%2Fi%2F10022753%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "MOOMIN ARABIA [公式] ムーミン アラビア ミニフィギュア ムーミンママ ムーミンアラビア インテリア・生活雑貨 その他のインテリア・生活雑貨【先行予約】*【送料無料】",
+     "price": 4180,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rvyxn.kgoda128.g00rvyxn.kgodbba9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fstylifemen%2Fmj8878%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fstylifemen%2Fi%2F10960347%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hinokiyashop/cabinet/2027calendar/nowonprinting2027.jpg?_ex=300x300",
-     "shop": "美術工芸の檜屋",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/stylifemen/cabinet/item/878/mj8878-01_1.jpg?_ex=300x300",
+     "shop": "Rakuten Fashion Men",
      "hot": false
     },
     {
@@ -576,16 +586,6 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_57/33e7d627db1f28d5.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "マテル(MATTEL) 【予約】JGM16 ジュラシック・ワールド ラボ襲撃!T-レックス",
-     "price": 4962,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qet1n.kgodadb2.g00qet1n.kgodb4c0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecjoy%2F21604635%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fecjoy%2Fi%2F92646393%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "",
-     "shop": "ECJOY!楽天市場店",
      "hot": false
     }
    ]
@@ -1473,12 +1473,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年1月予定】No:98173 TOMIX 道南いさりび鉄道 キハ40 1700形ディーゼルカー（急行色・首都圏色）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 10712,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5170%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000644%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2026年12月予定】No:98360 TOMIX 24系25形（トワイライトエクスプレス）増結セットA（4両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 8299,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5172-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000647%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5170_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5172-02_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     }
@@ -1678,7 +1678,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189867.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ティームエンタテインメント 『おねがいアイプリ』 アクリルスタンド ナナ 【10月予約】",
@@ -1688,7 +1688,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189866.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ティームエンタテインメント 『おねがいアイプリ』 アクリルスタンド おりびあ 【10月予約】",
@@ -1698,7 +1698,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189865.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ティームエンタテインメント 『おねがいアイプリ』 アクリルスタンド ぐみ 【10月予約】",
@@ -1708,7 +1708,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189864.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ティームエンタテインメント 『おねがいアイプリ』 アクリルスタンド あおい 【10月予約】",
@@ -1718,7 +1718,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189863.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ティームエンタテインメント 『おねがいアイプリ』 アクリルスタンド いのり 【10月予約】",
@@ -1728,7 +1728,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189862.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "SO-ZO 『TIGER & BUNNY』 ホテルコラボ第4弾 アクリルスタンド 2種セット (虎徹/バーナビー) セット商品◆ゆうパケット送料無料 【11月予約】",
@@ -1738,7 +1738,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189856.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "SO-ZO 『TIGER & BUNNY』 ホテルコラボ第4弾 アクリルスタンド バーナビー 【11月予約】",
@@ -1748,7 +1748,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189855.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "SO-ZO 『TIGER & BUNNY』 ホテルコラボ第4弾 アクリルスタンド 虎徹 【11月予約】",
@@ -1758,7 +1758,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yg189854.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "アクリルスタンド「長谷川先輩と橘くん」02/長谷川凉久＆橘昂B(公式イラスト)[A3]《10月予約》",
@@ -1768,7 +1768,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "アクリルスタンド「長谷川先輩と橘くん」01/長谷川凉久＆橘昂A(描き下ろしイラスト)[A3]《10月予約》",
@@ -1778,7 +1778,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/noimage.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   }
