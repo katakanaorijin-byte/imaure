@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-22T22:59:46.396558+09:00",
+ "generated_at": "2026-08-22T23:21:31.436065+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -9,7 +9,7 @@
    "icon": "⚡",
    "tag": "#ポケカ",
    "slug": "pokemon-card",
-   "new_count": 3,
+   "new_count": 1,
    "items": [
     {
      "name": "ポケモンカードゲーム MEGA 拡張パック 30th CELEBRATION BOX 30周年 セレブレーション ボックス 9月16日発売 予約",
@@ -26,7 +26,7 @@
      "price": 46800,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00s12an.kgoda1a6.g00s12an.kgodb8ca/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flittle-ship%2F000023578555%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flittle-ship%2Fi%2F10001603%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/little-ship/cabinet/04043132/04240806/4521329462424.jpg?_ex=300x300",
      "shop": "リトルシップ 楽天市場店",
      "hot": false
@@ -36,7 +36,7 @@
      "price": 172000,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00s12an.kgoda1a6.g00s12an.kgodb8ca/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flittle-ship%2F00005245788%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flittle-ship%2Fi%2F10001602%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/little-ship/cabinet/04043132/04240806/imgrc0370722452.jpg?_ex=300x300",
      "shop": "リトルシップ 楽天市場店",
      "hot": false
@@ -469,36 +469,6 @@
      "hot": false
     },
     {
-     "name": "【予約】 オランジュ・ルージュ ヘタリア World★Stars イギリス フィギュア 【2027年3月発売予定】",
-     "price": 10537,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000076393%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10020146%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年3月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_59/96f45722bf8d0306.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約】 コトブキヤ ARTFX J 『ポケットモンスター』シリーズ トウヤ with ビクティニ フィギュア 【2027年3月発売予定】",
-     "price": 16939,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000076395%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10020148%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年3月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_59/13d2578fd6e80162.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約】 フリーイング オーバーロード ルプスレギナ・ベータ バニーVer. フィギュア 【2027年4月発売予定】",
-     "price": 51018,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000076394%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10020147%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年4月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_59/69c1bea80f09a48a.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": false
-    },
-    {
      "name": "送料無料◆再販 ユニオンクリエイティブ 『To LOVEる ダークネス』 籾岡里紗 ダークネスver. リニューアルパッケージ版 1/6スケール フィギュア 【4月予約】",
      "price": 18980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyf189616%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10337732%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -545,6 +515,36 @@
      "release": "",
      "is_new": false,
      "image": "",
+     "shop": "ECJOY!楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "マテル(MATTEL) 【予約】JCH02 ジュラシック・ワールド スーパーアクション!ひかってほえるT-レックス",
+     "price": 8830,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qet1n.kgodadb2.g00qet1n.kgodb4c0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecjoy%2F21604614%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fecjoy%2Fi%2F92646365%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "",
+     "shop": "ECJOY!楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "マテル(MATTEL) 【予約】JCH00 ジュラシック・ワールド バトルアクション モササウルス",
+     "price": 7065,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qet1n.kgodadb2.g00qet1n.kgodb4c0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecjoy%2F21604613%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fecjoy%2Fi%2F92646356%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "",
+     "shop": "ECJOY!楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "マテル(MATTEL) 【予約】JCH08 ジュラシック・ワールド ハモンドコレクション ステゴサウルス",
+     "price": 7237,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qet1n.kgodadb2.g00qet1n.kgodb4c0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecjoy%2F21604612%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fecjoy%2Fi%2F92646349%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/ecjoy/cabinet/image1434/21604612.jpg?_ex=300x300",
      "shop": "ECJOY!楽天市場店",
      "hot": false
     }
@@ -1161,7 +1161,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/trendcapsule/cabinet/71er0jjkg1l.jpg?_ex=300x300",
      "shop": "トレンドカプセル 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【対象のおもちゃから2点5%・3点10%オフクーポン】【2026年9月5日発売 予約商品】DXライドワッターエグズ 仮面ライダーマイス",
@@ -1191,7 +1191,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages62/stoy-13698-0.jpg?_ex=300x300",
      "shop": "バトンストア 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【対象のおもちゃから2点5%・3点10%オフクーポン】【2026年8月29日発売 予約商品】変身プリチューム キュアアルカナ 名探偵プリキュア！",
@@ -1201,7 +1201,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages62/stoy-13697-0.jpg?_ex=300x300",
      "shop": "バトンストア 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【対象のおもちゃから2点5%・3点10%オフクーポン】【2026年10月下旬再入荷 予約商品】まわして変身！ ティアアルカナロッド 名探偵プリキュア！",
@@ -1211,7 +1211,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages58/stoy-12932-0.jpg?_ex=300x300",
      "shop": "バトンストア 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【2027年1月発売 予約商品】【BOX】プリキュア ふわキュアマスコット 10個入り（食玩）",
@@ -1221,7 +1221,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages62/stoy-13678-0.jpg?_ex=300x300",
      "shop": "バトンストア 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【対象のおもちゃから2点5%・3点10%オフクーポン】【2026年9月12日発売 予約商品】DXスラッシュボーンバックル＆ライドエグズ4セット 仮面ライダーマイス",
@@ -1469,7 +1469,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/09703391/imgrc0080205251.jpg?_ex=300x300",
      "shop": "HOTTOYS ホットトイズ",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ミニカー　メルセデスベンツ 1964　プルマン　ランドレー　紺色　1/18　　KKS　MERCEDES BENZ - S-CLASS 600 PULLMAN (W100) LANDAULET SEMICONVERTIBLE 1964　【予約商品】",
@@ -1479,7 +1479,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/09703391/imgrc0080205254.jpg?_ex=300x300",
      "shop": "HOTTOYS ホットトイズ",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ミニカー　メルセデスベンツ 1964　プルマン　黒色　1/18　　KKS　MERCEDES BENZ - S-CLASS 600 LWB PULLMAN (W100) 1964【予約商品】",
@@ -1489,7 +1489,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/09703391/imgrc0080205258.jpg?_ex=300x300",
      "shop": "HOTTOYS ホットトイズ",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ミニカー　メルセデスベンツ 1964　プルマン　白色　1/18　　KKS　MERCEDES BENZ - S-CLASS 600 LWB PULLMAN (W100) 1964【予約商品】",
@@ -1499,7 +1499,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/09703391/imgrc0080205260.jpg?_ex=300x300",
      "shop": "HOTTOYS ホットトイズ",
-     "hot": false
+     "hot": true
     },
     {
      "name": "ミニカー　メルセデスベンツ 1964　プルマン　ランドレー　金色　1/18　　KKS　MERCEDES BENZ - S-CLASS 600 PULLMAN (W100) LANDAULET SEMICONVERTIBLE 1964　【予約商品】",
@@ -1509,7 +1509,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/09703391/imgrc0080205256.jpg?_ex=300x300",
      "shop": "HOTTOYS ホットトイズ",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【予約】 11月下旬出荷 みかん うま採り 箱込 10kg 7.5kg 5kg 2.5kg 1kg 光センサー選別 みかん詰め合わせ 光センサー 厳選 冬みかん サイズ混合 和歌山県 産地直送 有田みかん 贈答用 お取り寄せ ミカン 甘いみかん 蜜柑 プレゼント ギフト 果物",
