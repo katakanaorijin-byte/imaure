@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T00:09:21.096254+09:00",
+ "generated_at": "2026-08-25T00:54:43.387843+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -426,8 +426,18 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 2,
+   "new_count": 3,
    "items": [
+    {
+     "name": "ブルーロック けもきゅーぶ トレーディングフィギュア 1BOX【予約 01/中 発売予定】",
+     "price": 8800,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725254%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238610%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725254.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": false
+    },
     {
      "name": "[8月29日発売予約][再販][バンダイ] S.H.フィギュアーツ サイクロップス（GAMERVERSE）",
      "price": 11980,
@@ -557,16 +567,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_55/06c7622e504e5e25.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": false
-    },
-    {
-     "name": "[ムービー・マスターピース DIECAST]『アイアンマン』1/6スケールフィギュア アイアンマン・マーク3（アーマー・スーツアップ版）　塗装済み完成品〔ホットトイズ〕（250818予約開始）",
-     "price": 68000,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4570191990849%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10183089%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/yoyaku/yoyaku.gif?_ex=300x300",
-     "shop": "イエローサブマリン楽天市場店",
-     "hot": true
     }
    ]
   },
@@ -1333,42 +1333,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年2月予定】No:98169 TOMIX キハ47-0形（JR四国色）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 10080,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51779%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000687%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51779_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年2月予定】No:97261 TOMIX 227-500系近郊電車（Kizashi・2両）増結セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 7380,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51777-04%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000686%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51777-04_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
      "name": "【予約 2027年2月予定】No:7493 TOMIX 特企 キハ120-300形（芸備線・庄原さとやまトレイン）（M） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 7890,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51781%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000690%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51781_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年2月予定】No:97260 TOMIX 227-500系近郊電車（Kizashi・3両）増結セット（3両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 9980,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51777-03%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000688%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51777-03_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1383,6 +1353,16 @@
      "hot": false
     },
     {
+     "name": "【予約 2027年2月予定】No:97260 TOMIX 227-500系近郊電車（Kizashi・3両）増結セット（3両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 9980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51777-03%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000688%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51777-03_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
      "name": "【予約 2027年3月予定】No:97623 TOMIX 北海道貨物列車（黄帯車）セットB（8両） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 12150,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51775%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000685%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1393,12 +1373,32 @@
      "hot": false
     },
     {
+     "name": "【予約 2027年2月予定】No:98169 TOMIX キハ47-0形（JR四国色）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 10080,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51779%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000687%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51779_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
      "name": "【予約 2027年2月予定】No:97973 TOMIX 特企 キハ47-0形（復活首都圏色・徳島運転所）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 10380,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51778%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000683%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51778_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2027年2月予定】No:97261 TOMIX 227-500系近郊電車（Kizashi・2両）増結セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 7380,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51777-04%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000686%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51777-04_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1453,12 +1453,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年1月予定】No:97990 TOMIX 特別企画品 望郷の平成筑豊鉄道 田川線セット 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 10067,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5171%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000643%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年1月予定】No:97643 TOMIX E2-0系東北・上越新幹線（やまびこ・赤帯）セット（8両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 23275,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt5163%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000642%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5171_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt5163_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     }
@@ -1621,143 +1621,143 @@
    "new_count": 14,
    "items": [
     {
-     "name": "PEANUTS FUWAKUTA オラフ 抹茶 ぬいぐるみ キャラクター 予約商品",
-     "price": 2530,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qmm7n.kgodaf0d.g00qmm7n.kgodbb09/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flovesweet%2Fngjm-229748-26%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Flovesweet%2Fi%2F10114469%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/lovesweet/cabinet/2026/5/ngjm-229748-26-01.jpg?_ex=300x300",
-     "shop": "キューティーショップ 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "送料無料◆エフトイズ 『サンリオキャラクターズ』 ウィンターアクリルスタンド 食玩 (1BOX) 【11月予約】",
-     "price": 5800,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyt190955%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10339001%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yt190955.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "送料無料◆エフトイズ 『ハイキュー！！』 刺しゅう缶バッジ 食玩 (1BOX) 【11月予約】",
-     "price": 4380,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyt190957%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338999%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yt190957.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【ネコポス/ゆうパケット対応】コスパ 東方LostWord 東方Lostword キスメ アクリルスタンド お背中、流しましょうかVer.【11月発売予定 予約商品】",
+     "name": "ピアプロキャラクターズ Fit Boxing feat. 初音ミク Art by にわ子 アクリルスタンド デフォルメキャラクターセット【予約 11/下 発売予定】",
      "price": 1650,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q4l7n.kgodae95.g00q4l7n.kgodb5f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprojectcore%2F4549970508957%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprojectcore%2Fi%2F10097421%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/projectcore/cabinet/cospa14/4549970508957.jpg?_ex=300x300",
-     "shop": "PROJECT CORE",
-     "hot": true
-    },
-    {
-     "name": "【ネコポス/ゆうパケット対応】コスパ 東方LostWord 東方Lostword 鍵山雛 アクリルスタンド 秘湯かけ流しVer.【11月発売予定 予約商品】",
-     "price": 1650,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q4l7n.kgodae95.g00q4l7n.kgodb5f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprojectcore%2F4549970508940%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprojectcore%2Fi%2F10097420%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/projectcore/cabinet/cospa14/4549970508940.jpg?_ex=300x300",
-     "shop": "PROJECT CORE",
-     "hot": true
-    },
-    {
-     "name": "【ネコポス/ゆうパケット対応】コスパ 東方LostWord 東方Lostword 依神紫苑 アクリルスタンド ここに家を建てたいVer.【11月発売予定 予約商品】",
-     "price": 1650,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q4l7n.kgodae95.g00q4l7n.kgodb5f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprojectcore%2F4549970508933%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprojectcore%2Fi%2F10097419%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/projectcore/cabinet/cospa14/4549970508933.jpg?_ex=300x300",
-     "shop": "PROJECT CORE",
-     "hot": true
-    },
-    {
-     "name": "【ネコポス/ゆうパケット対応】コスパ 東方LostWord 東方Lostword 霧雨魔理沙 アクリルスタンド 温泉三昧な魔法使いVer.【11月発売予定 予約商品】",
-     "price": 1650,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q4l7n.kgodae95.g00q4l7n.kgodb5f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprojectcore%2F4549970508926%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprojectcore%2Fi%2F10097418%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/projectcore/cabinet/cospa14/4549970508926.jpg?_ex=300x300",
-     "shop": "PROJECT CORE",
-     "hot": true
-    },
-    {
-     "name": "【ネコポス/ゆうパケット対応】コスパ メビウス・ダスト ステラ アクリルスタンド【11月発売予定 予約商品】",
-     "price": 1650,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q4l7n.kgodae95.g00q4l7n.kgodb5f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprojectcore%2F4549970502740%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprojectcore%2Fi%2F10097416%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/projectcore/cabinet/cospa14/4549970502740.jpg?_ex=300x300",
-     "shop": "PROJECT CORE",
-     "hot": true
-    },
-    {
-     "name": "【ネコポス/ゆうパケット対応】コスパ メビウス・ダスト アラキ アクリルスタンド【11月発売予定 予約商品】",
-     "price": 1650,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q4l7n.kgodae95.g00q4l7n.kgodb5f4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprojectcore%2F4549970502733%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fprojectcore%2Fi%2F10097415%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/projectcore/cabinet/cospa14/4549970502733.jpg?_ex=300x300",
-     "shop": "PROJECT CORE",
-     "hot": true
-    },
-    {
-     "name": "進撃の巨人 進撃の巨人 ミニアクリルスタンド (ベビー) 6種セット ムービック◆ゆうパケット送料無料 【10月予約】",
-     "price": 5980,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg190843%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338929%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725417%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238653%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yg190843.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725417.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "正反対な君と僕 アクリルスタンド 本田 ムービック 【10月予約】",
-     "price": 1880,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg190833%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338882%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "ピアプロキャラクターズ Fit Boxing feat. 初音ミク Art by さいね アクリルスタンド 鏡音レン【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725416%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238637%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yg190833.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725416.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "正反対な君と僕 アクリルスタンド 佐藤 ムービック 【10月予約】",
-     "price": 1880,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg190832%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338880%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "ピアプロキャラクターズ Fit Boxing feat. 初音ミク Art by さいね アクリルスタンド 鏡音リン【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725415%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238644%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yg190832.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725415.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "正反対な君と僕 アクリルスタンド 渡辺 ムービック 【10月予約】",
-     "price": 1880,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg190831%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338881%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "ピアプロキャラクターズ Fit Boxing feat. 初音ミク Art by さいね アクリルスタンド 巡音ルカ【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725414%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238633%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yg190831.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725414.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     },
     {
-     "name": "正反対な君と僕 アクリルスタンド 東 ムービック 【10月予約】",
-     "price": 1880,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyg190830%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338888%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "ピアプロキャラクターズ Fit Boxing feat. 初音ミク Art by さいね アクリルスタンド 初音ミク【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725413%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238620%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yg190830.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725413.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ピアプロキャラクターズ Fit Boxing feat. 初音ミク Art by 岩十 アクリルスタンド 初音ミク【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725412%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238606%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725412.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 トレーディングミニキャラアクリルスタンド 1BOX【予約 11/下 発売予定】",
+     "price": 6160,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725409%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238611%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725409.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド メグ【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725399%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238510%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725399.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド マヤ【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725398%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238499%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725398.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド シャロ【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725397%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238492%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725397.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド 千夜【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725396%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238483%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725396.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド リゼ【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725395%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238471%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725395.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド チノ【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725394%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238461%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725394.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "ご注文はうさぎですか？ BLOOM ご注文はお湯どころですか？〜ぽかぽか湯けむりたいむ〜 アクリルスタンド ココア【予約 11/下 発売予定】",
+     "price": 1650,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qcdkn.kgoda90e.g00qcdkn.kgodbb43/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fotrp%2F99725393%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fotrp%2Fi%2F12238448%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/otrp/cabinet/item610/99725393.jpg?_ex=300x300",
+     "shop": "O-TRAP 楽天市場店",
      "hot": true
     }
    ]
