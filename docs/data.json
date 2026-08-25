@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-25T20:20:16.601225+09:00",
+ "generated_at": "2026-08-25T20:53:15.393927+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -277,7 +277,7 @@
    "icon": "🎴",
    "tag": "#遊戯王",
    "slug": "yugioh",
-   "new_count": 13,
+   "new_count": 12,
    "items": [
     {
      "name": "【予約】[TCG] (BOX) ボックス特典付初回版 ヴァイスシュヴァルツ ブースターパック ガールズ&パンツァー ブシロード(10パック)(20261030)",
@@ -404,7 +404,7 @@
      "price": 2970,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyb190896%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10338950%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/192000/yb190896.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
      "hot": true
@@ -426,18 +426,8 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 12,
+   "new_count": 10,
    "items": [
-    {
-     "name": "【予約安心発送】[GDS] (BOX)(食玩) ロリポップチョコチャーム お茶犬 キーホルダー(10個) バンダイ(2027年1月)",
-     "price": 3260,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00skv0n.kgoda37c.g00skv0n.kgodb63e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmediaworldkaitoriworld%2F55501227000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmediaworldkaitoriworld%2Fi%2F11136592%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/5550/1/cg55501227.jpg?_ex=300x300",
-     "shop": "メディアワールド 販売&買取SHOP",
-     "hot": false
-    },
     {
      "name": "送料無料◆INART Action(インアート・アクション) 1/12 ブルース・リー(カンフー衣装) アクションフィギュア INART 【12月予約】",
      "price": 20800,
@@ -466,7 +456,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/hituji-set-1.jpg?_ex=300x300",
      "shop": "のあのはこぶね",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【ポイント5倍】【予約商品2026年10月中旬入荷予定】zsg-95122-36g-set「福羊コンプリート15点セット」福羊 year of the sheep 2027年 干支 羊 decole デコレ concombre コンコンブル インテリア 飾り 装飾 季節 イベント",
@@ -476,17 +466,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/zsg-95122-36g-set-1.jpg?_ex=300x300",
      "shop": "のあのはこぶね",
-     "hot": true
-    },
-    {
-     "name": "【ポイント5倍】【予約商品2026年10月上旬入荷予定】cr-table-set「クリスマステーブル6点セット」まったりクリスマスホリデー decole デコレ concombre コンコンブル クリスマス CHRISMAS X'mas インテリア 飾り 装飾 季節 イベント",
-     "price": 5588,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qro3n.kgoda4e1.g00qro3n.kgodb8f2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoahs-ark%2Fcr-table-set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnoahs-ark%2Fi%2F10106738%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年10月上旬",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/cr-table-set-1.jpg?_ex=300x300",
-     "shop": "のあのはこぶね",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【ポイント5倍】【予約商品2026年10月中旬入荷予定】ZCB-95881-96-SET「福もの屋コンプリート16点セット」福もの屋 FUKU 福 MONO decole デコレ concombre コンコンブル インテリア 飾り 装飾 季節 イベント",
@@ -496,7 +476,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/zcb-95881-96-set-1.jpg?_ex=300x300",
      "shop": "のあのはこぶね",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【ポイント5倍】【予約商品2026年10月中旬入荷予定】sisimai-set「新春獅子舞ショー5点セット」福羊 year of the sheep 2027年 干支 羊 decole デコレ concombre コンコンブル インテリア 飾り 装飾 季節 イベント",
@@ -506,7 +486,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/sisimai-set-1.jpg?_ex=300x300",
      "shop": "のあのはこぶね",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約】 ファースト4フィギュア メトロイドプライム/ メトロイド PVC スタチュー フィギュア 【2027年5月発売予定】",
@@ -549,24 +529,44 @@
      "hot": false
     },
     {
-     "name": "【ポイント5倍】【予約商品2026年10月上旬入荷予定】ZXS-95641-55X-SET「まったりクリスマスホリデー コンプリート15点セット」まったりクリスマスホリデー decole デコレ concombre コンコンブル クリスマス CHRISMAS X'mas インテリア 飾り 装飾 季節 イベント",
-     "price": 13460,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qro3n.kgoda4e1.g00qro3n.kgodb8f2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoahs-ark%2Fzxs-95641-55x-set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnoahs-ark%2Fi%2F10106737%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年10月上旬",
+     "name": "送料無料◆フューチャーFactory 『快獣ブースカ』 FFAF ブースカ 桃色Ver. 完成品可動フィギュア 【1月予約】",
+     "price": 8980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyf189560%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10337733%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/zxs-95641-55x-set-1.jpg?_ex=300x300",
-     "shop": "のあのはこぶね",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/190000/yf189560.jpg?_ex=300x300",
+     "shop": "でじたみん 楽天市場店",
      "hot": true
     },
     {
-     "name": "【ポイント5倍】【予約商品2026年10月上旬入荷予定】santa-park-set「サンタ in ザ パーク6点セット」まったりクリスマスホリデー decole デコレ concombre コンコンブル クリスマス CHRISMAS X'mas インテリア 飾り 装飾 季節 イベント",
-     "price": 5104,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qro3n.kgoda4e1.g00qro3n.kgodb8f2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoahs-ark%2Fsanta-park-set%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnoahs-ark%2Fi%2F10106739%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年10月上旬",
+     "name": "フィギュア ジャアクフロスト「デジタル・デビル・サーガ アバタール・チューナー2」wanpaku予約特典 ソフビ塗装済み完成品【10日以内発送】",
+     "price": 5215,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rf47n.kgoda6d2.g00rf47n.kgodbda9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcomi-choku%2F10335913%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcomi-choku%2Fi%2F11251795%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noahs-ark/cabinet/decole06/santa-park-set-1.jpg?_ex=300x300",
-     "shop": "のあのはこぶね",
-     "hot": true
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/comi-choku/cabinet/im00335500/335913-01.jpg?_ex=300x300",
+     "shop": "コミ直(コミック卸直販)",
+     "hot": false
+    },
+    {
+     "name": "フィギュア MONONOFUコラボレートモデル 剣豪3特製 備前長船兼光（極上業物） 「剣豪3」予約特典【10日以内発送】",
+     "price": 3062,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rf47n.kgoda6d2.g00rf47n.kgodbda9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcomi-choku%2F10335951%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcomi-choku%2Fi%2F11252157%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/comi-choku/cabinet/im00335500/335951-01.jpg?_ex=300x300",
+     "shop": "コミ直(コミック卸直販)",
+     "hot": false
+    },
+    {
+     "name": "フィギュア［単品］ケイド6 「PS4ソフト DESTINY2（デスティニー2）」 ゲオ予約購入特典フィギュア【10日以内発送】",
+     "price": 3523,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rf47n.kgoda6d2.g00rf47n.kgodbda9/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcomi-choku%2F10336413%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fcomi-choku%2Fi%2F11251347%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/comi-choku/cabinet/im00336000/336413-01.jpg?_ex=300x300",
+     "shop": "コミ直(コミック卸直販)",
+     "hot": false
     }
    ]
   },
@@ -1333,6 +1333,16 @@
      "hot": false
     },
     {
+     "name": "【予約 2027年2月予定】No:7493 TOMIX 特企 キハ120-300形（芸備線・庄原さとやまトレイン）（M） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 7890,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51781%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000690%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51781_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
      "name": "【予約 2027年2月予定】No:97992 TOMIX 特企 キハ120-0形（関西線・お茶の京都ラッピング車）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 13380,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51780%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000689%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1343,12 +1353,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年2月予定】No:7493 TOMIX 特企 キハ120-300形（芸備線・庄原さとやまトレイン）（M） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 7890,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51781%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000690%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年2月予定】No:97973 TOMIX 特企 キハ47-0形（復活首都圏色・徳島運転所）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 10380,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51778%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000683%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51781_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51778_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1373,16 +1383,6 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年3月予定】No:97623 TOMIX 北海道貨物列車（黄帯車）セットB（8両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 12150,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51775%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000685%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51775_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
      "name": "【予約 2027年2月予定】No:97261 TOMIX 227-500系近郊電車（Kizashi・2両）増結セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
      "price": 7380,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51777-04%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000686%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1393,12 +1393,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年2月予定】No:97973 TOMIX 特企 キハ47-0形（復活首都圏色・徳島運転所）セット（2両） 鉄道模型 Nゲージ TOMIX トミックス",
-     "price": 10380,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51778%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000683%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年3月予定】No:97623 TOMIX 北海道貨物列車（黄帯車）セットB（8両） 鉄道模型 Nゲージ TOMIX トミックス",
+     "price": 12150,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51775%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000685%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51778_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51775_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
