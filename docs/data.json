@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23T05:19:54.410027+09:00",
+ "generated_at": "2026-09-23T08:06:48.661908+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -28,6 +28,16 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hankuroom/cabinet/goq002/8652_1.jpg?_ex=300x300",
+     "shop": "hankuroom 楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "10月16日発売 予約 ポケモンカードゲーム MEGA 30th CELEBRATION カードセット サルノリ・ヒバニー・メッソン 30周年 セレブレーション",
+     "price": 6520,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardbox-psp-032%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015611%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hankuroom/cabinet/goq002/8651_1.jpg?_ex=300x300",
      "shop": "hankuroom 楽天市場店",
      "hot": false
     },
@@ -140,16 +150,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/andmoa/cabinet/goq001/8652_1.jpg?_ex=300x300",
      "shop": "and moa",
      "hot": false
-    },
-    {
-     "name": "10月16日発売 予約 ポケモンカードゲーム MEGA 30th CELEBRATION カードセット キモリ・アチャモ・ミズゴロウ 30周年 セレブレーション",
-     "price": 6520,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ujd5n.kgoda9a3.g00ujd5n.kgodbb6f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhankuroom%2Fcardbox-psp-027%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhankuroom%2Fi%2F10015606%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hankuroom/cabinet/goq002/8646_1.jpg?_ex=300x300",
-     "shop": "hankuroom 楽天市場店",
-     "hot": false
     }
    ]
   },
@@ -237,16 +237,6 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages62/stoy-13847-00.jpg?_ex=300x300",
      "shop": "バトンストア 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "MTG　【予約9/27発送】MTG 気まぐれオリパ！3000円くじPart4 1個 3300円 限定70個 上限数6個",
-     "price": 3300,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r91on.kgodaa71.g00r91on.kgodbb3c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-famikonkun%2F445361%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-famikonkun%2Fi%2F10172965%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-famikonkun/cabinet/pos_new/n61/445361.jpg?_ex=300x300",
-     "shop": "HOBBY SHOP ファミコンくん",
      "hot": false
     },
     {
@@ -347,7 +337,17 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13522572/p27_eca319b259f5.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": true
+     "hot": false
+    },
+    {
+     "name": "【予約商品：9/26出荷予定】 遊戯王OCG デュエルモンスターズ ORIGINAL ARTWORK COLLECTION BOX",
+     "price": 14980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00tmv0n.kgodaddc.g00tmv0n.kgodba9d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fworld-free-store%2F4988602180701%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fworld-free-store%2Fi%2F10027683%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/world-free-store/cabinet/07084073/12723007/imgrc0120052010.jpg?_ex=300x300",
+     "shop": "WFS(World Free Store)",
+     "hot": false
     }
    ]
   },
@@ -625,7 +625,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13536712/p27_30a97a007831.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 グッドスマイルカンパニー ブルーアーカイブ -Blue Archive- ねんどろいどどーる アロナ フィギュア 【2027年4月発売予定】",
@@ -635,7 +635,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13533204/p27_50d9a9fe4e20.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 グッドスマイルカンパニー キャラクター・ボーカル・シリーズ01 初音ミク ねんどろいど 初音ミク 葛飾北斎コラボVer.(Rella) フィギュア 【2027年4月発売予定】",
@@ -645,7 +645,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13533115/p27_b23626e0a3f5.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     }
    ]
   },
@@ -684,7 +684,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/gs01/4580828665446.jpg?_ex=300x300",
      "shop": "イエローサブマリン楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "太鼓の達人［初代］アーケード筐体　1/12プラモデル〔ウェーブ〕（260501予約開始）",
@@ -972,7 +972,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/gramsky2nd/cabinet/rakutenpic/systempic031/b0cgxhrpm7-00.jpg?_ex=300x300",
      "shop": "グラムスキー薬局 2号店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "(早期予約特典:ティザービジュアル第二弾使用 A3ポスター付)機動戦士ガンダム 水星の魔女 vol.1(特装版)(全巻購入特典:キャストトーク引換シリアルコード付)(vol.1~4連動購入特典:描き下ろしイ",
@@ -1243,12 +1243,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年3月予定】No:HO-9135 TOMIX 485系特急電車（クハ481-300）基本セット（4両） 鉄道模型 HOゲージ トミックス 1/80スケール 16.5mmゲージ 国鉄 特急電車 485系 クハ481-300 非貫通形 モハ484-200 モハ485 AU13クーラー搭載車 基本編成",
-     "price": 94397,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51790%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000719%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年3月予定】No:HO-9138 TOMIX 485系特急電車（モハ484-600）増結セットT（2両） 鉄道模型 HOゲージ トミックス 1/80スケール 16.5mmゲージ 国鉄 特急電車 485系 モハ484-600 車掌室付き モハ485 AU13分散型クーラー搭載車 トレーラー増結セット",
+     "price": 40295,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51793%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000722%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51790_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51793_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1263,22 +1263,22 @@
      "hot": false
     },
     {
+     "name": "【予約 2027年3月予定】No:HO-9135 TOMIX 485系特急電車（クハ481-300）基本セット（4両） 鉄道模型 HOゲージ トミックス 1/80スケール 16.5mmゲージ 国鉄 特急電車 485系 クハ481-300 非貫通形 モハ484-200 モハ485 AU13クーラー搭載車 基本編成",
+     "price": 94397,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51790%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000719%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51790_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
      "name": "【予約 2027年3月予定】No:HO-9136 TOMIX 485（489）系特急電車（AU13搭載車）増結セットM（2両） 鉄道模型 HOゲージ トミックス 1/80スケール 16.5mmゲージ 国鉄 特急電車 485系 489系 モハ484-200 モハ485 AU13分散型クーラー搭載車 動力車付き 増結セット",
      "price": 49799,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51791%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000720%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51791_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年3月予定】No:97652 TOMIX E3系東北新幹線（荷物専用新幹線）セット（7両） 鉄道模型 Nゲージ トミックス E3系2000番代 L69編成 7両フル編成 荷物専用新幹線 新幹線電車 東北新幹線 山形新幹線 E371形 E372形 E5系連結対応 2026年登場 荷物輸送",
-     "price": 24419,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51784%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000712%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51784_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1293,32 +1293,12 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年3月予定】No:HO-9138 TOMIX 485系特急電車（モハ484-600）増結セットT（2両） 鉄道模型 HOゲージ トミックス 1/80スケール 16.5mmゲージ 国鉄 特急電車 485系 モハ484-600 車掌室付き モハ485 AU13分散型クーラー搭載車 トレーラー増結セット",
-     "price": 40295,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51793%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000722%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年3月予定】No:97248 TOMIX 485-1000系特急電車（サロ481-1050）増結セットB（5両） 鉄道模型 Nゲージ トミックス 485系1000番代 国鉄 特急つばさ やまばと ハイグレード HG仕様 サロ481-1050 特サロ 耐寒耐雪仕様 東北本線 奥羽本線 車両セット",
+     "price": 19197,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51786-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000715%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51793_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年3月予定】No:97252 TOMIX 60・72形通勤電車（常磐線）セットA（4両） 鉄道模型 Nゲージ トミックス 旧型国電 常磐線 ハイグレード HG仕様 クモハ60形 サハ78形 モハ72形 クハ79形300番代 通勤形電車 4ドア電車 横浜線 鉄道模型コレクション系 車両",
-     "price": 16471,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51787%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000716%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51787_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約 2027年3月予定】No:97246 TOMIX 485-1000系特急電車基本セット（4両） 鉄道模型 Nゲージ TOMIX トミックス 485系1000番代 国鉄 特急電車 つばさ やまばと いなほ ハイグレード HG仕様 耐寒耐雪仕様 東北本線 奥羽本線 クハ481 モハ484 モハ485",
-     "price": 18152,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51785%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000713%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51785_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51786-02_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1333,12 +1313,32 @@
      "hot": false
     },
     {
-     "name": "【予約 2027年3月予定】No:97248 TOMIX 485-1000系特急電車（サロ481-1050）増結セットB（5両） 鉄道模型 Nゲージ トミックス 485系1000番代 国鉄 特急つばさ やまばと ハイグレード HG仕様 サロ481-1050 特サロ 耐寒耐雪仕様 東北本線 奥羽本線 車両セット",
-     "price": 19197,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51786-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000715%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約 2027年3月予定】No:97652 TOMIX E3系東北新幹線（荷物専用新幹線）セット（7両） 鉄道模型 Nゲージ トミックス E3系2000番代 L69編成 7両フル編成 荷物専用新幹線 新幹線電車 東北新幹線 山形新幹線 E371形 E372形 E5系連結対応 2026年登場 荷物輸送",
+     "price": 24419,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51784%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000712%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51786-02_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51784_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2027年3月予定】No:97246 TOMIX 485-1000系特急電車基本セット（4両） 鉄道模型 Nゲージ TOMIX トミックス 485系1000番代 国鉄 特急電車 つばさ やまばと いなほ ハイグレード HG仕様 耐寒耐雪仕様 東北本線 奥羽本線 クハ481 モハ484 モハ485",
+     "price": 18152,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51785%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000713%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51785_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約 2027年3月予定】No:97252 TOMIX 60・72形通勤電車（常磐線）セットA（4両） 鉄道模型 Nゲージ トミックス 旧型国電 常磐線 ハイグレード HG仕様 クモハ60形 サハ78形 モハ72形 クハ79形300番代 通勤形電車 4ドア電車 横浜線 鉄道模型コレクション系 車両",
+     "price": 16471,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51787%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000716%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image8/9vtmt51787_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1538,7 +1538,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13441905/p27_01b9f7f82ae0.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい 星型缶バッジ E シーナ&ミミ グッズ 【2026年12月発売予定】",
@@ -1548,7 +1548,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13441900/p27_459c98410b00.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい 星型缶バッジ D モード・アリ グッズ 【2026年12月発売予定】",
@@ -1558,7 +1558,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13441888/p27_425eae9afa31.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい 星型缶バッジ C リジィ・セイラン グッズ 【2026年12月発売予定】",
@@ -1568,7 +1568,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13441810/p27_2073fa139216.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい 星型缶バッジ B カガリ・ミミ グッズ 【2026年12月発売予定】",
@@ -1578,7 +1578,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13439216/p27_046a79d6d02e.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい 星型缶バッジ A トツキ・シーナ グッズ 【2026年12月発売予定】",
@@ -1588,7 +1588,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13439207/p27_a940b2d307ee.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい ハート型缶バッジ F セイラン&アリ グッズ 【2026年12月発売予定】",
@@ -1598,7 +1598,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13415579/p27_3928873e35a4.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい ハート型缶バッジ E シーナ&ミミ グッズ 【2026年12月発売予定】",
@@ -1608,7 +1608,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13372546/p27_9ef4674d813e.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい ハート型缶バッジ D モード・アリ グッズ 【2026年12月発売予定】",
@@ -1618,7 +1618,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13372407/p27_22b1137f7cea.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい ハート型缶バッジ C リジィ・セイラン グッズ 【2026年12月発売予定】",
@@ -1628,7 +1628,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13372110/p27_d6e61ff79ba2.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい ハート型缶バッジ B カガリ・ミミ グッズ 【2026年12月発売予定】",
@@ -1638,7 +1638,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13372109/p27_855cde6b089c.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 シンクイノベーション きみが死ぬまで恋をしたい ハート型缶バッジ A トツキ・シーナ グッズ 【2026年12月発売予定】",
@@ -1648,7 +1648,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/13372106/p27_b6bd3ef00b16.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "【エントリーでP10倍】【予約】 アルマビアンカ TVアニメ『ブルーロック』 描き下ろし オリヴァ・愛空 指揮者ver. BIGアクリルスタンド グッズ 【2026年12月発売予定】",
