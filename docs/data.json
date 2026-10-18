@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-18T07:40:51.168034+09:00",
+ "generated_at": "2026-10-18T09:19:05.651182+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -307,18 +307,8 @@
    "icon": "🎴",
    "tag": "#遊戯王",
    "slug": "yugioh",
-   "new_count": 3,
+   "new_count": 2,
    "items": [
-    {
-     "name": "[予約：11/27]ヴァイスシュヴァルツ ブースターパック Persona 30th Anniversary 12BOX入カートン",
-     "price": 52800,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4573616015950_ct%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10191008%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/gameimages/tcg1/tcg3/4573616015950.jpg?_ex=300x300",
-     "shop": "イエローサブマリン楽天市場店",
-     "hot": false
-    },
     {
      "name": "[予約：2/5]ヴァイスシュヴァルツロゼ ブースターパック　ネコぱら セカイコネクト/ラブプロジェクト　20BOX入カートン",
      "price": 110000,
@@ -417,7 +407,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/images/2026/422/goods-04886209.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【予約】[TCG] (BOX) ヴァイスシュヴァルツロゼ ブースターパック ネコぱら セカイコネクト/ラブプロジェクト ブシロード(10パック)(20270205)",
@@ -448,6 +438,16 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/andmoa/cabinet/goq001/8886_1.jpg?_ex=300x300",
      "shop": "and moa",
      "hot": false
+    },
+    {
+     "name": "【予約】[TCG] バトルスピリッツ コラボスターター 学園アイドルマスター 始まりのステップ【26RSD13】 バンダイ(20270227)",
+     "price": 3040,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00skv0n.kgoda37c.g00skv0n.kgodb63e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmediaworldkaitoriworld%2F13922326000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmediaworldkaitoriworld%2Fi%2F11166299%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1392/2/cg13922326.jpg?_ex=300x300",
+     "shop": "メディアワールド 販売&買取SHOP",
+     "hot": false
     }
    ]
   },
@@ -456,8 +456,18 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 8,
+   "new_count": 9,
    "items": [
+    {
+     "name": "『ホロライブプロダクション』博衣こより 1/7スケールフィギュア　塗装済み完成品〔クレーネル〕（250219予約開始）",
+     "price": 23800,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r6txn.kgoda06e.g00r6txn.kgodb801/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyellowsubmarine%2F4571452943475%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fyellowsubmarine%2Fi%2F10179194%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/yellowsubmarine/cabinet/toyheroin10/4571452943475.jpg?_ex=300x300",
+     "shop": "イエローサブマリン楽天市場店",
+     "hot": true
+    },
     {
      "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 HEATBOYS 合金機甲 ミュータント・タートルズ シュレッダー メッキ版 フィギュア 【2027年6月発売予定】",
      "price": 32774,
@@ -526,7 +536,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/182000/yf181666.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "送料無料◆フリュー 『ラブライブ！蓮ノ空女学院スクールアイドルクラブ』 村野さやか 1/7スケール フィギュア 【3月予約】",
@@ -536,7 +546,7 @@
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/182000/yf181667.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
-     "hot": false
+     "hot": true
     },
     {
      "name": "送料無料◆『劇場版 忍たま乱太郎 ドクタケ忍者隊最強の軍師』土井半助 ノンスケールフィギュア ユニオンクリエイティブ 【10月予約】",
@@ -586,16 +596,6 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/aio-shop/cabinet/ir-w/women1/yozora-damages/hgftjkrtfxgn.jpg?_ex=300x300",
      "shop": "AiO Online Store",
-     "hot": false
-    },
-    {
-     "name": "【3R】TG80009 1/12 Mini Reich Series - WW2 German GroBadmiral - Karl Donitz WW2ドイツ軍 ドイツ国大統領 国防大臣 カール・デーニッツ 1/12スケールアクションフィギュア《予約2027年2月》",
-     "price": 14850,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r2qan.kgoda70b.g00r2qan.kgodb76b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fuchusen%2F3r_tg80009%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fuchusen%2Fi%2F10006786%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/uchusen/cabinet/did_img/imgrc0104144835.jpg?_ex=300x300",
-     "shop": "宇宙船 TOYS&FIGURES 楽天市場店",
      "hot": false
     }
    ]
@@ -1132,7 +1132,7 @@
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/gramsky2nd/cabinet/rakutenpic/systempic030/b0dyngqcdj-00.jpg?_ex=300x300",
      "shop": "グラムスキー薬局 2号店",
-     "hot": true
+     "hot": false
     },
     {
      "name": "【Amazon.co.jp限定】Fate/stay night [Unlimited Blade Works] Blu-ray Disc Box I(メーカー早期予約特典:武内崇描き下ろしイラストA3タペストリー付)(描き下ろしB1布ポスター、CDサイズスチールケース付)(完全生産限定版)新品　マルチレンズクリーナー付き",
@@ -1292,26 +1292,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/baton-store/cabinet/ir-m-shopimages/ir-m-shopimages62/stoy-13680-0.jpg?_ex=300x300",
      "shop": "バトンストア 楽天市場店",
      "hot": false
-    },
-    {
-     "name": "【予約品 2026/10/19以降 発送】 バンダイ 名探偵プリキュア！ふわふわおでかけますこっと 10個装入 代引・後払い決済不可 沖縄・離島発送不可{ おかし 食玩 コレクション }{ 食玩 景品玩具 プリキュア マスコット フィギュア }302[26I25] 送料無料",
-     "price": 5260,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qtxtn.kgoda7e1.g00qtxtn.kgodbc96/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffestival-plus%2Fgng-sg-oks-331-0429%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffestival-plus%2Fi%2F10072423%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plus/cabinet/k-gangu15/gng-sg-oks-331-0429p.jpg?_ex=300x300",
-     "shop": "フェスティバルプラザPLUS",
-     "hot": true
-    },
-    {
-     "name": "【予約品 2026/10/19以降 発送】 バンダイ 名探偵プリキュア！ふわふわおでかけますこっと 10個装入 代引・後払い決済不可 沖縄・離島発送不可{ 食玩 景品玩具 プリキュア マスコット フィギュア }{ おかし 食玩 コレクション }302[26I25]",
-     "price": 4851,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00psiin.kgoda5d9.g00psiin.kgodb335/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffestival-plaza%2Fgng-sg-oks-331-0429%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Ffestival-plaza%2Fi%2F10067091%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/festival-plaza/cabinet/k-gangu15/gng-sg-oks-331-0429.jpg?_ex=300x300",
-     "shop": "フェスティバルプラザ",
-     "hot": true
     }
    ]
   },
@@ -1423,16 +1403,6 @@
      "hot": false
     },
     {
-     "name": "【予約2027年4月予定】TOMIX トミックス 98763 東京臨海高速鉄道 70-000形 りんかい線 6両基本セット Nゲージ 鉄道模型 再生産 埼京線 川越線 2002年登場 2色シルバー 車番選択式 前面表示交換式 フライホイール付動力 M-13モーター ヘッド・テールライト点灯 98764増結対応",
-     "price": 15855,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51803-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000786%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51803-01_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
      "name": "【予約2027年4月予定】TOMIX トミックス 98764 東京臨海高速鉄道 70-000形 りんかい線 4両増結セット Nゲージ 鉄道模型 再生産 JR埼京線 川越線 2002年登場 2色シルバー 中間車4両 車番選択式 黒色車輪 動力なし ライトなし 避雷器付属 98763基本セット別売 10両編成対応",
      "price": 8648,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51803-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000787%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1443,24 +1413,34 @@
      "hot": false
     },
     {
-     "name": "【予約2027年4月予定】TOMIX トミックス 12111 国鉄 EF65形1000番代 前期型 宇都宮運転所 Nゲージ 鉄道模型 電気機関車 1980年頃 東北本線 あけぼの つばさ ヘッドマーク付属 ナンバープレート選択式 1026 1028 1029 1030 LA15形 フライホイール付動力 ヘッドライト点灯",
-     "price": 7604,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51801-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000782%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約2027年4月予定】TOMIX トミックス 98763 東京臨海高速鉄道 70-000形 りんかい線 6両基本セット Nゲージ 鉄道模型 再生産 埼京線 川越線 2002年登場 2色シルバー 車番選択式 前面表示交換式 フライホイール付動力 M-13モーター ヘッド・テールライト点灯 98764増結対応",
+     "price": 15855,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51803-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000786%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51801-01_2.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51803-01_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
     {
-     "name": "338420 トミーテック (JH066) 全国バスコレクション80 平和交通 1/80スケール(HOゲージサイズ) 鉄道模型 【3月予約】",
-     "price": 6480,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyn200157%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10348082%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約2027年4月予定】TOMIX トミックス 98861 JR 200系東北新幹線 K編成 4両増結セット Nゲージ 鉄道模型 JR東日本 再生産 リニューアル前 4～7号車 パンタグラフ撤去跡 車番選択式 U字型通電カプラー 銀色車輪 動力なし ライトなし 98860基本セット別売 10両編成対応",
+     "price": 8773,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51802-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000785%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/202000/yn200157.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
-     "hot": true
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51802-02_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約2027年4月予定】TOMIX トミックス 98860 JR 200系東北新幹線 K編成 基本セット 6両 Nゲージ 鉄道模型 JR東日本 再生産 リニューアル前 1500番代 221形 222形 併結対応 動力付き フライホイール ヘッドライト テールライト点灯 車番選択式 銀色車輪 98861増結対応",
+     "price": 16690,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51802-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000784%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51802-01_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
     }
    ]
   },
@@ -1469,16 +1449,56 @@
    "icon": "🚗",
    "tag": "#トミカ",
    "slug": "tomica",
-   "new_count": 0,
+   "new_count": 5,
    "items": [
     {
-     "name": "【予約2027年3月予定】CM MODEL CMモデル 1/64 Pagani Zonda F Roadster パガーニ ゾンダ F ロードスター モンテカルログレー CM64-ZONDAROADSTERF-03 ダイキャスト製 完成品 ミニカー スーパーカー レッド内装 大型リアウイング スケールモデル コレクション",
-     "price": 5720,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6304%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000805%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "ミニカー　1/12巨大サイズ！　スカイライン　GTR　R34　黒色　BBSゴールドホイール　SKYLINE GT-R (R34) V-SPEC II 2001 BBS RIMS　KKS【限定予約商品】",
+     "price": 64980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106801%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008673%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6304_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0109595240.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
+     "hot": true
+    },
+    {
+     "name": "ミニカー　1/12巨大サイズ！　スカイライン　GTR　R34　黒色　OEMガンメタホイール　SKYLINE GT-R (R34) V-SPEC II 2001 OEM RIMS　KKS【限定予約商品】",
+     "price": 64980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106800%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008672%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0109595233.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
+     "hot": true
+    },
+    {
+     "name": "ミニカー　1/18　1958　シボレー　インパラ　　グリーンメタ色/水色　1958 Chevy Impala 　KKS【限定予約商品】",
+     "price": 29850,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106799%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008669%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0109595227.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
+     "hot": true
+    },
+    {
+     "name": "ミニカー　1/18　1958　シボレー　インパラ　　水色/白色　1958 Chevy Impala 　KKS【限定予約商品】",
+     "price": 29850,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106798%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008668%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0109595213.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
+     "hot": true
+    },
+    {
+     "name": "ミニカー　1/18　1958　シボレー　インパラ　　黒色　1958 Chevy Impala 　KKS【限定予約商品】",
+     "price": 29850,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rcepn.kgoda3a1.g00rcepn.kgodb437/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhottoys%2F1000106797%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhottoys%2Fi%2F10008667%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/hottoys/cabinet/13557221/imgrc0109595141.jpg?_ex=300x300",
+     "shop": "HOTTOYS ホットトイズ",
      "hot": true
     },
     {
@@ -1488,6 +1508,26 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9wrdv6008_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約2026年11月予定】ALMOST REAL オールモストリアル 1/64 Porsche 911 GT3 R ポルシェ 911 GT3 R 2026 GTワールドチャレンジ アジア マンダリカ #911 テストカー ダークグリーン 48579 ダイキャスト製 完成品 ミニカー チェイスカーの場合あり レーシングカー",
+     "price": 5890,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6312%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000811%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6312_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約2027年2月予定】MOTORHELIX モーターヘリックス 1/64 LB-Super Silhouette Mazda FD3S RX-7 ATHLETE マツダ RX-7 FD3S LBスーパーシルエット リバティーウォーク M61112 ダイキャスト製 完成品 ミニカー ワイドフェンダー リアウイング カスタムカー コレクション",
+     "price": 17380,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9wrdv6007%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000812%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9wrdv6007_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": true
     },
@@ -1512,46 +1552,6 @@
      "hot": true
     },
     {
-     "name": "【予約2026年11月予定】ALMOST REAL オールモストリアル 1/64 Land Rover Defender 110 ランドローバー ディフェンダー110 キャメルトロフィー サポートユニット 1993 サバ州 マレーシア 48494 ダイキャスト製 完成品 ミニカー サンドボード付属 ルーフラック オフロード",
-     "price": 5890,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6309%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000806%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6309_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【予約2027年3月予定】CM MODEL CMモデル 1/64 Ford F-150 Raptor フォード F-150 ラプター アゲートブラックメタリック CM64-F150-01 ダイキャスト製 完成品 ミニカー ピックアップトラック アメ車 オフロード 大径タイヤ ワイドフェンダー スケールモデル コレクション",
-     "price": 5280,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6306%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000808%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6306_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【予約2027年2月予定】MOTORHELIX モーターヘリックス 1/64 LB-Super Silhouette Mazda FD3S RX-7 ATHLETE マツダ RX-7 FD3S LBスーパーシルエット リバティーウォーク M61112 ダイキャスト製 完成品 ミニカー ワイドフェンダー リアウイング カスタムカー コレクション",
-     "price": 17380,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9wrdv6007%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000812%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9wrdv6007_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【予約2026年11月予定】ALMOST REAL オールモストリアル 1/64 Porsche 911 GT3 R ポルシェ 911 GT3 R 2026 GTワールドチャレンジ アジア マンダリカ #911 テストカー ダークグリーン 48579 ダイキャスト製 完成品 ミニカー チェイスカーの場合あり レーシングカー",
-     "price": 5890,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6312%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000811%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6312_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": true
-    },
-    {
      "name": "【予約2026年11月予定】ALMOST REAL オールモストリアル 1/64 Porsche 911 GT3 R ポルシェ 911 GT3 R 2025 GTワールドチャレンジ アジア 岡山 #911 3位入賞 記念スタンド付 48531 ダイキャスト製 完成品 ミニカー Absolute Racing レースカー チェイスカーの場合あり",
      "price": 5890,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6310%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000807%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1562,12 +1562,12 @@
      "hot": true
     },
     {
-     "name": "【予約2027年3月予定】CM MODEL CMモデル 1/64 2024 RAM 1500 TRX Final Edition ダッジ ラム 1500 TRX ファイナルエディション ホワイト CM64-TRXLC-01 ダイキャスト製 完成品 ミニカー アメ車 ピックアップトラック オフロード 大径タイヤ ワイドフェンダー コレクション",
-     "price": 5280,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6307%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000804%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約2026年11月予定】ALMOST REAL オールモストリアル 1/64 Land Rover Defender 110 ランドローバー ディフェンダー110 キャメルトロフィー サポートユニット 1993 サバ州 マレーシア 48494 ダイキャスト製 完成品 ミニカー サンドボード付属 ルーフラック オフロード",
+     "price": 5890,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9nrdv6309%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000806%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6307_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9nrdv6309_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": true
     },
@@ -1590,26 +1590,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/b-yumekobo/cabinet/09703705/13826559/4904810077244_1.jpg?_ex=300x300",
      "shop": "バルーン夢工房+ベビー",
      "hot": false
-    },
-    {
-     "name": "予約受付品 2026年10月17日発売予定 O くるくるドームミラースピナー トミカパトロールカー タカラトミー トミカ おもちゃベビートイ 6か月 男の子 ベビー 玩具 ギフト プレゼント 誕生日 お祝い 贈り物 インテリア ブラックフライデー クリスマス",
-     "price": 2200,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00u9nhn.kgodae19.g00u9nhn.kgodb5eb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-yumekobo%2F4904810075417%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fb-yumekobo%2Fi%2F10006469%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/b-yumekobo/cabinet/09703705/13826559/4904810075417_1.jpg?_ex=300x300",
-     "shop": "バルーン夢工房+ベビー",
-     "hot": false
-    },
-    {
-     "name": "【本日10/18予約締切】【マラソン★最大500円OFFクーポン】【予約】 タカラトミーアーツ トミカinガレージ2(ガム) BOX 5個入り グッズ 【2026年12月発売予定】",
-     "price": 7580,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000087638%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10031102%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年12月",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_87/2f83a8c972ac83da.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": false
     }
    ]
   },
@@ -1618,118 +1598,8 @@
    "icon": "🧸",
    "tag": "#ぬいぐるみ",
    "slug": "plush",
-   "new_count": 14,
+   "new_count": 10,
    "items": [
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 MENEGI 『ブルーロック』 アクリルスタンド にゅ~とろ 糸師 冴バースデー C グッズ 【2026年11月発売予定】",
-     "price": 2077,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000086282%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10029768%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_84/879372299242e497.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 MENEGI 『ブルーロック』 アクリルスタンド にゅ~とろ 糸師 冴バースデー B グッズ 【2026年11月発売予定】",
-     "price": 2077,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000086281%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10029767%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_84/8824cd22c09e52c7.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 MENEGI 『ブルーロック』 アクリルスタンド にゅ~とろ 糸師 冴バースデー A グッズ 【2026年11月発売予定】",
-     "price": 2077,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000086280%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10029766%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2026年11月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_84/1d8df1d972f11f2c.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 『ラブライブ!虹ヶ咲学園スクールアイドル同好会』ハート型アクリルスタンド ミア グッズ 【2027年1月発売予定】",
-     "price": 3084,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085381%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028868%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/1b121afa606a0f00.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 『ラブライブ!虹ヶ咲学園スクールアイドル同好会』ハート型アクリルスタンド エマ グッズ 【2027年1月発売予定】",
-     "price": 3084,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085380%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028867%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/5b611fc33e244860.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 『ラブライブ!虹ヶ咲学園スクールアイドル同好会』ハート型アクリルスタンド 彼方 グッズ 【2027年1月発売予定】",
-     "price": 3084,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085379%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028866%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/76914d7bdf986f8a.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 『ラブライブ!虹ヶ咲学園スクールアイドル同好会』ハート型アクリルスタンド 果林 グッズ 【2027年1月発売予定】",
-     "price": 3084,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085378%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028865%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/7ee46d3841976d9d.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 「時々ボソッとロシア語でデレる隣のアーリャさん」アクリルスタンドフィギュア 浴衣ver. 政近 グッズ 【2027年1月発売予定】",
-     "price": 2455,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085366%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028853%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/89d095f6dd7729d1.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 「時々ボソッとロシア語でデレる隣のアーリャさん」アクリルスタンドフィギュア 浴衣ver. 綾乃 グッズ 【2027年1月発売予定】",
-     "price": 2455,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085365%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028852%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/fa56d5cd6d26c443.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 「時々ボソッとロシア語でデレる隣のアーリャさん」アクリルスタンドフィギュア 浴衣ver. マーシャ グッズ 【2027年1月発売予定】",
-     "price": 2455,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085364%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028851%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/610d485fea70d7e3.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 「時々ボソッとロシア語でデレる隣のアーリャさん」アクリルスタンドフィギュア 浴衣ver. 有希 グッズ 【2027年1月発売予定】",
-     "price": 2455,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085363%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028850%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "2027年1月",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/b941664554ed7ae1.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
     {
      "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 『ラブライブ!虹ヶ咲学園スクールアイドル同好会』スクエア缶バッジ 侑&ミア グッズ 【2027年1月発売予定】",
      "price": 1706,
@@ -1759,6 +1629,116 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/61a1f27f4afc4415.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
+    },
+    {
+     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 『ラブライブ!虹ヶ咲学園スクールアイドル同好会』スクエア缶バッジ 侑&果林 グッズ 【2027年1月発売予定】",
+     "price": 1706,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085382%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028869%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2027年1月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/4c70e9569e31566b.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 「時々ボソッとロシア語でデレる隣のアーリャさん」クリアファイル&缶バッジセット Season2メインビジュアル グッズ 【2027年1月発売予定】",
+     "price": 1958,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085368%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028855%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2027年1月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/d7819eac860b28ed.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 KADOKAWA 「時々ボソッとロシア語でデレる隣のアーリャさん」トレーディング缶バッジ 浴衣ver. BOX 5個入り グッズ 【2027年1月発売予定】",
+     "price": 2952,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000085360%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10028847%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2027年1月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_82/b01df2f1f23711b1.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【8→10月予約】【送料無料】サンリオキャラクターズ みんなでなっちゃお！ 歯 ぬいぐるみ 全5種 コンプリート",
+     "price": 3680,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00tomgn.kgodaa37.g00tomgn.kgodb4d8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoris-collection%2F8668671803550%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fnoris-collection%2Fi%2F10007961%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/noris-collection/cabinet/items1788169440/13564655785549952.jpg?_ex=300x300",
+     "shop": "ノリーズコレクション",
+     "hot": false
+    },
+    {
+     "name": "【予約】 TBSグロウディア TRIGUN STARGAZE ぬいぐるみ【ニコラス・D・ウルフウッド】 グッズ 【2026年11月発売予定】",
+     "price": 3469,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000087896%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10031360%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2026年11月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_87/d75907fb083b892c.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約】 TBSグロウディア TRIGUN STARGAZE ぬいぐるみ【ヴァッシュ・ザ・スタンピード】 グッズ 【2026年11月発売予定】",
+     "price": 3469,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000087895%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10031359%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2026年11月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_87/4f5ca0dded98e7f5.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約】 ムービック 魔法少女まどか☆マギカ ぬいパル(ぬいぐるみマスコット)/悪魔ほむら グッズ 【2027年1月発売予定】",
+     "price": 2872,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000087994%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10031458%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2027年1月",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_87/d704bd9c8242a36c.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "一番くじ ゴジラvsコング A賞 SOFVICS GODZILLA 単品 造形・彩色：酒井ゆうじ氏■ 2021年7月2日発売 予約　■ソフビ　フィギュア",
+     "price": 36800,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00rx0en.kgoda6e1.g00rx0en.kgodb095/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-world-antiqu%2F20210702godzillaa%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-world-antiqu%2Fi%2F10006605%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-world-antiqu/cabinet/03816285/ichibankujitanpin4/20210702godzillaa1.jpg?_ex=300x300",
+     "shop": "ワールドアンティーク",
+     "hot": false
+    },
+    {
+     "name": "予約/ミニぬいぐるみチャーム【ベリエちゃん】【デビリーちゃん】【ブルーベリエちゃん】【ナカムラくん】／ナルミヤキャラクターズ（NARUMIYACHARACTERS）",
+     "price": 2530,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r4d8n.kgoda80c.g00r4d8n.kgodb421/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2F0101marui%2Fcg024021460101%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2F0101marui%2Fi%2F13165248%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/0101marui/cabinet/cg024/021/46cg024-02146-04b.jpg?_ex=300x300",
+     "shop": "丸井(マルイ)楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 MENEGI 『ブルーロック』 キラキラ缶バッジ にゅ~とろ 糸師 冴バースデー C グッズ 【2026年11月発売予定】",
+     "price": 1520,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000086285%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10029771%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2026年11月",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_84/7d5e9ae8ec8bc72a.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【10/24予約締切】【マラソン★最大500円OFFクーポン】【予約】 MENEGI 『ブルーロック』 キラキラ缶バッジ にゅ~とろ 糸師 冴バースデー B グッズ 【2026年11月発売予定】",
+     "price": 1520,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000086284%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10029770%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "2026年11月",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_84/43fe4959ebefb5aa.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": false
     }
    ]
   }
