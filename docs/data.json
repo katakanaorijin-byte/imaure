@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T03:31:23.667437+09:00",
+ "generated_at": "2026-11-01T06:49:22.818788+09:00",
  "demo": false,
  "site_name": "予約開始レーダー",
  "site_url": "https://katakanaorijin-byte.github.io/imaure/",
@@ -9,14 +9,14 @@
    "icon": "⚡",
    "tag": "#ポケカ",
    "slug": "pokemon-card",
-   "new_count": 1,
+   "new_count": 0,
    "items": [
     {
      "name": "【予約商品】 ポケモンカードゲーム MEGA グミ 30th CELEBRATION BOX 20個入り タカラトミーアーツ 食玩",
      "price": 9980,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00t6k4n.kgodae61.g00t6k4n.kgodbfb8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgeexcollection%2Fs851%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgeexcollection%2Fi%2F10005140%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/geexcollection/cabinet/s/851.jpg?_ex=300x300",
      "shop": "GEEX COLLECTION",
      "hot": false
@@ -307,7 +307,7 @@
    "icon": "🎴",
    "tag": "#遊戯王",
    "slug": "yugioh",
-   "new_count": 11,
+   "new_count": 7,
    "items": [
     {
      "name": "[2027年03月25日発売予約][ニンテンドースイッチ2ソフト] ヴァイスシュヴァルツ オンライン Complete Edition *早期予約特典付",
@@ -384,7 +384,7 @@
      "price": 6680,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyc205236%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10353121%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/206000/yc205236.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
      "hot": true
@@ -394,7 +394,7 @@
      "price": 5480,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyc205230%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10353116%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/206000/yc205230.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
      "hot": true
@@ -404,18 +404,8 @@
      "price": 6080,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyc205225%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10353111%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
-     "is_new": true,
+     "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/206000/yc205225.jpg?_ex=300x300",
-     "shop": "でじたみん 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "マジック：ザ・ギャザリング プレイヤーズカードスリーブ MTGS-402〜407『ストリクスヘイヴンの秘密』ミスティカルアーカイブ 6種セット (死せる生/森林の目覚め/大軍の功績/弾ける力/弱者選別/表現の反復) エンスカイ◆ゆうパケット送料無料 【1月予約】",
-     "price": 6080,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyc205218%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10353105%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/206000/yc205218.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
      "hot": true
     },
@@ -440,13 +430,23 @@
      "hot": false
     },
     {
-     "name": "楽譜 SK983　Yes! 東京 ／ ミュージックエイト【予約商品】",
-     "price": 4290,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00re3jn.kgoda872.g00re3jn.kgodbee2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshimamura-gakufu%2Fmtg0206445%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fshimamura-gakufu%2Fi%2F10468701%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約前日発送】[Switch2] 早期予約特典付(PRカード2枚セット) ヴァイスシュヴァルツ オンライン Weis Edition(ヴァイスエディション)(通常版) ブシロード(20270325)",
+     "price": 9141,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00skv0n.kgoda37c.g00skv0n.kgodb63e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmediaworldkaitoriworld%2F10490313000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmediaworldkaitoriworld%2Fi%2F11176387%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/shimamura-gakufu/cabinet/mtg02064/mtg0206445.jpg?_ex=300x300",
-     "shop": "島村楽器 楽譜便",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1049/0/cg10490313.jpg?_ex=300x300",
+     "shop": "メディアワールド 販売&買取SHOP",
+     "hot": false
+    },
+    {
+     "name": "【予約前日発送】[Switch2] 早期予約特典付(PRカード2枚セット) ヴァイスシュヴァルツ オンライン Schwarz Edition(シュヴァルツエディション)(通常版) ブシロード(20270325)",
+     "price": 9141,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00skv0n.kgoda37c.g00skv0n.kgodb63e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmediaworldkaitoriworld%2F10490314000%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmediaworldkaitoriworld%2Fi%2F11176386%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/mediaworldkaitoriworld/cabinet/1049/0/cg10490314.jpg?_ex=300x300",
+     "shop": "メディアワールド 販売&買取SHOP",
      "hot": false
     }
    ]
@@ -456,7 +456,7 @@
    "icon": "🎎",
    "tag": "#フィギュア",
    "slug": "figure",
-   "new_count": 6,
+   "new_count": 5,
    "items": [
     {
      "name": "【予約】 クレーネル ウマ娘 プリティーダービー ハルウララ 【初うらら♪さくさくら】Ver. 1/7スケールフィギュア",
@@ -465,16 +465,6 @@
      "release": "",
      "is_new": true,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/2748a3a537f06236.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約】 RIBOSE RISE UP+ 崩壊:スターレイル ちびねこシリーズ フィギュア ブートヒル Ver. 完成品フィギュア",
-     "price": 14084,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090915%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034369%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/ede9aadeb425974c.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": false
     },
@@ -595,6 +585,16 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/176000/yf174129.jpg?_ex=300x300",
+     "shop": "でじたみん 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "コトブキヤ OSHI WORKS 薬屋のひとりごと 壬氏 ノンスケール フィギュア 【12月予約】",
+     "price": 8380,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00q5m4n.kgoda2e7.g00q5m4n.kgodbc25/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdigitamin%2Fyf177617%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdigitamin%2Fi%2F10326020%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/digitamin/cabinet/178000/yf177617.jpg?_ex=300x300",
      "shop": "でじたみん 楽天市場店",
      "hot": true
     }
@@ -1006,6 +1006,16 @@
      "hot": false
     },
     {
+     "name": "※予約販売11/5以降出荷【新品・お一人様1点限り】switch2 ゼルダの伝説 時のオカリナ",
+     "price": 8980,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00qg3kn.kgodaf72.g00qg3kn.kgodb9b6/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsendaihawks%2F0263329%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsendaihawks%2Fi%2F10007521%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sendaihawks/cabinet/imgrc0145186308.jpg?_ex=300x300",
+     "shop": "仙台ホークス",
+     "hot": false
+    },
+    {
      "name": "【あみあみ限定特典】Nintendo Switch 2 ゼノブレイド3 Nintendo Switch 2 Edition[任天堂]《12月予約》",
      "price": 9570,
      "url": "https://hb.afl.rakuten.co.jp/hgc/g00pr6bn.kgoda83b.g00pr6bn.kgodb6df/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famiami%2Fgame-0034639%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Famiami%2Fi%2F13067865%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
@@ -1014,16 +1024,6 @@
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/amiami/cabinet/pb/2026/272/game-0034639.jpg?_ex=300x300",
      "shop": "あみあみ 楽天市場店",
      "hot": true
-    },
-    {
-     "name": "Switch2アノマリス／ANOMALITH メーカー特典あり 予約特典遺失物統轄機構コラボDLC＆開発素材セット",
-     "price": 10447,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00u59tn.kgoda08b.g00u59tn.kgodb7e5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgoodwoods%2F6a9g01np3v362%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fgoodwoods%2Fi%2F10351511%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/goodwoods/cabinet/h8e6uco0h4hhm/6a9g01np3v3621.jpg?_ex=300x300",
-     "shop": "KIRARI store",
-     "hot": false
     },
     {
      "name": "Nintendo Switch 2 ゼノブレイド3 Nintendo Switch 2 Edition[任天堂]【送料無料】《12月予約》",
@@ -1052,8 +1052,18 @@
    "icon": "💿",
    "tag": "#アニメ",
    "slug": "anime-bd",
-   "new_count": 6,
+   "new_count": 7,
    "items": [
+    {
+     "name": "【予約】【特典付き】TVアニメ「これ描いて死ね」Blu-ray（12/13頃発送予定）（送料無料）",
+     "price": 39600,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ubl7n.kgoda32a.g00ubl7n.kgodba45/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshosen%2F4573687036175-021%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fshosen%2Fi%2F10041024%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/shosen/cabinet/shohin/open31/imgrc0172109446.jpg?_ex=300x300",
+     "shop": "書泉オンライン楽天市場店",
+     "hot": true
+    },
     {
      "name": "【楽天ブックス限定先着特典+早期予約特典】「下野紘 音楽祭 DVD」＋「下野紘 2ndミニアルバム（初回限定盤 CD＋Blu-ray）」セット(アクリルキーホルダー(50mm×50mm)+ステッカー+複製コメント入り記念カード1) [ 下野紘 ]",
      "price": 14850,
@@ -1181,16 +1191,6 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-mhfriend/cabinet/1000128/1510430_2_noimage.jpg?_ex=300x300",
-     "shop": "ミュージックハウス フレンズ",
-     "hot": false
-    },
-    {
-     "name": "【11/13まで予約受付中！】本間勇輔 - 古畑任三郎　サウンドトラックvol.2　2026リマスター(UHQCD) / 新生活応援",
-     "price": 4194,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00r4ysn.kgoda94e.g00r4ysn.kgodba4b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-mhfriend%2F1510431%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fauc-mhfriend%2Fi%2F10183722%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-mhfriend/cabinet/1000128/1510431_2.jpg?_ex=300x300",
      "shop": "ミュージックハウス フレンズ",
      "hot": false
     }
@@ -1343,42 +1343,12 @@
      "hot": false
     },
     {
-     "name": "【予約2027年4月予定】TOMIX トミックス 97268 国鉄 キハ82系 4両基本セット Nゲージ 鉄道模型 特急形気動車 ハイグレード HG 本州仕様 キハ82初期型 後期型 キロ80 キハ80 動力付き フライホイール ヘッドライト テールライト 前面表示点灯 白鳥 まつかぜ TNカプラーSP",
-     "price": 17735,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51797-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000779%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約2027年4月予定】TOMIX トミックス 98763 東京臨海高速鉄道 70-000形 りんかい線 6両基本セット Nゲージ 鉄道模型 再生産 埼京線 川越線 2002年登場 2色シルバー 車番選択式 前面表示交換式 フライホイール付動力 M-13モーター ヘッド・テールライト点灯 98764増結対応",
+     "price": 15855,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51803-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000786%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51797-01_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約2027年4月予定】TOMIX トミックス 97269 国鉄 キハ82系 3両増結セット Nゲージ 鉄道模型 特急形ディーゼルカー HG ハイグレード 食堂車 キシ80 キハ80 中間車3両 本州仕様 業務用窓なし TNカプラーSP 黒色車輪 動力なし ライトなし 97268基本セット別売 7両編成対応",
-     "price": 9076,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51797-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000774%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51797-02_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約2027年4月予定】TOMIX トミックス 98584 国鉄 14系座席車 前期型 4両セット Nゲージ 鉄道模型 客車 スハフ14 オハ14 オハフ15 白帯 踊り子 機関車用ヘッドマーク テールライト点灯 トレインマーク点灯 車番選択式 交換用TNカプラー 黒色車輪 動力なし 機関車別売",
-     "price": 11155,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51799%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000781%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51799_1.jpg?_ex=300x300",
-     "shop": "モダンリヴ楽天市場店",
-     "hot": false
-    },
-    {
-     "name": "【予約2027年4月予定】TOMIX トミックス 98174 JR キハ185形3100番代 2両セット Nゲージ 鉄道模型 JR四国 普通列車 ディーゼルカー 予讃線 内子線 宇和島 長浜経由 松山 伊予大洲 小型前面表示 新規製作 フライホイール付動力 ヘッドライト テールライト点灯 TNカプラーSP",
-     "price": 10319,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51798%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000780%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": false,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51798_1.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51803-01_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     },
@@ -1389,6 +1359,36 @@
      "release": "",
      "is_new": false,
      "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51803-02_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約2027年4月予定】TOMIX トミックス 98860 JR 200系東北新幹線 K編成 基本セット 6両 Nゲージ 鉄道模型 JR東日本 再生産 リニューアル前 1500番代 221形 222形 併結対応 動力付き フライホイール ヘッドライト テールライト点灯 車番選択式 銀色車輪 98861増結対応",
+     "price": 16690,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51802-01%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000784%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51802-01_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約2027年4月予定】TOMIX トミックス 98861 JR 200系東北新幹線 K編成 4両増結セット Nゲージ 鉄道模型 JR東日本 再生産 リニューアル前 4～7号車 パンタグラフ撤去跡 車番選択式 U字型通電カプラー 銀色車輪 動力なし ライトなし 98860基本セット別売 10両編成対応",
+     "price": 8773,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51802-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000785%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51802-02_1.jpg?_ex=300x300",
+     "shop": "モダンリヴ楽天市場店",
+     "hot": false
+    },
+    {
+     "name": "【予約2027年4月予定】TOMIX トミックス 97275 JR キハ261系1000番代 6次車「北斗」(新塗装) 3両増結セット Nゲージ 鉄道模型 JR北海道 特急形気動車 キハ260-1200 キハ260-1300 動力なし 車番転写シート付属 97274基本セット対応 SUPER HOKUTO 臨時 スノープロウ 黒色車輪",
+     "price": 8293,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00usvcn.kgoda5b7.g00usvcn.kgodbe3d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmodernrive%2F9vtmt51800-02%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fmodernrive%2Fi%2F10000776%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": false,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/modernrive/cabinet/image9/9vtmt51800-02_1.jpg?_ex=300x300",
      "shop": "モダンリヴ楽天市場店",
      "hot": false
     }
@@ -1551,62 +1551,32 @@
    "new_count": 14,
    "items": [
     {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 日野陽太 放課後寄り道ver. 特大アクリルスタンド グッズ",
-     "price": 3946,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090769%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034223%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 A3 アクリルスタンド「TVアニメ『幼女戦記II』」02/ターニャ・デグレチャフ メイドver.(描き下ろしイラスト) グッズ",
+     "price": 2654,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090552%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034006%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/3091e32fac39d1ab.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/ab8709875024a9c0.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 雨宮 湊 放課後寄り道ver. 特大アクリルスタンド グッズ",
-     "price": 3946,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090768%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034222%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 A3 アクリルスタンド「TVアニメ『幼女戦記II』」01/ターニャ・デグレチャフ スーツver.(描き下ろしイラスト) グッズ",
+     "price": 2654,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090551%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034005%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/5feb1536ef6c7324.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/e54c17fe10a1597a.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 氷川小雪 放課後寄り道ver. 特大アクリルスタンド グッズ",
-     "price": 3946,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090766%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034220%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 日野陽太 放課後寄り道ver. BIGアクリルスタンド グッズ",
+     "price": 2753,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090775%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034229%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/9027e1bec9304691.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 安曇美姫 放課後寄り道ver. 特大アクリルスタンド グッズ",
-     "price": 3946,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090767%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034221%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/2cd62743aa053803.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 安曇美姫&日野陽太 放課後寄り道ver. 集合BIGアクリルスタンド グッズ",
-     "price": 3946,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090771%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034225%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/0b9df94ce615452a.jpg?_ex=300x300",
-     "shop": "セプライ 楽天市場店",
-     "hot": true
-    },
-    {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 氷川小雪&雨宮 湊 放課後寄り道ver. 集合BIGアクリルスタンド グッズ",
-     "price": 3946,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090770%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034224%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
-     "release": "",
-     "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/689f71e5b005e046.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/82583048b5491287.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
@@ -1641,52 +1611,82 @@
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 日野陽太 放課後寄り道ver. BIGアクリルスタンド グッズ",
-     "price": 2753,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090775%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034229%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 安曇美姫&日野陽太 放課後寄り道ver. 集合BIGアクリルスタンド グッズ",
+     "price": 3946,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090771%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034225%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/82583048b5491287.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/0b9df94ce615452a.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ 忍たま乱太郎 描き下ろし 摂津のきり丸 AKIBIYORIの段 in HANA・BIYORI ver. BIGアクリルスタンド グッズ",
-     "price": 2634,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090820%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034274%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 氷川小雪&雨宮 湊 放課後寄り道ver. 集合BIGアクリルスタンド グッズ",
+     "price": 3946,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090770%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034224%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/1e46f1f4c5e4b9c3.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/689f71e5b005e046.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ 忍たま乱太郎 描き下ろし 六年生集合 AKIBIYORIの段 in HANA・BIYORI ver. BIGアクリルスタンド グッズ",
-     "price": 3747,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090818%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034272%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 日野陽太 放課後寄り道ver. 特大アクリルスタンド グッズ",
+     "price": 3946,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090769%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034223%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/a60a380ee66ac84c.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/3091e32fac39d1ab.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ 忍たま乱太郎 描き下ろし 猪名寺乱太郎 AKIBIYORIの段 in HANA・BIYORI ver. BIGアクリルスタンド グッズ",
-     "price": 2634,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090819%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034273%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 雨宮 湊 放課後寄り道ver. 特大アクリルスタンド グッズ",
+     "price": 3946,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090768%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034222%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/6eb1256e84b52517.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/5feb1536ef6c7324.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     },
     {
-     "name": "【予約】 アルマビアンカ 忍たま乱太郎 描き下ろし 一年生集合 AKIBIYORIの段 in HANA・BIYORI ver. BIGアクリルスタンド グッズ",
-     "price": 3747,
-     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090817%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034271%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 安曇美姫 放課後寄り道ver. 特大アクリルスタンド グッズ",
+     "price": 3946,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090767%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034221%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
      "release": "",
      "is_new": true,
-     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/2b06027a68520212.jpg?_ex=300x300",
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/2cd62743aa053803.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約】 アルマビアンカ TVアニメ『氷の城壁』 描き下ろし 氷川小雪 放課後寄り道ver. 特大アクリルスタンド グッズ",
+     "price": 3946,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090766%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034220%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/9027e1bec9304691.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約】 アルマビアンカ TVアニメ『WIND BREAKER』 描き下ろし ジャズver. トレーディンググリッター缶バッジ 1BOX入数:8 8個入り グッズ",
+     "price": 5046,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090856%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034310%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/d11b1b12cca68f7e.jpg?_ex=300x300",
+     "shop": "セプライ 楽天市場店",
+     "hot": true
+    },
+    {
+     "name": "【予約】 アルマビアンカ TVアニメ『千歳くんはラムネ瓶のなか』 西野明日風 場面写缶バッジ2個セット グッズ",
+     "price": 1799,
+     "url": "https://hb.afl.rakuten.co.jp/hgc/g00ukphn.kgoda809.g00ukphn.kgodb622/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsepply%2Fsp-0000090792%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fsepply%2Fi%2F10034246%2F&rafcid=wsc_i_is_727925b7-ddc1-4c2c-a01f-977f41c84cec",
+     "release": "",
+     "is_new": true,
+     "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/sepply/cabinet/po_94/04b0a136db1fd738.jpg?_ex=300x300",
      "shop": "セプライ 楽天市場店",
      "hot": true
     }
